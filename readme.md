@@ -1,4 +1,1 @@
-1. Отключил lazy плагин. Поставил  loading="lazy"
-
-
-rm -rf node_modules
+1. <https://megafronteam.github.io/0006NavesNaZakaz/public>

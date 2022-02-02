@@ -1,0 +1,36 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCategories/_sCategories.pug
+include ../blocks/sYouNeedUs/_sYouNeedUs.pug
+include ../blocks/sTeam/_sTeam.pug
+include ../blocks/sAccess/_sAccess.pug
+include ../blocks/sQuestions/_sQuestions.pug
+include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sCardHorisontal/_sCardHorisontal.pug
+include ../blocks/footer-main/_footer-main.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= 'Модальные окна'
+	title= title
+block pagecontent
+	+mob-mnu()
+	//- +header()
+	+top-nav()
+	//- +topLine()
+	.section.container
+		.row
+			mixin btn(id, name)
+				.col-auto.mb-2
+					a.btn.btn-primary.link-modal-js(href=`#${id}`)= name
+			+btn("modal-call", "modal-call")
+	+footer
+
+
+

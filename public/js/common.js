@@ -1,22 +1,26 @@
 "use strict";
 const JSCCommon = { 
 	modalCall() {
-		const link = ".link-modal-js";
+		const link = '[data-fancybox="modal"], .link-modal-js';
 
 		Fancybox.bind(link, {
 			arrows: false,
-			infobar: false,
+			// infobar: false,
 			touch: false,
+			trapFocus: false,
+			placeFocusBack: false,
 			infinite: false,
 			dragToClose: false,
 			type: 'inline',
 			autoFocus: false,
+			groupAll: false,
+			groupAttr: false,
 			l10n: {
 				Escape: "Закрыть",
 				NEXT: "Вперед",
-				PREV: "Назад", 
-			}, 
-		}); 
+				PREV: "Назад",
+			},
+		});
 		document.querySelectorAll(".modal-close-js").forEach(el=>{
 			el.addEventListener("click", ()=>{
 				Fancybox.close();

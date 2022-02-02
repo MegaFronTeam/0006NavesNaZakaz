@@ -1,4 +1,4 @@
-$rfs-rem-value: 16 !default;
+$rfs-rem-value: 18 !default;
 $em-base: $rfs-rem-value * 1px;
 $small: rem(14);
 $url: '../img/';
@@ -93,14 +93,14 @@ $colors: ("blue": $blue,
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary: $blue !default;
-$secondary: $gray-600 !default;
-$success: $green !default;
-$info: $cyan !default;
-$warning: $yellow !default;
+$primary: #FFC23C !default;
+$secondary: #35455C !default;
+$success: #55CD6C !default;
+$info: #C1D5F1 !default;
+$warning: #FF9C64 !default;
 $danger: $red !default;
-$light: $gray-100 !default;
-$dark: $gray-900 !default;
+$light: #F2F6FC !default;
+$dark: #2C3440 !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -116,7 +116,6 @@ $theme-colors: (
 // scss-docs-end theme-colors-map
 
 $theme-colors: map-remove($theme-colors, 
-"info", 
 "light", 
 "dark",  
 "success",
@@ -209,7 +208,7 @@ $position-values: (0: 0,
 // Settings for the `<body>` element.
 
 $body-bg: $white !default;
-$body-color: $gray-900 !default;
+$body-color: $dark !default;
 $body-text-align: null !default;
 
 // Utilities maps
@@ -289,7 +288,7 @@ $container-max-widths: (sm: 540px,
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns: 12 !default;
-$grid-gutter-width: 1.5rem !default;
+$grid-gutter-width: rem(32) !default;
 $grid-row-columns: 6 !default;
 
 $gutters: $spacers !default;
@@ -402,10 +401,10 @@ $line-height-base: 1.5 !default;
 $line-height-sm: 1.25 !default;
 $line-height-lg: 2 !default;
 
-$h1-font-size: $font-size-base * 2.5 !default;
-$h2-font-size: $font-size-base * 2 !default;
-$h3-font-size: $font-size-base * 1.75 !default;
-$h4-font-size: $font-size-base * 1.5 !default;
+$h1-font-size: rem(60) !default;
+$h2-font-size: rem(48) !default;
+$h3-font-size: rem(36) !default;
+$h4-font-size: rem(24) !default;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 // scss-docs-end font-variables
@@ -423,9 +422,9 @@ $font-sizes: (1: $h1-font-size,
 $headings-margin-bottom: $spacer * .5 !default;
 $headings-font-family: null !default;
 $headings-font-style: null !default;
-$headings-font-weight: 500 !default;
-$headings-line-height: 1.2 !default;
-$headings-color: null !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.05 !default;
+$headings-color: $secondary !default;
 // scss-docs-end headings-variables
 
 // scss-docs-start display-headings
@@ -569,29 +568,29 @@ $input-btn-border-width: $border-width !default;
 // For each of Bootstrap's buttons, define text, background, and border color.
 
 // scss-docs-start btn-variables
-$btn-padding-y: $input-btn-padding-y !default;
-$btn-padding-x: $input-btn-padding-x !default;
+$btn-padding-y: rem(11) !default;
+$btn-padding-x: rem(31) !default;
 $btn-font-family: $input-btn-font-family !default;
-$btn-font-size: $input-btn-font-size !default;
-$btn-line-height: $input-btn-line-height !default;
+$btn-font-size: rem(16) !default;
+$btn-line-height: 100% !default;
 $btn-white-space: null !default; // Set to `nowrap` to prevent text wrapping
 
-$btn-padding-y-sm: $input-btn-padding-y-sm !default;
-$btn-padding-x-sm: $input-btn-padding-x-sm !default;
-$btn-font-size-sm: $input-btn-font-size-sm !default;
+$btn-padding-y-sm: rem(11) !default;
+$btn-padding-x-sm: rem(24) !default;
+$btn-font-size-sm: rem(12) !default;
 
-$btn-padding-y-lg: $input-btn-padding-y-lg !default;
-$btn-padding-x-lg: $input-btn-padding-x-lg !default;
-$btn-font-size-lg: $input-btn-font-size-lg !default;
+$btn-padding-y-lg: rem(11.5) !default;
+$btn-padding-x-lg: rem(31) !default;
+$btn-font-size-lg: rem(16) !default;
 
 $btn-border-width: $input-btn-border-width !default;
 
-$btn-font-weight: $font-weight-normal !default;
+$btn-font-weight: 600 !default;
 $btn-box-shadow: inset 0 1px 0 rgba($white, .15),
 0 1px 1px rgba($black, .075) !default;
 $btn-focus-width: $input-btn-focus-width !default;
 $btn-focus-box-shadow: $input-btn-focus-box-shadow !default;
-$btn-disabled-opacity: .65 !default;
+$btn-disabled-opacity: 1;
 $btn-active-box-shadow: inset 0 3px 5px rgba($black, .125) !default;
 
 $btn-link-color: $link-color !default;
@@ -599,9 +598,9 @@ $btn-link-hover-color: $link-hover-color !default;
 $btn-link-disabled-color: $gray-600 !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius: $border-radius !default;
-$btn-border-radius-sm: $border-radius-sm !default;
-$btn-border-radius-lg: $border-radius-lg !default;
+$btn-border-radius: 1000px !default;
+$btn-border-radius-sm: 1000px !default;
+$btn-border-radius-lg: 1000px !default;
 
 $btn-transition: color .15s ease-in-out,
 background-color .15s ease-in-out,

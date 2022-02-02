@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>title</title>
+		<title>Модальные окна</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,  shrink-to-fit=no">
@@ -11,12 +11,22 @@
 		<link href="libs/@fancyapps/ui/fancybox.css" rel="stylesheet"/>
 		<link href="css/main.min.css" rel="stylesheet"/>
 	</head>
-	<body class="main-page">
+	<body>
 		<div class="main-wrapper">
-			<!-- start header-->
-			<header class="header" id="header">
-			</header>
-			<!-- end header-->
+			<div class="menu-mobile menu-mobile--js">
+				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+				</div>
+				<div class="menu-mobile__inner">
+					<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Наши работы</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Цены</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Акции</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Заказать</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--  мобильное меню-->
 			<!-- start top-nav-->
 			<div class="top-nav block-with-lazy">
 				<div class="container">
@@ -44,86 +54,11 @@
 				</div>
 			</div>
 			<!-- end top-nav-->
-			<!-- start topLine-->
-			<section class="topLine section" id="topLine">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>topLine</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</section>
-			<!-- end topLine-->
-			<div class="container">
+			<div class="section container">
 				<div class="row">
-					<div class="col-auto">
-						<div class="btn btn-primary btn-lg" href="#">Отправить</div>
-					</div>
-					<div class="col-auto">
-						<div class="btn btn-primary" href="#">Отправить</div>
-					</div>
-					<div class="col-auto">
-						<div class="btn btn-outline-primary" href="#">Отправить</div>
-					</div>
-					<div class="col-auto">
-						<div class="btn btn-primary btn-sm" href="#">Отправить</div>
-					</div>
-					<div class="col-auto">
-						<div class="btn btn-secondary btn-sm" href="#">Отправить</div>
-					</div>
-					<div class="col-auto">
-						<div class="btn btn-outline-secondary btn-sm" href="#">Отправить</div>
-					</div>
-					<div class="col-auto">
-						<div class="btn btn-info btn-lg" href="#">Отправить</div>
-					</div>
-				</div>
-				<h1>Lorem ipsum dolor sit amet consectetur.</h1>
-				<h2>Lorem ipsum dolor sit amet consectetur.</h2>
-				<h3>Lorem ipsum dolor sit amet consectetur.</h3>
-				<h4>Lorem ipsum dolor sit amet consectetur.</h4>
-				<h5>Lorem ipsum dolor sit amet consectetur.</h5>
-				<h6>Lorem ipsum dolor sit amet consectetur.</h6>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem quam harum maxime perferendis magnam quis. Laudantium, ea error rerum deserunt asperiores unde nemo dolores a reiciendis quidem non ad tempora.</p>
-				<div class="row">
-					<div class="col-6">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam molestiae veritatis mollitia ipsum veniam, quos ut libero ducimus optio ullam laboriosam iste corporis odit, consectetur tenetur ipsa placeat quae aliquid.</p>
-					</div>
-					<div class="col-6">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam molestiae veritatis mollitia ipsum veniam, quos ut libero ducimus optio ullam laboriosam iste corporis odit, consectetur tenetur ipsa placeat quae aliquid.</p>
-					</div>
+										<div class="col-auto mb-2"><a class="btn btn-primary link-modal-js" href="#modal-call">modal-call</a></div>
 				</div>
 			</div>
-			<!-- start headerBlock-->
-			<div class="headerBlock section" id="headerBlock">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>headerBlock ds dfsdfdsfsd</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</div>
-			<!-- end headerBlock-->
-			<!-- start sForm-->
-			<section class="sForm section" id="sForm">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>sForm</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</section>
-			<!-- end sForm-->
-			<!-- start sContact-->
-			<section class="sContact section" id="sContact">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>sContact</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</section>
-			<!-- end sContact-->
 			<footer class="footer">
 				<div class="container">
 					<div class="row">

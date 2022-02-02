@@ -3,6 +3,19 @@ extends layout/main.pug
 
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sPortfolio/_sPortfolio.pug
+include ../blocks/sDesign/_sDesign.pug
+include ../blocks/sCalculator/_sCalculator.pug
+include ../blocks/sTypical/_sTypical.pug
+include ../blocks/sPriceList/_sPriceList.pug
+include ../blocks/sReviews/_sReviews.pug
+include ../blocks/sStages/_sStages.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sAdvantages/_sAdvantages.pug
+include ../blocks/sQuestions/_sQuestions.pug
+include ../blocks/sCertificates/_sCertificates.pug
+include ../blocks/sWeProduce/_sWeProduce.pug
 
 block variables
 	- let  mainPage= 'main-page' 
@@ -15,42 +28,28 @@ block pagecontent
 	//- +mob-mnu()
 	+header()
 	+top-nav()
-
 	+topLine()
-	.container
-		.row
-
-			.col-auto
-				.btn.btn-primary.btn-lg(href="#") Отправить
-			.col-auto
-				.btn.btn-primary(href="#") Отправить
-			.col-auto
-				.btn.btn-outline-primary(href="#") Отправить
-			.col-auto
-				.btn.btn-primary.btn-sm(href="#") Отправить
-			.col-auto
-				.btn.btn-secondary.btn-sm(href="#") Отправить
-			.col-auto
-				.btn.btn-outline-secondary.btn-sm(href="#") Отправить
-			.col-auto
-				.btn.btn-info.btn-lg(href="#") Отправить
-
-		h1 Lorem ipsum dolor sit amet consectetur.
-		h2 Lorem ipsum dolor sit amet consectetur.
-		h3 Lorem ipsum dolor sit amet consectetur.
-		h4 Lorem ipsum dolor sit amet consectetur.
-		h5 Lorem ipsum dolor sit amet consectetur.
-		h6 Lorem ipsum dolor sit amet consectetur.
-		p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem quam harum maxime perferendis magnam quis. Laudantium, ea error rerum deserunt asperiores unde nemo dolores a reiciendis quidem non ad tempora.
-		.row
-			.col-6
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam molestiae veritatis mollitia ipsum veniam, quos ut libero ducimus optio ullam laboriosam iste corporis odit, consectetur tenetur ipsa placeat quae aliquid.
-			.col-6
-				p Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam molestiae veritatis mollitia ipsum veniam, quos ut libero ducimus optio ullam laboriosam iste corporis odit, consectetur tenetur ipsa placeat quae aliquid.
 	+headerBlock()
-	+sForm()
+	+sCatalog()
+	.section-wrapper
+		+sPortfolio()
+	+sDesign()
+	+sCalculator()
+	.section-wrapper
+		+sTypical()
+		+sPriceList()
+	+sReviews()
+	+sStages()
+	.section-wrapper
+		+sAbout()
+		+sAdvantages()
+		+sQuestions()
+		+sCertificates()
+		+sWeProduce()
 	+sContact()
-	+footer()
+	.section-wrapper
+		+footer()
+	//- +sForm()
 
 
 

@@ -118,7 +118,7 @@ $theme-colors: (
 $theme-colors: map-remove($theme-colors, 
 "dark",  
 "success",
-'warning', 
+
 );
 
 // scss-docs-start theme-colors-rgb
@@ -400,10 +400,10 @@ $line-height-base: 1.5 !default;
 $line-height-sm: 1.25 !default;
 $line-height-lg: 2 !default;
 
-$h1-font-size: rem(60) !default;
-$h2-font-size: rem(48) !default;
-$h3-font-size: rem(36) !default;
-$h4-font-size: rem(24) !default;
+$h1-font-size: rem(48) !default;
+$h2-font-size: rem(38) !default;
+$h3-font-size: rem(29) !default;
+$h4-font-size: rem(20) !default;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 // scss-docs-end font-variables

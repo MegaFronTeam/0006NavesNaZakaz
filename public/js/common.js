@@ -361,6 +361,32 @@ function eventHandler() {
 		freeModeMomentum: true,
 
 	});
+	const sCatalogSlider = new Swiper('.sCatalog__slider--js', {
+		// freeMode: true,
+		// loopFillGroupWithBlank: true,
+		// touchRatio: 0.2,
+		// freeModeMomentum: true,
+		loop: true,
+		lazy: {
+			loadPrevNext: true,
+		},
+		watchOverflow: true,
+		spaceBetween: 16,
+		slidesPerView: 1,
+		slideToClickedSlide: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 16
+			},
+			
+		}
+
+	});
 	// modal window
 
 };

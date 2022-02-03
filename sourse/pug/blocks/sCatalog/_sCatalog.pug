@@ -3,7 +3,22 @@ mixin sCatalog(data)
 	+b.SECTION.sCatalog.section#sCatalog&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sCatalog
-				
-			.row
+				h4 Каталог
+				h2 Производим навесы для частных лиц и&nbsp;компаний
+			+e.slider-wrapper
+				+arrow
+				+e.slider--js.swiper
+					.swiper-wrapper
+						+e.slide.swiper-slide
+							+catalogItem(1, `Для машин`, `от 106 596 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(2, `К&nbsp;дому`, `от 106 596 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(3, `Для дачи`, `от 106 596 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(4, `Для бассейна`, `от 106 596 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(5, `Гаражи из&nbsp;СП`, `от 106 596 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(6, `Промышленные`, `от 106 596 ₽`)
 	// end sCatalog

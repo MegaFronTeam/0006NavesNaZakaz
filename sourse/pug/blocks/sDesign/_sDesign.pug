@@ -3,7 +3,35 @@ mixin sDesign(data)
 	+b.SECTION.sDesign.section#sDesign&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sDesign
-				
+				h4 Дизайн
+				h2 Выберите внешний вид навеса под свой вкус
 			.row
+				.col-xl-5
+					h3 Материалы кровли
+					+e.block
+						+e.item--lg.bg-wrap
+							+pic('sDesign-1.jpg', 'bg', 0).picture-bg
+							span Сотовый поликарбонат
+					+e.block
+						+e.item--lg.bg-wrap
+							+pic('sDesign-2.jpg', 'bg', 0).picture-bg
+							span Монолитный поликарбонат
+					+e.block
+						+e.item--lg.bg-wrap
+							+pic('sDesign-3.jpg', 'bg', 0).picture-bg
+							span Профнастил
+					+e.block
+						+e.item--lg.bg-wrap
+							+pic('sDesign-4.jpg', 'bg', 0).picture-bg
+							span Металлочерепица
+					+e.block
+						+e.item--lg.bg-wrap
+							+pic('sDesign-5.jpg', 'bg', 0).picture-bg
+							span Мягкая кровля
+					+e.block
+						+e.item--lg.bg-wrap
+							+pic('sDesign-6.jpg', 'bg', 0).picture-bg
+							span Ондулин
+				.col-xl-7
+
 	// end sDesign

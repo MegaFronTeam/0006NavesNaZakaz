@@ -1,14 +1,43 @@
 // start .sDesign
 .sDesign {
-		// --sPT: ;
-		// --sPB: ;
-		// --sTPB: ;
-
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
+	--sPT: #{rem(40)};
+	--sPB: #{rem(47)};
+	--sTPB: #{rem(30)};
+	@include media-breakpoint-up(md) {
+		--sPT: #{rem(128)};
+		--sPB: #{rem(98)};
+		--sTPB: #{rem(73)};
+	}
+	.section-title {
+		h2 {
+			max-width: 18em;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	&__item {
+		&--lg {
+			@include block(488, 112);
+			
+			span {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+			}
+		}
+	}
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
 } // end.sDesign

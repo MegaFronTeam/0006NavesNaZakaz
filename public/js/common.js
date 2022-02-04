@@ -375,13 +375,51 @@ function eventHandler() {
 		slidesPerView: 1,
 		slideToClickedSlide: true,
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.sCatalog .swiper-button-next',
+			prevEl: '.sCatalog .swiper-button-prev',
 		},
 		breakpoints: {
 			768: {
 				slidesPerView: 2,
 				spaceBetween: 16
+			},
+			
+		}
+
+	});
+	const sCertificatesSlider = new Swiper('.sCertificates__slider--js', {
+		// freeMode: true,
+		// loopFillGroupWithBlank: true,
+		// touchRatio: 0.2,
+		// freeModeMomentum: true,
+		// loop: true,
+		lazy: {
+			loadPrevNext: true,
+		},
+		watchOverflow: true,
+		spaceBetween: 16,
+		slidesPerView: 1,
+		slideToClickedSlide: true,
+		navigation: {
+			nextEl: '.sCertificates .swiper-button-next',
+			prevEl: '.sCertificates .swiper-button-prev',
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 24
+			},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 24
+			},
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 24
+			},
+			1400: {
+				slidesPerView: 4,
+				spaceBetween: 32
 			},
 			
 		}

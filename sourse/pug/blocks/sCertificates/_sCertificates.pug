@@ -3,7 +3,19 @@ mixin sCertificates(data)
 	+b.SECTION.sCertificates.section#sCertificates&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sCertificates
-				
-			.row
+				h2 Сертификаты качества на&nbsp;используемые материалы
+			+e.slider-wrapper
+				+arrow
+				+e.slider--js.swiper
+					.swiper-wrapper
+						mixin sCertificatesSlide(i, p)
+							+e.slide.swiper-slide
+								+e.item(data-fancybox='sCertificates' data-src=`img/@2x/sCertificates-${i}.jpg` data-caption=`${p}`)
+									+pic('sCertificates-1.jpg', 'bg', 0)
+									p!= p
+						+sCertificatesSlide(1, `Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit`)
+						+sCertificatesSlide(2, `Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit`)
+						+sCertificatesSlide(3, `Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit`)
+						+sCertificatesSlide(1, `Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit`)
+
 	// end sCertificates

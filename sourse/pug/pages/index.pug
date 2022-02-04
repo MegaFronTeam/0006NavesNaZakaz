@@ -15,14 +15,13 @@ include ../blocks/sAbout/_sAbout.pug
 include ../blocks/sAdvantages/_sAdvantages.pug
 include ../blocks/sQuestions/_sQuestions.pug
 include ../blocks/sCertificates/_sCertificates.pug
-include ../blocks/sWeProduce/_sWeProduce.pug
 
 block variables
 	- let  mainPage= 'main-page' 
 	- let  bg= null
 
 block title
-	- let  title= 'title'
+	- let  title= 'Главная'
 	title= title
 block pagecontent
 	//- +mob-mnu()
@@ -45,7 +44,6 @@ block pagecontent
 		+sAdvantages()
 		+sQuestions()
 		+sCertificates()
-		//- +sWeProduce()
 		+sCatalogProd()
 	+sContact()
 	.section-wrapper

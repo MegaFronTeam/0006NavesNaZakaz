@@ -22,11 +22,16 @@
 	}
 	h3 {
 		margin-bottom: rem(25);
+		text-align: center;
 		@include media-breakpoint-up(md) {
+			text-align: left;
 			margin-bottom: rem(32);
 		}
 		@include media-breakpoint-only(lg) {
 			margin-bottom: rem(25);
+		}
+		@include media-breakpoint-down(sm) {
+			@include rfs(22px);
 		}
 	}
 	&__row-sm {

@@ -522,6 +522,9 @@ h3 {
 	@include media-breakpoint-up(xl) {
 		font-size: rem(36);
 	}
+	@include media-breakpoint-down(sm) {
+		@include rfs(31px);
+	}
 }
 h4 {
 	@include media-breakpoint-up(xl) {

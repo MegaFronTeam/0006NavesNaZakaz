@@ -40,6 +40,30 @@
 		}
 	}
 
+	&--prod {
+		--sPT: #{rem(26)};
+		--sPB: #{rem(41)};
+		--sTPB: #{rem(30)};
+		@include media-breakpoint-up(md) {
+			--sPT: #{rem(52)};
+			--sPB: #{rem(98)};
+			--sTPB: #{rem(72)};
+		}
+		.sCatalog__slide {
+			@include media-breakpoint-up(lg) {
+				flex: 0 0 auto !important;
+				width: 25% !important;
+			}
+		}
+		.catalogItem {
+			picture {
+				@include media-breakpoint-up(lg) {
+					--ratio: 270/280;
+				}
+			}
+		}
+	}
+
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {

@@ -22,3 +22,31 @@ mixin sCatalog(data)
 						+e.slide.swiper-slide
 							+catalogItem(6, `Промышленные`, `от 106 596 ₽`)
 	// end sCatalog
+
+mixin sCatalogProd(data)
+	// start sCatalog
+	+b.SECTION.sCatalog--prod.section#sCatalog&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h3 Производим также
+			+e.slider-wrapper
+				+arrow
+				+e.slider--js.swiper
+					.swiper-wrapper
+						+e.slide.swiper-slide
+							+catalogItem(1, `Бетонные площадки`, `от 59 150 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(2, `Укладка тротуарной <br> плитки`, `от 59 150 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(3, `Ворота откатные <br> и&nbsp;распашные`, `от 59 150 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(4, `Заборы и&nbsp;ограждения`, `от 59 150 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(5, `Кованые изделия`, `от 59 150 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(6, `Крыльцо`, `от 59 150 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(5, `Лестницы`, `от 59 150 ₽`)
+						+e.slide.swiper-slide
+							+catalogItem(6, `Изготовление металлоконструкций`, `от 59 150 ₽`)
+	// end sCatalog

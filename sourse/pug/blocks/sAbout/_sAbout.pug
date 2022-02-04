@@ -4,8 +4,19 @@ mixin sAbout(data)
 		.container
 			+b.section-title.text-center
 				h4 О компании
-				h2 Работаем с&nbsp;2012&nbsp;года. Собственное производство. Сертификаты качества.
-				
-			.row
-		block
+				h2 Работаем с 2012 года. Собственное производство. Сертификаты качества.
+			+e.slider-wrapper
+				+arrow
+				+e.slider--js.swiper
+					.swiper-wrapper
+						mixin sAboutSlide(i, p)
+							+e.slide.swiper-slide
+								+e.item(data-fancybox='sAbout' data-src=`img/@2x/sAbout-${i}.png` data-caption=`${p}`)
+									+e.img-wrap.picture-bg
+										+pic(`sAbout-${i}.png`, 'bg')
+									span!= p
+						+sAboutSlide(1, `Сварочный цех`)
+						+sAboutSlide(1, `Сборочный цех`)
+						+sAboutSlide(1, `Сварочный цех`)
+						+sAboutSlide(1, `Сборочный цех`)
 	// end sAbout

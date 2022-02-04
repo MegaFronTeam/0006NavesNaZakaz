@@ -11,7 +11,7 @@ mixin sCertificates(data)
 						mixin sCertificatesSlide(i, p)
 							+e.slide.swiper-slide
 								+e.item(data-fancybox='sCertificates' data-src=`img/@2x/sCertificates-${i}.jpg` data-caption=`${p}`)
-									+pic('sCertificates-1.jpg', 'bg', 0)
+									+pic(`sCertificates-${i}.jpg`, 'bg', 0)
 									p!= p
 						+sCertificatesSlide(1, `Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit`)
 						+sCertificatesSlide(2, `Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit`)

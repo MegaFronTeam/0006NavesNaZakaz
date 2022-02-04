@@ -425,6 +425,24 @@ function eventHandler() {
 		}
 
 	});
+	const sAboutSlider = new Swiper('.sAbout__slider--js', {
+		// freeMode: true,
+		loopFillGroupWithBlank: true,
+		// touchRatio: 0.2,
+		// freeModeMomentum: true,
+		loop: true,
+		lazy: {
+			loadPrevNext: true,
+		},
+		watchOverflow: true,
+		spaceBetween: 16,
+		slidesPerView: 1,
+		slideToClickedSlide: true,
+		navigation: {
+			nextEl: '.sAbout .swiper-button-next',
+			prevEl: '.sAbout .swiper-button-prev',
+		},
+	});
 	// modal window
 
 };

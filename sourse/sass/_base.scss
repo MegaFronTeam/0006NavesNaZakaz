@@ -308,7 +308,7 @@ ul {
 	background-image: none;
 	margin: 0;
 	@include a-cent(y);
-	box-shadow: 0 15px 60px rgba(0, 0, 0, 0.1);
+	filter: drop-shadow(0px 10px 13px rgba(0, 0, 0, 0.09));
 	@include mt;
 	user-select: none;
 

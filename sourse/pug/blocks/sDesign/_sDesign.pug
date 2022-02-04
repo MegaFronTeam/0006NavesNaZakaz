@@ -4,34 +4,54 @@ mixin sDesign(data)
 		.container
 			+b.section-title.text-center
 				h4 Дизайн
-				h2 Выберите внешний вид навеса под свой вкус
-			.row
-				.col-xl-5
+				h2 Выберите внешний вид&nbsp;навеса под свой&nbsp;вкус
+			+e.row-lg.row
+				.col-lg-5
 					h3 Материалы кровли
-					+e.block
-						+e.item--lg.bg-wrap
-							+pic('sDesign-1.jpg', 'bg', 0).picture-bg
-							span Сотовый поликарбонат
-					+e.block
-						+e.item--lg.bg-wrap
-							+pic('sDesign-2.jpg', 'bg', 0).picture-bg
-							span Монолитный поликарбонат
-					+e.block
-						+e.item--lg.bg-wrap
-							+pic('sDesign-3.jpg', 'bg', 0).picture-bg
-							span Профнастил
-					+e.block
-						+e.item--lg.bg-wrap
-							+pic('sDesign-4.jpg', 'bg', 0).picture-bg
-							span Металлочерепица
-					+e.block
-						+e.item--lg.bg-wrap
-							+pic('sDesign-5.jpg', 'bg', 0).picture-bg
-							span Мягкая кровля
-					+e.block
-						+e.item--lg.bg-wrap
-							+pic('sDesign-6.jpg', 'bg', 0).picture-bg
-							span Ондулин
-				.col-xl-7
+					+e.block--lg
+						mixin sDesignItem(i, t)
+							+e.item.bg-wrap(href="#")&attributes(attributes)
+								+e.img-wrap.picture-bg
+									if i
+										+pic(`sDesign-${i}.jpg`, 'bg', 0)
+								span!= t
+						+sDesignItem(1, `Сотовый поликарбонат`)
+						+sDesignItem(2, `Монолитный поликарбонат`)
+						+sDesignItem(3, `Профнастил`)
+						+sDesignItem(4, `Металлочерепица`)
+						+sDesignItem(5, `Мягкая кровля`)
+						+sDesignItem(6, `Ондулин`)
+				.col-lg-7
+					h3 Цвета
+					+e.row-sm.row
+						.col-12
+							+e.subtitle 100+ цветов кровли
+							+e.block--sm
+								+sDesignItem(``, `Прозрачный`)(style="--itemBg:#F9F9F9;")
+								+sDesignItem(``, `Белый опал`)(style="--itemBg:#DEE2E3;")
+								+sDesignItem(``, `Бирюза`)(style="--itemBg:#56E6EB;")
+								+sDesignItem(``, `Янтарь`)(style="--itemBg:#88776F;")
+								+sDesignItem(``, `Бронза`)(style="--itemBg:#AA978A;")
+								+sDesignItem(``, `Желтый`)(style="--itemBg:#EFD71D;")
+								+sDesignItem(``, `Зеленый`)(style="--itemBg:#5EB454;")
+								+sDesignItem(``, `Красный`)(style="--itemBg:#DF3939;")
+								+sDesignItem(``, `Оранжевый`)(style="--itemBg:#FEAF27;")
+								+sDesignItem(``, `Синий`)(style="--itemBg:#228AE4;")
+						.col-12
+							+e.subtitle 200+ цветов эмали для металлического каркаса
+							+e.block--sm
+								+sDesignItem(7, `Черный`)
+								+sDesignItem(8, `Бронза`)
+								+sDesignItem(9, `Голубой`)
+								+sDesignItem(10, `Графит`)
+								+sDesignItem(11, `Изумруд`)
+								+sDesignItem(12, `Коричневый`)
+								+sDesignItem(13, `Серебристый`)
+								+sDesignItem(14, `Синий`)
+								+sDesignItem(15, `Вишневый`)
+								+sDesignItem(16, `Зеленый`)
+								+sDesignItem(17, `Золотистый`)
+								+sDesignItem(18, `Красный`)
+						
 
 	// end sDesign

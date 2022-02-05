@@ -252,35 +252,35 @@ const JSCCommon = {
 			};
 		}, { passive: true });
 	},
-	makeDDGroup() {
-		let parents = document.querySelectorAll('.dd-group-js');
-		for (let parent of parents) {
-			if (parent) {
-				// childHeads, kind of funny))
-				let ChildHeads = parent.querySelectorAll('.dd-head-js:not(.disabled)');
-				$(ChildHeads).click(function () {
-					let clickedHead = this;
+	// makeDDGroup() {
+	// 	let parents = document.querySelectorAll('.dd-group-js');
+	// 	for (let parent of parents) {
+	// 		if (parent) {
+	// 			// childHeads, kind of funny))
+	// 			let ChildHeads = parent.querySelectorAll('.dd-head-js:not(.disabled)');
+	// 			$(ChildHeads).click(function () {
+	// 				let clickedHead = this;
 
-					$(ChildHeads).each(function () {
-						if (this === clickedHead) {
-							//parent element gain toggle class, style head change via parent
-							$(this.parentElement).toggleClass('active');
-							$(this.parentElement).find('.dd-content-js').slideToggle(function () {
-								$(this).toggleClass('active');
-							});
-						}
-						else {
-							$(this.parentElement).removeClass('active');
-							$(this.parentElement).find('.dd-content-js').slideUp(function () {
-								$(this).removeClass('active');
-							});
-						}
-					});
+	// 				$(ChildHeads).each(function () {
+	// 					if (this === clickedHead) {
+	// 						//parent element gain toggle class, style head change via parent
+	// 						$(this.parentElement).toggleClass('active');
+	// 						$(this.parentElement).find('.dd-content-js').slideToggle(function () {
+	// 							$(this).toggleClass('active');
+	// 						});
+	// 					}
+	// 					else {
+	// 						$(this.parentElement).removeClass('active');
+	// 						$(this.parentElement).find('.dd-content-js').slideUp(function () {
+	// 							$(this).removeClass('active');
+	// 						});
+	// 					}
+	// 				});
 
-				});
-			}
-		}
-	},
+	// 			});
+	// 		}
+	// 	}
+	// },
 };
 const $ = jQuery;
 
@@ -292,7 +292,7 @@ function eventHandler() {
 	// JSCCommon.inputMask();
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
-	JSCCommon.makeDDGroup();
+	// JSCCommon.makeDDGroup();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
 	
@@ -444,6 +444,9 @@ function eventHandler() {
 		},
 	});
 	// modal window
+	$(".dd-head-js").click(function(){
+		$(this).toggleClass("active").next().slideToggle();
+	})
 
 };
 if (document.readyState !== 'loading') {

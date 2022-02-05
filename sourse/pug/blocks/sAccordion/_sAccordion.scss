@@ -1,8 +1,13 @@
-// start .sQuestions
-.sQuestions {
-		// --sPT: ;
-		// --sPB: ;
-		// --sTPB: ;
+// start .sAccordion
+.sAccordion {
+	--sPT: #{rem(26)};
+	--sPB: #{rem(32)};
+	--sTPB: #{rem(24)};
+	@include media-breakpoint-up(md) {
+		--sPT: #{rem(57)};
+		--sPB: #{rem(40)};
+		--sTPB: #{rem(58)};
+	}
 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -11,4 +16,4 @@
 	@include media-breakpoint-between(md, xl) {}
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
-} // end.sQuestions
+} // end.sAccordion

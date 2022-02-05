@@ -4,18 +4,26 @@ mixin ddGroup()
 		if block
 			block
 		else
-			+ddGroupItem('вопрос1', 'active')
-			+ddGroupItem('вопрос2')
-			+ddGroupItem('вопрос3')
+			+ddGroupItem(`Как понять сколько будет стоить мой навес?`)
+			+ddGroupItem(`Сколько стоит замер на&nbsp;моей территории?`)
+			+ddGroupItem(`Как быстро сможете сделать?`)
+			+ddGroupItem(`Не&nbsp;сломается? Есть&nbsp;ли гарантия на&nbsp;изделие и&nbsp;работы?`)
+			+ddGroupItem(`Есть&nbsp;ли у&nbsp;вас скидки?`)
+			+ddGroupItem(`Нужна&nbsp;ли предоплата? как проходитпроцесс оплаты?`)
+			+ddGroupItem(`Заключаете&nbsp;ли вы&nbsp;договор на&nbsp;услуги?`)
+			+ddGroupItem(`Возможно&nbsp;ли купить в&nbsp;рассрочку?`)
+			+ddGroupItem(`Какую краску вы&nbsp;используете для покраски навеса?`)
+			+ddGroupItem(`Как вы&nbsp;монтрируете навес в&nbsp;землю?`)
 
-mixin ddGroupItem(txt, activeClasses='')
+mixin ddGroupItem(t , activeClasses='')
 	//-хедеру и контенту => .dd-head-js, .dd-content-js
 	//-!!! они должни вкладиваться в 1 контейнер(+e.item) header стилизируеться от етого контейнера, внутри хедера втавлять что душе угодно
-	+e.item(class=activeClasses)
-		+e.head.dd-head-js=txt
+	+b.accordion-item(class=activeClasses)
+		+e.head.dd-head-js
+			h4!= t
+			+icon('chevron-right')
 		+e.content.dd-content-js(class=activeClasses)
 			if block
 				block
 			else
-				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ducimus et fuga id, iure molestiae nam quaerat qui sequi similique.
-				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ducimus et fuga id, iure molestiae nam quaerat qui sequi similique.
+				p Производим прочные навесы, выдерживающие нагрузку в&nbsp;суровом климате. Соблюдаем стандарты качества и&nbsp;предоставляем полный сервис под ключ для наших клиентов. С&nbsp;нами легко начать работать&nbsp;&mdash; замер, расчет сметы и&nbsp;3D-макет навеса мы&nbsp;делаем бесплатно.

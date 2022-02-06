@@ -387,6 +387,44 @@ function eventHandler() {
 		}
 
 	});
+	const sReviewsSlider = new Swiper('.sReviews__slider--js', {
+		// freeMode: true,
+		// loopFillGroupWithBlank: true,
+		// touchRatio: 0.2,
+		// freeModeMomentum: true,
+		loop: true,
+		lazy: {
+			loadPrevNext: true,
+		},
+		watchOverflow: true,
+		spaceBetween: 16,
+		slidesPerView: 1,
+		slideToClickedSlide: true,
+		navigation: {
+			nextEl: '.sReviews .swiper-button-next',
+			prevEl: '.sReviews .swiper-button-prev',
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 16
+			},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 16
+			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 24
+			},
+			1400: {
+				slidesPerView: 3,
+				spaceBetween: 32
+			},
+			
+		}
+
+	});
 	const sCertificatesSlider = new Swiper('.sCertificates__slider--js', {
 		// freeMode: true,
 		// loopFillGroupWithBlank: true,

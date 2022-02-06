@@ -5,6 +5,40 @@ mixin sReviews(data)
 			+b.section-title.text-center
 				h4 Отзывы
 				h2 Что говорят о&nbsp;наших навесах клиенты
-				
-			.row
+			+e.slider-wrapper
+				+arrow
+				+e.slider--js.swiper
+					.swiper-wrapper
+						mixin sReviewsItem(i, h, n)
+							+b.reviewItem
+								+e.body
+									img(src="img/svg/reviewItem-bg.svg", alt="")
+									+e.subtitle Цитата из&nbsp;отзыва
+									h4!= h
+									+e.subtitle Аудио-отзыв
+									audio(controls='' src='')
+									+e.btn(href="#") Читать отзыв
+								+e.footer.row
+									.col-auto
+										+e.img-wrap.bg-wrap
+											+icon('person')
+											if i
+												+pic(`person-${i}.jpg`, 'bg', 0).picture-bg
+									.col
+										+e.subtitle Клиент
+										p!= n
+										.small МО, г. Дмитров, СНТ &laquo;Квазаровка&raquo;
+						+e.slide.swiper-slide
+							+sReviewsItem('', `&laquo;Убрали за&nbsp;собой мусор, соблюдали чистоту&raquo;`, `Игорь`)
+						+e.slide.swiper-slide
+							+sReviewsItem('', `&laquo;Все договоренности соблюдаются&raquo;`, `Вадим Львович`)
+						+e.slide.swiper-slide
+							+sReviewsItem(1, `&laquo;Аккуратно все сделали и&nbsp;уложились в&nbsp;сроки&raquo;`, `Григорий`)
+						+e.slide.swiper-slide
+							+sReviewsItem('', `&laquo;Убрали за&nbsp;собой мусор, соблюдали чистоту&raquo;`, `Игорь`)
+						+e.slide.swiper-slide
+							+sReviewsItem('', `&laquo;Все договоренности соблюдаются&raquo;`, `Вадим Львович`)
+						+e.slide.swiper-slide
+							+sReviewsItem(1, `&laquo;Аккуратно все сделали и&nbsp;уложились в&nbsp;сроки&raquo;`, `Григорий`)
+			+e.btn(href="#") Смотреть все 214 отзывов
 	// end sReviews

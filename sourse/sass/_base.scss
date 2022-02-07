@@ -571,6 +571,10 @@ iframe {
 .btn-lg {
 	font-weight: 700;
 	line-height: 145%;
+	@include media-breakpoint-down(md) {
+		padding-top: rem(7.5);
+		padding-bottom: rem(7.5);
+	}
 }
 
 h1 {

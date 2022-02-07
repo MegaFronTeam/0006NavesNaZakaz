@@ -485,7 +485,7 @@ function eventHandler() {
 	$(".dd-head-js").click(function(){
 		$(this).toggleClass("active").next().slideToggle();
 	})
-
+	// const player = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, { invertTime: false })); window.player = player;
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

@@ -1,9 +1,128 @@
+mixin tr(...cells)
+	tr
+		each cell in cells
+			td!= cell
+
 mixin sPriceList(data)
 	// start sPriceList
 	+b.SECTION.sPriceList.section#sPriceList&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 sPriceList
-				
-			.row
+				h2 Прайс-лист на&nbsp;различные <br> категории навесов
+			+e.row-main.row
+				.col-lg-7.col-xxl-8
+					+ddGroup()
+						+ddGroupItem(`Навесы для авто`)
+							table.with-transfers
+								tr
+									td.text-black Для 1 авто #[span 3,5×6,3 м]
+									td 103 635 ₽
+								tr
+									td.text-black Для 1 авто #[span 4×6,3 м]
+									td 118 440 ₽
+								tr
+									td.text-black Для 1 авто #[span 4,5×6,3 м]
+									td 133 245 ₽
+								tr
+									td.text-black Для 1 авто #[span 5,5×6,3 м]
+									td 162 855 ₽
+								tr
+									td.text-black Для 2 авто #[span 5,5×6,3 м]
+									td 162 855 ₽
+								tr
+									td.text-black Для 2 авто #[span 3,5×8,2 м]
+									td 134 890 ₽
+								tr
+									td.text-black Для 2 авто #[span 3,5×10,5 м]
+									td 172 725 ₽
+								tr
+									td.text-black Для 2 авто #[span 6×6,3 м]
+									td 177 660 ₽
+								tr
+									td.text-black Для 2 авто #[span 6,5×6,3 м]
+									td 192 465 ₽
+								tr
+									td.text-black Для 2 авто #[span 4×10,5 м]
+									td 197 400 ₽
+								tr
+									td.text-black Для 2 авто #[span 7×6,3 м]
+									td 207 270 ₽
+								tr
+									td.text-black Для 2 авто #[span 4,5×10,5 м]
+									td 222 075 ₽
+				.col-lg-5.col-xxl-4
+					+ddGroup()
+						+ddGroupItem(`Навес под ключ`)
+							table.with-transfers
+								+tr(`Из&nbsp;сотового поликарбоната`, `от&nbsp;4&nbsp;500&nbsp;₽/м2`)
+								+tr(`Из&nbsp;монолитного поликарбоната`, `от&nbsp;7&nbsp;000&nbsp;₽/м2`)
+								+tr(`Из&nbsp;профнастила`, `от&nbsp;4&nbsp;800&nbsp;₽/м2`)
+								+tr(`Из&nbsp;металлочерепицы`, `от&nbsp;4&nbsp;800&nbsp;₽/м2`)
+								+tr(`Из&nbsp;мягкой кровли`, `от&nbsp;7&nbsp;000&nbsp;₽/м2`)
+								+tr(`Из&nbsp;ондулина`, `от&nbsp;4&nbsp;800&nbsp;₽/м2`)
+				.col-lg-7.col-xxl-8
+					+ddGroup()
+						+ddGroupItem(`Типовые арочные фермы`)
+							+e.row.row
+								+e.col.col-md-6
+									table
+										+tr(`Длина&nbsp;3&nbsp;м`, `2&nbsp;500&nbsp;₽/ферма`)
+										+tr(`Длина&nbsp;3,5&nbsp;м`, `3&nbsp;500&nbsp;₽/ферма`)
+										+tr(`Длина&nbsp;3,7&nbsp;м`, `3&nbsp;500&nbsp;₽/ферма`)
+										+tr(`Длина&nbsp;4&nbsp;м`, `4&nbsp;000&nbsp;₽/ферма`)
+										+tr(`Длина&nbsp;4,4&nbsp;м`, `4&nbsp;500&nbsp;₽/ферма`)
+										+tr(`Длина&nbsp;5&nbsp;м`, `5&nbsp;000&nbsp;₽/ферма`)
+								+e.col.col-md-6
+									table
+										+tr(`Длина&nbsp;3&nbsp;м`, `2&nbsp;500&nbsp;₽/ферма`)
+										+tr(`Длина&nbsp;3,5&nbsp;м`, `3&nbsp;500&nbsp;₽/ферма`)
+										+tr(`Длина&nbsp;3,7&nbsp;м`, `3&nbsp;500&nbsp;₽/ферма`)
+										+tr(`Длина&nbsp;4&nbsp;м`, `4&nbsp;000&nbsp;₽/ферма`)
+										+tr(`Длина&nbsp;4,4&nbsp;м`, `4&nbsp;500&nbsp;₽/ферма`)
+										+tr(`Длина&nbsp;5&nbsp;м`, `5&nbsp;000&nbsp;₽/ферма`)
+				.col-lg-5.col-xxl-4
+					+ddGroup()
+						+ddGroupItem(`Ферма для гаражей  <span>(крыша&nbsp;и&nbsp;столбы)<span/>`)
+							table
+								+tr(`4&nbsp;м`, `15&nbsp;000&nbsp;₽/ферма`)
+								+tr(`4&nbsp;м`, `15&nbsp;000&nbsp;₽/ферма`)
+								+tr(`4&nbsp;м`, `15&nbsp;000&nbsp;₽/ферма`)
+								+tr(`4&nbsp;м`, `15&nbsp;000&nbsp;₽/ферма`)
+			h3 Дополнительные комплектующие
+			+e.row-main.row
+				.col-lg-6
+					+ddGroup()
+						+ddGroupItem(`Навесы для авто`)
+							table.with-transfers
+								+tr(`Изготовление металлокаркаса навеса`, `4000&ndash;4500&nbsp;₽/м2`)
+								+tr(`Покраска Hammerite (Хамерайт)`, `180&nbsp;₽/м2`)
+								+tr(`Нестандартная высота 3&nbsp;метра`, `плюс 120&ndash;240&nbsp;₽/м2`)
+								+tr(`Нестандартная высота 4&nbsp;метра`, `плюс 600&nbsp;₽/м2`)
+								+tr(`Бетонирование столбов на&nbsp;1200&nbsp;мм`, `1&nbsp;800&nbsp;₽/столб`)
+								+tr(`Сваи 76&nbsp;мм &bull; Глубина вкручивания 2&nbsp;м`, `3&nbsp;600&nbsp;₽/свая`)
+								+tr(`Бутование щебнем`, `плюс 600&nbsp;₽/столб`)
+								+tr(`Бутование вашим щебнем`, `бесплатно`)
+								+tr(`Монтаж анкерами к&nbsp;бетону`, `бесплатно`)
+				.col-lg-6
+					+e.row-main.row
+						.col-12
+							+ddGroup()
+								+ddGroupItem(`Откатные ворота`)
+									table.with-transfers
+										+tr(`Ширина 4&nbsp;м &bull; Автоматика Nice RD400`, `94&nbsp;800&nbsp;₽`)
+										+tr(`Ширина 4&nbsp;м &bull; Без автоматики`, `72&nbsp;000&nbsp;₽`)
+						.col-12
+							+ddGroup()
+								+ddGroupItem(`Секционные ворота`)
+									table
+										+tr(`С&nbsp;приводом`, `114&nbsp;000&nbsp;₽`)
+										+tr(`Без привода`, `90&nbsp;000&nbsp;₽`)
+						.col-12
+							+ddGroup()
+								+ddGroupItem(`Заборы`)
+									table.with-transfers
+										+tr(`Под ключ со&nbsp;столбами &bull; Высота&nbsp;1,8&nbsp;м &bull; Профлист &laquo;Маталл&nbsp;Профиль&raquo;`, `1680&nbsp;₽/мп`)
+										+tr(`Под ключ на&nbsp;ваши столбы &bull; Высота&nbsp;1,8&nbsp;м &bull; Профлист &laquo;Маталл&nbsp;Профиль&raquo;`, `1500&nbsp;₽/мп`)
+										+tr(`Демонтаж сетки-рабицы`, `120&nbsp;₽/мп`)
+										+tr(`Бутование песчаного-гравийной смесью`, `540&nbsp;₽/столб`)
 	// end sPriceList

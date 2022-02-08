@@ -27,6 +27,16 @@
 
 	--fancybox-bg: rgba(24, 24, 27, 0.77);
 
+
+	--plyr-color-main: var(--bs-primary);
+	--plyr-control-icon-size: #{rem(15)};
+	--plyr-audio-controls-background: var(--bs-secondary);
+	--plyr-audio-control-color: var(--bs-primary);
+	--plyr-audio-control-color-hover: var(--bs-secondary);
+	--plyr-control-spacing: 8px;
+	@include media-breakpoint-up(xl) {
+		--plyr-control-spacing: 9.7px;
+	}
 	//  --carousel-button-width: 48px;
 	//  --carousel-button-height: 48px;
 

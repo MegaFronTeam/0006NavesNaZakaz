@@ -16,7 +16,8 @@ mixin sReviews(data)
 									+e.subtitle Цитата из&nbsp;отзыва
 									h4!= h
 									+e.subtitle Аудио-отзыв
-									audio(controls='' src='')
+									audio.js-player(controls='')
+										source(src="audio/sample.mp3" type="audio/mp3")
 									+e.btn(href="#") Читать отзыв
 								+e.footer.row
 									.col-auto

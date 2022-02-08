@@ -606,3 +606,16 @@ h4 {
 		font-size: rem(24);
 	}
 }
+
+.plyr--audio {
+	width: 100%;
+	.plyr__controls {
+		border-radius: 10px;
+	}
+	.plyr__menu {
+		display: none;
+	}
+	.plyr__time {
+		display: none;
+	}
+}

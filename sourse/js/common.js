@@ -399,7 +399,7 @@ function eventHandler() {
 		watchOverflow: true,
 		spaceBetween: 16,
 		slidesPerView: 1,
-		slideToClickedSlide: true,
+		// slideToClickedSlide: true,
 		navigation: {
 			nextEl: '.sReviews .swiper-button-next',
 			prevEl: '.sReviews .swiper-button-prev',
@@ -485,7 +485,7 @@ function eventHandler() {
 	$(".dd-head-js").click(function(){
 		$(this).toggleClass("active").next().slideToggle();
 	})
-	// const player = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, { invertTime: false })); window.player = player;
+	const player = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, { invertTime: false }));
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

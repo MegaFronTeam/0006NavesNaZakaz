@@ -390,7 +390,7 @@ function eventHandler() {
 	const sReviewsSlider = new Swiper('.sReviews__slider--js', {
 		// freeMode: true,
 		// loopFillGroupWithBlank: true,
-		// touchRatio: 0.2,
+		touchRatio: 0.2,
 		// freeModeMomentum: true,
 		loop: true,
 		lazy: {

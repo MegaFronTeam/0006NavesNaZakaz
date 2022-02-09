@@ -35,3 +35,10 @@ mixin catalogItem(i, h, p)
 		h6!= h
 		.small!= p
 		+e.btn(href="#") Получить расчет
+
+mixin page-head(data)
+	+b.page-head
+		.container
+			a(href="#")
+				+icon('arrow-left')
+			h1!= data.title

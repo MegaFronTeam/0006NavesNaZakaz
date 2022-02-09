@@ -1,0 +1,59 @@
+// start .sFilter
+.sFilter {
+	--sPT: 0;
+	--sPB: 0;
+	// --sTPB: ;
+	&__title {
+		@include roww(32px);
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: rem(21);
+		h4 {
+			// margin-right: rem(33);
+			margin-bottom: 0;
+		}
+		a {
+			font-size: rem(14);
+		}
+	}
+	&__body {
+		.accordion-item {
+			border: none;
+			&:not(:last-child) {
+				margin-bottom: rem(33);
+			}
+			&__head {
+				padding: 0;
+				h4 {
+					@extend .h6;
+					padding-left: rem(29);
+					color: rgba(#35455C, 0.5);
+				}
+				.icon {
+					@include a-cent(y);
+					font-size: rem(14);
+					stroke: $secondary;
+					stroke-width: 2px;
+				}
+			}
+			.custom-input {
+				&__text {
+					font-size: rem(14);
+					// line-height: 1.5em;
+				}
+			}
+			&__wrap {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+		
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sFilter

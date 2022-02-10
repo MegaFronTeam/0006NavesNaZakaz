@@ -464,6 +464,52 @@ function eventHandler() {
 		}
 
 	});
+	const sTypicalSlider = new Swiper('.sTypical__slider--js', {
+		// freeMode: true,
+		// loopFillGroupWithBlank: true,
+		// touchRatio: 0.2,
+		// freeModeMomentum: true,
+		// loop: true,
+		lazy: {
+			loadPrevNext: true,
+		},
+		watchOverflow: true,
+		spaceBetween: 16,
+		slidesPerView: 1,
+		slideToClickedSlide: true,
+		navigation: {
+			nextEl: '.sTypical .swiper-button-next',
+			prevEl: '.sTypical .swiper-button-prev',
+		},
+		pagination: {
+			el: ' .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+			// renderBullet: function (index, className) {
+			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
+			// }
+		},
+		breakpoints: {
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 24
+			},
+			992: {
+				slidesPerView: 3,
+				spaceBetween: 24
+			},
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 24
+			},
+			1400: {
+				slidesPerView: 4,
+				spaceBetween: 32
+			},
+			
+		}
+
+	});
 	const sAboutSlider = new Swiper('.sAbout__slider--js', {
 		// freeMode: true,
 		loopFillGroupWithBlank: true,

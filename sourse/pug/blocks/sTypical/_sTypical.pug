@@ -23,4 +23,33 @@ mixin sTypical(data)
 						+filterBtn(5, `8м`, `8 метров`)
 						+filterBtn(6, `9м`, `9 метров`)
 						+filterBtn(7, `10м`, `10 метров`)
+			+e.slider-wrapper
+				+arrow
+				+e.slider--js.swiper
+					.swiper-wrapper
+						mixin sTypicalItem()
+							+e.slide.swiper-slide
+								+e.item
+									+pic(`sTypical-1.png`, 'bg', 0)
+									table
+										tr
+											th Н-1830
+											th 100&nbsp;800&nbsp;₽
+										tr
+											td Ш&times;Д&times;В
+											td 3&times;8&times;2,5&nbsp;м
+										tr
+											td Тип навеса
+											td Арочный
+										tr
+											td Кровля
+											td Сот. поликарбонат
+									+e.btn(href="#") Хочу такой навес
+						+sTypicalItem()
+						+sTypicalItem()
+						+sTypicalItem()
+						+sTypicalItem()
+						+sTypicalItem()
+						+sTypicalItem()
+					.swiper-pagination
 	// end sTypical

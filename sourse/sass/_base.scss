@@ -343,7 +343,7 @@ ul {
 	@include roww(16px, m);
 	--bs-gutter-y: var(--bs-gutter-x);
 	margin-top: calc(-1 * var(--bs-gutter-y) / 4);
-	
+
 	text-align: center;
 	display: flex;
 	align-items: center;
@@ -647,4 +647,20 @@ h4 {
 }
 .btn-info {
 	color: $secondary;
+}
+
+.dropdown {
+	position: relative;
+	// &__btn {
+	// }
+	&__content {
+		display: none;	
+		position: absolute;
+		left: 0;
+		top: 110%;
+		z-index: 999;
+	}
+	&__item {
+		display: block;
+	}
 }

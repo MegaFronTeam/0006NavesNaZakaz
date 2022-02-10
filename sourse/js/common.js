@@ -533,6 +533,18 @@ function eventHandler() {
 		$(this).toggleClass("active").next().slideToggle();
 	})
 	const player = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, { invertTime: false }));
+
+	$(".dropdown__btn").click(function() {
+		$(this).parent().toggleClass( "active" );
+    $(this).siblings('.dropdown__content').slideToggle();
+	});
+	$(document).on('click', function(e) {
+		if (!$(e.target).closest(".dropdown").length) {
+			$('.dropdown__content').slideUp();
+			$(".dropdown").removeClass( "active" );
+		}
+		e.stopPropagation();
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

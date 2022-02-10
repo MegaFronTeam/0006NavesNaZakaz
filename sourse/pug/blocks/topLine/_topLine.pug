@@ -9,8 +9,17 @@ mixin topLine()
 						//- img(src="img/svg/logo-top.svg", alt="")
 				.col
 					.row
-						.col
-							span dropdown
+						+e.col.col-auto
+							+b.locaton-dropdown.dropdown
+								+e.btn.dropdown__btn
+									+icon('geo-tag')
+									span Москва и&nbsp;МО
+									+icon('chevron-down')
+								+e.content.dropdown__content
+									+e.item(href="#") Москва и&nbsp;МО
+									+e.item(href="#") Санкт-Петербург и&nbsp;область
+									+e.item(href="#") И так далее
+									
 						.col-auto
 							+e.schedule
 								span открыто

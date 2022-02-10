@@ -5,17 +5,23 @@
 	height: rem(64);
 	display: flex;
 	align-items: center;
+	background-color: $light;
 	&__main-row {
 		--bs-gutter-x: #{rem(55)};
 		align-items: center;
 		.row {
 			--bs-gutter-x: #{rem(45)};
 			align-items: center;
-			flex-wrap: nowrap
+			flex-wrap: nowrap;
 		}
 	}
-	&__col {
-
+	&__logo {
+		&:not(:hover) {
+			color: $black;
+		}
+		.icon {
+			font-size: rem(38);
+		}
 	}
 	&__schedule {
 		@include roww(5px, m);

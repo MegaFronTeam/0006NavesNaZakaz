@@ -619,3 +619,14 @@ h4 {
 		display: none;
 	}
 }
+.btn {
+	&:focus {
+		box-shadow: none !important;
+	}
+	&:focus:active {
+		box-shadow: none !important;
+	}
+}
+.btn-info {
+	color: $secondary;
+}

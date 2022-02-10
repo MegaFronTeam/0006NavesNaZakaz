@@ -4,7 +4,23 @@ mixin sTypical(data)
 		.container
 			+b.section-title.text-center
 				h4 Цены
-				h2 Типовые арочные навесы из&nbsp;поликарбоната
-				
-			.row
+				h2 Типовые арочные&nbsp;навесы из&nbsp;поликарбоната
+			+e.filter.row
+				.col-12.col-lg-auto
+					p Выберите длину
+				.col
+					.row
+						mixin filterBtn(c, ...items)
+							+e.btn-col.col
+								input.btn-check(type='checkbox' id=`option${c}` autocomplete='off')&attributes(attributes)
+								label.btn(for=`option${c}`)
+									each item in items
+										span!= item
+						+filterBtn(1, `4м`, `4 метра`)
+						+filterBtn(2, `5м`, `5 метров`)
+						+filterBtn(3, `6м`, `6 метров`)
+						+filterBtn(4, `7м`, `7 метров`)
+						+filterBtn(5, `8м`, `8 метров`)
+						+filterBtn(6, `9м`, `9 метров`)
+						+filterBtn(7, `10м`, `10 метров`)
 	// end sTypical

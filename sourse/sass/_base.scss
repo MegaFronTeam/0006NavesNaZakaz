@@ -322,7 +322,7 @@ ul {
 	.icon {
 		@include a-cent;
 		font-size: rem(10);
-		@include media-breakpoint-up(sm) {
+		@media (min-width: 440px) {
 			font-size: rem(15);
 		}
 	}
@@ -340,25 +340,43 @@ ul {
 }
 
 .swiper-pagination {
-	width: 100%;
+	@include roww(16px, m);
+	--bs-gutter-y: var(--bs-gutter-x);
+	margin-top: calc(-1 * var(--bs-gutter-y) / 4);
+	
 	text-align: center;
-
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
 	&-bullet {
-		opacity: 1;
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		background-color: #e6e6e6;
-		outline: none !important;
 		@include mt;
-		margin-left: rem(8);
-		// padding-right: rem(8);
-		margin-right: rem(5);
+		position: relative;
+		opacity: 1;
+		width: rem(16);
+		height: rem(16);
+		border-radius: 50%;
+		outline: none !important;
+		background-color: transparent;
+		margin-top: calc(var(--bs-gutter-y) / 4);
+		// margin-left: rem(8);
+		// margin-right: rem(8);
 		display: inline-block;
-
+		&::after {
+			content: "";
+			@include a-cent;
+			@include mt;
+			width: rem(8);
+			height: rem(8);
+			border-radius: 50%;
+			background-color: rgba($color: $body-color, $alpha: 0.5);
+		}
 		&-active,
 		&:hover {
-			background-color: var(--bs-primary);
+			background-color: $white;
+			&::after {
+				background-color: var(--bs-warning);
+			}
 		}
 	}
 }

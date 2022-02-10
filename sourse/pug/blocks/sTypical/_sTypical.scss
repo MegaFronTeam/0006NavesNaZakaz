@@ -1,8 +1,13 @@
 // start .sTypical
 .sTypical {
-	// --sPT: ;
-	// --sPB: ;
-	// --sTPB: ;
+	--sPT: #{rem(30)};
+	--sPB: #{rem(20)};
+	--sTPB: #{rem(24)};
+	@include media-breakpoint-up(md) {
+		--sPT: #{rem(72)};
+		--sPB: #{rem(30)};
+		--sTPB: #{rem(45)};
+	}
 	h2 {
 		max-width: 18em;
 		margin-left: auto;
@@ -10,7 +15,7 @@
 	}
 	&__filter {
 		margin-bottom: rem(32);
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(xl) {
 			margin-bottom: rem(48);
 		}
 		.row {
@@ -97,15 +102,45 @@
 	}
 	&__slider-wrapper {
 		position: relative;
+		max-width: rem(385);
+		margin-left: auto;
+		margin-right: auto;
+		@include media-breakpoint-up(md) {
+			max-width: 100%;
+		}
+		.swiper-button-hand {
+			margin: 0;
+			top: calc(25% - var(--swiperArrowSize) / 2);
+			@include media-breakpoint-up(sm) {
+				--swiperArrowPosition: calc(var(--swiperArrowSize) * -1 / 2);
+			}
+			// @include media-breakpoint-down(sm) {
+			// 	--swiperArrowSize: #{rem(32)};
+			// }
+		}
+		.swiper-pagination {
+			padding-top: rem(35);
+			@include media-breakpoint-up(xl) {
+				padding-top: rem(55);
+			}
+		}
+	}
+	&__slider {
+		// max-width: rem(385);
+		// margin-left: auto;
+		// margin-right: auto;
+		// @include media-breakpoint-up(md) {
+		// 	max-width: 100%;
+		// }
 	}
 	&__item {
 		position: relative;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		max-width: rem(330);
-		margin-left: auto;
-		margin-right: auto;
+		// max-width: rem(336);
+		// margin-left: auto;
+		// margin-right: auto;
 		picture {
 			@include block(280, 220);
 			width: 100%;

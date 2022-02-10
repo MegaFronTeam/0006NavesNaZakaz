@@ -16,7 +16,11 @@
 	&__slider-wrapper {
 		position: relative;
 		margin-bottom: rem(32);
+		max-width: rem(385);
+		margin-left: auto;
+		margin-right: auto;
 		@include media-breakpoint-up(md) {
+			max-width: 100%;
 			margin-bottom: rem(80);
 		}
 		.swiper-button-hand {
@@ -47,11 +51,11 @@
 			box-shadow: none;
 		}
 	}
-	.reviewItem {
-		max-width: rem(385);
-		margin-left: auto;
-		margin-right: auto;
-	}
+	// .reviewItem {
+	// 	max-width: rem(385);
+	// 	margin-left: auto;
+	// 	margin-right: auto;
+	// }
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {
@@ -81,7 +85,7 @@
 		border-radius: 20px 20px 0 0;
 		overflow: hidden;
 		flex-grow: 1;
-		@include media-breakpoint-up(sm) {
+		@media (min-width: 440px) {
 			padding: rem(27) rem(24) rem(49);
 		}
 		&::before {

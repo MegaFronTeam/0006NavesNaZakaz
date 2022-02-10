@@ -1,29 +1,100 @@
+// start .topLine
+.topLine {
+	--sPT: 0;
+	--sPB: 0;
+	height: rem(64);
+	display: flex;
+	align-items: center;
+	&__main-row {
+		--bs-gutter-x: #{rem(55)};
+		align-items: center;
+		.row {
+			--bs-gutter-x: #{rem(45)};
+			align-items: center;
+			flex-wrap: nowrap
+		}
+	}
+	&__col {
 
-	// start .topLine
-	.topLine {
-		 
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	}
+	&__schedule {
+		@include roww(5px, m);
+		display: flex;
+		align-items: center;
+		span {
+			&:first-child {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: rem(54);
+				height: rem(14);
+				font-weight: 500;
+				font-size: rem(10);
+				line-height: 100%;
+				// padding-bottom: 1px;
+				color: $white;
+				border-radius: 3px;
+				background-color: $success;
+			}
+			&:last-child {
+				font-size: rem(12);
+				line-height: calc(14 / 12);
+				color: #000000;
+			}
+		}
+	}
+	&__label {
+		display: flex;
+		align-items: center;
+		width: rem(199);
+		height: rem(32);
+		padding: rem(7) rem(27) rem(7) rem(11);
+		clip-path: polygon(100% 0%, calc(100% - 20px) 50%, 100% 100%, 0 100%, 0 0);
+		background-color: $info;
+		border-radius: 3px 0 0 3px;
+		span {
+			font-weight: 500;
+			font-size: rem(14);
+			line-height: 1;
+			color: $secondary;
+		}
+	}
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-up(xs) {
+	}
 
+	//
+	@include media-breakpoint-between(md, xl) {
+	}
+
+	//
+	@include media-breakpoint-only(xs) {
+	}
+	@include media-breakpoint-only(sm) {
+	}
+	@include media-breakpoint-only(md) {
+	}
+	@include media-breakpoint-only(lg) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+
+	//
+	@include media-breakpoint-down(xl) {
+	}
+	@include media-breakpoint-down(lg) {
+	}
+	@include media-breakpoint-down(md) {
+	}
+	@include media-breakpoint-down(sm) {
+	}
+	@include media-breakpoint-down(xs) {
+	}
 } // end.topLine

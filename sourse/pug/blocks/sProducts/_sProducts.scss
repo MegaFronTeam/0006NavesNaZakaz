@@ -42,11 +42,8 @@
 			h4 {
 				color: $gray-900;
 			}
-			picture {
-				box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
-			}
 		}
-		a {
+		& > a {
 			flex-grow: 1;
 		}
 		picture {
@@ -61,6 +58,9 @@
 				left: 0;
 				top: 0;
 			}
+			&:hover {
+				box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
+			}
 		}
 		h4 {
 			@include mt;
@@ -72,6 +72,20 @@
 		}
 		h5 {
 			margin-bottom: rem(8);
+		}
+	}
+	table {
+		tr {
+
+		}
+		// th {
+		// 	@extend .h5;
+		// 	margin-bottom: rem(8);
+		// }
+		td {
+			font-size: rem(12);
+			border-bottom: 1px solid #C1D5F1;
+			padding: 8px 0;
 		}
 	}
 	&__specifications-wrap {
@@ -101,59 +115,12 @@
 			margin-bottom: 0;
 		}
 	}
-	// .page-numbers {
-	// 	justify-content: center;
-	// }
-	// .pagination-wrraper {
-	// 	ul {
-	// 		color: $black;
-	// 		font-size: rem(12);
-	// 		font-weight: 600;
-	// 		border-radius: 8px;
-	// 		column-gap: 16px;
-	// 		// padding: 0;
-	// 		// width: rem(32);
-	// 		// height: rem(32);
-	// 		&.current {
-	// 			background-color: $primary;
-	// 			border-color: $primary;
-	// 			color: $black;
-	// 			&:hover {
-	// 				background-color: $primary;
-	// 				border-color: $primary;
-	// 				color: $black;
-	// 			}
-	// 		}
-	// 		li {
-	// 			.page-numbers {
-	// 				padding: 0;
-	// 				width: rem(32);
-	// 				height: rem(32);
-	// 			}
-	// 		}
-	// 		a {
-	// 			border: 1px solid rgba(44, 52, 64, 0.5);
-	// 			color: $black;
-	// 			&:hover {
-	// 				color: $black;
-	// 				background-color: $primary;
-	// 				border-color: $primary;
-	// 			}
-	// 		}
-	// 		.icon {
-	// 			font-size: rem(9);
-	// 		}
-	// 		.prev,
-	// 		.next {
-	// 			cursor:  pointer;
-	// 			background-color: $secondary;
-	// 			color: $primary;
-	// 			&:hover {
-	
-	// 			}
-	// 		}
-	// 	}
-	// }
+	.pagination-wrapper {
+		margin-top: rem(35);
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(48);
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

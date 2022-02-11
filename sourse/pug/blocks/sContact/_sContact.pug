@@ -5,6 +5,92 @@ mixin sContact()
 			+b.section-title.text-center
 				h4 Контакты
 				h2 Позвоните или посетите наш офис на&nbsp;производстве
-				
-			.row
+			+e.row.row
+				.col-lg-8
+					+e.map
+						#map
+						//- <div id="map"style="width:100%; height:360px"></div>
+						<script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
+						script.
+							const map = document.querySelector('#map');
+							document.addEventListener('DOMContentLoaded', function(event) {
+								ymaps.ready(init);
+							});
+							function init () {
+									//- var center = [55.75322550427434,37.65589449999999];
+									var center = [56.01248606874105,37.48441499999996];
+									var myMap = new ymaps.Map("map", {
+													center: center,
+													zoom: 17
+											}),
+											myPlacemark = new ymaps.Placemark([56.01248606874105,37.48441499999996], {
+													// Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
+													balloonContentHeader: "",
+													balloonContentBody: "Лобня • ул. Маяковского, д. 5",
+													balloonContentFooter: "",
+													hintContent: "Адрес"
+											});
+									myMap.geoObjects.add(myPlacemark);
+
+									myMap.behaviors.disable('scrollZoom');
+									//на мобильных устройствах... (проверяем по userAgent браузера)
+									if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+									//... отключаем перетаскивание карты
+										myMap.behaviors.disable('drag');
+									}
+									// Добавляем все метки на карту.
+								};
+				.col-lg-4
+					+e.info
+						+b.locaton-dropdown.dropdown
+								+e.btn.dropdown__btn
+									+icon('geo-tag')
+									span Москва и&nbsp;МО
+									+icon('chevron-down')
+								+e.content.dropdown__content
+									+e.item(href="#") Москва и&nbsp;МО
+									+e.item(href="#") Санкт-Петербург и&nbsp;область
+									+e.item(href="#") И так далее
+						+b.schedule
+							span открыто
+							span Пн&ndash;Вс &bull; 9:00&ndash;21:00
+					+e.wrap
+						h5 Телефоны
+						+e.content
+							+e.phone-number
+								a(href="tel:+74952563067") +7 495 256 30 67 
+								a(href="tel:+74952563067") +7 495 256 30 67 
+							+e.links(href="#")
+								+icon('whatsapp')
+								span Whatsapp
+							+e.links(href="#")
+								+icon('instagram-map')
+							+e.links--yt(href="#")
+								+icon('youtube')
+							+e.btn.btn.btn-primary.btn-sm(href="#")
+								| Обратный звонок
+					+e.wrap
+						h5 Email
+						a(href="mailto:info@naves-na-zakaz.ru") info@naves-na-zakaz.ru
+					+e.wrap
+						h5 Офисы и цеха
+						+e.map-point
+							| Лобня • ул. Маяковского, д. 5
+						+e.map-point
+							| Одинцово • ул. Транспортная, д. 2
+						+e.map-point
+							| Кашира • ул. Стрелецкая, д. 66
+						+e.map-point
+							| Фатеево • городской округ Павловский Посад, д. 118
+						+e.map-point
+							| Клин • ул. Дурыманова, д. 24
+						+e.map-point
+							| Сергиев Посад • ул. Стахановская, д. 1Б
+			+form-wrap()
+				.row
+					.col-lg-8 
+						+input('Вопрос', 'textarea')
+					.col-lg-4
+						+input('Ваш номер телефона', 'tel')
+						button.btn.btn.btn-primary(type="submit") Получить консультацию 
 	// end sContact

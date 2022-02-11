@@ -2,8 +2,11 @@
 	@include media-breakpoint-up(lg) {
 		display: flex;
 		text-align: center;
-		@include roww(24px);
+		@include roww(16px);
 		flex-wrap: wrap;
+	}
+	@include media-breakpoint-up(xxl) {
+		--bs-gutter-x: #{rem(24)};
 	}
 
 	list-style: none;

@@ -6,7 +6,7 @@ mixin item-sos(icon, a='#')
 			+icon(icon)
 //- social buttons
 mixin soc()
-	+b.soc
+	+b.soc&attributes(attributes)
 		if block
 			block
 		else

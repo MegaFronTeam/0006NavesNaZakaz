@@ -3,134 +3,139 @@ mixin sProducts(data)
 	+b.sProducts&attributes(attributes)
 		+e.filter
 			p Сортировать по:
-			a(href="#") Цене
-				+icon('arrow-left')
+			+select('', 'Цене 🡩', 'Цене 🡫')
 		.row
 			.col-md-6
 				+e.card
-					+pic('sProducts-1.jpg', 'bg', 0)
-					h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
-					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
-					h5 Характеристики
-					+e.specifications-wrap
-						span Тип
-						p навесы для дачи
-					+e.specifications-wrap
-						span Тип навеса
-						p полуарочный
-					+e.specifications-wrap
-						span Кровля
-						p сотовый поликарбонат
-					+e.specifications-wrap
-						span Каркас
-						p Металический
-					+e.more
-						p 150 400 ₽
-						a.btn.btn-primary.btn-sm(href="#") Подробнее 
-			.col-md-6
-				+e.card
-					+pic('sProducts-1.jpg', 'bg', 0)
-					h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
-					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
-					h5 Характеристики
-					+e.specifications-wrap
-						span Тип
-						p навесы для дачи
-					+e.specifications-wrap
-						span Тип навеса
-						p полуарочный
-					+e.specifications-wrap
-						span Кровля
-						p сотовый поликарбонат
-					+e.specifications-wrap
-						span Каркас
-						p Металический
-					+e.more
-						p 150 400 ₽
-						a.btn.btn-primary.btn-sm(href="#") Подробнее 
-			.col-md-6
-				+e.card
-					+pic('sProducts-1.jpg', 'bg', 0)
-					h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
-					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
-					h5 Характеристики
-					+e.specifications-wrap
-						span Тип
-						p навесы для дачи
-					+e.specifications-wrap
-						span Тип навеса
-						p полуарочный
-					+e.specifications-wrap
-						span Кровля
-						p сотовый поликарбонат
-					+e.specifications-wrap
-						span Каркас
-						p Металический
-					+e.more
-						p 150 400 ₽
-						a.btn.btn-primary.btn-sm(href="#") Подробнее 
-			.col-md-6
-				+e.card
-					+pic('sProducts-1.jpg', 'bg', 0)
-					h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
-					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
-					h5 Характеристики
-					+e.specifications-wrap
-						span Тип
-						p навесы для дачи
-					+e.specifications-wrap
-						span Тип навеса
-						p полуарочный
-					+e.specifications-wrap
-						span Кровля
-						p сотовый поликарбонат
-					+e.specifications-wrap
-						span Каркас
-						p Металический
-					+e.more
-						p 150 400 ₽
-						a.btn.btn-primary.btn-sm(href="#") Подробнее 
-			.col-md-6
-				+e.card
-					+pic('sProducts-1.jpg', 'bg', 0)
-					h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
-					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
-					h5 Характеристики
-					+e.specifications-wrap
-						span Тип
-						p навесы для дачи
-					+e.specifications-wrap
-						span Тип навеса
-						p полуарочный
-					+e.specifications-wrap
-						span Кровля
-						p сотовый поликарбонат
-					+e.specifications-wrap
-						span Каркас
-						p Металический
-					+e.more
-						p 150 400 ₽
-						a.btn.btn-primary.btn-sm(href="#") Подробнее 
-			.col-md-6
-					+e.card
+					a(href="#") 
 						+pic('sProducts-1.jpg', 'bg', 0)
 						h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
-						p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
-						h5 Характеристики
-						+e.specifications-wrap
-							span Тип
-							p навесы для дачи
-						+e.specifications-wrap
-							span Тип навеса
-							p полуарочный
-						+e.specifications-wrap
-							span Кровля
-							p сотовый поликарбонат
-						+e.specifications-wrap
-							span Каркас
-							p Металический
-						+e.more
-							p 150 400 ₽
-							a.btn.btn-primary.btn-sm(href="#") Подробнее 
-		//- +pugin2()
+					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
+					h5 Характеристики
+					+e.specifications-wrap
+						span Тип
+						p навесы для дачи
+					+e.specifications-wrap
+						span Тип навеса
+						p полуарочный
+					+e.specifications-wrap
+						span Кровля
+						p сотовый поликарбонат
+					+e.specifications-wrap
+						span Каркас
+						p Металический
+					+e.more
+						p 150 400 ₽
+						a.btn.btn-primary.btn-sm(href="#") Подробнее 
+			.col-md-6
+				+e.card
+					a(href="#") 
+						+pic('sProducts-1.jpg', 'bg', 0)
+						h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
+					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
+					h5 Характеристики
+					+e.specifications-wrap
+						span Тип
+						p навесы для дачи
+					+e.specifications-wrap
+						span Тип навеса
+						p полуарочный
+					+e.specifications-wrap
+						span Кровля
+						p сотовый поликарбонат
+					+e.specifications-wrap
+						span Каркас
+						p Металический
+					+e.more
+						p 150 400 ₽
+						a.btn.btn-primary.btn-sm(href="#") Подробнее 
+			.col-md-6
+				+e.card
+					a(href="#") 
+						+pic('sProducts-1.jpg', 'bg', 0)
+						h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
+					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
+					h5 Характеристики
+					+e.specifications-wrap
+						span Тип
+						p навесы для дачи
+					+e.specifications-wrap
+						span Тип навеса
+						p полуарочный
+					+e.specifications-wrap
+						span Кровля
+						p сотовый поликарбонат
+					+e.specifications-wrap
+						span Каркас
+						p Металический
+					+e.more
+						p 150 400 ₽
+						a.btn.btn-primary.btn-sm(href="#") Подробнее 
+			.col-md-6
+				+e.card
+					a(href="#") 
+						+pic('sProducts-1.jpg', 'bg', 0)
+						h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
+					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
+					h5 Характеристики
+					+e.specifications-wrap
+						span Тип
+						p навесы для дачи
+					+e.specifications-wrap
+						span Тип навеса
+						p полуарочный
+					+e.specifications-wrap
+						span Кровля
+						p сотовый поликарбонат
+					+e.specifications-wrap
+						span Каркас
+						p Металический
+					+e.more
+						p 150 400 ₽
+						a.btn.btn-primary.btn-sm(href="#") Подробнее 
+			.col-md-6
+				+e.card
+					a(href="#") 
+						+pic('sProducts-1.jpg', 'bg', 0)
+						h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
+					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
+					h5 Характеристики
+					+e.specifications-wrap
+						span Тип
+						p навесы для дачи
+					+e.specifications-wrap
+						span Тип навеса
+						p полуарочный
+					+e.specifications-wrap
+						span Кровля
+						p сотовый поликарбонат
+					+e.specifications-wrap
+						span Каркас
+						p Металический
+					+e.more
+						p 150 400 ₽
+						a.btn.btn-primary.btn-sm(href="#") Подробнее 
+			.col-md-6
+				+e.card
+					a(href="#") 
+						+pic('sProducts-1.jpg', 'bg', 0)
+						h4 Навес 4&times;8&nbsp;м из&nbsp;сотового поликарбоната
+					p Гарабиты: 6&times;6&nbsp;м &bull; Высота по&nbsp;столбам: 2,4&nbsp;м
+					h5 Характеристики
+					+e.specifications-wrap
+						span Тип
+						p навесы для дачи
+					+e.specifications-wrap
+						span Тип навеса
+						p полуарочный
+					+e.specifications-wrap
+						span Кровля
+						p сотовый поликарбонат
+					+e.specifications-wrap
+						span Каркас
+						p Металический
+					+e.more
+						p 150 400 ₽
+						a.btn.btn-primary.btn-sm(href="#") Подробнее 
+		+pugin2()
 	// end sProducts

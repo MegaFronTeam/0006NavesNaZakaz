@@ -81,10 +81,32 @@ $output-bourbon-deprecation-warnings: false;
 
 .pagination-wrapper ul {
 	@extend .pagination;
+	@include roww(8px, m);
+	@include media-breakpoint-up(sm) {
+		--bs-gutter-x: 16px;
+	}
+	justify-content: center;
+	margin-bottom: 0;
 }
 
 .pagination-wrapper li .page-numbers {
 	@extend .page-link;
+	padding: 0;
+	width: rem(32);
+	height: rem(32);
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: rem(12);
+	&.next,
+	&.prev {
+		background-color: $secondary;
+		.icon {
+			color: $primary;
+			font-size: rem(10);
+		}
+	}
 }
 
 .pagination-wrapper li {

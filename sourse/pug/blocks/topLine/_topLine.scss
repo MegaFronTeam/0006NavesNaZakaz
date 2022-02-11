@@ -7,29 +7,46 @@
 	align-items: center;
 	background-color: $light;
 	&__main-row {
-		--bs-gutter-x: #{rem(55)};
 		align-items: center;
+		@include media-breakpoint-up(lg) {
+			--bs-gutter-x: #{rem(55)};
+		}
 		.row {
-			--bs-gutter-x: #{rem(45)};
 			align-items: center;
-			// flex-wrap: nowrap;
+			--bs-gutter-y: #{rem(12)};
+			justify-content: flex-end;
+			@include media-breakpoint-up(sm) {
+				justify-content: space-between;
+			}
+			@include media-breakpoint-up(lg) {
+				--bs-gutter-x: #{rem(45)};
+			}
+			@include media-breakpoint-down(sm) {
+				--bs-gutter-x: #{rem(16)};
+			}
 		}
 	}
 	&__col {
-		margin-right: auto;
+		@include media-breakpoint-up(lg) {
+			margin-right: auto;
+		}
 	}
 	&__logo {
 		&:not(:hover) {
 			color: $black;
 		}
 		.icon {
-			font-size: rem(38);
+			font-size: rem(33);
+			@media (min-width: 350px) {
+				font-size: rem(39);
+			}
 		}
 	}
 	&__schedule {
 		@include roww(5px, m);
 		display: flex;
 		align-items: center;
+		justify-content: flex-end;
 		span {
 			&:first-child {
 				display: inline-flex;
@@ -115,8 +132,10 @@
 		@include mt;
 		display: flex;
 		align-items: center;
-		padding: rem(5) 0;
 		cursor: pointer;
+		@include media-breakpoint-up(sm) {
+			padding: rem(5) 0;
+		}
 		&:hover {
 			color: $link-hover-color;
 		}

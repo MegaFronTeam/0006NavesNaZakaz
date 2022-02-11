@@ -22,10 +22,48 @@ mixin top-nav()
 	+b.top-nav.block-with-lazy
 		.container
 			.row
+				.col-auto.d-lg-none
+					+menu-toggle()
 				.col-auto
-					+menu-toggle().d-lg-none
-					+e.services.dropdown
-						.dropdown__btn
+					+b.services-dropdown.dropdown
+						+e.btn.dropdown__btn
+							+e.toggle-icon
+								span
+							//- +icon('menu')
+							span Услуги
+						+e.content.dropdown__content
+							.row
+								.col-4
+									ul
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
+										
+								.col-8
+									ul
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
+										li 
+											a(href="#") Услуги
 				.col
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner

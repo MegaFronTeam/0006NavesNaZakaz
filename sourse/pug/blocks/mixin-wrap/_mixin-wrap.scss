@@ -15,6 +15,37 @@
 	.icon {
 		font-size: rem(30);
 	}
+	&--header {
+		.soc__item {
+			width: rem(32);
+			height: rem(32);
+			border-radius: 50%;
+			.icon {
+				font-size: rem(16);
+			}
+			&:hover {
+				box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+			}
+			&--whatsapp {
+				background-color: $light;
+				color: $success;
+				&:hover {
+				}
+			}
+			&--phone-call {
+				background-color: $primary;
+				color: $secondary;
+				&:hover {
+				}
+			}
+			&--measuring {
+				background-color: $secondary;
+				color: $primary;
+				&:hover {
+				}
+			}
+		}
+	}
 }
 
 .counter {

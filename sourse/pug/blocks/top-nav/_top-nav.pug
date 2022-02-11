@@ -22,13 +22,79 @@ mixin top-nav()
 	+b.top-nav.block-with-lazy
 		.container
 			.row
-				.col-auto
-					+menu-toggle().d-lg-none
-					+e.services.dropdown
-						.dropdown__btn
-				.col
+				.col-auto.d-lg-none
+					+menu-toggle()
+				.col-auto.d-none.d-lg-block
+					+b.services-dropdown.dropdown
+						+e.btn.dropdown__btn
+							+e.toggle-icon
+								span
+							span Услуги
+						+e.content.dropdown__content
+							.row
+								.col-4
+									h6 Навесы
+									ul
+										li 
+											a(href="#") Для авто
+										li 
+											a(href="#") Для парковки
+										li 
+											a(href="#") К&nbsp;дому
+										li 
+											a(href="#") Беседка
+										li 
+											a(href="#") Для дачи
+										li 
+											a(href="#") Кольцо и&nbsp;козырек
+										li 
+											a(href="#") Для бассейна
+										li 
+											a(href="#") Ангар
+										
+								.col-8
+									h6 Производим также
+									ul
+										li 
+											a(href="#") Бетонные площадки
+										li 
+											a(href="#") Заезды на&nbsp;участок
+										li 
+											a(href="#") Укладка тротуарной плитки
+										li 
+											a(href="#") Ворота откатные и&nbsp;распашные
+										li 
+											a(href="#") Заборы и&nbsp;ограждения
+										li 
+											a(href="#") Кованые изделия
+										li 
+											a(href="#") Крыльцо
+										li 
+											a(href="#") Лестница в&nbsp;дом
+										li 
+											a(href="#") Лестница на&nbsp;улице
+										li 
+											a(href="#") Ангары
+										li 
+											a(href="#") Изготовление металлоконструкций
+										li 
+											a(href="#") Беседки
+				+e.col.col-auto
 					.menu-mobile.menu-mobile--js
+						+menu-toggle().d-lg-none
 						.menu-mobile__inner
 							+mnu()
-					
+				.col.text-end
+					+e.tel(href="tel:+74952563067") +7 495 256 30 67
+				.col-auto
+					+soc().--header
+						+e.A.item--whatsapp(href="#" target="_blank")
+							+icon('whatsapp')
+						+e.A.item--phone-call(href="#" target="_blank")
+							+icon('phone-call')
+						+e.A.item--measuring.d-none.d-xl-grid(href="#" target="_blank")
+							+icon('measuring')
+						//- +item-sos('whatsapp')
+						//- +item-sos('phone-call')
+						//- +item-sos('measuring-tape')
 	// end top-nav

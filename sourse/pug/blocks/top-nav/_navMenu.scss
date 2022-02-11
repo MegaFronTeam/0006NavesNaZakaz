@@ -2,8 +2,11 @@
 	@include media-breakpoint-up(lg) {
 		display: flex;
 		text-align: center;
-		@include roww(16px);
+		@include roww(12px);
 		flex-wrap: wrap;
+	}
+	@include media-breakpoint-up(xl) {
+		--bs-gutter-x: #{rem(16)};
 	}
 	@include media-breakpoint-up(xxl) {
 		--bs-gutter-x: #{rem(24)};
@@ -22,12 +25,14 @@
 		display: block;
 		padding: rem(16) calc(var(--bs-gutter-x) / 2);
 		font-weight: 600;
-		font-size: rem(12);
+		font-size: rem(11);
 		line-height: 100%;
+		@include media-breakpoint-up(xl) {
+			font-size: rem(12);
+		}
 		&:not(:hover) {
 			color: $secondary;
 		}
-		
 	}
 }
 
@@ -37,6 +42,10 @@
 	--position: calc(var(--h) * 2);
 	&.on span {
 		--color: transparent;
+		span:after,
+		span:before {
+			--color: $secondary;
+		}
 	}
 
 	&.on {

@@ -79,8 +79,9 @@ mixin top-nav()
 											a(href="#") Изготовление металлоконструкций
 										li 
 											a(href="#") Беседки
-				.col-auto
+				+e.col.col-auto
 					.menu-mobile.menu-mobile--js
+						+menu-toggle().d-lg-none
 						.menu-mobile__inner
 							+mnu()
 				.col.text-end
@@ -91,7 +92,7 @@ mixin top-nav()
 							+icon('whatsapp')
 						+e.A.item--phone-call(href="#" target="_blank")
 							+icon('phone-call')
-						+e.A.item--measuring(href="#" target="_blank")
+						+e.A.item--measuring.d-none.d-xl-grid(href="#" target="_blank")
 							+icon('measuring')
 						//- +item-sos('whatsapp')
 						//- +item-sos('phone-call')

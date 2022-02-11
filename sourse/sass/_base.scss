@@ -365,17 +365,23 @@ ul {
 		&::after {
 			content: "";
 			@include a-cent;
-			@include mt;
 			width: rem(8);
 			height: rem(8);
 			border-radius: 50%;
 			background-color: rgba($color: $body-color, $alpha: 0.5);
 		}
-		&-active,
-		&:hover {
+		&-active {
 			background-color: $white;
 			&::after {
 				background-color: var(--bs-warning);
+			}
+		}
+		&:hover {
+			@include media-breakpoint-up(lg) {
+				background-color: $white;
+				&::after {
+					background-color: var(--bs-warning);
+				}
 			}
 		}
 	}
@@ -654,7 +660,7 @@ h4 {
 	// &__btn {
 	// }
 	&__content {
-		display: none;	
+		display: none;
 		position: absolute;
 		left: 0;
 		top: 110%;

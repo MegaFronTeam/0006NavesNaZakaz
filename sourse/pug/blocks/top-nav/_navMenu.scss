@@ -31,6 +31,9 @@
 		font-weight: 600;
 		font-size: rem(12);
 		line-height: 100%;
+		@include media-breakpoint-between(sm, lg) {
+			font-size: rem(14);
+		}
 		@include media-breakpoint-only(lg) {
 			font-size: rem(11);
 		}
@@ -100,7 +103,7 @@
 		z-index: 999;
 		max-width: 100%;
 		height: calc(var(--vh, 1vh) * 100);
-		width: 350px;
+		width: 420px;
 		top: rem(48);
 		// left: 0;
 		right: 0;
@@ -115,21 +118,21 @@
 		@include mt(0.6s);
 		will-change: transform;
 
-		.toggle-menu-mobile {
-			margin-left: -15%;
-			position: absolute;
-			left: 0;
-			right: auto;
-			color: #fff;
-			top: 10px;
-			z-index: 9999;
-			span:after,
-			span:before {
-				--color: #ffffff;
-			}
-		}
+		// .toggle-menu-mobile {
+		// 	margin-left: -15%;
+		// 	position: absolute;
+		// 	left: 0;
+		// 	right: auto;
+		// 	color: #fff;
+		// 	top: 10px;
+		// 	z-index: 9999;
+		// 	span:after,
+		// 	span:before {
+		// 		--color: #ffffff;
+		// 	}
+		// }
 		&__inner {
-			padding: rem(8) 0 rem(31);
+			padding: rem(8) 0 rem(24);
 			overflow-x: hidden;
 			overflow-y: auto;
 			-webkit-overflow-scrolling: touch;

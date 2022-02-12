@@ -4,6 +4,7 @@
 		text-align: center;
 		@include roww(12px);
 		flex-wrap: wrap;
+		margin-bottom: 0;
 	}
 	@include media-breakpoint-up(xl) {
 		--bs-gutter-x: #{rem(16)};
@@ -11,7 +12,10 @@
 	@include media-breakpoint-up(xxl) {
 		--bs-gutter-x: #{rem(24)};
 	}
-
+	@include media-breakpoint-down(lg) {
+		columns: 2;
+		margin-bottom: rem(26);
+	}
 	list-style: none;
 	position: relative;
 	margin-bottom: 0;
@@ -25,10 +29,10 @@
 		display: block;
 		padding: rem(16) calc(var(--bs-gutter-x) / 2);
 		font-weight: 600;
-		font-size: rem(11);
+		font-size: rem(12);
 		line-height: 100%;
-		@include media-breakpoint-up(xl) {
-			font-size: rem(12);
+		@include media-breakpoint-only(lg) {
+			font-size: rem(11);
 		}
 		&:not(:hover) {
 			color: $secondary;
@@ -38,24 +42,24 @@
 
 .toggle-menu-mobile {
 	--h: #{em(2)};
-	--color: #{$primary};
-	--position: calc(var(--h) * 2);
+	--color: #{$secondary};
+	--position: calc(var(--h) * 3);
 	&.on span {
 		--color: transparent;
-		span:after,
-		span:before {
-			--color: $secondary;
-		}
 	}
 
 	&.on {
 		--position: 0;
 		--rotate: 45deg;
+		span:after,
+		span:before {
+			background-color: $secondary;
+		}
 	}
 	display: block;
 	height: calc(var(--h) * 12);
 	position: relative;
-	font-size: 32px;
+	font-size: 17px;
 	width: 1em;
 	cursor: pointer;
 	span:after,
@@ -94,10 +98,10 @@
 	.menu-mobile {
 		position: fixed !important;
 		z-index: 999;
-		max-width: 85%;
+		max-width: 100%;
 		height: calc(var(--vh, 1vh) * 100);
-		width: 280px;
-		top: 0;
+		width: 350px;
+		top: rem(48);
 		// left: 0;
 		right: 0;
 		background-color: $body-bg;
@@ -125,11 +129,11 @@
 			}
 		}
 		&__inner {
-			padding: rem(20) 0;
+			padding: rem(8) 0 rem(31);
 			overflow-x: hidden;
 			overflow-y: auto;
 			-webkit-overflow-scrolling: touch;
-			height: 100%;
+			height: calc(100% - rem(48));
 			@include mt(0.3s);
 			transition-delay: 0.4s;
 			opacity: var(--opacity);
@@ -148,12 +152,12 @@
 		li {
 			display: block;
 			margin: 0;
-			border-top: 1px solid rgba(255, 255, 255, 0.13);
+			// border-top: 1px solid rgba(255, 255, 255, 0.13);
 
 			a {
 				// font-size: 16px;
 
-				padding: 10px;
+				padding: rem(9) rem(16);
 				display: block;
 			}
 		}

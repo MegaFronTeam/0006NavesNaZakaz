@@ -19,7 +19,7 @@ mixin ddGroupItem(t , activeClasses='')
 	//-хедеру и контенту => .dd-head-js, .dd-content-js
 	//-!!! они должни вкладиваться в 1 контейнер(+e.item) header стилизируеться от етого контейнера, внутри хедера втавлять что душе угодно
 	+b.accordion-item(class=activeClasses)
-		+e.head.dd-head-js
+		+e.head.dd-head-js&attributes(attributes)
 			h4!= t
 			+icon('chevron-right')
 		+e.content.dd-content-js(class=activeClasses)

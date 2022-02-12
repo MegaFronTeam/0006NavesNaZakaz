@@ -3,6 +3,26 @@
 	--sPT: 0;
 	--sPB: 0;
 	// --sTPB: ;
+	& > .dd-group-js {
+		& > .dd-head-js {
+			align-items: center;
+			padding: 10px;
+			border: 1px solid $secondary;
+			margin-bottom: rem(15);
+			border-radius: 8px;
+			.icon {
+				@include mt;
+				margin-left: rem(10);
+				fill: none;
+				stroke: currentColor;
+			}
+			&.active {
+				.icon {
+					transform: rotate(-90deg);
+				}
+			}
+		}
+	}
 	&__title {
 		@include roww(32px);
 		display: flex;
@@ -36,6 +56,9 @@
 					stroke: $secondary;
 					stroke-width: 2px;
 				}
+			}
+			&__content {
+				display: block;
 			}
 			.custom-input {
 				&__text {

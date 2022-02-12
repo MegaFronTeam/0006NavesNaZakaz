@@ -181,7 +181,7 @@
 									</div>
 								</div>
 								<div class="col-sm-auto">
-									<div class="topLine__schedule"><span>открыто</span><span>Пн&ndash;Вс &bull; 9:00&ndash;21:00</span>
+									<div class="schedule"><span>открыто</span><span>Пн&ndash;Вс &bull; 9:00&ndash;21:00</span>
 									</div>
 								</div>
 								<div class="col-auto d-none d-md-flex">
@@ -2057,7 +2057,126 @@
 						<h4>Контакты</h4>
 						<h2>Позвоните или посетите наш офис на&nbsp;производстве</h2>
 					</div>
-					<div class="row"></div>
+					<div class="sContact__row row">
+						<div class="col-lg-8">
+							<div class="sContact__map">
+								<div id="map"></div><script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
+								<script>
+									const map = document.querySelector('#map');
+									document.addEventListener('DOMContentLoaded', function(event) {
+										ymaps.ready(init);
+									});
+									function init () {
+											//- var center = [55.75322550427434,37.65589449999999];
+											var center = [56.01248606874105,37.48441499999996];
+											var myMap = new ymaps.Map("map", {
+															center: center,
+															zoom: 17
+													}),
+													myPlacemark = new ymaps.Placemark([56.01248606874105,37.48441499999996], {
+															// Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
+															balloonContentHeader: "",
+															balloonContentBody: "Лобня • ул. Маяковского, д. 5",
+															balloonContentFooter: "",
+															hintContent: "Адрес"
+													});
+											myMap.geoObjects.add(myPlacemark);
+									
+											myMap.behaviors.disable('scrollZoom');
+											//на мобильных устройствах... (проверяем по userAgent браузера)
+											if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+											//... отключаем перетаскивание карты
+												myMap.behaviors.disable('drag');
+											}
+											// Добавляем все метки на карту.
+										};
+								</script>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="sContact__info">
+								<div class="locaton-dropdown dropdown">
+									<div class="locaton-dropdown__btn dropdown__btn">
+										<svg class="icon icon-geo-tag ">
+											<use xlink:href="img/svg/sprite.svg#geo-tag"></use>
+										</svg><span>Москва и&nbsp;МО</span>
+										<svg class="icon icon-chevron-down ">
+											<use xlink:href="img/svg/sprite.svg#chevron-down"></use>
+										</svg>
+									</div>
+									<div class="locaton-dropdown__content dropdown__content">
+										<a class="locaton-dropdown__item" href="#">Москва и&nbsp;МО
+										</a>
+										<a class="locaton-dropdown__item" href="#">Санкт-Петербург и&nbsp;область
+										</a>
+										<a class="locaton-dropdown__item" href="#">И так далее
+										</a>
+									</div>
+								</div>
+								<div class="schedule"><span>открыто</span><span>Пн&ndash;Вс &bull; 9:00&ndash;21:00</span>
+								</div>
+							</div>
+							<div class="sContact__wrap">
+								<h5>Телефоны</h5>
+								<div class="sContact__content">
+									<div class="sContact__phone-number"><a href="tel:+74952563067">+7 495 256 30 67 </a><a href="tel:+74952563067">+7 495 256 30 67 </a>
+									</div>
+									<a class="sContact__links" href="#">
+										<svg class="icon icon-whatsapp ">
+											<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
+										</svg><span>Whatsapp</span>
+									</a>
+									<a class="sContact__links" href="#">
+										<svg class="icon icon-instagram-map ">
+											<use xlink:href="img/svg/sprite.svg#instagram-map"></use>
+										</svg>
+									</a>
+									<a class="sContact__links sContact__links--yt" href="#">
+										<svg class="icon icon-youtube ">
+											<use xlink:href="img/svg/sprite.svg#youtube"></use>
+										</svg>
+									</a>
+									<a class="sContact__btn btn btn-primary btn-sm" href="#">Обратный звонок
+									</a>
+								</div>
+							</div>
+							<div class="sContact__wrap">
+								<h5>Email</h5><a href="mailto:info@naves-na-zakaz.ru">info@naves-na-zakaz.ru</a>
+							</div>
+							<div class="sContact__wrap">
+								<h5>Офисы и цеха</h5>
+								<div class="sContact__map-point">Лобня • ул. Маяковского, д. 5
+								</div>
+								<div class="sContact__map-point">Одинцово • ул. Транспортная, д. 2
+								</div>
+								<div class="sContact__map-point">Кашира • ул. Стрелецкая, д. 66
+								</div>
+								<div class="sContact__map-point">Фатеево • городской округ Павловский Посад, д. 118
+								</div>
+								<div class="sContact__map-point">Клин • ул. Дурыманова, д. 24
+								</div>
+								<div class="sContact__map-point">Сергиев Посад • ул. Стахановская, д. 1Б
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-wrap">
+						<form>
+							<div class="row">
+								<div class="col-lg-8"> 
+									<div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" name="textarea" placeholder="Вопрос"></textarea>
+									</div>
+									<!-- +e.input-wrap-->
+								</div>
+								<div class="col-lg-4">
+									<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш номер телефона"/>
+									</div>
+									<!-- +e.input-wrap-->
+									<button class="btn btn btn-primary" type="submit">Получить консультацию </button>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 			</section>
 			<!-- end sContact-->

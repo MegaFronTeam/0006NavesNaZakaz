@@ -14,6 +14,7 @@
 		height: rem(64);
 	}
 	&.fixed {
+		box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
 	}
 	& > .container {
 		& > .row {

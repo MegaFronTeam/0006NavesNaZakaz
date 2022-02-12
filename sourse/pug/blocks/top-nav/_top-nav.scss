@@ -152,6 +152,7 @@
 }
 .services-dropdown {
 	&__btn {
+		@include mt;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -170,12 +171,18 @@
 			display: block;
 			line-height: inherit;
 		}
+		&:hover {
+			background-color: lighten($primary, 10%);
+		}
 		// .icon {
 		// 	font-size: inherit;
 		// 	margin-right: rem(8);
 		// }
 	}
 	&.active {
+		.services-dropdown__btn {
+			background-color: lighten($primary, 10%);
+		}
 		.services-dropdown__toggle-icon {
 			--position: 0;
 			--rotate: 45deg;

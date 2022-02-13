@@ -4,7 +4,73 @@ mixin sCalculator(data)
 		.container
 			+b.section-title.text-center
 				h4 Калькулятор
-				h2 Получите цену навеса и&nbsp;посмотрите, как он&nbsp;будет выглядеть
-				
-			.row
+				h2 Получите цену навеса <br> и&nbsp;посмотрите, как он&nbsp;будет выглядеть
+			+form-wrap
+				+e.part
+					h4 Введите параметры навеса
+					.row
+						.col-4
+							+input('Длина навеса, мм', 'text')
+						.col-4
+							+input('Ширина навеса, мм', 'text')
+						.col-4
+							+input('Высота навеса, мм', 'text')
+						.col-12
+							+input('Материал кровли', 'select')
+					+e.slider-wrapper
+						.small Форма крыши
+						+e.slider--js.swiper
+							.swiper-wrapper
+								+e.slide.swiper-slide
+									+e.item
+										+in-c('radio', 'текст')
+								+e.slide.swiper-slide
+									+e.item
+										+in-c('radio', 'текст')
+								+e.slide.swiper-slide
+									+e.item
+										+in-c('radio', 'текст')
+								+e.slide.swiper-slide
+									+e.item
+										+in-c('radio', 'текст')
+								+e.slide.swiper-slide
+									+e.item
+										+in-c('radio', 'текст')
+				+e.part
+					h6 Визуализация навеса
+					+e.img-wrap
+						+pic('sCalculator-1.png', 'bg', 0)
+				+e.part
+					h6 Предварительные расчеты
+					table
+						tr
+							td Металлические столбы
+							td 8&nbsp;шт
+						tr
+							td Силовые боковые балки
+							td 2&nbsp;шт
+						tr
+							td Металлические фермы
+							td 5&nbsp;шт
+						tr
+							td Обрешетка (лаги)
+							td 12&nbsp;шт
+						tr
+							td Сотовый поликарбонат
+							td 36&nbsp;м2
+						tr
+							td Соединительные профили
+							td 1&nbsp;к-т
+						tr
+							td Окрашивание
+							td 30&nbsp;м2
+				+e.part
+					h6 Получите расчет цены и&nbsp;полную смету
+					.row
+						.col-6
+							+input('place', 'text')
+						.col-6
+							+input('place', 'text')
+						.col-12
+							+e.BUTTON.btn(type="submit") Получить точный расчет за&nbsp;15&nbsp;минут
 	// end sCalculator

@@ -528,6 +528,19 @@ function eventHandler() {
 			prevEl: '.sAbout .swiper-button-prev',
 		},
 	});
+	const formWrapSlider = new Swiper('.form-wrap__slider--js', {
+		freeMode: true,
+		loopFillGroupWithBlank: true,
+		touchRatio: 0.2,
+		freeModeMomentum: true,
+		lazy: {
+			loadPrevNext: true,
+		},
+		watchOverflow: true,
+		spaceBetween: 16,
+		slidesPerView: 'auto',
+		slideToClickedSlide: true,
+	});
 	// modal window
 	$(".dd-head-js").click(function(){
 		$(this).toggleClass("active").next().slideToggle();

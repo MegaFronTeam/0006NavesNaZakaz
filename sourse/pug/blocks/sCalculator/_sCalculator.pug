@@ -21,21 +21,19 @@ mixin sCalculator(data)
 						.small Форма крыши
 						+e.slider--js.swiper
 							.swiper-wrapper
-								+e.slide.swiper-slide
-									+e.item
-										+in-c('radio', 'текст')
-								+e.slide.swiper-slide
-									+e.item
-										+in-c('radio', 'текст')
-								+e.slide.swiper-slide
-									+e.item
-										+in-c('radio', 'текст')
-								+e.slide.swiper-slide
-									+e.item
-										+in-c('radio', 'текст')
-								+e.slide.swiper-slide
-									+e.item
-										+in-c('radio', 'текст')
+								mixin slideBtn(c, t)
+									+e.slide.swiper-slide
+										+e.item
+											input.btn-check(type='radio' name="options" id=`option${c}` autocomplete='off')&attributes(attributes)
+											label(for=`option${c}`)
+												img(src=`img/svg/sCalculator-${c}.svg`, alt="")
+												span!= t
+								+slideBtn(1, `1-скатная кровля`)
+								+slideBtn(2, `2-скатная кровля`)
+								+slideBtn(3, `Арочная кровля`)
+								+slideBtn(4, `Полуарочная кровля`)
+								+slideBtn(5, `4-скатная кровля`)
+								
 				+e.part
 					h6 Визуализация навеса
 					+e.img-wrap

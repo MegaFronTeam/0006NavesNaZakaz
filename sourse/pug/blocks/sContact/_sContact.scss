@@ -23,7 +23,7 @@
 		// height: rem(751);
 		height: 100%;
 		// min-height: rem(400);
-		max-height: rem(622);
+		// max-height: rem(622);
 		@include block(800, 622);
 		@include media-breakpoint-down(lg) {
 			margin-bottom: rem(30);
@@ -136,8 +136,10 @@
 		display: flex;
 		align-items: flex-end;
 		flex-wrap: wrap;
-		max-width: rem(349);
 		gap: rem(15);
+		@include media-breakpoint-up(lg) {
+			max-width: rem(349);
+		}
 	}
 	&__links {
 		background-color: $light;

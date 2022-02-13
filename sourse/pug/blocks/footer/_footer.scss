@@ -22,6 +22,21 @@
 			margin-bottom: 0;
 		}
 	}
+	&__col {
+		padding-top: rem(36);
+		margin-bottom: rem(43);
+		@include media-breakpoint-up(md) {
+			padding-top: 0;
+			margin-bottom: 0;
+		}
+	}
+	&__btn {
+		width: 100%;
+		margin-bottom: rem(28);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 0;
+		}
+	}
 	.logo {
 		display: inline-block;
 		@include media-breakpoint-up(lg) {
@@ -61,7 +76,10 @@
 			margin-bottom: rem(10);
 		}
 		a {
-			font-size: rem(12);
+			font-size: rem(11);
+			@include media-breakpoint-up(md) {
+				font-size: rem(12);
+			}
 			&:not(:hover) {
 				color: $black;
 			}
@@ -131,6 +149,8 @@
 @include media-breakpoint-down(xs) {}
 }
 
-.ml-auto {
-	margin-left: auto;
+.ml-lg-auto {
+	@include media-breakpoint-up(lg) {
+		margin-left: auto;
+	}
 }

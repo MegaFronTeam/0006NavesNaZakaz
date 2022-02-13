@@ -47,6 +47,15 @@
 	--h: #{em(2)};
 	--color: #{$secondary};
 	--position: calc(var(--h) * 3);
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: calc(-1 * var(--bs-gutter-x) / 2);
+		width: calc(100% + var(--bs-gutter-x));
+		height: 100%;
+
+	}
 	&.on span {
 		--color: transparent;
 	}

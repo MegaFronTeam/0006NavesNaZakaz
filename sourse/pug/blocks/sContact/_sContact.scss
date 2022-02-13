@@ -1,6 +1,5 @@
-
-	// start .sContact
-	.sContact {
+// start .sContact
+.sContact {
 	h2 {
 		margin-bottom: rem(32);
 		@include media-breakpoint-up(lg) {
@@ -18,7 +17,7 @@
 		@include media-breakpoint-up(lg) {
 			margin-bottom: rem(80);
 		}
-	}  
+	}
 	&__map {
 		position: relative;
 		// height: rem(751);
@@ -41,8 +40,8 @@
 		}
 		&::after {
 			position: absolute;
-			content: '';
-			background: #F2F6FC;
+			content: "";
+			background: #f2f6fc;
 			filter: blur(321px);
 			display: block;
 			width: rem(815);
@@ -58,7 +57,7 @@
 		flex-direction: column;
 		margin-bottom: rem(30);
 		margin-top: rem(13);
-		@include media-breakpoint-up(lg) { 
+		@include media-breakpoint-up(lg) {
 			margin-top: 0;
 			align-items: center;
 			flex-direction: row;
@@ -69,14 +68,22 @@
 			@include media-breakpoint-up(lg) {
 				margin-bottom: 0;
 			}
-			.icon {
-				color: #B8B8B8;
+			&__btn {
+				color: rgba($color: $body-color, $alpha: 0.5);
+				span {
+					@include mt(0.15s);
+				}
+				&:not(:hover) {
+					span {
+						color: $body-color;
+					}
+				}
 			}
 		}
 		.schedule {
 			span {
 				&:first-child {
-					background-color: #B8B8B8;
+					background-color: #b8b8b8;
 				}
 			}
 		}
@@ -96,7 +103,6 @@
 				color: $primary;
 			}
 		}
-
 	}
 	&__map-point {
 		@include mt;
@@ -167,12 +173,12 @@
 			justify-content: center;
 			border-radius: rem(1000);
 			.icon {
-				color: #D21FFF;
+				color: #d21fff;
 			}
 		}
-		&--yt{
+		&--yt {
 			.icon {
-				color: #FF0000 !important;
+				color: #ff0000 !important;
 			}
 		}
 	}
@@ -204,28 +210,42 @@
 			margin-top: rem(20);
 		}
 	}
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-up(xs) {}
-	
-	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
-	//
-	@include media-breakpoint-only(xs) {}
-	@include media-breakpoint-only(sm) {}
-	@include media-breakpoint-only(md) {}
-	@include media-breakpoint-only(lg) {}
-	@include media-breakpoint-only(xl) {}
-	
-	//
-	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-up(xs) {
+	}
 
+	//
+	@include media-breakpoint-between(md, xl) {
+	}
+
+	//
+	@include media-breakpoint-only(xs) {
+	}
+	@include media-breakpoint-only(sm) {
+	}
+	@include media-breakpoint-only(md) {
+	}
+	@include media-breakpoint-only(lg) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+
+	//
+	@include media-breakpoint-down(xl) {
+	}
+	@include media-breakpoint-down(lg) {
+	}
+	@include media-breakpoint-down(md) {
+	}
+	@include media-breakpoint-down(sm) {
+	}
+	@include media-breakpoint-down(xs) {
+	}
 } // end.sContact

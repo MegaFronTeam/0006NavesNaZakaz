@@ -4,7 +4,7 @@ mixin topLine()
 		.container
 			+e.main-row.row
 				.col-auto
-					+e.logo(href="/")
+					+b.logo(href="/")
 						+icon('logo-top')
 						//- img(src="img/svg/logo-top.svg", alt="")
 				.col
@@ -25,6 +25,6 @@ mixin topLine()
 								span открыто
 								span Пн&ndash;Вс &bull; 9:00&ndash;21:00
 						.col-auto.d-none.d-md-flex
-							+e.label 
+							+b.label 
 								span Работаем с&nbsp;2012 года
 	// end topLine

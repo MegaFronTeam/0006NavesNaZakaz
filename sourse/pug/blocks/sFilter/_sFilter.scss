@@ -40,9 +40,10 @@
 	&__body {
 		.accordion-item {
 			border: none;
-			&:not(:last-child) {
-				margin-bottom: rem(33);
-			}
+			margin-bottom: rem(33);
+			// &:not(:last-child) {
+			// 	margin-bottom: rem(33);
+			// }
 			&__head {
 				padding: 0;
 				h4 {

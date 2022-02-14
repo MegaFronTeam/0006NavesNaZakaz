@@ -22,101 +22,108 @@ mixin sFilter(data)
 					a(href="#") Сбросить
 				+e.body
 					+ddGroup()
-						+ddGroupItem('Навесы').active
-							+e.wrap
-								+in-c("checkbox", 'Для машин')
-								+in-c("checkbox", 'К дому')(checked)
-								+in-c("checkbox", 'Для бассейна')
-								+in-c("checkbox", 'Кованые')(checked)
-								+in-c("checkbox", 'Другие типы навесов')
-						+ddGroupItem('Прочие конструкции').active
-							+e.wrap
-								+in-c("checkbox", 'Комплекты гаражей')
-								+in-c("checkbox", 'Фермы')(checked)
-								+in-c("checkbox", 'Ангары')
-								+in-c("checkbox", 'Гаражи из СП')(checked)
-								+in-c("checkbox", 'Козырьки')
-						+ddGroupItem('Длина').active
-							+e.wrap
-								.row
-									.col-6
-											+in-c("checkbox", '1 м')
-									.col-6
-											+in-c("checkbox", '1 м')
-									.col-6
-											+in-c("checkbox", '12 м')(checked)
-									.col-6
-											+in-c("checkbox", '12 м')(checked)
-									.col-6
-											+in-c("checkbox", '17 м')
-									.col-6
-											+in-c("checkbox", '17 м')
-									.col-6
-											+in-c("checkbox", '2 м')(checked)
-									.col-6
-											+in-c("checkbox", '2 м')(checked)
-									.col-6
-											+in-c("checkbox", '4 м')
-									.col-6
-											+in-c("checkbox", '4 м')
-									.col-6
-											+in-c("checkbox", '6 м')
-									.col-6
-											+in-c("checkbox", '6 м')
-									.col-6
-											+in-c("checkbox", '8 м')
-									.col-6
-											+in-c("checkbox", '8 м')
-						+ddGroupItem('Ширина').active
-							+e.wrap
-								.row
-									.col-6
-											+in-c("checkbox", '1 м')
-									.col-6
-											+in-c("checkbox", '1 м')
-									.col-6
-											+in-c("checkbox", '12 м')(checked)
-									.col-6
-											+in-c("checkbox", '12 м')(checked)
-									.col-6
-											+in-c("checkbox", '17 м')
-									.col-6
-											+in-c("checkbox", '17 м')
-									.col-6
-											+in-c("checkbox", '2 м')(checked)
-									.col-6
-											+in-c("checkbox", '2 м')(checked)
-									.col-6
-											+in-c("checkbox", '4 м')
-									.col-6
-											+in-c("checkbox", '4 м')
-									.col-6
-											+in-c("checkbox", '6 м')
-									.col-6
-											+in-c("checkbox", '6 м')
-									.col-6
-											+in-c("checkbox", '8 м')
-									.col-6
-											+in-c("checkbox", '8 м')
-						+ddGroupItem('Тип навеса').active
-							+e.wrap
-								+in-c("checkbox", 'Ангары')
-								+in-c("checkbox", 'Беседка')(checked)
-								+in-c("checkbox", 'Ангары')
-								+in-c("checkbox", 'Гаражи из СП')(checked)
-								+in-c("checkbox", 'Кованные навесы')
-						+ddGroupItem('Материал кровли').active
-							+e.wrap
-								+in-c("checkbox", 'Ангары')
-								+in-c("checkbox", 'Беседка')(checked)
-								+in-c("checkbox", 'Ангары')
-								+in-c("checkbox", 'Гаражи из СП')(checked)
-								+in-c("checkbox", 'Кованные навесы')
-						+ddGroupItem('Тип каркаса').active
-							+e.wrap
-								+in-c("checkbox", 'Ангары')
-								+in-c("checkbox", 'Беседка')(checked)
-								+in-c("checkbox", 'Ангары')
-								+in-c("checkbox", 'Гаражи из СП')(checked)
-								+in-c("checkbox", 'Кованные навесы')
+						.row
+							.col-md-6.col-lg-12
+								+ddGroupItem('Навесы').active
+									+e.wrap
+										+in-c("checkbox", 'Для машин')
+										+in-c("checkbox", 'К дому')(checked)
+										+in-c("checkbox", 'Для бассейна')
+										+in-c("checkbox", 'Кованые')(checked)
+										+in-c("checkbox", 'Другие типы навесов')
+							.col-md-6.col-lg-12
+								+ddGroupItem('Прочие конструкции').active
+									+e.wrap
+										+in-c("checkbox", 'Комплекты гаражей')
+										+in-c("checkbox", 'Фермы')(checked)
+										+in-c("checkbox", 'Ангары')
+										+in-c("checkbox", 'Гаражи из СП')(checked)
+										+in-c("checkbox", 'Козырьки')
+							.col-12
+								+ddGroupItem('Длина').active
+									+e.wrap
+										.row
+											.col-6
+													+in-c("checkbox", '1 м')
+											.col-6
+													+in-c("checkbox", '1 м')
+											.col-6
+													+in-c("checkbox", '12 м')(checked)
+											.col-6
+													+in-c("checkbox", '12 м')(checked)
+											.col-6
+													+in-c("checkbox", '17 м')
+											.col-6
+													+in-c("checkbox", '17 м')
+											.col-6
+													+in-c("checkbox", '2 м')(checked)
+											.col-6
+													+in-c("checkbox", '2 м')(checked)
+											.col-6
+													+in-c("checkbox", '4 м')
+											.col-6
+													+in-c("checkbox", '4 м')
+											.col-6
+													+in-c("checkbox", '6 м')
+											.col-6
+													+in-c("checkbox", '6 м')
+											.col-6
+													+in-c("checkbox", '8 м')
+											.col-6
+													+in-c("checkbox", '8 м')
+								+ddGroupItem('Ширина').active
+									+e.wrap
+										.row
+											.col-6
+													+in-c("checkbox", '1 м')
+											.col-6
+													+in-c("checkbox", '1 м')
+											.col-6
+													+in-c("checkbox", '12 м')(checked)
+											.col-6
+													+in-c("checkbox", '12 м')(checked)
+											.col-6
+													+in-c("checkbox", '17 м')
+											.col-6
+													+in-c("checkbox", '17 м')
+											.col-6
+													+in-c("checkbox", '2 м')(checked)
+											.col-6
+													+in-c("checkbox", '2 м')(checked)
+											.col-6
+													+in-c("checkbox", '4 м')
+											.col-6
+													+in-c("checkbox", '4 м')
+											.col-6
+													+in-c("checkbox", '6 м')
+											.col-6
+													+in-c("checkbox", '6 м')
+											.col-6
+													+in-c("checkbox", '8 м')
+											.col-6
+													+in-c("checkbox", '8 м')
+							.col-md-6.col-lg-12
+								+ddGroupItem('Тип навеса').active
+									+e.wrap
+										+in-c("checkbox", 'Ангары')
+										+in-c("checkbox", 'Беседка')(checked)
+										+in-c("checkbox", 'Ангары')
+										+in-c("checkbox", 'Гаражи из СП')(checked)
+										+in-c("checkbox", 'Кованные навесы')
+							.col-md-6.col-lg-12
+								+ddGroupItem('Материал кровли').active
+									+e.wrap
+										+in-c("checkbox", 'Ангары')
+										+in-c("checkbox", 'Беседка')(checked)
+										+in-c("checkbox", 'Ангары')
+										+in-c("checkbox", 'Гаражи из СП')(checked)
+										+in-c("checkbox", 'Кованные навесы')
+							.col-md-6.col-lg-12
+								+ddGroupItem('Тип каркаса').active
+									+e.wrap
+										+in-c("checkbox", 'Ангары')
+										+in-c("checkbox", 'Беседка')(checked)
+										+in-c("checkbox", 'Ангары')
+										+in-c("checkbox", 'Гаражи из СП')(checked)
+										+in-c("checkbox", 'Кованные навесы')
 	// end sFilter

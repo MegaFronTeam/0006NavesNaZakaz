@@ -42,3 +42,9 @@ mixin page-head(data)
 			a(href="#")
 				+icon('arrow-left')
 			h1!= data.title
+
+mixin scrollToTop()
+	+b.back-top#back-top
+		a(href="#top")
+			+icon('arrow-up')
+			span Наверх

@@ -583,6 +583,44 @@ function eventHandler() {
 			swiper: sSpecificationsswiperThumbs,
 		}
 	});
+	var sSpecificationsswiperThumbs = new Swiper(".sSpecifications__slider-thumbs--js-2", {
+		loop: true,
+		spaceBetween: 8,
+		slidesPerView: 4,
+		freeMode: true,
+		watchSlidesProgress: true,
+	});
+	var sSpecificationsswiper2 = new Swiper(".sSpecifications__slider--js-2", {
+		loop: true,
+		spaceBetween: 0,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 5000,
+		},
+		watchOverflow: false,
+		thumbs: {
+			swiper: sSpecificationsswiperThumbs,
+		}
+	});
+	var sSpecificationsswiperThumbs = new Swiper(".sSpecifications__slider-thumbs--js-3", {
+		loop: true,
+		spaceBetween: 8,
+		slidesPerView: 4,
+		freeMode: true,
+		watchSlidesProgress: true,
+	});
+	var sSpecificationsswiper2 = new Swiper(".sSpecifications__slider--js-3", {
+		loop: true,
+		spaceBetween: 0,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 5000,
+		},
+		watchOverflow: false,
+		thumbs: {
+			swiper: sSpecificationsswiperThumbs,
+		}
+	});
 
 	// modal window
 	$(".dd-head-js").click(function(){

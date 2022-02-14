@@ -1,9 +1,16 @@
 // start .sPortfolio
 .sPortfolio {
-		// --sPT: ;
-		// --sPB: ;
-		// --sTPB: ;
-
+	// --sPT: ;
+	// --sPB: ;
+	// --sTPB: ;
+	.row {
+		--bs-gutter-y: #{rem(32)};
+	}
+	.sSpecifications {
+		--sPT: #{rem(24)};
+		--sPB: #{rem(24)};
+		border-radius: rem(20);
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

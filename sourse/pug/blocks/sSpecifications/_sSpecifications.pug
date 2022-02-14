@@ -77,3 +77,161 @@ mixin sSpecifications(btn)
 					if btn
 						button.btn.btn-outline-secondary Сохранить себе
 	// end sSpecifications
+mixin sSpecifications2(btn)
+	// start sSpecifications
+	+b.SECTION.sSpecifications.section#sSpecifications&attributes(attributes)
+		.container
+			.row
+				.col-lg-8
+					+e.slider-wrap
+						+e.slider--js-2.swiper
+							.swiper-wrapper
+								mixin slide2(i)
+									+e.slide.swiper-slide
+										+e.img-wrap(href=`img/@2x/sSpecifications-md-${i}.jpg` data-fancybox= "sCard-gallery")
+											//- img(src=`img/card-md-1.jpg` alt='')
+											+pic(`sSpecifications-md-${i}.jpg`, `bg`, 0)
+								+slide2(1)
+								+slide2(2)
+								+slide2(3)
+								+slide2(4)
+						+e.slider-thumbs--js-2.swiper
+							.swiper-wrapper
+								mixin slide(i)
+									+e.slide.swiper-slide
+										+e.img-wrap--thumbs.bg-wrap
+											+pic(`sSpecifications-sm-${i}.jpg`, `bg`, 0).picture-bg
+											//- img(src=`img/@2x/sProject-sm-${i}.jpg` alt='')
+								+slide(1)
+								+slide(2)
+								+slide(3)
+								+slide(4)
+				.col-lg-4
+					table
+						thead
+							tr
+								th
+									h6 Характеристики
+						tbody
+							tr
+								td Металлические столбы
+								td 80&times;80&times;3&nbsp;мм (6&nbsp;шт)
+							tr
+								td Силовые боковые балки
+								td 80&times;80&times;3&nbsp;мм 
+							tr
+								td Металлические фермы
+								td 60&times;30&times;2&nbsp;мм (4&nbsp;шт)
+							tr
+								td Обрешетка (лаги)
+								td 40&times;20&times;1,5&nbsp;мм
+							tr
+								td Форма крыши
+								td Арочная
+							tr
+								td Материал кровли
+								td Сотовый поликарбонат (8&nbsp;мм) &laquo;КарбоGlass Кристалл&raquo;
+							tr
+								td Цвет кровли
+								td Бронзовый
+							tr
+								td Монтаж к земле
+								td Заглубление на&nbsp;1200&nbsp;мм с&nbsp;бутованием щебнем
+					table
+						thead
+							tr
+								th
+									h6 Цены и сроки
+						tbody
+							tr
+								td Материалы • Работа
+								td 123 480 ₽ • 52 920 ₽
+							tr
+								td Итого
+								td 176 400 ₽
+							tr
+								td Изготовление • Установка
+								td 7 дней • 1 день
+					a(href="#").btn.btn-primary Хочу примерно такой же
+					if btn
+						button.btn.btn-outline-secondary Сохранить себе
+	// end sSpecifications
+mixin sSpecifications3(btn)
+	// start sSpecifications
+	+b.SECTION.sSpecifications.section#sSpecifications&attributes(attributes)
+		.container
+			.row
+				.col-lg-8
+					+e.slider-wrap
+						+e.slider--js-3.swiper
+							.swiper-wrapper
+								mixin slide2(i)
+									+e.slide.swiper-slide
+										+e.img-wrap(href=`img/@2x/sSpecifications-md-${i}.jpg` data-fancybox= "sCard-gallery")
+											//- img(src=`img/card-md-1.jpg` alt='')
+											+pic(`sSpecifications-md-${i}.jpg`, `bg`, 0)
+								+slide2(1)
+								+slide2(2)
+								+slide2(3)
+								+slide2(4)
+						+e.slider-thumbs--js-3.swiper
+							.swiper-wrapper
+								mixin slide(i)
+									+e.slide.swiper-slide
+										+e.img-wrap--thumbs.bg-wrap
+											+pic(`sSpecifications-sm-${i}.jpg`, `bg`, 0).picture-bg
+											//- img(src=`img/@2x/sProject-sm-${i}.jpg` alt='')
+								+slide(1)
+								+slide(2)
+								+slide(3)
+								+slide(4)
+				.col-lg-4
+					table
+						thead
+							tr
+								th
+									h6 Характеристики
+						tbody
+							tr
+								td Металлические столбы
+								td 80&times;80&times;3&nbsp;мм (6&nbsp;шт)
+							tr
+								td Силовые боковые балки
+								td 80&times;80&times;3&nbsp;мм 
+							tr
+								td Металлические фермы
+								td 60&times;30&times;2&nbsp;мм (4&nbsp;шт)
+							tr
+								td Обрешетка (лаги)
+								td 40&times;20&times;1,5&nbsp;мм
+							tr
+								td Форма крыши
+								td Арочная
+							tr
+								td Материал кровли
+								td Сотовый поликарбонат (8&nbsp;мм) &laquo;КарбоGlass Кристалл&raquo;
+							tr
+								td Цвет кровли
+								td Бронзовый
+							tr
+								td Монтаж к земле
+								td Заглубление на&nbsp;1200&nbsp;мм с&nbsp;бутованием щебнем
+					table
+						thead
+							tr
+								th
+									h6 Цены и сроки
+						tbody
+							tr
+								td Материалы • Работа
+								td 123 480 ₽ • 52 920 ₽
+							tr
+								td Итого
+								td 176 400 ₽
+							tr
+								td Изготовление • Установка
+								td 7 дней • 1 день
+					a(href="#").btn.btn-primary Хочу примерно такой же
+					if btn
+						button.btn.btn-outline-secondary Сохранить себе
+	// end sSpecifications

@@ -541,6 +541,49 @@ function eventHandler() {
 		slidesPerView: 'auto',
 		slideToClickedSlide: true,
 	});
+
+	// Прокрутка на верх 
+	$(function (){
+		// прячем кнопку #back-top
+		$("#back-top").hide();
+
+		$(window).scroll(function (){
+			if ($(this).scrollTop() > 908){
+				$("#back-top").fadeIn();
+			} else{
+				$("#back-top").fadeOut();
+			}
+		});
+
+		// при клике на ссылку плавно поднимаемся вверх
+		$("#back-top a").click(function (){
+			$("body,html").animate({
+				scrollTop:0
+			}, 800);
+			return false;
+		});
+	});
+
+	var sSpecificationsswiperThumbs = new Swiper(".sSpecifications__slider-thumbs--js", {
+		loop: true,
+		spaceBetween: 8,
+		slidesPerView: 4,
+		freeMode: true,
+		watchSlidesProgress: true,
+	});
+	var sSpecificationsswiper2 = new Swiper(".sSpecifications__slider--js", {
+		loop: true,
+		spaceBetween: 0,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 5000,
+		},
+		watchOverflow: false,
+		thumbs: {
+			swiper: sSpecificationsswiperThumbs,
+		}
+	});
+
 	// modal window
 	$(".dd-head-js").click(function(){
 		$(this).toggleClass("active").next().slideToggle();

@@ -41,7 +41,10 @@ mixin page-head(data)
 		.container
 			a(href="#")
 				+icon('arrow-left')
-			h1!= data.title
+			+e.wrap
+				h1!= data.title
+				if data.text
+					p!= data.text
 
 mixin scrollToTop()
 	+b.back-top#back-top

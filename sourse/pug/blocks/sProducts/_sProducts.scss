@@ -27,52 +27,66 @@
 			}
 		}
 	}
-	&__card {
-		@include mt;
-		padding: rem(24) rem(23.63) rem(20.5) rem(24);
-		// margin-bottom: rem(32);
-		border-radius: rem(20);
-		box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
-		border: 1px solid $light;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		&:hover {
-			box-shadow: none;
-			h4 {
-				color: $gray-900;
-			}
+	.pagination-wrapper {
+		margin-top: rem(35);
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(48);
 		}
-		& > a {
-			flex-grow: 1;
-		}
-		picture {
-			@include mt;
-			@include block(336, 200);
-			border: 1px solid #E0E0E0;
-			border-radius: 8px;
-			overflow: hidden;
-			margin-bottom: rem(24);
-			img {
-				position: absolute;
-				left: 0;
-				top: 0;
-			}
-			&:hover {
-				box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
-			}
-		}
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-between(md, xl) {}
+	@include media-breakpoint-only(xl) {}
+	@include media-breakpoint-down(xl) {}
+} // end.sProducts
+
+.card {
+	@include mt;
+	padding: rem(24) rem(23.63) rem(20.5) rem(24);
+	// margin-bottom: rem(32);
+	border-radius: rem(20);
+	box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
+	border: 1px solid $light;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	&:hover {
+		box-shadow: none;
 		h4 {
-			@include mt;
-			margin-bottom: rem(10);
+			color: $gray-900;
 		}
-		& > p {
-			margin-bottom: rem(16);
-			font-size: rem(12);
+	}
+	& > a {
+		flex-grow: 1;
+	}
+	picture {
+		@include mt;
+		@include block(336, 200);
+		border: 1px solid #E0E0E0;
+		border-radius: 8px;
+		overflow: hidden;
+		margin-bottom: rem(24);
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
 		}
-		h5 {
-			margin-bottom: rem(8);
+		&:hover {
+			box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
 		}
+	}
+	h4 {
+		@include mt;
+		margin-bottom: rem(10);
+	}
+	& > p {
+		margin-bottom: rem(16);
+		font-size: rem(12);
+	}
+	h5 {
+		margin-bottom: rem(8);
 	}
 	table {
 		tr {
@@ -115,17 +129,4 @@
 			margin-bottom: 0;
 		}
 	}
-	.pagination-wrapper {
-		margin-top: rem(35);
-		@include media-breakpoint-up(lg) {
-			margin-top: rem(48);
-		}
-	}
-	@include media-breakpoint-up(xl) {}
-	@include media-breakpoint-up(lg) {}
-	@include media-breakpoint-up(md) {}
-	@include media-breakpoint-up(sm) {}
-	@include media-breakpoint-between(md, xl) {}
-	@include media-breakpoint-only(xl) {}
-	@include media-breakpoint-down(xl) {}
-} // end.sProducts
+}

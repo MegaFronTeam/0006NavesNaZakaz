@@ -1,5 +1,11 @@
 // start .sContact
 .sContact {
+	--sPT: #{rem(32)};
+	--sPB: #{rem(32)};
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(80)};
+		--sPB: #{rem(90)};
+	}
 	h2 {
 		margin-bottom: rem(32);
 		@include media-breakpoint-up(lg) {

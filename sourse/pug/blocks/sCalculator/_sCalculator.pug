@@ -24,8 +24,8 @@ mixin sCalculator(data)
 								mixin slideBtn(c, t)
 									+e.slide.swiper-slide
 										+e.item
-											input.btn-check(type='radio' name="options" id=`option${c}` autocomplete='off')&attributes(attributes)
-											label(for=`option${c}`)
+											input.btn-check(type='radio' name="variants" id=`variant${c}` autocomplete='off')&attributes(attributes)
+											label(for=`variant${c}`)
 												img(src=`img/svg/sCalculator-${c}.svg`, alt="")
 												span!= t
 								+slideBtn(1, `1-скатная кровля`)

@@ -10,15 +10,15 @@ mixin sCalculator(data)
 					h4 Введите параметры навеса
 					.row
 						.col-4
-							+input('Длина навеса, мм', 'text')
+							+input('Длина, мм', 'number')
 						.col-4
-							+input('Ширина навеса, мм', 'text')
+							+input('Ширина, мм', 'number')
 						.col-4
-							+input('Высота навеса, мм', 'text')
+							+input('Высота, мм', 'number')
 						.col-12
 							+input('Материал кровли', 'select')
 					+e.slider-wrapper
-						.small Форма крыши
+						span Форма крыши
 						+e.slider--js.swiper
 							.swiper-wrapper
 								mixin slideBtn(c, t)
@@ -33,7 +33,7 @@ mixin sCalculator(data)
 								+slideBtn(3, `Арочная кровля`)
 								+slideBtn(4, `Полуарочная кровля`)
 								+slideBtn(5, `4-скатная кровля`)
-								
+					h6 Получите расчет цены и&nbsp;полную смету
 				+e.part
 					h6 Визуализация навеса
 					+e.img-wrap
@@ -62,13 +62,36 @@ mixin sCalculator(data)
 						tr
 							td Окрашивание
 							td 30&nbsp;м2
+					+e.sum
+						.row
+							.col-auto
+								span Материалы
+								span 100&nbsp;800&nbsp;₽
+							.col
+								span Работа
+								span 40&nbsp;800&nbsp;₽
+							
+							.col-auto
+								span Итого
+								span.strong 100&nbsp;800&nbsp;₽
 				+e.part
-					h6 Получите расчет цены и&nbsp;полную смету
 					.row
-						.col-6
-							+input('place', 'text')
-						.col-6
-							+input('place', 'text')
+						.col-sm-6
+							+input('Ваше имя', 'text')
+						.col-sm-6
+							+input('Ваш номер телефона', 'tel')
 						.col-12
-							+e.BUTTON.btn(type="submit") Получить точный расчет за&nbsp;15&nbsp;минут
+							+e.BUTTON.btn(type="submit") Получить точный расчет <br> за&nbsp;15&nbsp;минут
+						.col-12
+							+e.footer 
+								.row
+									.col-sm-6
+										+e.positive
+											+icon('positive')
+											span Коммерческое предложение с&nbsp;перечнем работ и&nbsp;материалов
+									.col-sm-6
+										+e.positive
+											+icon('positive')
+											span Бесплатный выезд инженера на&nbsp;ваш участок
+					p Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#") персональных&nbsp;данных]
 	// end sCalculator

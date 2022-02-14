@@ -687,17 +687,17 @@
 								<h4>Введите параметры навеса</h4>
 								<div class="row">
 									<div class="col-4">
-										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Длина навеса, мм"/>
+										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="number" type="number" placeholder="Длина, мм" step="any"/>
 										</div>
 										<!-- +e.input-wrap-->
 									</div>
 									<div class="col-4">
-										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ширина навеса, мм"/>
+										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="number" type="number" placeholder="Ширина, мм" step="any"/>
 										</div>
 										<!-- +e.input-wrap-->
 									</div>
 									<div class="col-4">
-										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Высота навеса, мм"/>
+										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="number" type="number" placeholder="Высота, мм" step="any"/>
 										</div>
 										<!-- +e.input-wrap-->
 									</div>
@@ -714,8 +714,7 @@
 										<!-- +e.input-wrap-->
 									</div>
 								</div>
-								<div class="form-wrap__slider-wrapper">
-									<div class="small">Форма крыши</div>
+								<div class="form-wrap__slider-wrapper"><span>Форма крыши</span>
 									<div class="form-wrap__slider form-wrap__slider--js swiper">
 										<div class="swiper-wrapper">
 												<div class="form-wrap__slide swiper-slide">
@@ -751,6 +750,7 @@
 										</div>
 									</div>
 								</div>
+								<h6>Получите расчет цены и&nbsp;полную смету</h6>
 							</div>
 							<div class="form-wrap__part">
 								<h6>Визуализация навеса</h6>
@@ -795,25 +795,52 @@
 										<td>30&nbsp;м2</td>
 									</tr>
 								</table>
+								<div class="form-wrap__sum">
+									<div class="row">
+										<div class="col-auto"><span>Материалы</span><span>100&nbsp;800&nbsp;₽</span></div>
+										<div class="col"><span>Работа</span><span>40&nbsp;800&nbsp;₽</span></div>
+										<div class="col-auto"><span>Итого</span><span class="strong">100&nbsp;800&nbsp;₽</span></div>
+									</div>
+								</div>
 							</div>
 							<div class="form-wrap__part">
-								<h6>Получите расчет цены и&nbsp;полную смету</h6>
 								<div class="row">
-									<div class="col-6">
-										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="place"/>
+									<div class="col-sm-6">
+										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше имя"/>
 										</div>
 										<!-- +e.input-wrap-->
 									</div>
-									<div class="col-6">
-										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="place"/>
+									<div class="col-sm-6">
+										<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="Ваш номер телефона"/>
 										</div>
 										<!-- +e.input-wrap-->
 									</div>
 									<div class="col-12">
-										<button class="form-wrap__btn" type="submit">Получить точный расчет за&nbsp;15&nbsp;минут
+										<button class="form-wrap__btn" type="submit">Получить точный расчет <br> за&nbsp;15&nbsp;минут
 										</button>
 									</div>
+									<div class="col-12">
+										<div class="form-wrap__footer"> 
+											<div class="row">
+												<div class="col-sm-6">
+													<div class="form-wrap__positive">
+														<svg class="icon icon-positive ">
+															<use xlink:href="img/svg/sprite.svg#positive"></use>
+														</svg><span>Коммерческое предложение с&nbsp;перечнем работ и&nbsp;материалов</span>
+													</div>
+												</div>
+												<div class="col-sm-6">
+													<div class="form-wrap__positive">
+														<svg class="icon icon-positive ">
+															<use xlink:href="img/svg/sprite.svg#positive"></use>
+														</svg><span>Бесплатный выезд инженера на&nbsp;ваш участок</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
+								<p>Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку <a href="#">персональных&nbsp;данных</a></p>
 							</div>
 						</form>
 					</div>

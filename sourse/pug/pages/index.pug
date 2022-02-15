@@ -18,7 +18,7 @@ include ../blocks/sCertificates/_sCertificates.pug
 include ../blocks/sSpecifications/_sSpecifications.pug 
 
 block variables
-	- let  mainPage= 'main-page' 
+	- let  mainPage= null 
 	- let  bg= null
 
 block title
@@ -27,8 +27,8 @@ block title
 block pagecontent
 	//- +mob-mnu()
 	+header()
-	+top-nav()
-	+topLine()
+		+top-nav()
+		+topLine()
 	+headerBlock()
 	+sCatalog()
 	.section-wrapper

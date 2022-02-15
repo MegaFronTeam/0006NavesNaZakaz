@@ -504,34 +504,34 @@
 							<div class="sContact__map">
 								<div id="map"></div><script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
 								<script>
-									const map = document.querySelector('#map');
-									document.addEventListener('DOMContentLoaded', function(event) {
-										ymaps.ready(init);
-									});
-									function init () {
-											//- var center = [55.75322550427434,37.65589449999999];
-											var center = [56.01248606874105,37.48441499999996];
-											var myMap = new ymaps.Map("map", {
-															center: center,
-															zoom: 17
-													}),
-													myPlacemark = new ymaps.Placemark([56.01248606874105,37.48441499999996], {
-															// Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
-															balloonContentHeader: "",
-															balloonContentBody: "Лобня • ул. Маяковского, д. 5",
-															balloonContentFooter: "",
-															hintContent: "Адрес"
-													});
-											myMap.geoObjects.add(myPlacemark);
+									//- const map = document.querySelector('#map');
+									//- document.addEventListener('DOMContentLoaded', function(event) {
+									//- 	ymaps.ready(init);
+									//- });
+									//- function init () {
+									//- 		//- var center = [55.75322550427434,37.65589449999999];
+									//- 		var center = [56.01248606874105,37.48441499999996];
+									//- 		var myMap = new ymaps.Map("map", {
+									//- 						center: center,
+									//- 						zoom: 17
+									//- 				}),
+									//- 				myPlacemark = new ymaps.Placemark([56.01248606874105,37.48441499999996], {
+									//- 						// Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
+									//- 						balloonContentHeader: "",
+									//- 						balloonContentBody: "Лобня • ул. Маяковского, д. 5",
+									//- 						balloonContentFooter: "",
+									//- 						hintContent: "Адрес"
+									//- 				});
+									//- 		myMap.geoObjects.add(myPlacemark);
 									
-											myMap.behaviors.disable('scrollZoom');
-											//на мобильных устройствах... (проверяем по userAgent браузера)
-											if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-											//... отключаем перетаскивание карты
-												myMap.behaviors.disable('drag');
-											}
-											// Добавляем все метки на карту.
-										};
+									//- 		myMap.behaviors.disable('scrollZoom');
+									//- 		//на мобильных устройствах... (проверяем по userAgent браузера)
+									//- 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+									//- 		//... отключаем перетаскивание карты
+									//- 			myMap.behaviors.disable('drag');
+									//- 		}
+									//- 		// Добавляем все метки на карту.
+									//- 	};
 								</script>
 							</div>
 						</div>
@@ -587,17 +587,17 @@
 							</div>
 							<div class="sContact__wrap">
 								<h5>Офисы и цеха</h5>
-								<div class="sContact__map-point">Лобня • ул. Маяковского, д. 5
+								<div class="sContact__map-point" data-mark="56.01248606874105,37.48441499999996" data-zoom="17">Лобня • ул. Маяковского, д. 5
 								</div>
-								<div class="sContact__map-point">Одинцово • ул. Транспортная, д. 2
+								<div class="sContact__map-point" data-mark="55.67169106905855,37.2928495" data-zoom="10">Одинцово • ул. Транспортная, д. 2
 								</div>
-								<div class="sContact__map-point">Кашира • ул. Стрелецкая, д. 66
+								<div class="sContact__map-point" data-mark="54.822272569867756,38.150632499999915" data-zoom="22">Кашира • ул. Стрелецкая, д. 66
 								</div>
-								<div class="sContact__map-point">Фатеево • городской округ Павловский Посад, д. 118
+								<div class="sContact__map-point" data-mark="55.749850568991356,38.64405949999995" data-zoom="17">Фатеево • городской округ Павловский Посад, д. 118
 								</div>
-								<div class="sContact__map-point">Клин • ул. Дурыманова, д. 24
+								<div class="sContact__map-point" data-mark="56.349454568379294,36.75054550000001" data-zoom="17">Клин • ул. Дурыманова, д. 24
 								</div>
-								<div class="sContact__map-point">Сергиев Посад • ул. Стахановская, д. 1Б
+								<div class="sContact__map-point" data-mark="56.316543568414716,38.15373199999991" data-zoom="17">Сергиев Посад • ул. Стахановская, д. 1Б
 								</div>
 							</div>
 						</div>

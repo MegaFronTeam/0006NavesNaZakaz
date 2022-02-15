@@ -1,8 +1,12 @@
 // start .sPortfolio
 .sPortfolio {
-	// --sPT: ;
-	// --sPB: ;
+	--sPT: #{rem(36)};
+	--sPB: #{rem(50)};
 	// --sTPB: ;
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(72)};
+		--sPB: #{rem(100)};
+	}
 	.row {
 		--bs-gutter-y: #{rem(32)};
 	}
@@ -10,6 +14,7 @@
 		--sPT: #{rem(24)};
 		--sPB: #{rem(24)};
 		border-radius: rem(20);
+		box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09) 
 	}
 	&__btn-wrap {
 		display: flex;

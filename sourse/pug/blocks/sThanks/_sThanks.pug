@@ -1,0 +1,43 @@
+mixin sThanks(data)
+	// start sThanks
+	+b.SECTION.sThanks.section#sThanks&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h4 Ура!
+				h1 Спасибо за&nbsp;ваше обращение
+				p Мы&nbsp;работаем с&nbsp;понедельника по&nbsp;воскресенье с&nbsp;09:00 до&nbsp;21:00 и&nbsp;свяжемся с&nbsp;вами в&nbsp;рабочее время
+			+e.block
+				h6 Если вам срочно требуется связаться с&nbsp;нами:
+				.row
+					.col-md-6.col-lg-auto
+						+e.contact(href="tel:+74952122320")
+							p позвоните по&nbsp;номеру телефона
+							h4 +7 495 212 23 20
+							+e.icon-wrap.bg-primary
+								+icon('phone-call')
+					.col-md-6.col-lg-auto
+						+e.contact(href="#")
+							p или напишите нам в&nbsp;WhatsApp
+							h4 +7 495 212 23 20
+							+e.icon-wrap
+								+icon('whatsapp')
+			+e.block
+				h6 А&nbsp;пока вы&nbsp;ждете:
+				.row
+					.col-sm-6.col-lg-3
+						+e.link
+							h6 Посмотрите <br> отзывы о&nbsp;нас
+							+e.btn(href="#") Перейти
+					.col-sm-6.col-lg-3
+						+e.link
+							h6 Посмотрите <br> примеры выполненных работ
+							+e.btn(href="#") Перейти
+					.col-sm-6.col-lg-3
+						+e.link
+							h6 Посмотрите <br> наш инстаграм
+							+e.btn(href="#") Перейти
+					.col-sm-6.col-lg-3
+						+e.link
+							h6 Почитайте <br> наш Блог
+							+e.btn(href="#") Перейти
+	// end sThanks

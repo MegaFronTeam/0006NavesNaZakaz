@@ -159,17 +159,36 @@
 	@include media-breakpoint-up(lg) {
 		padding-top: rem(70);
 	}
-	a {
-		color: $secondary;
+	&__row {
+		align-items: center;
 		margin-bottom: rem(25);
-		display: inline-block;
+		--bs-gutter-x: #{rem(16)};
+		--bs-gutter-y: var(--bs-gutter-x);
 		@include media-breakpoint-up(md) {
+			--bs-gutter-x: #{rem(24)};
 			margin-bottom: rem(35);
 		}
 		@include media-breakpoint-up(lg) {
+			--bs-gutter-x: #{rem(32)};
 			margin-bottom: rem(45);
 		}
-		svg {
+	}
+	&__arrow-back {
+		color: $secondary;
+		// margin-bottom: rem(25);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: rem(23);
+		padding-right: rem(12);
+		// @include media-breakpoint-up(md) {
+		// 	margin-bottom: rem(35);
+		// }
+		// @include media-breakpoint-up(lg) {
+		// 	margin-bottom: rem(45);
+		// }
+
+		.icon {
 			font-size: rem(16);
 		}
 		&:hover {
@@ -177,7 +196,7 @@
 		}
 	}
 	&__wrap {
-		display: flex;
+		// display: flex;
 	}
 	h1 {
 		margin-bottom: 0;
@@ -246,5 +265,53 @@
 		color: $secondary;
 		font-size: rem(10);
 		font-weight: 600;
+	}
+}
+.search-field {
+	display: flex;
+	position: relative;
+	max-width: 100%;
+	color: $secondary;
+	&:hover {
+		input {
+			border: 1px solid $info;
+		}
+	}
+	input {
+		@include mt;
+		flex-grow: 1;
+		border: 1px solid transparent;
+		outline: none;
+		border-radius: 4px;
+		font-size: rem(14);
+		line-height: 150%;
+		padding: rem(5) rem(4) rem(3) rem(30);
+		color: inherit;
+		&:hover,
+		&:focus {
+			border: 1px solid $info;
+		}
+		&::placeholder {
+			color: $info;
+		}
+	}
+	button {
+		@include a-cent(y);
+		@include mt;
+		left: 0;
+		border: none;
+		outline: none;
+		background: none;
+		width: rem(30);
+		height: rem(30);
+		padding: 0;
+		color: inherit;
+		.icon {
+			@include a-cent;
+			font-size: rem(16);
+		}
+		&:hover {
+			color: $primary;
+		}
 	}
 }

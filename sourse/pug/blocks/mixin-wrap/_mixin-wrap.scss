@@ -351,7 +351,7 @@
 			display: block;
 			font-weight: bold;
 			font-size: rem(18);
-			line-height: 130%;
+			line-height: calc(24 / 18);
 		}
 	}
 }

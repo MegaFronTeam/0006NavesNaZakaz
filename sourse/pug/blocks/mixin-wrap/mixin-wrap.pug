@@ -45,8 +45,8 @@ mixin page-head(data)
 						+e.arrow-back(href="#")
 							+icon('arrow-left')
 				if data.menu
-					.col-auto
-						span КАТЕГОРИИ
+					+e.col.col-auto
+						+categoryMenu()
 				if data.search
 					.col-sm
 						+b.search-field
@@ -57,6 +57,42 @@ mixin page-head(data)
 				h1!= data.title
 				if data.text
 					p!= data.text
+				block
+mixin categoryMenu()
+		+b.category-menu.dropdown
+			+e.btn.dropdown__btn
+				+icon('categories-btn')
+				span Категории
+			+b.categories.dropdown__content
+				mixin categoryItem(t, i)
+					+e.item(href="#")&attributes(attributes)
+						span!= t
+						+icon(`categories-${i}`)
+				+categoryItem(`Советы <br> и&nbsp;лайфхаки`, 1).active
+				+categoryItem(`Технические <br> детали`, 2)
+				+categoryItem(`Безопасность <br> и&nbsp;гарантии`, 3)
+				+categoryItem(`Внешний <br> вид`, 4)
+				+categoryItem(`Как <br> выбрать`, 5)
+				+categoryItem(`Примеры <br> Наших работ`, 6)
+			
+mixin info-panel()
+	+b.info-panel
+		.row
+			.col-auto
+				+e.item--btn
+					span Как выбрать
+			.col-auto
+				+e.item--btn
+					span 15.09.21
+			.col-auto
+				+e.item--views
+					+icon('eye')
+					span 834
+			.col-auto
+				+e.item--time
+					+icon('clock')
+					span 5&nbsp;минут
+
 
 mixin scrollToTop()
 	+b.back-top#back-top

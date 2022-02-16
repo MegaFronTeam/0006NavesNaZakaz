@@ -7,6 +7,11 @@
 		--sPT: #{rem(72)};
 		--sPB: #{rem(100)};
 	}
+	h2 {
+		max-width: 18.7em;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	.row {
 		--bs-gutter-y: #{rem(32)};
 	}

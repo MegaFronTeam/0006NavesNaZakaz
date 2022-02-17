@@ -2,7 +2,7 @@
 mixin modal() 
 	//  start modals
 	//- a(href="modal-call").link-modal-js modal-call 
-	div(id="modal-call"  style="display: none" )
+	div(id="modal-call-measurer"  style="display: none" )
 		+b.modal-win
 			+pic('modal-1.png', '', 0)
 			+form-wrap
@@ -16,7 +16,103 @@ mixin modal()
 			+e.img-wrap.bg-wrap
 				+pic('modal-bg.jpg', 'bg', 0).picture-bg
 				
-	// #modal-call
+	// #modal-call-measurer
+
+	div(id="modal-call-calculation"  style="display: none" )
+		+b.modal-win
+			+pic('modal-2.png', '', 0)
+			+form-wrap
+				.text-center
+					h4 Получить расчет
+					p Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет.
+				+input("Ваше Имя")(required)
+				+input("+7 ___ ___ __ __", 'tel')(required)
+				+e.BUTTON.btn.btn(type="submit") Получить расчет
+				+e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#") персональных данных] 
+			+e.img-wrap.bg-wrap
+				+pic('modal-bg.jpg', 'bg', 0).picture-bg
+				
+	// #modal-call-calculation
+
+	div(id="modal-call-back"  style="display: none" )
+		+b.modal-win
+			+pic('modal-2.png', '', 0)
+			+form-wrap
+				.text-center
+					h4 Обратный звонок
+					p Оставьте свой номер телефона и&nbsp;мы&nbsp;вам перезвоним в&nbsp;течение 15&nbsp;минут.
+				+input("Ваше Имя")(required)
+				+input("+7 ___ ___ __ __", 'tel')(required)
+				+e.BUTTON.btn.btn(type="submit") Запросить обратный звонок
+				+e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#") персональных данных] 
+			+e.img-wrap.bg-wrap
+				+pic('modal-bg.jpg', 'bg', 0).picture-bg
+				
+	// #modal-call-back
+
+	div(id="modal-call-want"  style="display: none" )
+		+b.modal-win
+			+pic('modal-2.png', '', 0)
+			+form-wrap
+				.text-center
+					h4 Хочу навес Н1830
+					p Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;сообщим детальную информацию по&nbsp;навесу, направим к&nbsp;вам замерщика или поможем оформить заказ онлайн
+				+input("Ваше Имя")(required)
+				+input("+7 ___ ___ __ __", 'tel')(required)
+				+e.BUTTON.btn.btn(type="submit") Запросить обратный звонок
+				+e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#") персональных данных] 
+			+e.img-wrap.bg-wrap
+				+pic('modal-bg.jpg', 'bg', 0).picture-bg
+				
+	// #modal-call-want
+
+	div(id="modal-call-similar"  style="display: none" )
+		+b.modal-win
+			+pic('modal-2.png', '', 0)
+			+form-wrap
+				.text-center
+					h4 Запросить расчет похожего навеса
+					p Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет
+				+input("Ваше Имя")(required)
+				+input("+7 ___ ___ __ __", 'tel')(required)
+				+e.BUTTON.btn.btn(type="submit") Запросить расчет
+				+e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#") персональных данных] 
+			+e.img-wrap.bg-wrap
+				+pic('modal-bg.jpg', 'bg', 0).picture-bg
+				
+	// #modal-call-similar
+
+	div(id="modal-call-detailed"  style="display: none" )
+		+b.modal-win
+			+pic('modal-1.png', '', 0)
+			+form-wrap
+				.text-center
+					h4 Запросить детальный расчет
+					p Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет.
+				+input("Ваше Имя")(required)
+				+input("+7 ___ ___ __ __", 'tel')(required)
+				+e.BUTTON.btn.btn(type="submit") Запросить расчет
+				+e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#") персональных данных] 
+			+e.img-wrap.bg-wrap
+				+pic('modal-bg.jpg', 'bg', 0).picture-bg
+				
+	// #modal-call-detailed
+
+	div(id="modal-call-excursion"  style="display: none" )
+		+b.modal-win
+			+pic('modal-1.png', '', 0)
+			+form-wrap
+				.text-center
+					h4 Записаться на&nbsp;экскурсию по&nbsp;производству
+					p Оставьте свой номер телефона, мы&nbsp;перезвоним в&nbsp;течение 15&nbsp;минут и&nbsp;запишем вас
+				+input("Ваше Имя")(required)
+				+input("+7 ___ ___ __ __", 'tel')(required)
+				+e.BUTTON.btn.btn(type="submit") Запсиаться на&nbsp;экскурсию
+				+e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#") персональных данных] 
+			+e.img-wrap.bg-wrap
+				+pic('modal-bg.jpg', 'bg', 0).picture-bg
+				
+	// #modal-call-excursion
 
 	div(id="modal-call-reviews"  style="display: none" )
 		+b.modal-win--reviews

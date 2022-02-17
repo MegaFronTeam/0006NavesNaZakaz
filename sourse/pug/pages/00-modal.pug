@@ -27,10 +27,16 @@ block pagecontent
 	.section.container
 		.row
 			mixin btn(id, name)
-				.col-auto.mb-2
+				.col-auto.mb-3
 					a.btn.btn-primary.link-modal-js(href=`#${id}`)= name
-			+btn("modal-call", "modal-call")
-			+btn("modal-call-reviews", "modal-call-reviews")
+			+btn("modal-call-measurer", "Вызвать замерщика")
+			+btn("modal-call-calculation", "Получить расчет")
+			+btn("modal-call-back", "Запросить обратный звонок")
+			+btn("modal-call-want", "Запросить обратный (хочу навес)")
+			+btn("modal-call-similar", "Запросить расчет похожего")
+			+btn("modal-call-detailed", "Запросить расчет детальный")
+			+btn("modal-call-excursion", "Записаться на экскурсию")
+			+btn("modal-call-reviews", "Обзор")
 	+footer
 
 

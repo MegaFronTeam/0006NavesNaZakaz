@@ -6,12 +6,16 @@ mixin modal()
 		+b.modal-win
 			+form-wrap
 				.text-center
-					+e.title.form-data.h3.ttu Обратный звонок
-					p.after-headline Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут
-
-				+input("Ваше Имя")(required)  
-				+e.BUTTON.btn.btn(type="submit"  )  
-				+policy()
+					h4 Вызвать замерщика
+					p.after-headline Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере
+				+input("Ваше Имя")(required)
+				+input("+7 ___ ___ __ __", 'tel')(required)
+				+e.BUTTON.btn.btn(type="submit") Отправить
+				+e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#") персональных данных] 
+			+e.img-wrap.bg-wrap
+				+pic('modal-bg.jpg', 'bg', 0).picture-bg
+				+pic('modal-1.png', '', 0)
+				
 	// #modal-call
 	
 	// end modals

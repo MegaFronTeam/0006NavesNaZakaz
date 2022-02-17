@@ -3,18 +3,135 @@
 }
 
 .fancybox__content {
+	--carousel-button-width: 32px;
+	--carousel-button-height: 32px;
+	--carousel-button-svg-width: 16px;
+	--carousel-button-svg-height: 16px;
 	padding: 0;
 	max-width: 100%;
+	& > .carousel__button {
+		@include mt;
+		--carousel-button-bg: #{$primary};
+		--carousel-button-svg-filter: none;
+		&.is-close {
+			right: -8px;
+			top: -8px;
+			color: #35455c;
+		}
+		&:hover {
+			--carousel-button-bg: #{$secondary};
+			color: #{$white};
+		}
+	}
 }
 .modal-win {
 	// display: block;
-	background-color: #fff;
+	display: flex;
+	background-color: $white;
 	max-width: 100%;
 	position: relative;
-	width: rem(1500);
-	// min-height: 100%; 
-	padding: 40px;
-
+	width: rem(500);
+	padding: 0;
+	box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
+	border-radius: 16px;
+	overflow: hidden;
+	@media (min-width: 700px) {
+		width: rem(656);
+	}
+	.form-wrap {
+		padding: rem(32) rem(16) rem(24);
+		width: 100%;
+		@media (min-width: 450px) {
+			padding: rem(32);
+		}
+		@media (min-width: 700px) {
+			padding: rem(32) rem(30) rem(42) rem(32);
+			width: 53%;
+		}
+		h4 {
+			@media (min-width: 450px) {
+				margin-bottom: rem(17);
+			}
+		}
+		&__btn {
+			@extend .btn, .btn-primary, .btn-lg, .with-shadow;
+			width: 100%;
+			margin-top: rem(4);
+			margin-bottom: rem(4);
+			@media (min-width: 700px) {
+			}
+		}
+		&__agreement {
+			font-size: 10px;
+			line-height: 115%;
+			text-align: center;
+			color: $secondary;
+			margin-top: rem(14);
+			max-width: 24em;
+			margin-left: auto;
+			margin-right: auto;
+			@media (min-width: 450px) {
+				margin-top: rem(22);
+			}
+			a {
+				color: currentColor;
+				&:not(:hover) {
+					text-decoration: underline;
+				}
+			}
+		}
+		.after-headline {
+			font-weight: 500;
+			font-size: rem(13);
+			line-height: 150%;
+			text-align: center;
+			color: rgba($color: $secondary, $alpha: 0.5);
+			margin-bottom: rem(18);
+			max-width: 22em;
+			margin-left: auto;
+			margin-right: auto;
+			@media (min-width: 450px) {
+				font-size: rem(14);
+				margin-bottom: rem(21);
+			}
+		}
+		&__input-wrap {
+			margin-bottom: rem(9);
+			@media (min-width: 450px) {
+				margin-bottom: rem(12);
+			}
+		}
+		&__input {
+			background-color: $light;
+			padding: rem(15);
+			&:focus {
+				background-color: $white;
+			}
+		}
+	}
+	&__img-wrap {
+		width: 47%;
+		display: none;
+		@media (min-width: 700px) {
+			display: block;
+		}
+		.picture-bg {
+			height: calc(100% + 2px);
+			width: calc(100% + 2px);
+			margin: -1px;
+			right: 0;
+			left: auto;
+		}
+		picture {
+			&:not(.picture-bg) {
+				position: absolute;
+				bottom: 0;
+				left: -24px;
+				max-width: 100%;
+				max-height: calc(100% - 18px);
+			}
+		}
+	}
 	.modal-content {
 		// max-width: 485px;
 		// padding-right: 40px 15px;
@@ -50,7 +167,7 @@ a {
 	top: 0;
 	text-decoration: none;
 	text-align: center;
-	opacity: .65; // padding: 0 0 18px 10px;
+	opacity: 0.65; // padding: 0 0 18px 10px;
 	// color: #fff;
 	font-style: normal;
 	font-size: 28px;
@@ -101,48 +218,63 @@ a {
 	}
 }
 
+//
+@include media-breakpoint-up(xl) {
+}
 
-// 
-@include media-breakpoint-up(xl) {}
+@include media-breakpoint-up(lg) {
+}
 
-@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(md) {
+}
 
-@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(sm) {
+}
 
-@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(xs) {
+}
 
-@include media-breakpoint-up(xs) {}
+//
+@include media-breakpoint-between(md, xl) {
+}
 
-// 
-@include media-breakpoint-between(md, xl) {}
+//
+@include media-breakpoint-only(xs) {
+}
 
-// 
-@include media-breakpoint-only(xs) {}
+@include media-breakpoint-only(sm) {
+}
 
-@include media-breakpoint-only(sm) {}
+@include media-breakpoint-only(md) {
+}
 
-@include media-breakpoint-only(md) {}
+@include media-breakpoint-only(lg) {
+}
 
-@include media-breakpoint-only(lg) {}
+@include media-breakpoint-only(xl) {
+}
 
-@include media-breakpoint-only(xl) {}
+//
+@include media-breakpoint-down(xl) {
+}
 
-// 
-@include media-breakpoint-down(xl) {}
+@include media-breakpoint-down(lg) {
+}
 
-@include media-breakpoint-down(lg) {}
+@include media-breakpoint-down(md) {
+}
 
-@include media-breakpoint-down(md) {}
-
-@include media-breakpoint-down(sm) {}
+@include media-breakpoint-down(sm) {
+}
 
 @include media-breakpoint-down(xs) {
-
 	.fancybox__container {
 		width: 100% !important;
-		min-height: 100%; 
+		min-height: 100%;
 		transform: none !important;
 	}
 }
 
-
+.fancybox__content :focus:not(.carousel__button.is-close) {
+	outline: none;
+}

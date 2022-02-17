@@ -3,7 +3,7 @@ mixin sProducts(data)
 	+b.sProducts&attributes(attributes)
 		+e.filter
 			p Сортировать по:
-			+select('', 'Цене 🡩', 'Цене 🡫')
+			+select('', 'Цене ↑', 'Цене ↓') 
 		.row
 			.col-md-6
 				+b.card

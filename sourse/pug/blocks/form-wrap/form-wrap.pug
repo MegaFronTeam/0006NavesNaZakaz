@@ -34,12 +34,12 @@ mixin input(placeholder,  t='text', label, name= t)
 mixin select(label,pl,...items)
 	+e.input-wrap.form-group
 		label
-			+e.SPAN.title= label
+			+e.SPAN.title!= label
 			+e.SELECT.input.form-control&attributes(attributes)
 
-					option()= pl
+					option()!= pl
 					each item in items
-						option()= item
+						option()!= item
 
 //- wrapper for form
 mixin form-wrap(inp)

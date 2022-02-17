@@ -99,3 +99,9 @@ mixin scrollToTop()
 		a(href="#top")
 			+icon('arrow-up')
 			span Наверх
+
+mixin content(title, ...items)
+	+e.content
+		h4!= title
+		each item in items
+			p!= item

@@ -26,6 +26,7 @@
 }
 .modal-win {
 	// display: block;
+	position: relative;
 	display: flex;
 	background-color: $white;
 	max-width: 100%;
@@ -38,9 +39,19 @@
 	@media (min-width: 700px) {
 		width: rem(656);
 	}
+	& > picture {
+		position: absolute;
+		bottom: -1px;
+		right: 24px;
+		width: auto;
+		max-height: calc(100% - 12px);
+		z-index: 3;
+	}
 	.form-wrap {
+		position: relative;
 		padding: rem(32) rem(16) rem(24);
 		width: 100%;
+		z-index: 4;
 		@media (min-width: 450px) {
 			padding: rem(32);
 		}
@@ -48,6 +59,7 @@
 			padding: rem(32) rem(30) rem(42) rem(32);
 			width: 53%;
 		}
+
 		h4 {
 			@media (min-width: 450px) {
 				margin-bottom: rem(17);
@@ -115,21 +127,13 @@
 		@media (min-width: 700px) {
 			display: block;
 		}
-		.picture-bg {
+		picture {
 			height: calc(100% + 2px);
 			width: calc(100% + 2px);
 			margin: -1px;
 			right: 0;
 			left: auto;
-		}
-		picture {
-			&:not(.picture-bg) {
-				position: absolute;
-				bottom: 0;
-				left: -24px;
-				max-width: 100%;
-				max-height: calc(100% - 18px);
-			}
+			z-index: -1;
 		}
 	}
 	.modal-content {

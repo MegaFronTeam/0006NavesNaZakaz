@@ -4,6 +4,7 @@ mixin modal()
 	//- a(href="modal-call").link-modal-js modal-call 
 	div(id="modal-call"  style="display: none" )
 		+b.modal-win
+			+pic('modal-1.png', '', 0)
 			+form-wrap
 				.text-center
 					h4 Вызвать замерщика
@@ -14,7 +15,6 @@ mixin modal()
 				+e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#") персональных данных] 
 			+e.img-wrap.bg-wrap
 				+pic('modal-bg.jpg', 'bg', 0).picture-bg
-				+pic('modal-1.png', '', 0)
 				
 	// #modal-call
 	

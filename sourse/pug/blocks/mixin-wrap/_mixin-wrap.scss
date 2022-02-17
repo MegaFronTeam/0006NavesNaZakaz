@@ -159,25 +159,50 @@
 	@include media-breakpoint-up(lg) {
 		padding-top: rem(70);
 	}
-	a {
-		color: $secondary;
+	&__row {
+		align-items: center;
 		margin-bottom: rem(25);
-		display: inline-block;
+		--bs-gutter-x: #{rem(16)};
+		--bs-gutter-y: calc(var(--bs-gutter-x) * 0.7);
 		@include media-breakpoint-up(md) {
+			--bs-gutter-x: #{rem(24)};
 			margin-bottom: rem(35);
 		}
 		@include media-breakpoint-up(lg) {
+			--bs-gutter-x: #{rem(32)};
 			margin-bottom: rem(45);
 		}
-		svg {
+	}
+	&__arrow-back {
+		color: $secondary;
+		// margin-bottom: rem(25);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: rem(23);
+		padding-right: rem(12);
+		// @include media-breakpoint-up(md) {
+		// 	margin-bottom: rem(35);
+		// }
+		// @include media-breakpoint-up(lg) {
+		// 	margin-bottom: rem(45);
+		// }
+
+		.icon {
 			font-size: rem(16);
 		}
 		&:hover {
 			color: $primary;
 		}
 	}
+	&__col {
+		width: 100%;
+		@media (min-width: 350px) {
+			width: auto;
+		}
+	}
 	&__wrap {
-		display: flex;
+		// display: flex;
 	}
 	h1 {
 		margin-bottom: 0;
@@ -246,5 +271,180 @@
 		color: $secondary;
 		font-size: rem(10);
 		font-weight: 600;
+	}
+}
+.search-field {
+	display: flex;
+	position: relative;
+	max-width: 100%;
+	color: $secondary;
+	&:hover {
+		input {
+			border: 1px solid $info;
+		}
+	}
+	input {
+		@include mt;
+		flex-grow: 1;
+		border: 1px solid transparent;
+		outline: none;
+		border-radius: 4px;
+		font-size: rem(14);
+		line-height: 150%;
+		padding: rem(5) rem(4) rem(3) rem(30);
+		color: inherit;
+		&:hover,
+		&:focus {
+			border: 1px solid $info;
+		}
+		&::placeholder {
+			color: $info;
+		}
+	}
+	button {
+		@include a-cent(y);
+		@include mt;
+		left: 0;
+		border: none;
+		outline: none;
+		background: none;
+		width: rem(30);
+		height: rem(30);
+		padding: 0;
+		color: inherit;
+		.icon {
+			@include a-cent;
+			font-size: rem(16);
+		}
+		&:hover {
+			color: $primary;
+		}
+	}
+}
+
+.category-menu {
+	color: $secondary;
+	display: inline-flex;
+	&.active {
+		.category-menu__btn {
+			border-bottom-color: $secondary;
+		}
+	}
+	.categories {
+		width: rem(280);
+	}
+	&__btn {
+		@include mt;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		border-top: 2px solid transparent;
+		border-bottom: 2px solid transparent;
+		&:hover {
+			border-bottom-color: $secondary;
+		}
+		.icon {
+			font-size: rem(14);
+			margin-right: rem(10);
+		}
+		span {
+			display: block;
+			font-weight: bold;
+			font-size: rem(18);
+			line-height: calc(24 / 18);
+		}
+	}
+}
+.categories {
+	padding: rem(24);
+	background-color: $light;
+	box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
+	border-radius: 16px;
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: 8px;
+		margin-bottom: rem(8);
+		color: $secondary;
+		background-color: $light;
+		font-weight: bold;
+		font-size: rem(16);
+		line-height: 145%;
+		padding: rem(10) rem(16) rem(10) rem(10);
+		border: 1px solid $info;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&:hover,
+		&.active {
+			color: $white;
+			background-color: $secondary;
+			border-color: $secondary;
+		}
+		span {
+			margin-right: rem(10);
+		}
+		.icon {
+			font-size: rem(32);
+		}
+	}
+}
+
+.info-panel {
+	padding-top: rem(15);
+	@include media-breakpoint-up(sm) {
+		padding-top: rem(20);
+	}
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(30);
+	}
+	@include media-breakpoint-up(xl) {
+		padding-top: rem(40);
+	}
+	.row {
+		--bs-gutter-x: #{rem(10)};
+		--bs-gutter-y: calc(var(--bs-gutter-x) / 2);
+		@include media-breakpoint-up(lg) {
+			--bs-gutter-x: #{rem(20)};
+		}
+	}
+	&__item {
+		position: relative;
+		padding: rem(7);
+		border-radius: 5px;
+		display: flex;
+		align-items: center;
+		color: rgba($color: $secondary, $alpha: 0.5);
+		@include media-breakpoint-up(lg) {
+		}
+		span {
+			display: block;
+			font-size: rem(14);
+			line-height: 100%;
+			color: inherit;
+		}
+		.icon {
+			@include a-cent(y);
+			left: 0;
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 2px;
+		}
+		&--btn {
+			border: 1px solid $secondary;
+		}
+		&--views {
+			padding-left: rem(38);
+			.icon {
+				font-size: rem(30);
+			}
+		}
+		&--time {
+			padding-left: rem(28);
+			.icon {
+				font-size: rem(20);
+			}
+		}
 	}
 }

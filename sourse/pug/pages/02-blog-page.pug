@@ -15,15 +15,18 @@ include ../blocks/sContact/_sContact.pug
 //- include ../blocks/sAdvantages/_sAdvantages.pug
 //- include ../blocks/sAccordion/_sAccordion.pug
 //- include ../blocks/sCertificates/_sCertificates.pug
-include ../blocks/sFilter/_sFilter.pug
+//- include ../blocks/sFilter/_sFilter.pug
 include ../blocks/sProducts/_sProducts.pug
+include ../blocks/sSpecifications/_sSpecifications.pug
+include ../blocks/sSimilarAwnings/_sSimilarAwnings.pug
+
 
 block variables
-	- let  mainPage= 'portfolio-page' 
+	- let  mainPage= 'blog-page'
 	- let  bg= null
 
 block title
-	- let  title= 'Портфолио'
+	- let  title= 'Навес для дома. 7 способов, как украсить участок и сделать жизнь комфортнее (H1)'
 	title= title
 block pagecontent
 	//- +mob-mnu()
@@ -32,36 +35,14 @@ block pagecontent
 		+topLine()
 	+page-head({
 		title,
-		btn: 'btn'
+		btn: 'btn',
+		menu: 'menu'
 	})
-	.container
-		.row.justify-content-between
-			.col-lg-3
-				+sFilter()
-			.col-lg-8
-				+sProducts()
-	//- +headerBlock()
-	//- +sCatalog()
-	//- .section-wrapper
-	//- 	+sPortfolio()
-	//- +sDesign()
-	//- +sCalculator()
-	//- .section-wrapper
-	//- 	+sTypical()
-	//- 	+sPriceList()
-	//- +sReviews()
-	//- +sStages()
-	//- .section-wrapper
-	//- 	+sAbout()
-	//- 	+sAdvantages()
-	//- 	+sAccordion()
-	//- 	+sCertificates()
-	//- 	+sCatalogProd()
-	//- .section-wrapper
+		+info-panel()
+
 	+sContact()
 	.section-wrapper
 		+footer()
-	//- +sForm()
 	+scrollToTop()
 
 

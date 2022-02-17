@@ -130,6 +130,11 @@ body {
 	border-radius: 32px;
 	background-color: $light;
 	overflow: hidden;
+	&--footer {
+		@include media-breakpoint-up(xxl) {
+			margin-bottom: rem(150);
+		}
+	}
 }
 
 .section-title {

@@ -38,8 +38,12 @@ block pagecontent
 		btn: 'btn',
 		menu: 'menu'
 	})
-		+info-panel()
-
+		+infoPanel()
+			+infoPanelItem(``, `Как выбрать`).--btn
+			+infoPanelItem(``, `15.09.21`).--btn
+			+infoPanelItem(`eye`, `834`).--views
+			+infoPanelItem(`clock`, `5&nbsp;минут`).--time
+	+sContent()
 	+sContact()
 	.section-wrapper
 		+footer()

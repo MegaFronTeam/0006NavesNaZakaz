@@ -218,6 +218,18 @@
 			font-size: rem(18);
 		}
 	}
+	.info-panel {
+		padding-top: rem(15);
+		@include media-breakpoint-up(sm) {
+			padding-top: rem(20);
+		}
+		@include media-breakpoint-up(lg) {
+			padding-top: rem(30);
+		}
+		@include media-breakpoint-up(xl) {
+			padding-top: rem(40);
+		}
+	}
 }
 
 .portfolio-page {
@@ -392,16 +404,16 @@
 }
 
 .info-panel {
-	padding-top: rem(15);
-	@include media-breakpoint-up(sm) {
-		padding-top: rem(20);
-	}
-	@include media-breakpoint-up(lg) {
-		padding-top: rem(30);
-	}
-	@include media-breakpoint-up(xl) {
-		padding-top: rem(40);
-	}
+	// padding-top: rem(15);
+	// @include media-breakpoint-up(sm) {
+	// 	padding-top: rem(20);
+	// }
+	// @include media-breakpoint-up(lg) {
+	// 	padding-top: rem(30);
+	// }
+	// @include media-breakpoint-up(xl) {
+	// 	padding-top: rem(40);
+	// }
 	.row {
 		--bs-gutter-x: #{rem(10)};
 		--bs-gutter-y: calc(var(--bs-gutter-x) / 2);
@@ -444,6 +456,36 @@
 			padding-left: rem(28);
 			.icon {
 				font-size: rem(20);
+			}
+		}
+	}
+}
+
+.blog-item {
+	display: block;
+	picture {
+		@include block(900, 500);
+		border: 1px solid #e0e0e0;
+		border-radius: 16px;
+		overflow: hidden;
+		margin-bottom: rem(20);
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+	h4 {
+		margin-bottom: rem(20);
+	}
+	.info-panel {
+		&__item {
+			span {
+				font-size: rem(12);
+				line-height: 115%;
+			}
+			&--btn {
+				border: 1px solid #E0E0E0;
 			}
 		}
 	}

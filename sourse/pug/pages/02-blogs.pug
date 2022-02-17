@@ -16,9 +16,9 @@ include ../blocks/sContact/_sContact.pug
 //- include ../blocks/sAccordion/_sAccordion.pug
 //- include ../blocks/sCertificates/_sCertificates.pug
 //- include ../blocks/sFilter/_sFilter.pug
-include ../blocks/sProducts/_sProducts.pug
-include ../blocks/sSpecifications/_sSpecifications.pug
-include ../blocks/sSimilarAwnings/_sSimilarAwnings.pug
+//- include ../blocks/sProducts/_sProducts.pug
+//- include ../blocks/sSpecifications/_sSpecifications.pug
+include ../blocks/sBlog/_sBlog.pug
 
 
 block variables
@@ -38,6 +38,7 @@ block pagecontent
 		menu: 'menu',
 		search:'search'
 	})
+	+sBlog()
 	+sContact()
 	.section-wrapper
 		+footer()

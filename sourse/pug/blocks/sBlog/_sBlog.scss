@@ -1,0 +1,37 @@
+// start .sBlog
+.sBlog {
+	--sPT: 0;
+	--sPB: #{rem(40)};
+	--sTPB: #{rem(30)};
+	@include media-breakpoint-up(lg) {
+		--sPT: #{rem(5)};
+		--sPB: #{rem(80)};
+		--sTPB: #{rem(75)};
+	}
+	.container {
+		& > .row {
+			--bs-gutter-x: #{rem(16)};
+			--bs-gutter-y: calc(var(--bs-gutter-x) * 1.5);
+			@include media-breakpoint-up(xl) {
+				--bs-gutter-x: #{rem(24)};
+			}
+			@include media-breakpoint-up(xxl) {
+				--bs-gutter-x: #{rem(32)};
+			}
+		}
+	}
+	@include media-breakpoint-up(xl) {
+	}
+	@include media-breakpoint-up(lg) {
+	}
+	@include media-breakpoint-up(md) {
+	}
+	@include media-breakpoint-up(sm) {
+	}
+	@include media-breakpoint-between(md, xl) {
+	}
+	@include media-breakpoint-only(xl) {
+	}
+	@include media-breakpoint-down(xl) {
+	}
+} // end.sBlog

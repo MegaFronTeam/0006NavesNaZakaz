@@ -58,6 +58,7 @@ mixin page-head(data)
 				if data.text
 					p!= data.text
 				block
+
 mixin categoryMenu()
 		+b.category-menu.dropdown
 			+e.btn.dropdown__btn
@@ -75,24 +76,17 @@ mixin categoryMenu()
 				+categoryItem(`Как <br> выбрать`, 5)
 				+categoryItem(`Примеры <br> Наших работ`, 6)
 			
-mixin info-panel()
+mixin infoPanel()
 	+b.info-panel
 		.row
-			.col-auto
-				+e.item--btn
-					span Как выбрать
-			.col-auto
-				+e.item--btn
-					span 15.09.21
-			.col-auto
-				+e.item--views
-					+icon('eye')
-					span 834
-			.col-auto
-				+e.item--time
-					+icon('clock')
-					span 5&nbsp;минут
+			block
 
+mixin infoPanelItem(i, t)
+	.col-auto
+		+e.item&attributes(attributes)
+			if i
+				+icon(`${i}`)
+			span!= t
 
 mixin scrollToTop()
 	+b.back-top#back-top
@@ -105,3 +99,12 @@ mixin content(title, ...items)
 		h4!= title
 		each item in items
 			p!= item
+
+mixin blogItem(i, h)
+	+b.blog-item(href="#")
+		+pic(`blog-${i}.jpg`, 'bg', 0)
+		h4!= h
+		+infoPanel()
+			+infoPanelItem(``, `15.09.21`).--btn
+			+infoPanelItem(`eye`, `834`).--views
+			+infoPanelItem(`clock`, `5&nbsp;минут`).--time

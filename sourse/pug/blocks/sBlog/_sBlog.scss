@@ -2,11 +2,22 @@
 .sBlog {
 	--sPT: 0;
 	--sPB: #{rem(40)};
-	--sTPB: #{rem(30)};
+	--sTPB: #{rem(35)};
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(5)};
 		--sPB: #{rem(80)};
-		--sTPB: #{rem(75)};
+		--sTPB: #{rem(60)};
+	}
+	&--content {
+		--sPT: #{rem(30)};
+		--sPB: #{rem(10)};
+		--sTPB: #{rem(35)};
+		@include media-breakpoint-up(lg) {
+			--sPT: #{rem(47)};
+			--sPB: 0;
+			--sTPB: #{rem(60)};
+		}
+
 	}
 	& > .container {
 		& > .row {
@@ -19,6 +30,9 @@
 				--bs-gutter-x: #{rem(32)};
 			}
 		}
+	}
+	&__head-row {
+		margin-bottom: var(--bs-gutter-y);
 	}
 	@include media-breakpoint-up(xl) {
 	}

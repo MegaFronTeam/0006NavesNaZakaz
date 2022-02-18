@@ -581,7 +581,10 @@
 		margin-bottom: rem(17);
 	}
 	&__caption {
-		font-size: rem(24);
+		@include media-breakpoint-up(xl){
+			font-size: rem(24);
+		}
+		font-size: rem(20);
 		line-height: 130%;
 		font-weight: bold;
 		margin-bottom: rem(81);

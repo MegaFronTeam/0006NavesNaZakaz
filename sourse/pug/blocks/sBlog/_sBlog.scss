@@ -81,8 +81,6 @@
 	.content-table {
 		margin-bottom: rem(42);
 	}
-}
-.blog-page-item {
 	@include media-breakpoint-up(lg) {
 		margin-bottom: rem(56);
 	}
@@ -90,9 +88,10 @@
 	h2 {
 		margin-bottom: rem(20);
 	}
-	&__caption {
+	p {
 		line-height: 150%;
 		font-weight: 500;
+		margin-bottom: rem(20);
 	}
 	.row {
 		@include media-breakpoint-up(lg) {
@@ -102,6 +101,7 @@
 		--bs-gutter-y: #{rem(24)};
 	}
 	picture {
+		margin-bottom: rem(20);
 		img {
 			width: 100%;
 			border-radius: 16px;
@@ -122,11 +122,41 @@
 	h5 {
 		font-size: rem(18);
 	}
-	&__mini-text {
+	.mini-text {
 		font-size: rem(14);
 		font-weight: 500;
 		margin-bottom: rem(20);
 		line-height: 150%;
+	}
+	.banner-item {
+		margin-top: rem(56);
+	}
+	&__banners-wrap {
+		display: flex;
+		@include media-breakpoint-up(lg) {
+			flex-direction: column;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			justify-content: space-around;
+			height: 100%;
+		}
+		@include media-breakpoint-down(lg){
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+	&__banners-wrap > * {
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(20);
+			margin-bottom: rem(20);
+		}
+		@include media-breakpoint-down(lg){
+			width: calc(50% - 10px);
+		}
+		@include media-breakpoint-down(sm){
+			width: 100%;
+			margin-bottom: rem(20);
+		}
 	}
 }
 

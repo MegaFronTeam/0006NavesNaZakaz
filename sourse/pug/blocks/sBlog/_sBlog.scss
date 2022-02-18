@@ -46,9 +46,11 @@
 			width: 100%;
 			img {
 				width: 100%;
+				border-radius: 16px;
 			}
 			border-radius: 16px;
 			border: 1px solid #e0e0e0;
+			overflow: hidden;
 			margin-bottom: rem(30);
 		}
 		p {
@@ -89,8 +91,9 @@
 		img {
 			width: 100%;
 			border-radius: 16px;
-			border: 1px solid #e0e0e0;
 		}
+		border-radius: 16px;
+			border: 1px solid #e0e0e0;
 	}
 	.blog-item {
 		picture {
@@ -113,7 +116,7 @@
 	}
 }
 
-.recall-item {
+.banner-item {
 	img {
 		max-height: 100%;
 		width: 100%;
@@ -127,11 +130,13 @@
 	flex-direction: column;
 	align-items: center;
 	padding: rem(25);
+	margin-bottom: rem(24);
 	@include media-breakpoint-up(lg) {
 		padding-top: rem(43);
 		padding-bottom: rem(67);
 		padding-left: rem(30);
 		padding-right: rem(30);
+		margin-bottom: rem(48);
 	}
 	&__title {
 		color: rgba($white, 0.5);
@@ -157,9 +162,31 @@
 		line-height: 105%;
 		font-weight: bold;
 		color: $white;
+		span{
+			font-weight: normal;
+		}
 	}
 	&__btn {
-		@extend .btn, .btn-primary;
+		@extend .btn, .btn-primary, .with-shadow;
 		box-shadow: 0px 4px 0px #e2a826, 0px 10px 13px rgba(0, 0, 0, 0.09);
+	}
+	&--offer-center{
+		.banner-item__title{
+			margin-bottom: rem(17);
+		}
+		.banner-item__caption{
+			margin-bottom: rem(24);
+		}
+	}
+	&--offer{
+		align-items: flex-start;
+		.banner-item__title{
+			margin-bottom: rem(17);
+			text-align: left;
+		}
+		.banner-item__caption{
+			margin-bottom: rem(24);
+			text-align: left;
+		}
 	}
 }

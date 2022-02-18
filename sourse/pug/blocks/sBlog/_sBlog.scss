@@ -39,15 +39,16 @@
 .sBlogPage {
 	@include media-breakpoint-up(lg) {
 		--sPT: #{rem(18)};
+		--sPT: #{rem(50)};
 	}
 	&__preview {
 		picture {
 			width: 100%;
 			img {
-				border-radius: 16px;
 				width: 100%;
-				border: 1px solid #e0e0e0;
 			}
+			border-radius: 16px;
+			border: 1px solid #e0e0e0;
 			margin-bottom: rem(30);
 		}
 		p {
@@ -101,10 +102,64 @@
 	h5 {
 		margin-bottom: rem(20);
 	}
+	h5 {
+		font-size: rem(18);
+	}
 	&__mini-text {
 		font-size: rem(14);
 		font-weight: 500;
 		margin-bottom: rem(20);
 		line-height: 150%;
+	}
+}
+
+.recall-item {
+	img {
+		max-height: 100%;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 16px;
+	}
+	border-radius: 16px;
+	box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: rem(25);
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(43);
+		padding-bottom: rem(67);
+		padding-left: rem(30);
+		padding-right: rem(30);
+	}
+	&__title {
+		color: rgba($white, 0.5);
+		line-height: 130%;
+		font-weight: bold;
+		text-align: center;
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(45);
+		}
+		margin-bottom: rem(30);
+	}
+	&__caption {
+		@include media-breakpoint-up(lg) {
+			font-size: rem(48);
+			margin-bottom: rem(46);
+		}
+		text-align: center;
+		@include media-breakpoint-up(sm){
+			font-size: rem(36);
+		}
+		font-size: rem(28);
+		margin-bottom: rem(30);
+		line-height: 105%;
+		font-weight: bold;
+		color: $white;
+	}
+	&__btn {
+		@extend .btn, .btn-primary;
+		box-shadow: 0px 4px 0px #e2a826, 0px 10px 13px rgba(0, 0, 0, 0.09);
 	}
 }

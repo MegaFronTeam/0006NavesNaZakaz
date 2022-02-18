@@ -51,7 +51,7 @@ mixin sBlog(head, title)
 				.col-lg-4.col-xl-3
 					+blogItem(4, `5&nbsp;причин, почему навес необходим практически каждому`)
 				.col-12
-					p Типовые арочные навесыиз поликарбонатаот 72 000 ₽
+					+banner-item-offer-center().mb-0
 				.col-md-6.col-lg-8.col-xl-9
 					+blogItem(8, `8&nbsp;форм кровли для навесов`)
 				.col-md-6.col-lg-4.col-xl-3
@@ -118,21 +118,21 @@ mixin blog-page-item(title,caption)
 				+pic(`blog-4.jpg`,'',0)
 
 mixin banner-item()
-	+b.banner-item.bg-wrap
+	+b.banner-item.bg-wrap&attributes(attributes)
 		+pic(`banner-item.jpg`,'',0).picture-bg
 		+e.title Обратная связь
 		+e.caption Задайте свой<br>вопрос в Вотсапе
 		+e.btn(href="#") Написать
 
 mixin banner-item-offer-center()
-	+b.banner-item--offer-center.bg-wrap
+	+b.banner-item--offer-center.bg-wrap&attributes(attributes)
 		+pic(`banner-item-2.jpg`,'',0).picture-bg
 		+e.title Каталог
 		+e.caption Типовые арочные навесы<br>из поликарбоната<br><span>от 72 000 ₽</span>
 		+e.btn(href="#") Смотреть варианты
 
 mixin banner-item-offer()
-	+b.banner-item--offer.bg-wrap
+	+b.banner-item--offer.bg-wrap&attributes(attributes)
 		+pic(`banner-item-3.jpg`,'',0).picture-bg
 		+e.title Калькулятор
 		+e.caption Получите цену<br>навеса и посмотрите,<br>как он будет выглядеть

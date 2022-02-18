@@ -585,9 +585,8 @@
 		color: $white;
 	}
 	&__btn{
-		@extend .btn, .btn-primary;
+		@extend .btn, .btn-primary, .with-shadow;
 		width: 100%;
-		box-shadow: 0px 4px 0px #E2A826, 0px 10px 13px rgba(0, 0, 0, 0.09);
 		margin-top: auto;
 	}
 }

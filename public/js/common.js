@@ -46,10 +46,13 @@ const JSCCommon = {
 							// console.log(modal.querySelector(elem).tagName)
 						}
 					}
-					setValue(data.title, '.ttu');
-					setValue(data.text, '.after-headline');
+					function setImage(src){
+						return `<img src="img/@2x/modal-${src}.png" alt="" loading="lazy">`
+					}
+					setValue(data.title, '.modal-title-js');
+					setValue(data.text, '.modal-text-js');
 					setValue(data.btn, '.btn');
-					setValue(data.order, '.order');
+					setValue(setImage(data.pic), '.modal-pic-js');
 				})
 			})
 		}

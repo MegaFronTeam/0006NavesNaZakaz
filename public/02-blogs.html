@@ -1144,19 +1144,14 @@
 			</div>
 		</div>
 		<!--  start modals-->
-		<div id="modal-call-measurer" style="display: none">
+		<div id="modal-call" style="display: none">
 			<div class="modal-win">
-				<!-- picture-->
-				<picture> 
-					<source type="image/avif" srcset="img/@2x/avif/modal-1.avif"/>
-					<source type="image/webp" srcset="img/@2x/webp/modal-1.webp"/><img src="img/@2x/modal-1.png" alt="" loading="lazy"/>
-				</picture>
-				<!-- /picture-->
+				<picture class="modal-pic-js"></picture>
 				<div class="form-wrap">
 					<form>
 						<div class="text-center">
-							<h4>Вызвать замерщика</h4>
-							<p>Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере</p>
+							<h4 class="modal-title-js"></h4>
+							<p class="modal-text-js"></p>
 						</div>
 						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя" required="required"/>
 						</div>
@@ -1164,7 +1159,7 @@
 						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="+7 ___ ___ __ __" required="required"/>
 						</div>
 						<!-- +e.input-wrap-->
-						<button class="form-wrap__btn btn" type="submit">Отправить
+						<button class="form-wrap__btn btn" type="submit">
 						</button>
 						<div class="form-wrap__agreement">Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку <a href="#">персональных данных</a> 
 						</div>
@@ -1180,229 +1175,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- #modal-call-measurer-->
-		<div id="modal-call-calculation" style="display: none">
-			<div class="modal-win">
-				<!-- picture-->
-				<picture> 
-					<source type="image/avif" srcset="img/@2x/avif/modal-2.avif"/>
-					<source type="image/webp" srcset="img/@2x/webp/modal-2.webp"/><img src="img/@2x/modal-2.png" alt="" loading="lazy"/>
-				</picture>
-				<!-- /picture-->
-				<div class="form-wrap">
-					<form>
-						<div class="text-center">
-							<h4>Получить расчет</h4>
-							<p>Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет.</p>
-						</div>
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="+7 ___ ___ __ __" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<button class="form-wrap__btn btn" type="submit">Получить расчет
-						</button>
-						<div class="form-wrap__agreement">Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку <a href="#">персональных данных</a> 
-						</div>
-					</form>
-				</div>
-				<div class="modal-win__img-wrap bg-wrap">
-					<!-- picture-->
-					<picture class="picture-bg"> 
-						<source type="image/avif" srcset="img/@2x/avif/modal-bg.avif"/>
-						<source type="image/webp" srcset="img/@2x/webp/modal-bg.webp"/><img class="object-fit-js" src="img/@2x/modal-bg.jpg" alt="" loading="lazy"/>
-					</picture>
-					<!-- /picture-->
-				</div>
-			</div>
-		</div>
-		<!-- #modal-call-calculation-->
-		<div id="modal-call-back" style="display: none">
-			<div class="modal-win">
-				<!-- picture-->
-				<picture> 
-					<source type="image/avif" srcset="img/@2x/avif/modal-2.avif"/>
-					<source type="image/webp" srcset="img/@2x/webp/modal-2.webp"/><img src="img/@2x/modal-2.png" alt="" loading="lazy"/>
-				</picture>
-				<!-- /picture-->
-				<div class="form-wrap">
-					<form>
-						<div class="text-center">
-							<h4>Обратный звонок</h4>
-							<p>Оставьте свой номер телефона и&nbsp;мы&nbsp;вам перезвоним в&nbsp;течение 15&nbsp;минут.</p>
-						</div>
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="+7 ___ ___ __ __" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<button class="form-wrap__btn btn" type="submit">Запросить обратный звонок
-						</button>
-						<div class="form-wrap__agreement">Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку <a href="#">персональных данных</a> 
-						</div>
-					</form>
-				</div>
-				<div class="modal-win__img-wrap bg-wrap">
-					<!-- picture-->
-					<picture class="picture-bg"> 
-						<source type="image/avif" srcset="img/@2x/avif/modal-bg.avif"/>
-						<source type="image/webp" srcset="img/@2x/webp/modal-bg.webp"/><img class="object-fit-js" src="img/@2x/modal-bg.jpg" alt="" loading="lazy"/>
-					</picture>
-					<!-- /picture-->
-				</div>
-			</div>
-		</div>
-		<!-- #modal-call-back-->
-		<div id="modal-call-want" style="display: none">
-			<div class="modal-win">
-				<!-- picture-->
-				<picture> 
-					<source type="image/avif" srcset="img/@2x/avif/modal-2.avif"/>
-					<source type="image/webp" srcset="img/@2x/webp/modal-2.webp"/><img src="img/@2x/modal-2.png" alt="" loading="lazy"/>
-				</picture>
-				<!-- /picture-->
-				<div class="form-wrap">
-					<form>
-						<div class="text-center">
-							<h4>Хочу навес Н1830</h4>
-							<p>Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;сообщим детальную информацию по&nbsp;навесу, направим к&nbsp;вам замерщика или поможем оформить заказ онлайн</p>
-						</div>
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="+7 ___ ___ __ __" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<button class="form-wrap__btn btn" type="submit">Запросить обратный звонок
-						</button>
-						<div class="form-wrap__agreement">Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку <a href="#">персональных данных</a> 
-						</div>
-					</form>
-				</div>
-				<div class="modal-win__img-wrap bg-wrap">
-					<!-- picture-->
-					<picture class="picture-bg"> 
-						<source type="image/avif" srcset="img/@2x/avif/modal-bg.avif"/>
-						<source type="image/webp" srcset="img/@2x/webp/modal-bg.webp"/><img class="object-fit-js" src="img/@2x/modal-bg.jpg" alt="" loading="lazy"/>
-					</picture>
-					<!-- /picture-->
-				</div>
-			</div>
-		</div>
-		<!-- #modal-call-want-->
-		<div id="modal-call-similar" style="display: none">
-			<div class="modal-win">
-				<!-- picture-->
-				<picture> 
-					<source type="image/avif" srcset="img/@2x/avif/modal-2.avif"/>
-					<source type="image/webp" srcset="img/@2x/webp/modal-2.webp"/><img src="img/@2x/modal-2.png" alt="" loading="lazy"/>
-				</picture>
-				<!-- /picture-->
-				<div class="form-wrap">
-					<form>
-						<div class="text-center">
-							<h4>Запросить расчет похожего навеса</h4>
-							<p>Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет</p>
-						</div>
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="+7 ___ ___ __ __" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<button class="form-wrap__btn btn" type="submit">Запросить расчет
-						</button>
-						<div class="form-wrap__agreement">Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку <a href="#">персональных данных</a> 
-						</div>
-					</form>
-				</div>
-				<div class="modal-win__img-wrap bg-wrap">
-					<!-- picture-->
-					<picture class="picture-bg"> 
-						<source type="image/avif" srcset="img/@2x/avif/modal-bg.avif"/>
-						<source type="image/webp" srcset="img/@2x/webp/modal-bg.webp"/><img class="object-fit-js" src="img/@2x/modal-bg.jpg" alt="" loading="lazy"/>
-					</picture>
-					<!-- /picture-->
-				</div>
-			</div>
-		</div>
-		<!-- #modal-call-similar-->
-		<div id="modal-call-detailed" style="display: none">
-			<div class="modal-win">
-				<!-- picture-->
-				<picture> 
-					<source type="image/avif" srcset="img/@2x/avif/modal-1.avif"/>
-					<source type="image/webp" srcset="img/@2x/webp/modal-1.webp"/><img src="img/@2x/modal-1.png" alt="" loading="lazy"/>
-				</picture>
-				<!-- /picture-->
-				<div class="form-wrap">
-					<form>
-						<div class="text-center">
-							<h4>Запросить детальный расчет</h4>
-							<p>Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет.</p>
-						</div>
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="+7 ___ ___ __ __" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<button class="form-wrap__btn btn" type="submit">Запросить расчет
-						</button>
-						<div class="form-wrap__agreement">Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку <a href="#">персональных данных</a> 
-						</div>
-					</form>
-				</div>
-				<div class="modal-win__img-wrap bg-wrap">
-					<!-- picture-->
-					<picture class="picture-bg"> 
-						<source type="image/avif" srcset="img/@2x/avif/modal-bg.avif"/>
-						<source type="image/webp" srcset="img/@2x/webp/modal-bg.webp"/><img class="object-fit-js" src="img/@2x/modal-bg.jpg" alt="" loading="lazy"/>
-					</picture>
-					<!-- /picture-->
-				</div>
-			</div>
-		</div>
-		<!-- #modal-call-detailed-->
-		<div id="modal-call-excursion" style="display: none">
-			<div class="modal-win">
-				<!-- picture-->
-				<picture> 
-					<source type="image/avif" srcset="img/@2x/avif/modal-1.avif"/>
-					<source type="image/webp" srcset="img/@2x/webp/modal-1.webp"/><img src="img/@2x/modal-1.png" alt="" loading="lazy"/>
-				</picture>
-				<!-- /picture-->
-				<div class="form-wrap">
-					<form>
-						<div class="text-center">
-							<h4>Записаться на&nbsp;экскурсию по&nbsp;производству</h4>
-							<p>Оставьте свой номер телефона, мы&nbsp;перезвоним в&nbsp;течение 15&nbsp;минут и&nbsp;запишем вас</p>
-						</div>
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="text" type="text" placeholder="Ваше Имя" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" name="tel" type="tel" placeholder="+7 ___ ___ __ __" required="required"/>
-						</div>
-						<!-- +e.input-wrap-->
-						<button class="form-wrap__btn btn" type="submit">Запсиаться на&nbsp;экскурсию
-						</button>
-						<div class="form-wrap__agreement">Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку <a href="#">персональных данных</a> 
-						</div>
-					</form>
-				</div>
-				<div class="modal-win__img-wrap bg-wrap">
-					<!-- picture-->
-					<picture class="picture-bg"> 
-						<source type="image/avif" srcset="img/@2x/avif/modal-bg.avif"/>
-						<source type="image/webp" srcset="img/@2x/webp/modal-bg.webp"/><img class="object-fit-js" src="img/@2x/modal-bg.jpg" alt="" loading="lazy"/>
-					</picture>
-					<!-- /picture-->
-				</div>
-			</div>
-		</div>
-		<!-- #modal-call-excursion-->
+		<!-- #modal-call-->
 		<div id="modal-call-reviews" style="display: none">
 			<div class="modal-win modal-win--reviews">
 				<div class="sClientsReviews__wrap">

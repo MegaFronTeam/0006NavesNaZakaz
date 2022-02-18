@@ -67,8 +67,6 @@
 	.content-table {
 		margin-bottom: rem(42);
 	}
-}
-.blog-page-item {
 	@include media-breakpoint-up(lg) {
 		margin-bottom: rem(56);
 	}
@@ -76,9 +74,10 @@
 	h2 {
 		margin-bottom: rem(20);
 	}
-	&__caption {
+	p {
 		line-height: 150%;
 		font-weight: 500;
+		margin-bottom: rem(20);
 	}
 	.row {
 		@include media-breakpoint-up(lg) {
@@ -88,12 +87,13 @@
 		--bs-gutter-y: #{rem(24)};
 	}
 	picture {
+		margin-bottom: rem(20);
 		img {
 			width: 100%;
 			border-radius: 16px;
 		}
 		border-radius: 16px;
-			border: 1px solid #e0e0e0;
+		border: 1px solid #e0e0e0;
 	}
 	.blog-item {
 		picture {
@@ -108,11 +108,41 @@
 	h5 {
 		font-size: rem(18);
 	}
-	&__mini-text {
+	.mini-text {
 		font-size: rem(14);
 		font-weight: 500;
 		margin-bottom: rem(20);
 		line-height: 150%;
+	}
+	.banner-item {
+		margin-top: rem(56);
+	}
+	&__banners-wrap {
+		display: flex;
+		@include media-breakpoint-up(lg) {
+			flex-direction: column;
+			padding-top: 50px;
+			padding-bottom: 50px;
+			justify-content: space-around;
+			height: 100%;
+		}
+		@include media-breakpoint-down(lg){
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+	&__banners-wrap > * {
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(20);
+			margin-bottom: rem(20);
+		}
+		@include media-breakpoint-down(lg){
+			width: calc(50% - 10px);
+		}
+		@include media-breakpoint-down(sm){
+			width: 100%;
+			margin-bottom: rem(20);
+		}
 	}
 }
 
@@ -154,7 +184,7 @@
 			margin-bottom: rem(46);
 		}
 		text-align: center;
-		@include media-breakpoint-up(sm){
+		@include media-breakpoint-up(sm) {
 			font-size: rem(36);
 		}
 		font-size: rem(28);
@@ -162,7 +192,7 @@
 		line-height: 105%;
 		font-weight: bold;
 		color: $white;
-		span{
+		span {
 			font-weight: normal;
 		}
 	}
@@ -170,21 +200,21 @@
 		@extend .btn, .btn-primary, .with-shadow;
 		box-shadow: 0px 4px 0px #e2a826, 0px 10px 13px rgba(0, 0, 0, 0.09);
 	}
-	&--offer-center{
-		.banner-item__title{
+	&--offer-center {
+		.banner-item__title {
 			margin-bottom: rem(17);
 		}
-		.banner-item__caption{
+		.banner-item__caption {
 			margin-bottom: rem(24);
 		}
 	}
-	&--offer{
+	&--offer {
 		align-items: flex-start;
-		.banner-item__title{
+		.banner-item__title {
 			margin-bottom: rem(17);
 			text-align: left;
 		}
-		.banner-item__caption{
+		.banner-item__caption {
 			margin-bottom: rem(24);
 			text-align: left;
 		}

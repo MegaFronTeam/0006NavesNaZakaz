@@ -61,24 +61,24 @@ mixin page-head(data)
 
 mixin page-head-fixed(data)
 	+b.page-head
-		.container
-			+e.row--fix.row
-				.container
-					.row
-						if data.btn
-							.col-auto
-								+e.arrow-back(href="#")
-									+icon('arrow-left')
-						if data.menu
-							+e.col.col-auto
-								+categoryMenu()
-						if data.search
-							.col-sm
-								+b.search-field
-									input(type='text' name='search' placeholder='Поиск по блогу' aria-label='Search through site content')
-									button
-										+icon('search')
-			+e.wrap
+		+e.row--fix
+			.container
+				.row
+					if data.btn
+						.col-auto
+							+e.arrow-back(href="#")
+								+icon('arrow-left')
+					if data.menu
+						+e.col.col-auto
+							+categoryMenu()
+					if data.search
+						.col-sm
+							+b.search-field
+								input(type='text' name='search' placeholder='Поиск по блогу' aria-label='Search through site content')
+								button
+									+icon('search')
+		+e.wrap
+			.container
 				h1!= data.title
 				if data.text
 					p!= data.text

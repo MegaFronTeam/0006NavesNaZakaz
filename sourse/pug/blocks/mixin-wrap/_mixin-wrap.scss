@@ -162,40 +162,43 @@
 	&__row {
 		align-items: center;
 		margin-bottom: rem(25);
-		--bs-gutter-x: #{rem(16)};
-		--bs-gutter-y: calc(var(--bs-gutter-x) * 0.7);
 		@include media-breakpoint-up(md) {
-			--bs-gutter-x: #{rem(24)};
 			margin-bottom: rem(35);
 		}
 		@include media-breakpoint-up(lg) {
-			--bs-gutter-x: #{rem(32)};
 			margin-bottom: rem(45);
 		}
-		transition-duration: 0.2s;
+		// transition-duration: 0.2s;
 		.row {
 			align-items: center;
+			--bs-gutter-x: #{rem(16)};
+			--bs-gutter-y: calc(var(--bs-gutter-x) * 0.7);
+			@include media-breakpoint-up(md) {
+				--bs-gutter-x: #{rem(24)};
+			}
+			@include media-breakpoint-up(lg) {
+				--bs-gutter-x: #{rem(32)};
+			}
 		}
 	}
 	&__row.fixed {
 		background-color: #f2f6fc;
 		position: fixed;
 		@include media-breakpoint-up(lg) {
-			top: 86px;
-			left: 15px;
-		}
-		@include media-breakpoint-up(md) {
 			top: 64px;
 		}
-		top: 58px;
-		left: 8px;
-		width: calc(100vw + 5px);
+		// @include media-breakpoint-up(md) {
+		// 	top: 64px;
+		// }
+		top: 48px;
+		left: 0;
+		width: 100vw;
 		z-index: 999;
 		.container {
 			margin-top: 0;
 			@include media-breakpoint-up(lg) {
-				padding-top: rem(25);
-				padding-bottom: rem(23);
+				padding-top: rem(17.5);
+				padding-bottom: rem(17.5);
 			}
 			padding-top: 10px;
 			padding-bottom: 10px;
@@ -582,9 +585,8 @@
 		color: $white;
 	}
 	&__btn{
-		@extend .btn, .btn-primary;
+		@extend .btn, .btn-primary, .with-shadow;
 		width: 100%;
-		box-shadow: 0px 4px 0px #E2A826, 0px 10px 13px rgba(0, 0, 0, 0.09);
 		margin-top: auto;
 	}
 }

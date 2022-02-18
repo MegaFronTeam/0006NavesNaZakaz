@@ -33,14 +33,14 @@ block pagecontent
 	+header()
 		+top-nav()
 		+topLine()
-	+page-head({
+	+page-head-fixed({
 		title,
 		menu: 'menu',
 		search:'search'
 	})
 	+sBlog()
 	+sContact()
-	.section-wrapper
+	.section-wrapper.section-wrapper--footer
 		+footer()
 	//- +sForm()
 	+scrollToTop()

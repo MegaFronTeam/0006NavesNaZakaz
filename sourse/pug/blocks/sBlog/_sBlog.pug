@@ -1,18 +1,23 @@
-mixin sBlog(data)
+mixin sBlog(head, title)
 	// start sBlog
-	+b.SECTION.sBlog.section#sBlog&attributes(attributes)
+	+b.sBlog.section#sBlog&attributes(attributes)
 		.container
+			if head
+				+e.head-row.row
+					.col-lg-8.col-xl-9
+						+blogItem(1, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
+					.col-lg-4.col-xl-3
+						+b.categories
+							+categoryItem(`Советы <br> и&nbsp;лайфхаки`, 1).active
+							+categoryItem(`Технические <br> детали`, 2)
+							+categoryItem(`Безопасность <br> и&nbsp;гарантии`, 3)
+							+categoryItem(`Внешний <br> вид`, 4)
+							+categoryItem(`Как <br> выбрать`, 5)
+							+categoryItem(`Примеры <br> Наших работ`, 6)
+			if title
+				.section-title.text-center
+					h2!= title
 			.row
-				.col-lg-8.col-xl-9
-					+blogItem(1, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
-				.col-lg-4.col-xl-3
-					+b.categories
-						+categoryItem(`Советы <br> и&nbsp;лайфхаки`, 1).active
-						+categoryItem(`Технические <br> детали`, 2)
-						+categoryItem(`Безопасность <br> и&nbsp;гарантии`, 3)
-						+categoryItem(`Внешний <br> вид`, 4)
-						+categoryItem(`Как <br> выбрать`, 5)
-						+categoryItem(`Примеры <br> Наших работ`, 6)
 				.col-md-6
 					+blogItem(2, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
 				.col-md-6
@@ -88,6 +93,7 @@ mixin sBlogPage()
 						+blogItem(6, `5&nbsp;причин, почему навес необходим практически каждому`)
 						+adv-item(`Акция`,`Скидка до 17% на навесы для&nbsp;автомобиля`,`Подробнее`,`1`)
 			+banner-item()
+
 mixin blog-page-item(title,caption)
 	h2!=title
 	p=caption

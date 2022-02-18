@@ -156,7 +156,7 @@ mixin content-table()
 
 mixin adv-item(title,caption,btn,img)
 	+b.adv-item.bg-wrap
-		+pic(`adv-item-${img}.jpg`,``,0).picture-bg
+		+pic(`adv-item-${img}.jpg`,`bg`,0).picture-bg
 		+e.title!=title
 		+e.caption!=caption
 		+e.btn(href="#")!=btn

@@ -17,6 +17,7 @@
 	}
 	&--header {
 		.soc__item {
+			@include mt(0.2s);
 			width: rem(32);
 			height: rem(32);
 			border-radius: 50%;
@@ -541,15 +542,15 @@
 		list-style-type: none;
 		margin-bottom: 0;
 	}
-	a{
-		color: #35455C !important;
+	a {
+		color: #35455c !important;
 		font-size: rem(14);
 		line-height: 150%;
 		font-weight: 500;
 	}
-	li{
+	li {
 		margin-bottom: rem(20);
-		&:last-child{
+		&:last-child {
 			margin-bottom: 0;
 		}
 	}
@@ -585,10 +586,71 @@
 		margin-bottom: rem(81);
 		color: $white;
 	}
-	&__btn{
+	&__btn {
 		@extend .btn, .btn-primary, .with-shadow;
 		width: 100%;
 		margin-top: auto;
 	}
+	&--white {
+		background-color: $white;
+		display: flex;
+		flex-direction: column;
+		.adv-item__title {
+			color: rgba($color: $body-color, $alpha: 0.5);
+		}
+		.adv-item__caption {
+			color: $body-color;
+			margin-bottom: rem(32);
+			// flex-grow: 1;
+		}
+	}
 }
 
+.social {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	&__item {
+		@include roww(18px, m);
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(18);
+		color: $body-color;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		&:hover {
+			.social__icon-wrap {
+				background-color: $white;
+				box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+			}
+		}
+	}
+	&__icon-wrap {
+		@include mt(0.2s);
+		position: relative;
+		width: rem(32);
+		height: rem(32);
+		border-radius: 50%;
+		background-color: $light;
+		.icon {
+			@include a-cent;
+			font-size: rem(16);
+			&-instagram {
+				color: #d21fff;
+			}
+			&-youtube {
+				color: #ff0000;
+			}
+			&-whatsapp {
+				color: #55cd6c;
+			}
+		}
+	}
+	span {
+		display: block;
+		font-weight: 500;
+		font-size: rem(14);
+		line-height: 150%;
+	}
+}

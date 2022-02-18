@@ -160,3 +160,26 @@ mixin adv-item(title,caption,btn,img)
 		+e.title!=title
 		+e.caption!=caption
 		+e.btn(href="#")!=btn
+
+mixin adv-item-white(title,caption,btn)
+	+b.adv-item--white
+		+e.title!=title
+		+e.caption!=caption
+		if btn
+			+e.btn(href="#")!=btn
+		else
+			+b.social
+				+e.item(href="#" target="_blank")
+					+e.icon-wrap
+						+icon('instagram')
+					span instagram
+				+e.item(href="#" target="_blank")
+					+e.icon-wrap
+						+icon('youtube')
+					span youtube
+				+e.item(href="#" target="_blank")
+					+e.icon-wrap
+						+icon('whatsapp')
+					span whatsapp
+
+

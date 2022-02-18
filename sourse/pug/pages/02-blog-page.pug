@@ -1,7 +1,7 @@
 extends layout/main.pug
 
 
-include ../blocks/sContent/_sContent.pug
+//- include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug
 //- include ../blocks/sCatalog/_sCatalog.pug
 //- include ../blocks/sPortfolio/_sPortfolio.pug
@@ -19,6 +19,7 @@ include ../blocks/sContact/_sContact.pug
 include ../blocks/sProducts/_sProducts.pug
 include ../blocks/sSpecifications/_sSpecifications.pug
 include ../blocks/sSimilarAwnings/_sSimilarAwnings.pug
+include ../blocks/sBlog/_sBlog.pug
 
 
 block variables
@@ -33,7 +34,7 @@ block pagecontent
 	+header()
 		+top-nav()
 		+topLine()
-	+page-head({
+	+page-head-fixed({
 		title,
 		btn: 'btn',
 		menu: 'menu'
@@ -43,7 +44,8 @@ block pagecontent
 			+infoPanelItem(``, `15.09.21`).--btn
 			+infoPanelItem(`eye`, `834`).--views
 			+infoPanelItem(`clock`, `5&nbsp;минут`).--time
-	+sContent()
+	//- +sContent()
+	+sBlogPage
 	+sContact()
 	.section-wrapper
 		+footer()

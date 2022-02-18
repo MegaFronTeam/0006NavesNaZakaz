@@ -59,6 +59,31 @@ mixin page-head(data)
 					p!= data.text
 				block
 
+mixin page-head-fixed(data)
+	+b.page-head
+		.container
+			+e.row--fix.row
+				.container
+					.row
+						if data.btn
+							.col-auto
+								+e.arrow-back(href="#")
+									+icon('arrow-left')
+						if data.menu
+							+e.col.col-auto
+								+categoryMenu()
+						if data.search
+							.col-sm
+								+b.search-field
+									input(type='text' name='search' placeholder='Поиск по блогу' aria-label='Search through site content')
+									button
+										+icon('search')
+			+e.wrap
+				h1!= data.title
+				if data.text
+					p!= data.text
+				block
+
 mixin categoryMenu()
 		+b.category-menu.dropdown
 			+e.btn.dropdown__btn
@@ -108,3 +133,30 @@ mixin blogItem(i, h)
 			+infoPanelItem(``, `15.09.21`).--btn
 			+infoPanelItem(`eye`, `834`).--views
 			+infoPanelItem(`clock`, `5&nbsp;минут`).--time
+
+mixin content-table()
+	+b.content-table
+		+e.title Содержание
+		ul
+			li
+				a(href="#") Входная группа
+			li
+				a(href="#") Закрытая веранда
+			li
+				a(href="#") Открытая веранда
+			li
+				a(href="#") Навес для автомобиля
+			li
+				a(href="#") Беседка
+			li
+				a(href="#") Игровая зона для детей
+			li
+				a(href="#") Навес для кладовой
+
+
+mixin adv-item(title,caption,btn,img)
+	+b.adv-item.bg-wrap
+		+pic(`adv-item-${img}.jpg`,``,0).picture-bg
+		+e.title!=title
+		+e.caption!=caption
+		+e.btn(href="#")!=btn

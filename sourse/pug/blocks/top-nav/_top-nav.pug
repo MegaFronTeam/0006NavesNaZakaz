@@ -84,7 +84,7 @@ mixin top-nav()
 						//- +menu-toggle().d-lg-none
 						.menu-mobile__inner
 							+e.btn-wrap
-								+e.btn(href="#") Вызвать замерщика
+								+e.btn.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1") Вызвать замерщика
 							+mnu()
 							+e.list
 								h6 Навесы
@@ -138,9 +138,9 @@ mixin top-nav()
 					+soc().--header
 						+e.A.item--whatsapp(href="#" target="_blank")
 							+icon('whatsapp')
-						+e.A.item--phone-call(href="#" target="_blank")
+						+e.A.item--phone-call.link-modal-js(href="#modal-call" data-title= "Обратный звонок" data-text= "Оставьте свой номер телефона и&nbsp;мы&nbsp;вам перезвоним в&nbsp;течение 15&nbsp;минут." data-btn= "Запросить обратный звонок" data-pic= "2")
 							+icon('phone-call')
-						+e.A.item--measuring.d-none.d-xl-grid(href="#" target="_blank")
+						+e.A.item--measuring.d-none.d-xl-grid.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1")
 							+icon('measuring')
 						//- +item-sos('whatsapp')
 						//- +item-sos('phone-call')

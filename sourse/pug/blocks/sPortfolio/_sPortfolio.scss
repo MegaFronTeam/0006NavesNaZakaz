@@ -16,12 +16,16 @@
 		--bs-gutter-y: #{rem(32)};
 	}
 	.sSpecifications {
+		@include mt;
 		--sPT: #{rem(24)};
 		--sPB: #{rem(24)};
 		border-radius: rem(20);
 		box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
 		&__container {
 			--bs-gutter-x: #{rem(13)};
+		}
+		&:hover {
+			box-shadow: none;
 		}
 	}
 	&__btn-wrap {

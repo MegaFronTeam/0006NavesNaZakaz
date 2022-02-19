@@ -43,11 +43,15 @@
 	}
 
 	.accordion-item {
+		@include mt;
 		height: 100%;
 		border: none;
 		box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
 		border-radius: 20px;
 		background-color: $white;
+		&:hover {
+			box-shadow: 0px 10px 13px rgba(0, 0, 0, 0);
+		}
 		h4 {
 			span {
 				opacity: 0.7;

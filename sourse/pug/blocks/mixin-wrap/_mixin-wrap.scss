@@ -111,13 +111,19 @@
 	align-items: center;
 	height: 100%;
 	text-align: center;
+
+	&:hover {
+		picture {
+			box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
+		}
+	}
 	picture {
+		@include mt;
 		@include block(384, 270);
 		width: 100%;
 		border-radius: 20px;
 		overflow: hidden;
 		border: 1px solid #e0e0e0;
-		// border: 1px solid rgba($color: #e0e0e0, $alpha: 0.4);
 		margin-bottom: rem(16);
 		img {
 			position: absolute;
@@ -289,7 +295,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		z-index: 20;
+		z-index: 301;
 		@include media-breakpoint-up(lg) {
 			right: rem(33);
 			bottom: rem(144);
@@ -496,7 +502,16 @@
 
 .blog-item {
 	display: block;
+	&:hover {
+		picture {
+			box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
+		}
+		h4 {
+			color: $link-hover-color;
+		}
+	}
 	picture {
+		@include mt;
 		@include block(900, 500);
 		border: 1px solid #e0e0e0;
 		border-radius: 16px;
@@ -509,6 +524,7 @@
 		}
 	}
 	h4 {
+		@include mt;
 		margin-bottom: rem(20);
 	}
 	.info-panel {
@@ -581,7 +597,7 @@
 		margin-bottom: rem(17);
 	}
 	&__caption {
-		@include media-breakpoint-up(xl){
+		@include media-breakpoint-up(xl) {
 			font-size: rem(24);
 		}
 		font-size: rem(20);

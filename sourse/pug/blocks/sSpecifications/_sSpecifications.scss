@@ -60,6 +60,9 @@
 				margin-bottom: rem(40);
 			}
 		}
+		p {
+			@extend .h6;
+		}
 		tr {
 			&:not(:last-of-type) {
 				td {

@@ -10,6 +10,12 @@
 	.row {
 		--bs-gutter-y: var(--bs-gutter-x);
 	}
+	.card {
+		@include media-breakpoint-down(sm) {
+			padding-left: rem(15);
+			padding-right: rem(15);
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

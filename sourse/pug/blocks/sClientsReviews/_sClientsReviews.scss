@@ -33,6 +33,7 @@
 		background-color: $primary;
 		margin-right: rem(15);
 		border-radius: 50%;
+		overflow: hidden;
 	}
 	&__info {
 		display: flex;

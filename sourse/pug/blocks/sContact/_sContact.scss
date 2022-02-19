@@ -6,6 +6,20 @@
 		--sPT: #{rem(80)};
 		--sPB: #{rem(90)};
 	}
+	&__col-map {
+		order: 2;
+		@include media-breakpoint-up(lg) {
+			order: unset;
+		}
+	}
+	&__col-info {
+		order: 1;
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(lg) {
+			order: unset;
+			margin-bottom: 0;
+		}
+	}
 	h2 {
 		max-width: 16em;
 		margin-left: auto;
@@ -34,9 +48,6 @@
 		// min-height: rem(400);
 		// max-height: rem(622);
 		@include block(800, 622);
-		@include media-breakpoint-down(lg) {
-			margin-bottom: rem(30);
-		}
 		.ymaps-map {
 			border-radius: rem(16);
 		}

@@ -12,7 +12,7 @@ mixin sTypical(data)
 					.row
 						mixin filterBtn(c, ...items)
 							+e.btn-col.col
-								input.btn-check(type='checkbox' id=`option${c}` autocomplete='off')&attributes(attributes)
+								input.btn-check(type='checkbox' id=`option${c}`)&attributes(attributes)
 								label.btn(for=`option${c}`)
 									each item in items
 										span!= item

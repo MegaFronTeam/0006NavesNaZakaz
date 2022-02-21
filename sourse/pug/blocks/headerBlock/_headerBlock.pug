@@ -1,7 +1,7 @@
 mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section.bg-wrap#headerBlock&attributes(attributes)
-		video(loading='lazy' preload='auto' no-controls  autoplay  loop  playsinline  muted  poster='img/@2x/webp/video.webp')
+		video(preload='auto' autoplay  loop  playsinline  muted  poster='img/@2x/webp/video.webp')
 			source(src='video/video-1.mp4' type='video/mp4')
 			//- source(src='video/video.ogv' type='video/ogv')
 			//- source(src='video/video.webm' type='video/webm')
@@ -15,7 +15,7 @@ mixin headerBlock()
 						span Изготовление 14&ndash;30 дней
 						span &bull;
 						span Установка 1&ndash;2 дня
-					+e.btn(href="#") Вызвать замерщика
+					+e.btn.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1") Вызвать замерщика
 					p Выезжаем в&nbsp;удобный для вас день и&nbsp;время
 				.col-lg-auto
 					+form-wrap.blurred-block
@@ -30,7 +30,7 @@ mixin headerBlock()
 							.col-12
 								+input(`Ваш номер телефона +7 ___ ___ - __ - __`, `tel`)
 							.col-12
-								+e.btn(href="#") Получить расчет
+								+e.btn.link-modal-js(href="#modal-call" data-title= "Получить расчет" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет." data-btn= "Получить расчет" data-pic= "2") Получить расчет
 						ul
 							li
 								+icon('positive')

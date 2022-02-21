@@ -19,7 +19,7 @@ mixin sReviews(data)
 										+e.subtitle Аудио-отзыв
 										audio.js-player(controls='')
 											source(src="audio/sample.mp3" type="audio/mp3")
-										+e.btn(href="#") Читать отзыв
+										+e.btn.link-modal-js(href="#modal-call-reviews") Читать отзыв
 									+e.footer.row
 										.col-auto
 											+e.img-wrap.bg-wrap

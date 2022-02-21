@@ -34,7 +34,7 @@ mixin catalogItem(i, h, p)
 		+pic(`catalogItem-${i}.jpg`, 'bg', 0)
 		h6!= h
 		.small!= p
-		+e.btn(href="#") Получить расчет
+		+e.btn.link-modal-js(href="#modal-call" data-title= "Получить расчет" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет." data-btn= "Получить расчет" data-pic= "2") Получить расчет
 
 mixin page-head(data)
 	+b.page-head
@@ -160,3 +160,26 @@ mixin adv-item(title,caption,btn,img)
 		+e.title!=title
 		+e.caption!=caption
 		+e.btn(href="#")!=btn
+
+mixin adv-item-white(title,caption,btn)
+	+b.adv-item--white
+		+e.title!=title
+		+e.caption!=caption
+		if btn
+			+e.btn(href="#")!=btn
+		else
+			+b.social
+				+e.item(href="#" target="_blank")
+					+e.icon-wrap
+						+icon('instagram')
+					span instagram
+				+e.item(href="#" target="_blank")
+					+e.icon-wrap
+						+icon('youtube')
+					span youtube
+				+e.item(href="#" target="_blank")
+					+e.icon-wrap
+						+icon('whatsapp')
+					span whatsapp
+
+

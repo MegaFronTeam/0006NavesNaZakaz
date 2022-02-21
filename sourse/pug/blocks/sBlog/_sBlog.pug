@@ -6,7 +6,7 @@ mixin sBlog(head, title)
 				+e.head-row.row
 					.col-lg-8.col-xl-9
 						+blogItem(1, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
-					.col-lg-4.col-xl-3
+					.col-lg-4.col-xl-3.d-none.d-lg-block
 						+b.categories
 							+categoryItem(`Советы <br> и&nbsp;лайфхаки`, 1).active
 							+categoryItem(`Технические <br> детали`, 2)
@@ -22,16 +22,16 @@ mixin sBlog(head, title)
 					+blogItem(2, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
 				.col-md-6
 					+blogItem(3, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
-				.col-md-4.col-xl-3
-					p Большой выбор навесов к дому
-				.col-md-8.col-xl-9
+				.col-md-6.col-lg-4.col-xl-3
+					+adv-item(`Каталог`,`Большой выбор навесов к&nbsp;дому`,`Смотреть`,`2`)
+				.col-md-6.col-lg-8.col-xl-9
 					+blogItem(4, `8&nbsp;форм кровли для навесов`)
 				.col-md-6
 					+blogItem(5, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
 				.col-md-6
 					+blogItem(6, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
 				.col-12
-					p Получите цену навеса и посмотрите, как он будет выглядеть
+					+banner-item-offer().mb-0
 				.col-md-6.col-lg-8.col-xl-9
 					+blogItem(7, `8&nbsp;форм кровли для навесов`)
 				.col-md-6.col-lg-4.col-xl-3
@@ -40,9 +40,9 @@ mixin sBlog(head, title)
 					+blogItem(8, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
 				.col-md-6
 					+blogItem(3, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
-				.col-md-4.col-xl-3
-					p Смотрите и пишите
-				.col-md-8.col-xl-9
+				.col-md-6.col-lg-4.col-xl-3
+					+adv-item-white(`Наши соц. сети`, `Смотрите <br> и&nbsp;пишите`, ``)
+				.col-md-6.col-lg-8.col-xl-9
 					+blogItem(1, `8&nbsp;форм кровли для навесов`)
 				.col-md-6.col-lg-4.col-xl-6
 					+blogItem(3, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
@@ -60,9 +60,9 @@ mixin sBlog(head, title)
 					+blogItem(7, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
 				.col-md-6
 					+blogItem(3, `Навес для дома.&nbsp;7&nbsp;способов, как украсить участок и&nbsp;сделать жизнь комфортнее`)
-				.col-md-4.col-xl-3
-					p Бесплатно: замер, расчет сметы и 3D-макет
-				.col-md-8.col-xl-9
+				.col-md-6.col-lg-4.col-xl-3
+					+adv-item-white(`Каталог`, `Бесплатно: замер, расчет сметы <br> и&nbsp;3D-макет`, `Получить даром`)
+				.col-md-6.col-lg-8.col-xl-9
 					+blogItem(4, `Н8&nbsp;форм кровли для навесов`)
 	// end sBlog
 

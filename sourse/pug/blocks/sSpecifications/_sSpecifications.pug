@@ -1,7 +1,7 @@
 mixin sSpecifications(btn)
 	// start sSpecifications
-	+b.SECTION.sSpecifications.section#sSpecifications&attributes(attributes)
-		.container
+	+b.sSpecifications.section&attributes(attributes)
+		+e.container.container
 			.row
 				.col-lg-8
 					+e.slider-wrap
@@ -31,8 +31,8 @@ mixin sSpecifications(btn)
 					table
 						thead
 							tr
-								th
-									h6 Характеристики
+								th(colspan="2")
+									p Характеристики
 						tbody
 							tr
 								td Металлические столбы
@@ -61,8 +61,8 @@ mixin sSpecifications(btn)
 					table
 						thead
 							tr
-								th
-									h6 Цены и сроки
+								th(colspan="2")
+									p Цены и сроки
 						tbody
 							tr
 								td Материалы • Работа
@@ -73,14 +73,14 @@ mixin sSpecifications(btn)
 							tr
 								td Изготовление • Установка
 								td 7 дней • 1 день
-					a(href="#").btn.btn-primary Хочу примерно такой же
+					a.link-modal-js(href="#modal-call" data-title= "Запросить расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Запросить расчет" data-pic= "2").btn.btn-primary Хочу примерно такой же
 					if btn
 						button.btn.btn-outline-secondary Сохранить себе
 	// end sSpecifications
 mixin sSpecifications2(btn)
 	// start sSpecifications
-	+b.SECTION.sSpecifications.section#sSpecifications&attributes(attributes)
-		.container
+	+b.sSpecifications.section&attributes(attributes)
+		+e.container.container
 			.row
 				.col-lg-8
 					+e.slider-wrap
@@ -110,8 +110,8 @@ mixin sSpecifications2(btn)
 					table
 						thead
 							tr
-								th
-									h6 Характеристики
+								th(colspan="2")
+									p Характеристики
 						tbody
 							tr
 								td Металлические столбы
@@ -140,8 +140,8 @@ mixin sSpecifications2(btn)
 					table
 						thead
 							tr
-								th
-									h6 Цены и сроки
+								th(colspan="2")
+									p Цены и сроки
 						tbody
 							tr
 								td Материалы • Работа
@@ -152,14 +152,14 @@ mixin sSpecifications2(btn)
 							tr
 								td Изготовление • Установка
 								td 7 дней • 1 день
-					a(href="#").btn.btn-primary Хочу примерно такой же
+					a.link-modal-js(href="#modal-call" data-title= "Запросить расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Запросить расчет" data-pic= "2").btn.btn-primary Хочу примерно такой же
 					if btn
 						button.btn.btn-outline-secondary Сохранить себе
 	// end sSpecifications
 mixin sSpecifications3(btn)
 	// start sSpecifications
-	+b.SECTION.sSpecifications.section#sSpecifications&attributes(attributes)
-		.container
+	+b.sSpecifications.section#sSpecifications&attributes(attributes)
+		+e.container.container
 			.row
 				.col-lg-8
 					+e.slider-wrap
@@ -189,8 +189,8 @@ mixin sSpecifications3(btn)
 					table
 						thead
 							tr
-								th
-									h6 Характеристики
+								th(colspan="2")
+									p Характеристики
 						tbody
 							tr
 								td Металлические столбы
@@ -219,8 +219,8 @@ mixin sSpecifications3(btn)
 					table
 						thead
 							tr
-								th
-									h6 Цены и сроки
+								th(colspan="2")
+									p Цены и сроки
 						tbody
 							tr
 								td Материалы • Работа
@@ -231,7 +231,7 @@ mixin sSpecifications3(btn)
 							tr
 								td Изготовление • Установка
 								td 7 дней • 1 день
-					a(href="#").btn.btn-primary Хочу примерно такой же
+					a.link-modal-js(href="#modal-call" data-title= "Запросить расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Запросить расчет" data-pic= "2").btn.btn-primary Хочу примерно такой же
 					if btn
 						button.btn.btn-outline-secondary Сохранить себе
 	// end sSpecifications

@@ -70,7 +70,7 @@
 								<div class="menu-mobile menu-mobile--js">
 									<div class="menu-mobile__inner">
 										<div class="top-nav__btn-wrap">
-											<a class="top-nav__btn" href="#">Вызвать замерщика
+											<a class="top-nav__btn link-modal-js" href="#modal-call" data-title="Вызвать замерщика" data-text="Оставьте свой номер телефона, мы&amp;nbsp;вам перезвоним и&amp;nbsp;договоримся о&amp;nbsp;замере" data-btn="Отправить" data-pic="1">Вызвать замерщика
 											</a>
 										</div>
 										<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
@@ -129,12 +129,12 @@
 											<use xlink:href="img/svg/sprite.svg#whatsapp"></use>
 										</svg>
 									</a>
-									<a class="soc__item soc__item--phone-call" href="#" target="_blank">
+									<a class="soc__item soc__item--phone-call link-modal-js" href="#modal-call" data-title="Обратный звонок" data-text="Оставьте свой номер телефона и&amp;nbsp;мы&amp;nbsp;вам перезвоним в&amp;nbsp;течение 15&amp;nbsp;минут." data-btn="Запросить обратный звонок" data-pic="2">
 										<svg class="icon icon-phone-call ">
 											<use xlink:href="img/svg/sprite.svg#phone-call"></use>
 										</svg>
 									</a>
-									<a class="soc__item soc__item--measuring d-none d-xl-grid" href="#" target="_blank">
+									<a class="soc__item soc__item--measuring d-none d-xl-grid link-modal-js" href="#modal-call" data-title="Вызвать замерщика" data-text="Оставьте свой номер телефона, мы&amp;nbsp;вам перезвоним и&amp;nbsp;договоримся о&amp;nbsp;замере" data-btn="Отправить" data-pic="1">
 										<svg class="icon icon-measuring ">
 											<use xlink:href="img/svg/sprite.svg#measuring"></use>
 										</svg>
@@ -211,8 +211,8 @@
 				</div>
 			</div>
 			<!-- start sSpecifications-->
-			<section class="sSpecifications section" id="sSpecifications">
-				<div class="container">
+			<div class="sSpecifications section">
+				<div class="sSpecifications__container container">
 					<div class="row">
 						<div class="col-lg-8">
 							<div class="sSpecifications__slider-wrap">
@@ -310,8 +310,8 @@
 							<table>
 								<thead>
 									<tr>
-										<th>
-											<h6>Характеристики</h6>
+										<th colspan="2">
+											<p>Характеристики</p>
 										</th>
 									</tr>
 								</thead>
@@ -353,8 +353,8 @@
 							<table>
 								<thead>
 									<tr>
-										<th>
-											<h6>Цены и сроки</h6>
+										<th colspan="2">
+											<p>Цены и сроки</p>
 										</th>
 									</tr>
 								</thead>
@@ -372,12 +372,12 @@
 										<td>7 дней • 1 день</td>
 									</tr>
 								</tbody>
-							</table><a class="btn btn-primary" href="#">Хочу примерно такой же</a>
+							</table><a class="link-modal-js btn btn-primary" href="#modal-call" data-title="Запросить расчет похожего навеса" data-text="Оставьте свой номер телефона, мы&amp;nbsp;вам перезвоним и&amp;nbsp;выполним расчет" data-btn="Запросить расчет" data-pic="2">Хочу примерно такой же</a>
 							<button class="btn btn-outline-secondary">Сохранить себе</button>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 			<!-- end sSpecifications-->
 			<!-- start sSimilarAwnings-->
 			<section class="sSimilarAwnings section" id="sSimilarAwnings">
@@ -506,7 +506,7 @@
 						<h2>Позвоните или посетите наш офис на&nbsp;производстве</h2>
 					</div>
 					<div class="sContact__row row">
-						<div class="col-lg-7 col-xxl-8">
+						<div class="sContact__col-map col-lg-7 col-xxl-8">
 							<div class="sContact__map">
 								<div id="map"></div><script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=2066e304-cee0-4ed2-9cb2-5f6521d5f96c"></script>
 								<script>
@@ -541,7 +541,7 @@
 								</script>
 							</div>
 						</div>
-						<div class="col-lg-5 col-xxl-4">
+						<div class="sContact__col-info col-lg-5 col-xxl-4">
 							<div class="sContact__info">
 								<div class="locaton-dropdown dropdown">
 									<div class="locaton-dropdown__btn dropdown__btn">
@@ -584,7 +584,7 @@
 											<use xlink:href="img/svg/sprite.svg#youtube"></use>
 										</svg>
 									</a>
-									<a class="sContact__btn btn btn-primary btn-sm" href="#">Обратный звонок
+									<a class="sContact__btn btn btn-primary btn-sm link-modal-js" href="#modal-call" data-title="Обратный звонок" data-text="Оставьте свой номер телефона и&amp;nbsp;мы&amp;nbsp;вам перезвоним в&amp;nbsp;течение 15&amp;nbsp;минут." data-btn="Запросить обратный звонок" data-pic="2">Обратный звонок
 									</a>
 								</div>
 							</div>
@@ -642,7 +642,7 @@
 									<div class="label"> <span>Работаем с&nbsp;2012 года</span>
 									</div>
 								</div>
-								<a class="footer__btn btn btn-primary btn-sm" href="#">Вызвать замерщика 
+								<a class="footer__btn btn btn-primary btn-sm link-modal-js" href="#modal-call" data-title="Вызвать замерщика" data-text="Оставьте свой номер телефона, мы&amp;nbsp;вам перезвоним и&amp;nbsp;договоримся о&amp;nbsp;замере" data-btn="Отправить" data-pic="1">Вызвать замерщика 
 								</a>
 							</div>
 							<div class="col-6 col-md-4 col-lg-2 ml-lg-auto">
@@ -765,8 +765,13 @@
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/@fancyapps/ui/fancybox.umd.js"> </script>
 		<script src="libs/swiper/swiper-bundle.min.js"> </script>
+<<<<<<< HEAD
 		<script src="libs/inputmask/inputmask.min.js"> </script>
 		<script src="libs/hc-sticky/hc-sticky.js"> </script>
+=======
+		<script src="libs/inputmask/inputmask.min.js"></script>
+		<script src="libs/hc-sticky/hc-sticky.js"></script>
+>>>>>>> 2420537c5e7f179be75e1c65ab65cc664afc4bfb
 		<script src="libs/plyr/plyr.min.js"> </script>
 		<script src="js/common.js"></script>
 	</body>

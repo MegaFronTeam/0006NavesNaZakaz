@@ -672,6 +672,19 @@ function eventHandler() {
 		}
 		e.stopPropagation();
 	});
+	$('.page-head__row--fix').hcSticky({
+    stickTo: $('.sticky-wrapper'),
+		top: 128,
+		innerTop: 64,
+		// bottomEnd: 100,
+		responsive: {
+			992: {
+				top: 96,
+				innerTop: 48,
+				// disable: true,
+			}
+		}
+  });
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

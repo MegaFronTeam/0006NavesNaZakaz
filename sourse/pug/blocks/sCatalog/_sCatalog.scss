@@ -15,6 +15,10 @@
 			margin-right: auto;
 		}
 	}
+	&__slider {
+		padding: rem(16);
+		margin: rem(-16);
+	}
 	&__slider-wrapper {
 		position: relative;
 		--btnRatio: calc(270 / 384);

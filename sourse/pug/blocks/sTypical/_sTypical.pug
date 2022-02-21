@@ -12,7 +12,7 @@ mixin sTypical(data)
 					.row
 						mixin filterBtn(c, ...items)
 							+e.btn-col.col
-								input.btn-check(type='checkbox' id=`option${c}` autocomplete='off')&attributes(attributes)
+								input.btn-check(type='checkbox' id=`option${c}`)&attributes(attributes)
 								label.btn(for=`option${c}`)
 									each item in items
 										span!= item
@@ -44,7 +44,7 @@ mixin sTypical(data)
 										tr
 											td Кровля
 											td Сот. поликарбонат
-									+e.btn(href="#") Хочу такой навес
+									+e.btn.link-modal-js(href="#modal-call" data-title= "Хочу навес Н1830" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;сообщим детальную информацию по&nbsp;навесу, направим к&nbsp;вам замерщика или поможем оформить заказ онлайн" data-btn= "Запросить обратный звонок" data-pic= "2") Хочу такой навес
 						+sTypicalItem()
 						+sTypicalItem()
 						+sTypicalItem()

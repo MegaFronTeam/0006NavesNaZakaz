@@ -33,12 +33,13 @@ block pagecontent
 	+header()
 		+top-nav()
 		+topLine()
-	+page-head-fixed({
-		title,
-		menu: 'menu',
-		search:'search'
-	})
-	+sBlog(`head`, ``)
+	.sContent
+		+page-head-fixed({
+			title,
+			menu: 'menu',
+			search:'search'
+		})
+		+sBlog(`head`, ``)
 	+sContact()
 	.section-wrapper.section-wrapper--footer
 		+footer()

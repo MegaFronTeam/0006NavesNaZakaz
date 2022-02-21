@@ -1,6 +1,6 @@
 "use strict";
 
-const JSCCommon = { 
+const JSCCommon = {
 	modalCall() {
 		const link = '[data-fancybox="modal"], .link-modal-js';
 
@@ -22,8 +22,8 @@ const JSCCommon = {
 				PREV: "Назад",
 			},
 		});
-		document.querySelectorAll(".modal-close-js").forEach(el=>{
-			el.addEventListener("click", ()=>{
+		document.querySelectorAll(".modal-close-js").forEach(el => {
+			el.addEventListener("click", () => {
 				Fancybox.close();
 			})
 		})
@@ -46,7 +46,7 @@ const JSCCommon = {
 							// console.log(modal.querySelector(elem).tagName)
 						}
 					}
-					function setImage(src){
+					function setImage(src) {
 						return `<img src="img/@2x/modal-${src}.png" alt="" loading="lazy">`
 					}
 					setValue(data.title, '.modal-title-js');
@@ -81,7 +81,7 @@ const JSCCommon = {
 		}
 
 	},
-	mobileMenu() { 
+	mobileMenu() {
 		const menu = document.querySelector(".menu-mobile--js");
 		if (!menu) return;
 		this.toggleMenu();
@@ -299,7 +299,7 @@ function eventHandler() {
 	// JSCCommon.makeDDGroup();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
-	
+
 	// JSCCommon.CustomInputFile(); 
 	var x = window.location.host;
 	let screenName;
@@ -316,22 +316,22 @@ function eventHandler() {
 			? topNav.classList.add('fixed')
 			: topNav.classList.remove('fixed');
 	}
-	function setFixedNav1() {
-		let topNav1 = document.querySelector('.page-head__row--fix  ');
-		if (!topNav1) return;
-		window.scrollY > 100
-			? topNav1.classList.add('fixed')
-			: topNav1.classList.remove('fixed');
-	}
+	// function setFixedNav1() {
+	// 	let topNav1 = document.querySelector('.page-head__row--fix  ');
+	// 	if (!topNav1) return;
+	// 	window.scrollY > 100
+	// 		? topNav1.classList.add('fixed')
+	// 		: topNav1.classList.remove('fixed');
+	// }
 
 	function whenResize() {
 		setFixedNav();
-		setFixedNav1();
+		// setFixedNav1();
 	}
 
 	window.addEventListener('scroll', () => {
 		setFixedNav();
-		setFixedNav1();
+		// setFixedNav1();
 
 	}, { passive: true })
 	window.addEventListener('resize', () => {
@@ -396,7 +396,7 @@ function eventHandler() {
 				slidesPerView: 2,
 				spaceBetween: 16
 			},
-			
+
 		}
 
 	});
@@ -435,7 +435,7 @@ function eventHandler() {
 				slidesPerView: 3,
 				spaceBetween: 32
 			},
-			
+
 		}
 
 	});
@@ -473,7 +473,7 @@ function eventHandler() {
 				slidesPerView: 4,
 				spaceBetween: 32
 			},
-			
+
 		}
 
 	});
@@ -519,7 +519,7 @@ function eventHandler() {
 				slidesPerView: 4,
 				spaceBetween: 32
 			},
-			
+
 		}
 
 	});
@@ -556,22 +556,22 @@ function eventHandler() {
 	});
 
 	// Прокрутка на верх 
-	$(function (){
+	$(function () {
 		// прячем кнопку #back-top
 		$("#back-top").hide();
 
-		$(window).scroll(function (){
-			if ($(this).scrollTop() > 908){
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 908) {
 				$("#back-top").fadeIn();
-			} else{
+			} else {
 				$("#back-top").fadeOut();
 			}
 		});
 
 		// при клике на ссылку плавно поднимаемся вверх
-		$("#back-top a").click(function (){
+		$("#back-top a").click(function () {
 			$("body,html").animate({
-				scrollTop:0
+				scrollTop: 0
 			}, 800);
 			return false;
 		});
@@ -634,21 +634,41 @@ function eventHandler() {
 			swiper: sSpecificationsswiperThumbs,
 		}
 	});
+	//hc-sticky
 
+	// var Sticky = new hcSticky('.page-head__row--fix', {
+	// 	top:100
+	// });
+
+
+	var $sticky = $('.page-head__row--fix');
+
+	$sticky.hcSticky({
+		// innerTop:150,
+		stickTo:`.sContent`,
+		stickyClass: `fixed`,
+		top:64,
+		responsive: {
+			992: {
+				top:48,
+			}
+		},
+	});
+	//end
 	// modal window
-	$(".dd-head-js").click(function(){
+	$(".dd-head-js").click(function () {
 		$(this).toggleClass("active").next().slideToggle();
 	})
 	const player = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, { invertTime: false }));
 
-	$(".dropdown__btn").click(function() {
-		$(this).parent().toggleClass( "active" );
-    $(this).siblings('.dropdown__content').slideToggle();
+	$(".dropdown__btn").click(function () {
+		$(this).parent().toggleClass("active");
+		$(this).siblings('.dropdown__content').slideToggle();
 	});
-	$(document).on('click', function(e) {
+	$(document).on('click', function (e) {
 		if (!$(e.target).closest(".dropdown").length) {
 			$('.dropdown__content').slideUp();
-			$(".dropdown").removeClass( "active" );
+			$(".dropdown").removeClass("active");
 		}
 		e.stopPropagation();
 	});
@@ -670,46 +690,46 @@ if (document.readyState !== 'loading') {
 
 
 const map = document.querySelector('#map');
-	document.addEventListener('DOMContentLoaded', function(event) {
-		ymaps.ready(init);
-	});
+document.addEventListener('DOMContentLoaded', function (event) {
+	ymaps.ready(init);
+});
 function init() {
-			//- var center = [55.75322550427434,37.65589449999999];
-		var center = [56.01248606874105,37.48441499999996];
-		var myMap = new ymaps.Map("map", {
-			center: center,
-			zoom: 17,
-			controls: ['zoomControl']
-		});
-				
-								// Создадим коллекцию геообъектов.
+	//- var center = [55.75322550427434,37.65589449999999];
+	var center = [56.01248606874105, 37.48441499999996];
+	var myMap = new ymaps.Map("map", {
+		center: center,
+		zoom: 17,
+		controls: ['zoomControl']
+	});
+
+	// Создадим коллекцию геообъектов.
 	var collection = new ymaps.GeoObjectCollection();
-		
-		collection
-			.add(new ymaps.Placemark([56.01248606874105, 37.48441499999996], { balloonContent: '', }))
-			.add(new ymaps.Placemark([55.67169106905855, 37.2928495], { balloonContent: '', }))
-			.add(new ymaps.Placemark([54.822272569867756, 38.150632499999915], { balloonContent: '', }))
-			.add(new ymaps.Placemark([55.749850568991356, 38.64405949999995], { balloonContent: '', }))
-			.add(new ymaps.Placemark([56.349454568379294, 36.75054550000001], { balloonContent: '', }))
-			.add(new ymaps.Placemark([56.316543568414716, 38.15373199999991], { balloonContent: '', }));
-		
-		myMap.geoObjects.add(collection);
+
+	collection
+		.add(new ymaps.Placemark([56.01248606874105, 37.48441499999996], { balloonContent: '', }))
+		.add(new ymaps.Placemark([55.67169106905855, 37.2928495], { balloonContent: '', }))
+		.add(new ymaps.Placemark([54.822272569867756, 38.150632499999915], { balloonContent: '', }))
+		.add(new ymaps.Placemark([55.749850568991356, 38.64405949999995], { balloonContent: '', }))
+		.add(new ymaps.Placemark([56.349454568379294, 36.75054550000001], { balloonContent: '', }))
+		.add(new ymaps.Placemark([56.316543568414716, 38.15373199999991], { balloonContent: '', }));
+
+	myMap.geoObjects.add(collection);
 
 
-			myMap.behaviors.disable('scrollZoom');
-			//на мобильных устройствах... (проверяем по userAgent браузера)
-			if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-			//... отключаем перетаскивание карты
-				myMap.behaviors.disable('drag');
-			}
-			// Добавляем все метки на карту.
-		
-		
-		$(document).on('click', ".sContact__map-point", function (e) {  
-			// const mark = this.dataset.mark; 
-			const mark = this.dataset.mark.split(','); 
-			const zoom = +this.dataset.zoom;  
-			myMap.setCenter(mark, zoom); 
-			console.log(mark);
-		});
-		}
+	myMap.behaviors.disable('scrollZoom');
+	//на мобильных устройствах... (проверяем по userAgent браузера)
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		//... отключаем перетаскивание карты
+		myMap.behaviors.disable('drag');
+	}
+	// Добавляем все метки на карту.
+
+
+	$(document).on('click', ".sContact__map-point", function (e) {
+		// const mark = this.dataset.mark; 
+		const mark = this.dataset.mark.split(',');
+		const zoom = +this.dataset.zoom;
+		myMap.setCenter(mark, zoom);
+		console.log(mark);
+	});
+}

@@ -200,33 +200,8 @@
 				--bs-gutter-x: #{rem(32)};
 			}
 		}
-<<<<<<< HEAD
-	}
-	&__row.fixed {
-		background-color: #f2f6fc;
-		// position: fixed;
-		// @include media-breakpoint-up(lg) {
-		// 	top: 64px;
-		// }
-		// // @include media-breakpoint-up(md) {
-		// // 	top: 64px;
-		// // }
-		// top: 48px;
-		// left: 0;
-		// width: 100vw;
-		z-index: 999;
-		.container {
-			margin-top: 0;
-			@include media-breakpoint-up(lg) {
-				padding-top: rem(17.5);
-				padding-bottom: rem(17.5);
-			}
-			padding-top: 10px;
-			padding-bottom: 10px;
-=======
 		&.sticky {
 				background-color: $light;
->>>>>>> 2420537c5e7f179be75e1c65ab65cc664afc4bfb
 		}
 	}
 	// &__row.fixed {

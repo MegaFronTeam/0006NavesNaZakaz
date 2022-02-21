@@ -44,11 +44,7 @@
     "sass": "^1.49.8"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@fancyapps/ui": "^4.0.20",
-=======
     "@fancyapps/ui": "^4.0.25",
->>>>>>> 2420537c5e7f179be75e1c65ab65cc664afc4bfb
     "hc-sticky": "^2.2.7",
     "inputmask": "^5.0.6",
     "jquery": "^3.6.0",

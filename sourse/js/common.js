@@ -641,19 +641,19 @@ function eventHandler() {
 	// });
 
 
-	var $sticky = $('.page-head__row--fix');
+	// var $sticky = $('.page-head__row--fix');
 
-	$sticky.hcSticky({
-		// innerTop:150,
-		stickTo:`.sContent`,
-		stickyClass: `fixed`,
-		top:64,
-		responsive: {
-			992: {
-				top:48,
-			}
-		},
-	});
+	// $sticky.hcSticky({
+	// 	// innerTop:150,
+	// 	stickTo:`.sContent`,
+	// 	stickyClass: `fixed`,
+	// 	top:64,
+	// 	responsive: {
+	// 		992: {
+	// 			top:48,
+	// 		}
+	// 	},
+	// });
 	//end
 	// modal window
 	$(".dd-head-js").click(function () {
@@ -673,7 +673,7 @@ function eventHandler() {
 		e.stopPropagation();
 	});
 	$('.page-head__row--fix').hcSticky({
-    stickTo: $('.sticky-wrapper'),
+		stickTo: $('.sticky-wrapper'),
 		top: 128,
 		innerTop: 64,
 		// bottomEnd: 100,

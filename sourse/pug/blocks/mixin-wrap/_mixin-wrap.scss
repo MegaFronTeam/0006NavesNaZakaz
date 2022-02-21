@@ -158,16 +158,6 @@
 .sticky-wrapper {
 }
 .page-head {
-<<<<<<< HEAD
-	margin-top: rem(35);
-	padding-bottom: rem(35);
-	@include media-breakpoint-up(md) {
-		margin-top: rem(40);
-		padding-bottom: rem(40);
-	}
-	@include media-breakpoint-up(lg) {
-		margin-top: rem(70);
-=======
 	padding-top: rem(25);
 	padding-bottom: rem(35);
 	@include media-breakpoint-up(md) {
@@ -176,7 +166,6 @@
 	}
 	@include media-breakpoint-up(lg) {
 		padding-top: rem(52.5);
->>>>>>> 2420537c5e7f179be75e1c65ab65cc664afc4bfb
 	}
 	&__row {
 		@include mt(0.2s);

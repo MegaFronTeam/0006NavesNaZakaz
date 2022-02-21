@@ -34,23 +34,24 @@ block pagecontent
 	+header()
 		+top-nav()
 		+topLine()
-	+page-head-fixed({
-		title,
-		btn: 'btn',
-		menu: 'menu'
-	})
-		+infoPanel()
-			+infoPanelItem(``, `Как выбрать`).--btn
-			+infoPanelItem(``, `15.09.21`).--btn
-			+infoPanelItem(`eye`, `834`).--views
-			+infoPanelItem(`clock`, `5&nbsp;минут`).--time
-	//- +sContent()
-	+sBlogPage
-	+sBlog(``, `Продолжайте читать`).sBlog--content
-	+sContact()
-	.section-wrapper.section-wrapper--footer
-		+footer()
-	+scrollToTop()
+	.sticky-wrapper
+		+page-head-fixed({
+			title,
+			btn: 'btn',
+			menu: 'menu'
+		})
+			+infoPanel()
+				+infoPanelItem(``, `Как выбрать`).--btn
+				+infoPanelItem(``, `15.09.21`).--btn
+				+infoPanelItem(`eye`, `834`).--views
+				+infoPanelItem(`clock`, `5&nbsp;минут`).--time
+		//- +sContent()
+		+sBlogPage
+		+sBlog(``, `Продолжайте читать`).sBlog--content
+		+sContact()
+		.section-wrapper.section-wrapper--footer
+			+footer()
+		+scrollToTop()
 
 
 

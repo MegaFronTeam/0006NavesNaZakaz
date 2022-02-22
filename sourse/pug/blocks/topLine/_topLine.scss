@@ -218,9 +218,9 @@
 .label {
 	display: flex;
 	align-items: center;
-	width: rem(199);
+	width: auto;
 	height: rem(32);
-	padding: rem(7) rem(27) rem(7) rem(11);
+	padding: rem(7) rem(35) rem(7) rem(11);
 	clip-path: polygon(100% 0%, calc(100% - 20px) 50%, 100% 100%, 0 100%, 0 0);
 	background-color: $info;
 	border-radius: 3px 0 0 3px;

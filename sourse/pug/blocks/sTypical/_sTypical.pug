@@ -30,7 +30,8 @@ mixin sTypical(data)
 						mixin sTypicalItem()
 							+e.slide.swiper-slide
 								+e.item
-									+pic(`sTypical-1.png`, 'bg', 0)
+									+e.img-wrap(data-fancybox='sTypical' data-src=`img/@2x/sTypical-1.png` data-caption=`Н-1830`)
+										+pic(`sTypical-1.png`, 'bg', 0)
 									table
 										tr
 											th Н-1830

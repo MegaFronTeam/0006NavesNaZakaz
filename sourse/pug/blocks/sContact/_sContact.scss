@@ -7,13 +7,13 @@
 		--sPB: #{rem(90)};
 	}
 	&__col-map {
-		order: 2;
+		// order: 2;
 		@include media-breakpoint-up(lg) {
 			order: unset;
 		}
 	}
 	&__col-info {
-		order: 1;
+		// order: 1;
 		margin-bottom: rem(30);
 		@include media-breakpoint-up(lg) {
 			order: unset;
@@ -153,10 +153,16 @@
 		}
 	}
 	&__content {
+		@include roww(15px, m);
+		--bs-gutter-y: var(--bs-gutter-x);
+		margin-top: calc(-1 * var(--bs-gutter-y));
 		display: flex;
 		align-items: flex-end;
 		flex-wrap: wrap;
-		gap: rem(15);
+		// gap: rem(15);
+		& > * {
+			margin-top: var(--bs-gutter-y);
+		}
 		@include media-breakpoint-up(lg) {
 			max-width: rem(349);
 		}

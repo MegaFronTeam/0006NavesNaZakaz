@@ -98,8 +98,8 @@ mixin categoryMenu()
 				+categoryItem(`Технические <br> детали`, 2)
 				+categoryItem(`Безопасность <br> и&nbsp;гарантии`, 3)
 				+categoryItem(`Внешний <br> вид`, 4)
-				+categoryItem(`Как <br> выбрать`, 5)
-				+categoryItem(`Примеры <br> Наших работ`, 6)
+				+categoryItem(`Выбор <br> навеса`, 5)
+				+categoryItem(`Примеры <br> наших работ`, 6)
 			
 mixin infoPanel()
 	+b.info-panel
@@ -163,7 +163,8 @@ mixin adv-item(title,caption,btn,img)
 
 mixin adv-item-white(title,caption,btn)
 	+b.adv-item--white
-		+e.title!=title
+		if title
+			+e.title!=title
 		+e.caption!=caption
 		if btn
 			+e.btn(href="#")!=btn
@@ -172,14 +173,14 @@ mixin adv-item-white(title,caption,btn)
 				+e.item(href="#" target="_blank")
 					+e.icon-wrap
 						+icon('instagram')
-					span instagram
+					span Instagram
 				+e.item(href="#" target="_blank")
 					+e.icon-wrap
 						+icon('youtube')
-					span youtube
+					span YouTube
 				+e.item(href="#" target="_blank")
 					+e.icon-wrap
 						+icon('whatsapp')
-					span whatsapp
+					span Whatsapp
 
 

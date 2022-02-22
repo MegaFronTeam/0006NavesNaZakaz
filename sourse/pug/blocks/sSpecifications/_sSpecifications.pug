@@ -1,4 +1,4 @@
-mixin sSpecifications(btn)
+mixin sSpecifications(btn, title, subtitle, btnText)
 	// start sSpecifications
 	+b.sSpecifications.section&attributes(attributes)
 		+e.container.container
@@ -28,6 +28,9 @@ mixin sSpecifications(btn)
 								+slide(3)
 								+slide(4)
 				.col-lg-4
+					if title 
+						h4!= title
+						p!= subtitle
 					table
 						thead
 							tr
@@ -73,11 +76,11 @@ mixin sSpecifications(btn)
 							tr
 								td Изготовление • Установка
 								td 7 дней • 1 день
-					a.link-modal-js(href="#modal-call" data-title= "Запросить расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Запросить расчет" data-pic= "2").btn.btn-primary Хочу примерно такой же
+					a.link-modal-js(href="#modal-call" data-title= "Запросить расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Запросить расчет" data-pic= "2").btn.btn-primary!= btnText
 					if btn
 						button.btn.btn-outline-secondary Сохранить себе
 	// end sSpecifications
-mixin sSpecifications2(btn)
+mixin sSpecifications2(btn, title, subtitle, btnText)
 	// start sSpecifications
 	+b.sSpecifications.section&attributes(attributes)
 		+e.container.container
@@ -107,6 +110,9 @@ mixin sSpecifications2(btn)
 								+slide(3)
 								+slide(4)
 				.col-lg-4
+					if title 
+						h4!= title
+						p!= subtitle
 					table
 						thead
 							tr
@@ -152,11 +158,11 @@ mixin sSpecifications2(btn)
 							tr
 								td Изготовление • Установка
 								td 7 дней • 1 день
-					a.link-modal-js(href="#modal-call" data-title= "Запросить расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Запросить расчет" data-pic= "2").btn.btn-primary Хочу примерно такой же
+					a.link-modal-js(href="#modal-call" data-title= "Запросить расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Запросить расчет" data-pic= "2").btn.btn-primary!= btnText
 					if btn
 						button.btn.btn-outline-secondary Сохранить себе
 	// end sSpecifications
-mixin sSpecifications3(btn)
+mixin sSpecifications3(btn, title, subtitle, btnText)
 	// start sSpecifications
 	+b.sSpecifications.section#sSpecifications&attributes(attributes)
 		+e.container.container
@@ -186,6 +192,9 @@ mixin sSpecifications3(btn)
 								+slide(3)
 								+slide(4)
 				.col-lg-4
+					if title 
+						h4!= title
+						p!= subtitle
 					table
 						thead
 							tr
@@ -231,7 +240,7 @@ mixin sSpecifications3(btn)
 							tr
 								td Изготовление • Установка
 								td 7 дней • 1 день
-					a.link-modal-js(href="#modal-call" data-title= "Запросить расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Запросить расчет" data-pic= "2").btn.btn-primary Хочу примерно такой же
+					a.link-modal-js(href="#modal-call" data-title= "Запросить расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Запросить расчет" data-pic= "2").btn.btn-primary!= btnText
 					if btn
 						button.btn.btn-outline-secondary Сохранить себе
 	// end sSpecifications

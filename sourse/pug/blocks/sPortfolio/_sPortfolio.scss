@@ -27,6 +27,23 @@
 		&:hover {
 			box-shadow: none;
 		}
+		h4 {
+			color: $black;
+			margin-bottom: rem(10);
+			& + p {
+				font-size: rem(12);
+				color: rgba(44, 52, 64, 0.7);
+				margin-bottom: rem(16);
+			}
+		}
+		table {
+			&:not(:last-of-type) {
+				margin-bottom: rem(16);
+			}
+			&:last-of-type {
+				margin-bottom: rem(16);
+			}
+		}
 	}
 	&__btn-wrap {
 		display: flex;

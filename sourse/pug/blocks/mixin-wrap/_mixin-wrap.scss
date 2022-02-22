@@ -299,6 +299,9 @@
 		@include media-breakpoint-up(lg) {
 			padding-bottom: rem(57);
 		}
+		&__wrap {
+			display: flex;
+		}
 	}
 }
 

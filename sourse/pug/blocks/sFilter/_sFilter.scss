@@ -21,6 +21,12 @@
 					transform: rotate(-90deg);
 				}
 			}
+			& + .sFilter__wrap {
+				display: none;
+				@include media-breakpoint-up(lg) {
+					display: block;
+				}
+			}
 		}
 	}
 	&__title {

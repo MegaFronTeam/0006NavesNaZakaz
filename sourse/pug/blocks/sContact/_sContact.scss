@@ -44,7 +44,9 @@
 	&__map {
 		position: relative;
 		// height: rem(751);
+		@include media-breakpoint-up(lg) {
 		height: 100%;
+		}
 		// min-height: rem(400);
 		// max-height: rem(622);
 		@include block(800, 622);
@@ -69,6 +71,9 @@
 			top: -50%;
 			left: -50%;
 			z-index: -7;
+		}
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 40px;
 		}
 	}
 	&__info {
@@ -142,8 +147,11 @@
 		}
 	}
 	&__phone-number {
-		display: flex;
-		flex-direction: column;
+		@include media-breakpoint-up(lg){
+
+			display: flex;
+			flex-direction: column;
+		}
 		a {
 			font-size: rem(24);
 			color: $dark;
@@ -156,9 +164,12 @@
 		@include roww(15px, m);
 		--bs-gutter-y: var(--bs-gutter-x);
 		margin-top: calc(-1 * var(--bs-gutter-y));
-		display: flex;
-		align-items: flex-end;
-		flex-wrap: wrap;
+		@include media-breakpoint-up(lg){
+
+			display: flex;
+			align-items: flex-end;
+			flex-wrap: wrap;
+		}
 		// gap: rem(15);
 		& > * {
 			margin-top: var(--bs-gutter-y);
@@ -237,6 +248,11 @@
 			width: 100%;
 			margin-top: rem(20);
 		}
+	}
+
+	&__flex{
+		@include roww(10px, m);
+		display: flex;
 	}
 	@include media-breakpoint-up(xl) {
 	}

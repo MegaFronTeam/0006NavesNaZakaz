@@ -577,63 +577,34 @@ function eventHandler() {
 		});
 	});
 
-	var sSpecificationsswiperThumbs = new Swiper(".sSpecifications__slider-thumbs--js", {
-		loop: true,
-		spaceBetween: 8,
-		slidesPerView: 4,
-		freeMode: true,
-		watchSlidesProgress: true,
-	});
-	var sSpecificationsswiper2 = new Swiper(".sSpecifications__slider--js", {
-		loop: true,
-		spaceBetween: 0,
-		slidesPerView: 1,
-		autoplay: {
-			delay: 5000,
-		},
-		watchOverflow: false,
-		thumbs: {
-			swiper: sSpecificationsswiperThumbs,
-		}
-	});
-	var sSpecificationsswiperThumbs = new Swiper(".sSpecifications__slider-thumbs--js-2", {
-		loop: true,
-		spaceBetween: 8,
-		slidesPerView: 4,
-		freeMode: true,
-		watchSlidesProgress: true,
-	});
-	var sSpecificationsswiper2 = new Swiper(".sSpecifications__slider--js-2", {
-		loop: true,
-		spaceBetween: 0,
-		slidesPerView: 1,
-		autoplay: {
-			delay: 5000,
-		},
-		watchOverflow: false,
-		thumbs: {
-			swiper: sSpecificationsswiperThumbs,
-		}
-	});
-	var sSpecificationsswiperThumbs = new Swiper(".sSpecifications__slider-thumbs--js-3", {
-		loop: true,
-		spaceBetween: 8,
-		slidesPerView: 4,
-		freeMode: true,
-		watchSlidesProgress: true,
-	});
-	var sSpecificationsswiper2 = new Swiper(".sSpecifications__slider--js-3", {
-		loop: true,
-		spaceBetween: 0,
-		slidesPerView: 1,
-		autoplay: {
-			delay: 5000,
-		},
-		watchOverflow: false,
-		thumbs: {
-			swiper: sSpecificationsswiperThumbs,
-		}
-	});
+
+
+	let  sliderWrap = document.querySelectorAll(".sSpecifications__slider-wrap");
+
+	sliderWrap.forEach((element) => {
+
+		var sSpecificationsswiperThumbs = new Swiper(element.querySelector(".sSpecifications__slider-thumbs--js"), {
+			loop: true,
+			spaceBetween: 8,
+			slidesPerView: 4,
+			freeMode: true,
+			watchSlidesProgress: true,
+		});
+		var sSpecificationsswiper2 = new Swiper(element.querySelector(".sSpecifications__slider--js"), {
+			loop: true,
+			spaceBetween: 0,
+			slidesPerView: 1,
+			// autoplay: {
+			// 	delay: 5000,
+			// },
+			watchOverflow: true,
+			thumbs: {
+				swiper: sSpecificationsswiperThumbs,
+			}
+		});
+	})
+		
+	// console.log(sSpecificationsswiperThumbs);
 	//hc-sticky
 
 	// var Sticky = new hcSticky('.page-head__row--fix', {
@@ -729,7 +700,7 @@ function init() {
 	myMap.geoObjects.add(collection);
 
 
-	myMap.behaviors.disable('scrollZoom');
+	// myMap.behaviors.disable('scrollZoom');
 	//на мобильных устройствах... (проверяем по userAgent браузера)
 	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		//... отключаем перетаскивание карты

@@ -1,20 +1,63 @@
 .form-wrap{
  	&__input-wrap{
 			// @extend .form-group;
-			
+				position: relative;
 		}
 		&__input{
 			// @extend .form-control;
 		//  outline: 0 !important;
-		 resize: none;
+		padding-top: calc(#{$input-padding-y} + .5em);
+		padding-bottom: calc(#{$input-padding-y} - .5em);
+		&::placeholder{
+			color: transparent !important;
+			opacity: 0 !important;
+		}
+	// 	&:not(textarea)::placeholder {
+	// 		color: rgba(#05141F, .5);
+	// 		opacity: 0 !important	;
+	// }
  	}
  	&__btn{
  		cursor: pointer;
  	}
  	label{
- 		width: 100%;
+ 		// width: 100%;
  		display: block;
  	}
+
+
+	 &__input-title{
+		position: absolute;
+		left: $input-padding-x;
+		top: $input-padding-y;
+		font-size: $input-font-size;
+		color: $input-placeholder-color;
+		transform-origin: left ;
+		pointer-events: none;
+		@include mt(.2s);
+		max-width: 100%;
+	 }
+	//  textarea  + &__input-title{
+	// 	 display: none;
+	//  }
+	 &__input{
+		 
+		 &:-webkit-autofill ,
+		 &:focus, 
+		 &:not(:placeholder-shown){
+			 &:not(textarea) {
+				//  box-shadow:  0px 3px 0px  $primary;
+			 }
+		 }
+		 &:-webkit-autofill ,
+		 &:focus, 
+		 &:not(:placeholder-shown), 
+		 &.form-select  {
+			 & ~ .form-wrap__input-title{
+				 transform: translateY(calc( #{rem(-12)})); 
+			 }
+		 }
+	 }
 }
 
 

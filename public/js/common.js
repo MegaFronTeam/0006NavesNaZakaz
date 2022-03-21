@@ -256,35 +256,33 @@ const JSCCommon = {
 			};
 		}, { passive: true });
 	},
-	// makeDDGroup() {
-	// 	let parents = document.querySelectorAll('.dd-group-js');
-	// 	for (let parent of parents) {
-	// 		if (parent) {
-	// 			// childHeads, kind of funny))
-	// 			let ChildHeads = parent.querySelectorAll('.dd-head-js:not(.disabled)');
-	// 			$(ChildHeads).click(function () {
-	// 				let clickedHead = this;
-
-	// 				$(ChildHeads).each(function () {
-	// 					if (this === clickedHead) {
-	// 						//parent element gain toggle class, style head change via parent
-	// 						$(this.parentElement).toggleClass('active');
-	// 						$(this.parentElement).find('.dd-content-js').slideToggle(function () {
-	// 							$(this).toggleClass('active');
-	// 						});
-	// 					}
-	// 					else {
-	// 						$(this.parentElement).removeClass('active');
-	// 						$(this.parentElement).find('.dd-content-js').slideUp(function () {
-	// 							$(this).removeClass('active');
-	// 						});
-	// 					}
-	// 				});
-
-	// 			});
-	// 		}
-	// 	}
-	// },
+	portfolioSlider() {
+		let  sliderWrap = document.querySelectorAll(".sSpecifications__slider-wrap");
+		sliderWrap.forEach((element) => {
+	
+			var sSpecificationsswiperThumbs = new Swiper(element.querySelector(".sSpecifications__slider-thumbs--js"), {
+				loop: true,
+				spaceBetween: 8,
+				slidesPerView: 4,
+				freeMode: true,
+				observeParents: true,
+				watchSlidesProgress: true,
+			});
+			var sSpecificationsswiper2 = new Swiper(element.querySelector(".sSpecifications__slider--js"), {
+				loop: true,
+				spaceBetween: 0,
+				slidesPerView: 1,
+				observeParents: true,
+				// autoplay: {
+				// 	delay: 5000,
+				// },
+				watchOverflow: true,
+				thumbs: {
+					swiper: sSpecificationsswiperThumbs,
+				}
+			});
+		})
+	}
 };
 const $ = jQuery;
 
@@ -296,6 +294,8 @@ function eventHandler() {
 	JSCCommon.inputMask();
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
+	JSCCommon.portfolioSlider();
+	JSCCommon.portfolioSlider();
 	// JSCCommon.makeDDGroup();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
@@ -579,30 +579,8 @@ function eventHandler() {
 
 
 
-	let  sliderWrap = document.querySelectorAll(".sSpecifications__slider-wrap");
 
-	sliderWrap.forEach((element) => {
 
-		var sSpecificationsswiperThumbs = new Swiper(element.querySelector(".sSpecifications__slider-thumbs--js"), {
-			loop: true,
-			spaceBetween: 8,
-			slidesPerView: 4,
-			freeMode: true,
-			watchSlidesProgress: true,
-		});
-		var sSpecificationsswiper2 = new Swiper(element.querySelector(".sSpecifications__slider--js"), {
-			loop: true,
-			spaceBetween: 0,
-			slidesPerView: 1,
-			// autoplay: {
-			// 	delay: 5000,
-			// },
-			watchOverflow: true,
-			thumbs: {
-				swiper: sSpecificationsswiperThumbs,
-			}
-		});
-	})
 		
 	// console.log(sSpecificationsswiperThumbs);
 	//hc-sticky

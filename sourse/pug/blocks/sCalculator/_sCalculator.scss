@@ -31,7 +31,7 @@
 		.form-control {
 			border: none;
 		}
-		form {
+		&__form {
 			@include media-breakpoint-up(lg) {
 				display: grid;
 				grid-template-columns: 48.7% 51.3%;

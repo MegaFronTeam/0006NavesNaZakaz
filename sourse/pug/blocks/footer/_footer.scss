@@ -88,7 +88,7 @@
 	&__content {
 		// position: absolute;
 		@include media-breakpoint-up(lg) {
-			margin-top: rem(-113);
+			// margin-top: rem(-113);
 		}
 		span {
 			font-size: rem(12);

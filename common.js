@@ -54,7 +54,6 @@ const JSCCommon = {
 					setValue(setImage(data.pic), '.modal-pic-js');
 					setValue(data.btn, '.btn');
 
-				
 				})
 			})
 		}
@@ -594,6 +593,7 @@ function eventHandler() {
 
 			let title = document.createElement('span')
 			title.classList.add('form-wrap__input-title');
+
 			title.innerHTML = input.tagName == "SELECT"  ?  input.dataset.placeholder :  input.placeholder;
 			input.insertAdjacentElement('afterend', title)
 		};
@@ -651,49 +651,3 @@ if (document.readyState !== 'loading') {
 // 	}, 500);
 // }
 
-
-
-// const map = document.querySelector('#map');
-// document.addEventListener('DOMContentLoaded', function (event) {
-// 	ymaps.ready(init);
-// });
-// function init() {
-// 	//- var center = [55.75322550427434,37.65589449999999];
-// 	var center = [56.01248606874105, 37.48441499999996];
-// 	var myMap = new ymaps.Map("map", {
-// 		center: center,
-// 		zoom: 17,
-// 		controls: ['zoomControl']
-// 	});
-
-// 	// Создадим коллекцию геообъектов.
-// 	var collection = new ymaps.GeoObjectCollection();
-
-// 	collection
-// 		.add(new ymaps.Placemark([56.01248606874105, 37.48441499999996], { balloonContent: '', }))
-// 		.add(new ymaps.Placemark([55.67169106905855, 37.2928495], { balloonContent: '', }))
-// 		.add(new ymaps.Placemark([54.822272569867756, 38.150632499999915], { balloonContent: '', }))
-// 		.add(new ymaps.Placemark([55.749850568991356, 38.64405949999995], { balloonContent: '', }))
-// 		.add(new ymaps.Placemark([56.349454568379294, 36.75054550000001], { balloonContent: '', }))
-// 		.add(new ymaps.Placemark([56.316543568414716, 38.15373199999991], { balloonContent: '', }));
-
-// 	myMap.geoObjects.add(collection);
-
-
-// 	// myMap.behaviors.disable('scrollZoom');
-// 	//на мобильных устройствах... (проверяем по userAgent браузера)
-// 	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-// 		//... отключаем перетаскивание карты
-// 		myMap.behaviors.disable('drag');
-// 	}
-// 	// Добавляем все метки на карту.
-
-
-// 	$(document).on('click', ".sContact__map-point", function (e) {
-// 		// const mark = this.dataset.mark; 
-// 		const mark = this.dataset.mark.split(',');
-// 		const zoom = +this.dataset.zoom;
-// 		myMap.setCenter(mark, zoom);
-// 		console.log(mark);
-// 	});
-// }

@@ -25,7 +25,7 @@ mixin input(placeholder,  t='text', label= placeholder, name= t)
 		if label
 			label
 				+t(t,placeholder, name)&attributes(attributes)
-				+e.SPAN.input-title= label
+				//- +e.SPAN.input-title= label
 				block
 		else
 			+t(t,placeholder, name)&attributes(attributes)

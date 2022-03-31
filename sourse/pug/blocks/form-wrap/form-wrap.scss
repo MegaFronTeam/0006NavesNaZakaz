@@ -28,7 +28,8 @@
 
 	 &__input-title{
 		position: absolute;
-		left: $input-padding-x;
+		left: 0;
+		padding-left: $input-padding-x;
 		top: $input-padding-y;
 		font-size: $input-font-size;
 		color: $input-placeholder-color;
@@ -36,6 +37,8 @@
 		pointer-events: none;
 		@include mt(.2s);
 		max-width: 100%;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	 }
 	//  textarea  + &__input-title{
 	// 	 display: none;

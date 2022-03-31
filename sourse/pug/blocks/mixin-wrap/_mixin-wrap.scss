@@ -460,7 +460,15 @@
 		span {
 			margin-right: rem(10);
 		}
+		img,
+		svg,
 		.icon {
+			fill: currentColor !important;
+			* {
+				fill: currentColor !important;
+
+			}
+			height: 1em;
 			font-size: rem(32);
 		}
 	}

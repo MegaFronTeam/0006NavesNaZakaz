@@ -51,7 +51,7 @@
 		align-items: center;
 		a,
 		button {
-			&:first-child {
+			 
 				margin-bottom: rem(20);
 				width: 100%;
 				max-width: rem(213);
@@ -59,12 +59,11 @@
 				padding: rem(12);
 				@include media-breakpoint-up(lg) {
 					margin-bottom: rem(48);
-				}
-			}
-			&:last-child {
-				width: 100%;
-				max-width: rem(370);
-			}
+				} 
+		}
+		a {
+			width: 100%;
+			max-width: rem(370);
 		}
 	}
 	@include media-breakpoint-up(xl) {}

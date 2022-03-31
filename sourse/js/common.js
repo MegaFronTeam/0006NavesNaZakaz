@@ -47,12 +47,14 @@ const JSCCommon = {
 						}
 					}
 					function setImage(src) {
-						return `<img src="img/@2x/modal-${src}.png" alt="" loading="lazy">`
+						return `<img src="/wp-content/themes/naves/assets/img/@2x/modal-${src}.png" alt="">`
 					}
 					setValue(data.title, '.modal-title-js');
 					setValue(data.text, '.modal-text-js');
-					setValue(data.btn, '.btn');
 					setValue(setImage(data.pic), '.modal-pic-js');
+					setValue(data.btn, '.btn');
+
+				
 				})
 			})
 		}
@@ -155,7 +157,7 @@ const JSCCommon = {
 		// mask for input
 		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
 		InputTel.forEach(element => element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"));
-		Inputmask("+9(999)999-99-99").mask(InputTel);
+		Inputmask("+7(999)999-99-99").mask(InputTel);
 	},
 	// /inputMask
 	ifie() {
@@ -163,48 +165,7 @@ const JSCCommon = {
 		if (isIE11) {
 			document.body.insertAdjacentHTML("beforeend", '<div class="browsehappy">	<p class=" container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p></div>');
 		}
-	},
-	sendForm() {
-		var gets = (function () {
-			var a = window.location.search;
-			var b = new Object();
-			var c;
-			a = a.substring(1).split("&");
-			for (var i = 0; i < a.length; i++) {
-				c = a[i].split("=");
-				b[c[0]] = c[1];
-			}
-			return b;
-		})();
-		// form
-		$(document).on('submit', "form", function (e) {
-			e.preventDefault();
-			const th = $(this);
-			var data = th.serialize();
-			th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-			th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-			th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-			th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-			$.ajax({
-				url: 'action.php',
-				type: 'POST',
-				data: data,
-			}).done(function (data) {
-
-				Fancybox.close();
-				Fancybox.show([{ src: "#modal-thanks", type: "inline" }]);
-				// window.location.replace("/thanks.html");
-				setTimeout(function () {
-					// Done Functions
-					th.trigger("reset");
-					// $.magnificPopup.close();
-					// ym(53383120, 'reachGoal', 'zakaz');
-					// yaCounter55828534.reachGoal('zakaz');
-				}, 4000);
-			}).fail(function () { });
-
-		});
-	},
+	}, 
 	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01;
@@ -291,7 +252,7 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	// JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
-	JSCCommon.inputMask();
+	// JSCCommon.inputMask();
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.portfolioSlider();
@@ -604,6 +565,40 @@ function eventHandler() {
 	// 	},
 	// });
 	//end
+
+
+	const convertImages = (query, callback) => {
+		const images = document.querySelectorAll(query);
+	
+		images.forEach(image => {
+			fetch(image.src)
+			.then(res => res.text())
+			.then(data => {
+				const parser = new DOMParser();
+				const svg = parser.parseFromString(data, 'image/svg+xml').querySelector('svg');
+	
+				if (image.id) svg.id = image.id;
+				if (image.className) svg.classList = image.classList;
+	
+				image.parentNode.replaceChild(svg, image);
+			})
+			.then(callback)
+			.catch(error => console.error(error))
+		});
+	}
+	convertImages(".categories__item img");
+
+	let inputs = document.querySelectorAll('.form-wrap__input');
+	for (const input of inputs) {
+		if (input) {
+
+			let title = document.createElement('span')
+			title.classList.add('form-wrap__input-title');
+			title.innerHTML = input.tagName == "SELECT"  ?  input.dataset.placeholder :  input.placeholder;
+			input.insertAdjacentElement('afterend', title)
+		};
+	}
+
 	// modal window
 	$(".dd-head-js").click(function () {
 		$(this).toggleClass("active").next().slideToggle();
@@ -621,19 +616,26 @@ function eventHandler() {
 		}
 		e.stopPropagation();
 	});
-	$('.page-head__row--fix').hcSticky({
-		stickTo: $('.sticky-wrapper'),
-		top: 128,
-		innerTop: 64,
-		// bottomEnd: 100,
-		responsive: {
-			992: {
-				top: 96,
-				innerTop: 48,
-				// disable: true,
+
+	if ($('.sticky-wrapper')) {
+		
+		$('.page-head__row--fix').hcSticky({
+			stickTo: $('.sticky-wrapper'),
+			top: 128,
+			innerTop: 64,
+			// bottomEnd: 100,
+			responsive: {
+				992: {
+					top: 96,
+					innerTop: 48,
+					// disable: true,
+				}
 			}
-		}
-  });
+		});
+	}
+		
+
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
@@ -651,47 +653,47 @@ if (document.readyState !== 'loading') {
 
 
 
-const map = document.querySelector('#map');
-document.addEventListener('DOMContentLoaded', function (event) {
-	ymaps.ready(init);
-});
-function init() {
-	//- var center = [55.75322550427434,37.65589449999999];
-	var center = [56.01248606874105, 37.48441499999996];
-	var myMap = new ymaps.Map("map", {
-		center: center,
-		zoom: 17,
-		controls: ['zoomControl']
-	});
+// const map = document.querySelector('#map');
+// document.addEventListener('DOMContentLoaded', function (event) {
+// 	ymaps.ready(init);
+// });
+// function init() {
+// 	//- var center = [55.75322550427434,37.65589449999999];
+// 	var center = [56.01248606874105, 37.48441499999996];
+// 	var myMap = new ymaps.Map("map", {
+// 		center: center,
+// 		zoom: 17,
+// 		controls: ['zoomControl']
+// 	});
 
-	// Создадим коллекцию геообъектов.
-	var collection = new ymaps.GeoObjectCollection();
+// 	// Создадим коллекцию геообъектов.
+// 	var collection = new ymaps.GeoObjectCollection();
 
-	collection
-		.add(new ymaps.Placemark([56.01248606874105, 37.48441499999996], { balloonContent: '', }))
-		.add(new ymaps.Placemark([55.67169106905855, 37.2928495], { balloonContent: '', }))
-		.add(new ymaps.Placemark([54.822272569867756, 38.150632499999915], { balloonContent: '', }))
-		.add(new ymaps.Placemark([55.749850568991356, 38.64405949999995], { balloonContent: '', }))
-		.add(new ymaps.Placemark([56.349454568379294, 36.75054550000001], { balloonContent: '', }))
-		.add(new ymaps.Placemark([56.316543568414716, 38.15373199999991], { balloonContent: '', }));
+// 	collection
+// 		.add(new ymaps.Placemark([56.01248606874105, 37.48441499999996], { balloonContent: '', }))
+// 		.add(new ymaps.Placemark([55.67169106905855, 37.2928495], { balloonContent: '', }))
+// 		.add(new ymaps.Placemark([54.822272569867756, 38.150632499999915], { balloonContent: '', }))
+// 		.add(new ymaps.Placemark([55.749850568991356, 38.64405949999995], { balloonContent: '', }))
+// 		.add(new ymaps.Placemark([56.349454568379294, 36.75054550000001], { balloonContent: '', }))
+// 		.add(new ymaps.Placemark([56.316543568414716, 38.15373199999991], { balloonContent: '', }));
 
-	myMap.geoObjects.add(collection);
-
-
-	// myMap.behaviors.disable('scrollZoom');
-	//на мобильных устройствах... (проверяем по userAgent браузера)
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		//... отключаем перетаскивание карты
-		myMap.behaviors.disable('drag');
-	}
-	// Добавляем все метки на карту.
+// 	myMap.geoObjects.add(collection);
 
 
-	$(document).on('click', ".sContact__map-point", function (e) {
-		// const mark = this.dataset.mark; 
-		const mark = this.dataset.mark.split(',');
-		const zoom = +this.dataset.zoom;
-		myMap.setCenter(mark, zoom);
-		console.log(mark);
-	});
-}
+// 	// myMap.behaviors.disable('scrollZoom');
+// 	//на мобильных устройствах... (проверяем по userAgent браузера)
+// 	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+// 		//... отключаем перетаскивание карты
+// 		myMap.behaviors.disable('drag');
+// 	}
+// 	// Добавляем все метки на карту.
+
+
+// 	$(document).on('click', ".sContact__map-point", function (e) {
+// 		// const mark = this.dataset.mark; 
+// 		const mark = this.dataset.mark.split(',');
+// 		const zoom = +this.dataset.zoom;
+// 		myMap.setCenter(mark, zoom);
+// 		console.log(mark);
+// 	});
+// }

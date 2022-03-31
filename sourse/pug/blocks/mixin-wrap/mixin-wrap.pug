@@ -93,7 +93,8 @@ mixin categoryMenu()
 				mixin categoryItem(t, i)
 					+e.item(href="#")&attributes(attributes)
 						span!= t
-						+icon(`categories-${i}`)
+						img(src=`img/svg/categories-${i}.svg`, alt="")
+						//- +icon(`categories-${i}`)
 				+categoryItem(`Советы <br> и&nbsp;лайфхаки`, 1).active
 				+categoryItem(`Технические <br> детали`, 2)
 				+categoryItem(`Безопасность <br> и&nbsp;гарантии`, 3)

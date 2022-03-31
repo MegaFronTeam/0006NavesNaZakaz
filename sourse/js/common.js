@@ -222,7 +222,7 @@ const JSCCommon = {
 		sliderWrap.forEach((element) => {
 	
 			var sSpecificationsswiperThumbs = new Swiper(element.querySelector(".sSpecifications__slider-thumbs--js"), {
-				loop: true,
+				loop: false,
 				spaceBetween: 8,
 				slidesPerView: 4,
 				freeMode: true,
@@ -230,7 +230,7 @@ const JSCCommon = {
 				watchSlidesProgress: true,
 			});
 			var sSpecificationsswiper2 = new Swiper(element.querySelector(".sSpecifications__slider--js"), {
-				loop: true,
+				loop: false,
 				spaceBetween: 0,
 				slidesPerView: 1,
 				observeParents: true,

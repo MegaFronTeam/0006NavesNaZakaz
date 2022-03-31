@@ -127,6 +127,7 @@
 } // end.topLine
 
 .locaton-dropdown {
+	min-width: 120px;
 	&__btn {
 		@include roww(5px, m);
 		@include mt;

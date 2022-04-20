@@ -26,8 +26,8 @@
 			margin-bottom: rem(10);
 		}
 		img {
-			width: rem(24);
-			height: rem(24);
+			// width: rem(24);
+			// height: rem(24);
 			margin-bottom: rem(32);
 			@include media-breakpoint-up(sm) {
 				width: rem(48);

@@ -91,7 +91,7 @@ const JSCCommon = {
 			let container = event.target.closest(".menu-mobile--js.active"); // (1)
 			let link = event.target.closest(".menu-mobile .menu a"); // (1)
 			let toggle = event.target.closest('.toggle-menu-mobile--js.on'); // (1)
-			if (!container && !toggle) this.closeMenu();
+			if (!container && !toggle || link) this.closeMenu();
 		}, { passive: true });
 
 		window.addEventListener('resize', () => {
@@ -157,7 +157,7 @@ const JSCCommon = {
 		// mask for input
 		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
 		InputTel.forEach(element => element.setAttribute("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}"));
-		Inputmask("+7(999)999-99-99").mask(InputTel);
+		Inputmask({"mask":"+9(999)999-99-99", showMaskOnHover: false, showMaskOnFocus: false}).mask(InputTel);
 	},
 	// /inputMask
 	ifie() {
@@ -220,20 +220,22 @@ const JSCCommon = {
 	portfolioSlider() {
 		let  sliderWrap = document.querySelectorAll(".sSpecifications__slider-wrap");
 		sliderWrap.forEach((element) => {
-	
-			var sSpecificationsswiperThumbs = new Swiper(element.querySelector(".sSpecifications__slider-thumbs--js"), {
-				loop: false,
+			let thumbs = element.querySelector(".sSpecifications__slider-thumbs--js");
+			let loopThumb = (thumbs.querySelector(".swiper-slide").length > 4) ? true : false;
+			var sSpecificationsswiperThumbs = new Swiper(thumbs, {
+				// init:false,
+				loop: loopThumb,
 				spaceBetween: 8,
 				slidesPerView: 4,
 				freeMode: true,
-				observeParents: true,
+				observeParents: true, 
 				watchSlidesProgress: true,
 			});
 			var sSpecificationsswiper2 = new Swiper(element.querySelector(".sSpecifications__slider--js"), {
-				loop: false,
+				loop: true,
 				spaceBetween: 0,
-				slidesPerView: 1,
-				observeParents: true,
+				slidesPerView: 1, 
+				loopFillGroupWithBlank: true,
 				// autoplay: {
 				// 	delay: 5000,
 				// },

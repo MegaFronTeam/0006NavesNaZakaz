@@ -68,6 +68,7 @@
 						tr {
 							&:last-child {
 								td {
+								
 									padding: rem(12) 0;
 									border-bottom: 1px solid $info !important;
 									@include media-breakpoint-up(sm) {
@@ -176,6 +177,7 @@
 						color: $secondary;
 						white-space: nowrap;
 						text-align: right;
+						font-weight: bold;
 					}
 					span {
 						display: inline-block;

@@ -22,7 +22,7 @@
 		}
 		&__input {
 			@include media-breakpoint-down(md) {
-				padding: rem(12) rem(10);
+				// padding: rem(12) rem(10);
 			}
 			@include media-breakpoint-only(lg) {
 				padding: rem(12) rem(10);

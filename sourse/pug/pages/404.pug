@@ -1,0 +1,74 @@
+extends layout/main.pug
+
+
+//- include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sCatalog/_sCatalog.pug
+//- include ../blocks/sPortfolio/_sPortfolio.pug
+//- include ../blocks/sDesign/_sDesign.pug
+//- include ../blocks/sCalculator/_sCalculator.pug
+//- include ../blocks/sTypical/_sTypical.pug
+//- include ../blocks/sPriceList/_sPriceList.pug
+//- include ../blocks/sReviews/_sReviews.pug
+//- include ../blocks/sStages/_sStages.pug
+//- include ../blocks/sAbout/_sAbout.pug
+//- include ../blocks/sAdvantages/_sAdvantages.pug
+//- include ../blocks/sAccordion/_sAccordion.pug
+//- include ../blocks/sCertificates/_sCertificates.pug
+//- include ../blocks/sFilter/_sFilter.pug
+include ../blocks/sProducts/_sProducts.pug
+include ../blocks/sSpecifications/_sSpecifications.pug
+include ../blocks/sSimilarAwnings/_sSimilarAwnings.pug
+include ../blocks/sBlog/_sBlog.pug
+
+
+block variables
+	- let  mainPage= 'page-404'
+	- let  bg= null
+
+block title
+	- let  title= 'Навес для дома. 7 способов, как украсить участок и сделать жизнь комфортнее (H1)'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	+header()
+		+top-nav()
+		+topLine()
+	+b.s404
+		+e.title 
+			<svg width="660" height="659" viewBox="0 0 660 659" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M343.79 109.464L391.391 553.83L132.459 219.814L515.164 391.984L498.987 486.849L119.065 247.957L433.232 220.615L303.992 561.526L241.967 125.003L454.528 525.152L170.873 171.881" stroke="#F0F0F0"/>
+				<path d="M557.622 343.903L113.257 391.503L447.273 132.571L275.103 515.277L180.238 499.1L419.13 119.177L446.472 433.344L105.56 304.104L542.083 242.08L141.934 454.64L495.206 170.985" stroke="#F0F0F0"/>
+				<circle cx="330" cy="329.788" r="185.571" transform="rotate(60 330 329.788)" stroke="#F0F0F0"/>
+				<circle cx="330" cy="329.788" r="205.638" transform="rotate(60 330 329.788)" stroke="#F0F0F0" stroke-width="3"/>
+				<path opacity="0.1" d="M363.852 499.396L241.977 183.782L496.765 377.295L183.179 326.382L176.421 253.843L501.046 354.091L276.669 435.642L304.378 161.029L435.265 468.082L201.427 217.123L478.067 419.873" stroke="white" stroke-width="3"/>
+				<circle opacity="0.1" cx="330.854" cy="330.952" r="132.55" transform="rotate(-135 330.854 330.952)" stroke="white"/>
+				<circle opacity="0.1" cx="330.854" cy="330.952" r="146.614" transform="rotate(-135 330.854 330.952)" stroke="white" stroke-width="3"/>
+				<circle cx="330" cy="329.788" r="238.5" transform="rotate(60 330 329.788)" stroke="#F0F0F0" stroke-width="5"/>
+				</svg>
+
+			+e.inner--front 404
+			+e.inner--back 404
+		+e.text А&nbsp;тут ничего не&nbsp;нашлось. = ( <br> Вернитесь в&nbsp;начало
+		+e.btn.btn.btn-primary.btn-sm.with-shadow(href="#")  На главную
+	.section-wrapper.section-wrapper--footer
+		+footer()
+	+scrollToTop()
+	//- .sticky-wrapper
+	//- 	+page-head-fixed({
+	//- 		title,
+	//- 		btn: 'btn',
+	//- 		menu: 'menu'
+	//- 	})
+	//- 		+infoPanel()
+	//- 			+infoPanelItem(``, `Выбор навеса`).--btn
+	//- 			+infoPanelItem(``, `15.09.21`).--btn
+	//- 			+infoPanelItem(`eye`, `834`).--views
+	//- 			+infoPanelItem(`clock`, `5&nbsp;минут`).--time
+	//- 	//- +sContent()
+	//- 	+sBlogPage
+	//- 	+sBlog(``, `Узнать больше:`).sBlog--content
+	//- 	+sContact()
+
+
+

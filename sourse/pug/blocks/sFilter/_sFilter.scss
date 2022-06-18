@@ -80,6 +80,9 @@
 		}
 		
 	}
+	&__body{
+		position: relative;
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -87,4 +90,33 @@
 	@include media-breakpoint-between(md, xl) {}
 	@include media-breakpoint-only(xl) {}
 	@include media-breakpoint-down(xl) {}
+	&__btn-wrap{
+		z-index: 20;
+		position: absolute;
+		left: 100%;
+		top: calc(var(--tooltip-top) - 6px);
+		display: none;
+		&.visible{
+			display: block;
+		}
+	}
+	&__btn-tooltip{
+		@extend .btn, .btn-primary;
+		border-radius: 0;
+	
+		&::before{
+			content: '';
+			position: absolute;
+			left: -8px;
+			width: 15px;
+			height: 15px;
+			transform: rotate(45deg) ;
+			background-color: var(--bg, #{ $primary});
+			z-index: -1;
+			@include mt;
+		}
+		&:hover{
+			--bg: #ffc850;
+		}
+	}
 } // end.sFilter

@@ -254,7 +254,7 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	// JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
-	// JSCCommon.inputMask();
+	JSCCommon.inputMask();
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.portfolioSlider();
@@ -635,7 +635,30 @@ function eventHandler() {
 			}
 		});
 	}
+
+	
+	let filter = document.querySelector(".sFilter__body")
+	if (filter) {
 		
+		filter.addEventListener("click", function (event) {
+
+			function getCoords(elem) {
+				let box = elem.getBoundingClientRect();
+			
+				return {
+					top: box.top 
+				};
+			}
+			let target = event.target.closest(".custom-input");
+			
+			if (!target) return;
+			this.style.setProperty('--tooltip-top', `${target.offsetTop}px`);
+			document.querySelector(".sFilter__btn-wrap").classList.add("visible");
+			console.log(target.offsetTop);
+
+				
+		})
+	}
 
 
 };

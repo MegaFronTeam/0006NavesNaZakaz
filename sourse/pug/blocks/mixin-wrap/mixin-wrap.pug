@@ -125,6 +125,8 @@ mixin content(title, ...items)
 		h4!= title
 		each item in items
 			p!= item
+		.text-end.mt-3
+			a(href="#").btn.btn-primary Кнопка 
 
 mixin blogItem(i, h)
 	+b.blog-item(href="#")

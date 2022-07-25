@@ -7,13 +7,23 @@
 	@include media-breakpoint-up(lg) {
 		--sPB: #{rem(52)};
 	}
+	&__slider-thumbs{
+
+		width: 100%;
+	}
 	&__slider {
 		margin-bottom: rem(8);
+		flex-grow: 1;
+		width: 100%;
 	}
 	&__slider-wrap {
+		display: flex;
+		flex-direction: column;
 		margin-bottom: rem(20);
+		height: calc(100% - #{rem(20)});
 		@include media-breakpoint-up(lg) {
 			margin-bottom: rem(0);
+			height: calc(100%);
 		}
 	}
 	.swiper-slide-thumb-active {
@@ -22,7 +32,9 @@
 		}
 	}
 	&__img-wrap {
+		min-height: 100%;
 		picture {
+			min-height: 100%;
 			@include block(800, 478);
 			img {
 				border-radius: rem(8);
@@ -30,6 +42,7 @@
 				position: absolute;
 				top: 0;
 				left: 0;
+
 			}
 		}
 		&--thumbs {
@@ -85,7 +98,7 @@
 		box-shadow: 0 4px 0 #e2a826,0 10px 13px rgba(0,0,0,.09);
 		// margin-bottom: rem(16);
 	}
-	button {
+	.btn {
 		width: 100%;
 		margin-top: rem(16);
 	}

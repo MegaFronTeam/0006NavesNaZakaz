@@ -98,8 +98,13 @@
 		// }
 		td {
 			font-size: rem(12);
+			vertical-align: top;
 			border-bottom: 1px solid #C1D5F1;
 			padding: 8px 0;
+			&:nth-child(1){
+				padding-right: 5px;
+				width: em(140);
+			}
 		}
 	}
 	&__specifications-wrap {

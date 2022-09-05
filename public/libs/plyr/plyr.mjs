@@ -1155,7 +1155,10 @@ function generateId(prefix) {
 } // Format string
 
 function format(input, ...args) {
-  if (is.empty(input)) return input;
+  if (is.empty(input)) {
+    return input;
+  }
+
   return input.toString().replace(/{(\d+)}/g, (match, i) => args[i].toString());
 } // Get percentage
 
@@ -1165,11 +1168,11 @@ function getPercentage(current, max) {
   }
 
   return (current / max * 100).toFixed(2);
-} // Replace all occurrences of a string in a string
+} // Replace all occurances of a string in a string
 
 const replaceAll = (input = '', find = '', replace = '') => input.replace(new RegExp(find.toString().replace(/([.*+?^=!:${}()|[\]/\\])/g, '\\$1'), 'g'), replace.toString()); // Convert to title case
 
-const toTitleCase = (input = '') => input.toString().replace(/\w\S*/g, text => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase()); // Convert string to pascalCase
+const toTitleCase = (input = '') => input.toString().replace(/\w\S*/g, text => text.charAt(0).toUpperCase() + text.substr(1).toLowerCase()); // Convert string to pascalCase
 
 function toPascalCase(input = '') {
   let string = input.toString(); // Convert kebab case
@@ -1749,7 +1752,7 @@ const controls = {
     // Navigate through menus via arrow keys and space
     on.call(this, menuItem, 'keydown keyup', event => {
       // We only care about space and ⬆️ ⬇️️ ➡️
-      if (!['Space', 'ArrowUp', 'ArrowDown', 'ArrowRight'].includes(event.key)) {
+      if (![32, 38, 39, 40].includes(event.which)) {
         return;
       } // Prevent play / seek
 
@@ -1763,13 +1766,13 @@ const controls = {
 
       const isRadioButton = matches(menuItem, '[role="menuitemradio"]'); // Show the respective menu
 
-      if (!isRadioButton && ['Space', 'ArrowRight'].includes(event.key)) {
+      if (!isRadioButton && [32, 39].includes(event.which)) {
         controls.showMenuPanel.call(this, type, true);
       } else {
         let target;
 
-        if (event.key !== 'Space') {
-          if (event.key === 'ArrowDown' || isRadioButton && event.key === 'ArrowRight') {
+        if (event.which !== 32) {
+          if (event.which === 40 || isRadioButton && event.which === 39) {
             target = menuItem.nextElementSibling;
 
             if (!is.element(target)) {
@@ -1790,7 +1793,10 @@ const controls = {
     // So we bind to keyup which fires after and set focus here
 
     on.call(this, menuItem, 'keyup', event => {
-      if (event.key !== 'Return') return;
+      if (event.which !== 13) {
+        return;
+      }
+
       controls.focusFirstMenuItem.call(this, null, true);
     });
   },
@@ -1820,7 +1826,7 @@ const controls = {
       flex.appendChild(badge);
     }
 
-    menuItem.appendChild(flex); // Replicate radio button behavior
+    menuItem.appendChild(flex); // Replicate radio button behaviour
 
     Object.defineProperty(menuItem, 'checked', {
       enumerable: true,
@@ -1840,7 +1846,7 @@ const controls = {
 
     });
     this.listeners.bind(menuItem, 'click keyup', event => {
-      if (is.keyboardEvent(event) && event.key !== 'Space') {
+      if (is.keyboardEvent(event) && event.which !== 32) {
         return;
       }
 
@@ -2001,17 +2007,14 @@ const controls = {
 
   // Update hover tooltip for seeking
   updateSeekTooltip(event) {
-    var _this$config$markers, _this$config$markers$;
-
     // Bail if setting not true
     if (!this.config.tooltips.seek || !is.element(this.elements.inputs.seek) || !is.element(this.elements.display.seekTooltip) || this.duration === 0) {
       return;
     }
 
-    const tipElement = this.elements.display.seekTooltip;
     const visible = `${this.config.classNames.tooltip}--visible`;
 
-    const toggle = show => toggleClass(tipElement, visible, show); // Hide on touch
+    const toggle = show => toggleClass(this.elements.display.seekTooltip, visible, show); // Hide on touch
 
 
     if (this.touch) {
@@ -2025,8 +2028,8 @@ const controls = {
 
     if (is.event(event)) {
       percent = 100 / clientRect.width * (event.pageX - clientRect.left);
-    } else if (hasClass(tipElement, visible)) {
-      percent = parseFloat(tipElement.style.left, 10);
+    } else if (hasClass(this.elements.display.seekTooltip, visible)) {
+      percent = parseFloat(this.elements.display.seekTooltip.style.left, 10);
     } else {
       return;
     } // Set bounds
@@ -2036,22 +2039,12 @@ const controls = {
       percent = 0;
     } else if (percent > 100) {
       percent = 100;
-    }
-
-    const time = this.duration / 100 * percent; // Display the time a click would seek to
-
-    tipElement.innerText = controls.formatTime(time); // Get marker point for time
-
-    const point = (_this$config$markers = this.config.markers) === null || _this$config$markers === void 0 ? void 0 : (_this$config$markers$ = _this$config$markers.points) === null || _this$config$markers$ === void 0 ? void 0 : _this$config$markers$.find(({
-      time: t
-    }) => t === Math.round(time)); // Append the point label to the tooltip
-
-    if (point) {
-      tipElement.insertAdjacentHTML('afterbegin', `${point.label}<br>`);
-    } // Set position
+    } // Display the time a click would seek to
 
 
-    tipElement.style.left = `${percent}%`; // Show/hide the tooltip
+    controls.updateTimeDisplay.call(this, this.elements.display.seekTooltip, this.duration / 100 * percent); // Set position
+
+    this.elements.display.seekTooltip.style.left = `${percent}%`; // Show/hide the tooltip
     // If the event is a moues in/out and percentage is inside bounds
 
     if (is.event(event) && ['mouseenter', 'mouseleave'].includes(event.type)) {
@@ -2106,10 +2099,6 @@ const controls = {
 
     if (hasDuration) {
       controls.updateTimeDisplay.call(this, this.elements.display.duration, this.duration);
-    }
-
-    if (this.config.markers.enabled) {
-      controls.setMarkers.call(this);
     } // Update the tooltip (if visible)
 
 
@@ -2412,7 +2401,7 @@ const controls = {
 
     if (is.boolean(input)) {
       show = input;
-    } else if (is.keyboardEvent(input) && input.key === 'Escape') {
+    } else if (is.keyboardEvent(input) && input.which === 27) {
       show = false;
     } else if (is.event(input)) {
       // If Plyr is in a shadowDOM, the event target is set to the component, instead of the
@@ -2717,7 +2706,11 @@ const controls = {
           }, i18n.get('menuBack', this.config))); // Go back via keyboard
 
           on.call(this, pane, 'keydown', event => {
-            if (event.key !== 'ArrowLeft') return; // Prevent seek
+            // We only care about <-
+            if (event.which !== 37) {
+              return;
+            } // Prevent seek
+
 
             event.preventDefault();
             event.stopPropagation(); // Show the respective menu
@@ -2927,81 +2920,6 @@ const controls = {
         toggleClass(label, this.config.classNames.tooltip, true);
       });
     }
-  },
-
-  // Set media metadata
-  setMediaMetadata() {
-    try {
-      if ('mediaSession' in navigator) {
-        navigator.mediaSession.metadata = new window.MediaMetadata({
-          title: this.config.mediaMetadata.title,
-          artist: this.config.mediaMetadata.artist,
-          album: this.config.mediaMetadata.album,
-          artwork: this.config.mediaMetadata.artwork
-        });
-      }
-    } catch (_) {// Do nothing
-    }
-  },
-
-  // Add markers
-  setMarkers() {
-    var _this$config$markers2, _this$config$markers3;
-
-    if (!this.duration || this.elements.markers) return; // Get valid points
-
-    const points = (_this$config$markers2 = this.config.markers) === null || _this$config$markers2 === void 0 ? void 0 : (_this$config$markers3 = _this$config$markers2.points) === null || _this$config$markers3 === void 0 ? void 0 : _this$config$markers3.filter(({
-      time
-    }) => time > 0 && time < this.duration);
-    if (!(points !== null && points !== void 0 && points.length)) return;
-    const containerFragment = document.createDocumentFragment();
-    const pointsFragment = document.createDocumentFragment();
-    let tipElement = null;
-    const tipVisible = `${this.config.classNames.tooltip}--visible`;
-
-    const toggleTip = show => toggleClass(tipElement, tipVisible, show); // Inject markers to progress container
-
-
-    points.forEach(point => {
-      const markerElement = createElement('span', {
-        class: this.config.classNames.marker
-      }, '');
-      const left = `${point.time / this.duration * 100}%`;
-
-      if (tipElement) {
-        // Show on hover
-        markerElement.addEventListener('mouseenter', () => {
-          if (point.label) return;
-          tipElement.style.left = left;
-          tipElement.innerHTML = point.label;
-          toggleTip(true);
-        }); // Hide on leave
-
-        markerElement.addEventListener('mouseleave', () => {
-          toggleTip(false);
-        });
-      }
-
-      markerElement.addEventListener('click', () => {
-        this.currentTime = point.time;
-      });
-      markerElement.style.left = left;
-      pointsFragment.appendChild(markerElement);
-    });
-    containerFragment.appendChild(pointsFragment); // Inject a tooltip if needed
-
-    if (!this.config.tooltips.seek) {
-      tipElement = createElement('span', {
-        class: this.config.classNames.tooltip
-      }, '');
-      containerFragment.appendChild(tipElement);
-    }
-
-    this.elements.markers = {
-      points: pointsFragment,
-      tip: tipElement
-    };
-    this.elements.progress.appendChild(containerFragment);
   }
 
 };
@@ -3448,7 +3366,7 @@ const defaults = {
   // Sprite (for icons)
   loadSprite: true,
   iconPrefix: 'plyr',
-  iconUrl: 'https://cdn.plyr.io/3.7.2/plyr.svg',
+  iconUrl: 'https://cdn.plyr.io/3.6.12/plyr.svg',
   // Blank video (used to prevent errors on source change)
   blankVideo: 'https://cdn.plyr.io/static/blank.mp4',
   // Quality default
@@ -3668,7 +3586,6 @@ const defaults = {
     hover: 'plyr--hover',
     tooltip: 'plyr__tooltip',
     cues: 'plyr__cues',
-    marker: 'plyr__progress__marker',
     hidden: 'plyr__sr-only',
     hideControls: 'plyr--hide-controls',
     isIos: 'plyr--is-ios',
@@ -3760,18 +3677,6 @@ const defaults = {
     customControls: true,
     noCookie: false // Whether to use an alternative version of YouTube without cookies
 
-  },
-  // Media Metadata
-  mediaMetadata: {
-    title: '',
-    artist: '',
-    album: '',
-    artwork: []
-  },
-  // Markers
-  markers: {
-    enabled: false,
-    points: []
   }
 };
 
@@ -3910,7 +3815,7 @@ class Fullscreen {
 
     _defineProperty$1(this, "trapFocus", event => {
       // Bail if iOS, not active, not the tab key
-      if (browser.isIos || !this.active || event.key !== 'Tab') {
+      if (browser.isIos || !this.active || event.key !== 'Tab' || event.keyCode !== 9) {
         return;
       } // Get the current focused element
 
@@ -4211,11 +4116,6 @@ const ui = {
 
     if (this.config.duration) {
       controls.durationUpdate.call(this);
-    } // Media metadata
-
-
-    if (this.config.mediaMetadata) {
-      controls.setMediaMetadata.call(this);
     }
   },
 
@@ -4381,20 +4281,15 @@ class Listeners {
       const {
         elements
       } = player;
-      const {
-        key,
-        type,
-        timeStamp
-      } = event;
       clearTimeout(this.focusTimer); // Ignore any key other than tab
 
-      if (type === 'keydown' && key !== 'Tab') {
+      if (event.type === 'keydown' && event.which !== 9) {
         return;
       } // Store reference to event timeStamp
 
 
-      if (type === 'keydown') {
-        this.lastKeyDown = timeStamp;
+      if (event.type === 'keydown') {
+        this.lastKeyDown = event.timeStamp;
       } // Remove current classes
 
 
@@ -4405,9 +4300,9 @@ class Listeners {
       }; // Determine if a key was pressed to trigger this event
 
 
-      const wasKeyDown = timeStamp - this.lastKeyDown <= 20; // Ignore focus events if a key was pressed prior
+      const wasKeyDown = event.timeStamp - this.lastKeyDown <= 20; // Ignore focus events if a key was pressed prior
 
-      if (type === 'focus' && !wasKeyDown) {
+      if (event.type === 'focus' && !wasKeyDown) {
         return;
       } // Remove all current
 
@@ -4415,7 +4310,7 @@ class Listeners {
       removeCurrent(); // Delay the adding of classname until the focus has changed
       // This event fires before the focusin event
 
-      if (type !== 'focusout') {
+      if (event.type !== 'focusout') {
         this.focusTimer = setTimeout(() => {
           const focused = document.activeElement; // Ignore if current focus element isn't inside the player
 
@@ -4755,12 +4650,14 @@ class Listeners {
       // https://bugzilla.mozilla.org/show_bug.cgi?id=1220143
 
       this.bind(elements.buttons.settings, 'keyup', event => {
-        if (!['Space', 'Enter'].includes(event.key)) {
+        const code = event.which; // We only care about space and return
+
+        if (![13, 32].includes(code)) {
           return;
         } // Because return triggers a click anyway, all we need to do is set focus
 
 
-        if (event.key === 'Enter') {
+        if (code === 13) {
           controls.focusFirstMenuItem.call(player, null, true);
           return;
         } // Prevent scroll
@@ -4775,7 +4672,7 @@ class Listeners {
       ); // Escape closes menu
 
       this.bind(elements.settings.menu, 'keydown', event => {
-        if (event.key === 'Escape') {
+        if (event.which === 27) {
           controls.toggleMenu.call(player, event);
         }
       }); // Set range input alternative "value", which matches the tooltip time (#954)
@@ -4788,9 +4685,10 @@ class Listeners {
 
       this.bind(elements.inputs.seek, 'mousedown mouseup keydown keyup touchstart touchend', event => {
         const seek = event.currentTarget;
+        const code = event.keyCode ? event.keyCode : event.which;
         const attribute = 'play-on-seeked';
 
-        if (is.keyboardEvent(event) && !['ArrowLeft', 'ArrowRight'].includes(event.key)) {
+        if (is.keyboardEvent(event) && code !== 39 && code !== 37) {
           return;
         } // Record seek time so we can prevent hiding controls for a few seconds after seek
 
@@ -4939,7 +4837,7 @@ class Listeners {
       }); // Mouse wheel for volume
 
       this.bind(elements.inputs.volume, 'wheel', event => {
-        // Detect "natural" scroll - supported on OS X Safari only
+        // Detect "natural" scroll - suppored on OS X Safari only
         // Other browsers on OS X will be inverted until support improves
         const inverted = event.webkitDirectionInvertedFromDevice; // Get delta from event. Invert if `inverted` is true
 
@@ -4977,31 +4875,24 @@ class Listeners {
     const {
       elements
     } = player;
-    const {
-      key,
-      type,
-      altKey,
-      ctrlKey,
-      metaKey,
-      shiftKey
-    } = event;
-    const pressed = type === 'keydown';
-    const repeat = pressed && key === this.lastKey; // Bail if a modifier key is set
+    const code = event.keyCode ? event.keyCode : event.which;
+    const pressed = event.type === 'keydown';
+    const repeat = pressed && code === this.lastKey; // Bail if a modifier key is set
 
-    if (altKey || ctrlKey || metaKey || shiftKey) {
+    if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) {
       return;
     } // If the event is bubbled from the media element
-    // Firefox doesn't get the key for whatever reason
+    // Firefox doesn't get the keycode for whatever reason
 
 
-    if (!key) {
+    if (!is.number(code)) {
       return;
-    } // Seek by increment
+    } // Seek by the number keys
 
 
-    const seekByIncrement = increment => {
+    const seekByKey = () => {
       // Divide the max duration into 10th's and times by the number value
-      player.currentTime = player.duration / 10 * increment;
+      player.currentTime = player.duration / 10 * (code - 48);
     }; // Handle the key on keydown
     // Reset on keyup
 
@@ -5024,91 +4915,101 @@ class Listeners {
           return;
         }
 
-        if (event.key === 'Space' && matches(focused, 'button, [role^="menuitem"]')) {
+        if (event.which === 32 && matches(focused, 'button, [role^="menuitem"]')) {
           return;
         }
-      } // Which keys should we prevent default
+      } // Which keycodes should we prevent default
 
 
-      const preventDefault = ['Space', 'ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'c', 'f', 'k', 'l', 'm']; // If the key is found prevent default (e.g. prevent scrolling for arrows)
+      const preventDefault = [32, 37, 38, 39, 40, 48, 49, 50, 51, 52, 53, 54, 56, 57, 67, 70, 73, 75, 76, 77, 79]; // If the code is found prevent default (e.g. prevent scrolling for arrows)
 
-      if (preventDefault.includes(key)) {
+      if (preventDefault.includes(code)) {
         event.preventDefault();
         event.stopPropagation();
       }
 
-      switch (key) {
-        case '0':
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-        case '5':
-        case '6':
-        case '7':
-        case '8':
-        case '9':
+      switch (code) {
+        case 48:
+        case 49:
+        case 50:
+        case 51:
+        case 52:
+        case 53:
+        case 54:
+        case 55:
+        case 56:
+        case 57:
+          // 0-9
           if (!repeat) {
-            seekByIncrement(parseInt(key, 10));
+            seekByKey();
           }
 
           break;
 
-        case 'Space':
-        case 'k':
+        case 32:
+        case 75:
+          // Space and K key
           if (!repeat) {
             silencePromise(player.togglePlay());
           }
 
           break;
 
-        case 'ArrowUp':
+        case 38:
+          // Arrow up
           player.increaseVolume(0.1);
           break;
 
-        case 'ArrowDown':
+        case 40:
+          // Arrow down
           player.decreaseVolume(0.1);
           break;
 
-        case 'm':
+        case 77:
+          // M key
           if (!repeat) {
             player.muted = !player.muted;
           }
 
           break;
 
-        case 'ArrowRight':
+        case 39:
+          // Arrow forward
           player.forward();
           break;
 
-        case 'ArrowLeft':
+        case 37:
+          // Arrow back
           player.rewind();
           break;
 
-        case 'f':
+        case 70:
+          // F key
           player.fullscreen.toggle();
           break;
 
-        case 'c':
+        case 67:
+          // C key
           if (!repeat) {
             player.toggleCaptions();
           }
 
           break;
 
-        case 'l':
+        case 76:
+          // L key
           player.loop = !player.loop;
           break;
       } // Escape is handle natively when in full screen
       // So we only need to worry about non native
 
 
-      if (key === 'Escape' && !player.fullscreen.usingNative && player.fullscreen.active) {
+      if (code === 27 && !player.fullscreen.usingNative && player.fullscreen.active) {
         player.fullscreen.toggle();
-      } // Store last key for next cycle
+      } // Store last code for next cycle
 
 
-      this.lastKey = key;
+      this.lastKey = code;
     } else {
       this.lastKey = null;
     }
@@ -5452,11 +5353,11 @@ function parseHash(url) {
    *  - [https://player.]vimeo.com/video/{id}?h={hash}[&params]
    *  - [https://player.]vimeo.com/video/{id}?[params]&h={hash}
    *  - video/{id}/{hash}
-   * If matched, the hash is available in capture group 4
+   * If matched, the hash is available in the named group `hash`
    */
-  const regex = /^.*(vimeo.com\/|video\/)(\d+)(\?.*&*h=|\/)+([\d,a-f]+)/;
+  const regex = /^.*(?:vimeo.com\/|video\/)(?:\d+)(?:\?.*&*h=|\/)+(?<hash>[\d,a-f]+)/;
   const found = url.match(regex);
-  return found && found.length === 5 ? found[4] : null;
+  return found ? found.groups.hash : null;
 } // Set playback state and trigger change (only on actual change)
 
 
@@ -6790,22 +6691,6 @@ class Ads {
 
 }
 
-/**
- * Returns a number whose value is limited to the given range.
- *
- * Example: limit the output of this computation to between 0 and 255
- * (x * 255).clamp(0, 255)
- *
- * @param {Number} input
- * @param {Number} min The lower boundary of the output range
- * @param {Number} max The upper boundary of the output range
- * @returns A number within the bounds of min and max
- * @type Number
- */
-function clamp(input = 0, min = 0, max = 255) {
-  return Math.min(Math.max(input, min), max);
-}
-
 const parseVtt = vttDataString => {
   const processedList = [];
   const frames = vttDataString.split(/\r\n\r\n|\n\n|\r\r/);
@@ -6878,7 +6763,10 @@ class PreviewThumbnails {
         this.player.elements.display.seekTooltip.hidden = this.enabled;
       }
 
-      if (!this.enabled) return;
+      if (!this.enabled) {
+        return;
+      }
+
       this.getThumbnails().then(() => {
         if (!this.enabled) {
           return;
@@ -6959,17 +6847,23 @@ class PreviewThumbnails {
     });
 
     _defineProperty$1(this, "startMove", event => {
-      if (!this.loaded) return;
-      if (!is.event(event) || !['touchmove', 'mousemove'].includes(event.type)) return; // Wait until media has a duration
+      if (!this.loaded) {
+        return;
+      }
 
-      if (!this.player.media.duration) return;
+      if (!is.event(event) || !['touchmove', 'mousemove'].includes(event.type)) {
+        return;
+      } // Wait until media has a duration
+
+
+      if (!this.player.media.duration) {
+        return;
+      }
 
       if (event.type === 'touchmove') {
         // Calculate seek hover position as approx video seconds
         this.seekTime = this.player.media.duration * (this.player.elements.inputs.seek.value / 100);
       } else {
-        var _this$player$config$m, _this$player$config$m2;
-
         // Calculate seek hover position as approx video seconds
         const clientRect = this.player.elements.progress.getBoundingClientRect();
         const percentage = 100 / clientRect.width * (event.pageX - clientRect.left);
@@ -6987,16 +6881,7 @@ class PreviewThumbnails {
 
         this.mousePosX = event.pageX; // Set time text inside image container
 
-        this.elements.thumb.time.innerText = formatTime(this.seekTime); // Get marker point for time
-
-        const point = (_this$player$config$m = this.player.config.markers) === null || _this$player$config$m === void 0 ? void 0 : (_this$player$config$m2 = _this$player$config$m.points) === null || _this$player$config$m2 === void 0 ? void 0 : _this$player$config$m2.find(({
-          time: t
-        }) => t === Math.round(this.seekTime)); // Append the point label to the tooltip
-
-        if (point) {
-          // this.elements.thumb.time.innerText.concat('\n');
-          this.elements.thumb.time.insertAdjacentHTML('afterbegin', `${point.label}<br>`);
-        }
+        this.elements.thumb.time.innerText = formatTime(this.seekTime);
       } // Download and show image
 
 
@@ -7067,7 +6952,7 @@ class PreviewThumbnails {
       });
       this.elements.thumb.time = createElement('span', {}, '00:00');
       timeContainer.appendChild(this.elements.thumb.time);
-      this.elements.thumb.imageContainer.appendChild(timeContainer); // Inject the whole thumb
+      this.elements.thumb.container.appendChild(timeContainer); // Inject the whole thumb
 
       if (is.element(this.player.elements.progress)) {
         this.player.elements.progress.appendChild(this.elements.thumb.container);
@@ -7117,7 +7002,7 @@ class PreviewThumbnails {
         if (this.loadedImages.includes(thumbnail.frames[thumbNum].text)) {
           qualityIndex = index;
         }
-      }); // Only proceed if either thumb num or thumbfilename has changed
+      }); // Only proceed if either thumbnum or thumbfilename has changed
 
       if (thumbNum !== this.showingThumb) {
         this.showingThumb = thumbNum;
@@ -7308,41 +7193,42 @@ class PreviewThumbnails {
     });
 
     _defineProperty$1(this, "setThumbContainerSizeAndPos", () => {
-      const {
-        imageContainer
-      } = this.elements.thumb;
-
       if (!this.sizeSpecifiedInCSS) {
         const thumbWidth = Math.floor(this.thumbContainerHeight * this.thumbAspectRatio);
-        imageContainer.style.height = `${this.thumbContainerHeight}px`;
-        imageContainer.style.width = `${thumbWidth}px`;
-      } else if (imageContainer.clientHeight > 20 && imageContainer.clientWidth < 20) {
-        const thumbWidth = Math.floor(imageContainer.clientHeight * this.thumbAspectRatio);
-        imageContainer.style.width = `${thumbWidth}px`;
-      } else if (imageContainer.clientHeight < 20 && imageContainer.clientWidth > 20) {
-        const thumbHeight = Math.floor(imageContainer.clientWidth / this.thumbAspectRatio);
-        imageContainer.style.height = `${thumbHeight}px`;
+        this.elements.thumb.imageContainer.style.height = `${this.thumbContainerHeight}px`;
+        this.elements.thumb.imageContainer.style.width = `${thumbWidth}px`;
+      } else if (this.elements.thumb.imageContainer.clientHeight > 20 && this.elements.thumb.imageContainer.clientWidth < 20) {
+        const thumbWidth = Math.floor(this.elements.thumb.imageContainer.clientHeight * this.thumbAspectRatio);
+        this.elements.thumb.imageContainer.style.width = `${thumbWidth}px`;
+      } else if (this.elements.thumb.imageContainer.clientHeight < 20 && this.elements.thumb.imageContainer.clientWidth > 20) {
+        const thumbHeight = Math.floor(this.elements.thumb.imageContainer.clientWidth / this.thumbAspectRatio);
+        this.elements.thumb.imageContainer.style.height = `${thumbHeight}px`;
       }
 
       this.setThumbContainerPos();
     });
 
     _defineProperty$1(this, "setThumbContainerPos", () => {
-      const scrubberRect = this.player.elements.progress.getBoundingClientRect();
-      const containerRect = this.player.elements.container.getBoundingClientRect();
+      const seekbarRect = this.player.elements.progress.getBoundingClientRect();
+      const plyrRect = this.player.elements.container.getBoundingClientRect();
       const {
         container
       } = this.elements.thumb; // Find the lowest and highest desired left-position, so we don't slide out the side of the video container
 
-      const min = containerRect.left - scrubberRect.left + 10;
-      const max = containerRect.right - scrubberRect.left - container.clientWidth - 10; // Set preview container position to: mousepos, minus seekbar.left, minus half of previewContainer.clientWidth
+      const minVal = plyrRect.left - seekbarRect.left + 10;
+      const maxVal = plyrRect.right - seekbarRect.left - container.clientWidth - 10; // Set preview container position to: mousepos, minus seekbar.left, minus half of previewContainer.clientWidth
 
-      const position = this.mousePosX - scrubberRect.left - container.clientWidth / 2;
-      const clamped = clamp(position, min, max); // Move the popover position
+      let previewPos = this.mousePosX - seekbarRect.left - container.clientWidth / 2;
 
-      container.style.left = `${clamped}px`; // The arrow can follow the cursor
+      if (previewPos < minVal) {
+        previewPos = minVal;
+      }
 
-      container.style.setProperty('--preview-arrow-offset', `${position - clamped}px`);
+      if (previewPos > maxVal) {
+        previewPos = maxVal;
+      }
+
+      container.style.left = `${previewPos}px`;
     });
 
     _defineProperty$1(this, "setScrubbingContainerSize", () => {
@@ -7358,7 +7244,10 @@ class PreviewThumbnails {
     });
 
     _defineProperty$1(this, "setImageSizeAndOffset", (previewImage, frame) => {
-      if (!this.usingSprites) return; // Find difference between height and preview container height
+      if (!this.usingSprites) {
+        return;
+      } // Find difference between height and preview container height
+
 
       const multiplier = this.thumbContainerHeight / frame.h; // eslint-disable-next-line no-param-reassign
 
@@ -7389,7 +7278,11 @@ class PreviewThumbnails {
   }
 
   get currentImageContainer() {
-    return this.mouseDown ? this.elements.scrubbing.container : this.elements.thumb.imageContainer;
+    if (this.mouseDown) {
+      return this.elements.scrubbing.container;
+    }
+
+    return this.elements.thumb.imageContainer;
   }
 
   get usingSprites() {
@@ -7424,7 +7317,11 @@ class PreviewThumbnails {
   }
 
   get currentImageElement() {
-    return this.mouseDown ? this.currentScrubbingImageElement : this.currentThumbnailImageElement;
+    if (this.mouseDown) {
+      return this.currentScrubbingImageElement;
+    }
+
+    return this.currentThumbnailImageElement;
   }
 
   set currentImageElement(element) {
@@ -7580,6 +7477,22 @@ const source = {
   }
 
 };
+
+/**
+ * Returns a number whose value is limited to the given range.
+ *
+ * Example: limit the output of this computation to between 0 and 255
+ * (x * 255).clamp(0, 255)
+ *
+ * @param {Number} input
+ * @param {Number} min The lower boundary of the output range
+ * @param {Number} max The upper boundary of the output range
+ * @returns A number in the range [min, max]
+ * @type Number
+ */
+function clamp(input = 0, min = 0, max = 255) {
+  return Math.min(Math.max(input, min), max);
+}
 
 // TODO: Use a WeakMap for private globals
 // const globals = new WeakMap();
@@ -8287,7 +8200,7 @@ class Plyr {
   }
   /**
    * Set playback speed
-   * @param {Number} input - the speed of playback (0.5-2.0)
+   * @param {Number} speed - the speed of playback (0.5-2.0)
    */
 
 
@@ -8575,7 +8488,8 @@ class Plyr {
 
 
   set autoplay(input) {
-    this.config.autoplay = is.boolean(input) ? input : this.config.autoplay;
+    const toggle = is.boolean(input) ? input : this.config.autoplay;
+    this.config.autoplay = toggle;
   }
   /**
    * Get the current autoplay state
@@ -8596,13 +8510,13 @@ class Plyr {
   }
   /**
    * Set the caption track by index
-   * @param {Number} input - Caption index
+   * @param {Number} - Caption index
    */
 
 
   set currentTrack(input) {
     captions.set.call(this, input, false);
-    captions.setup.call(this);
+    captions.setup();
   }
   /**
    * Get the current caption track index (-1 if disabled)
@@ -8619,7 +8533,7 @@ class Plyr {
   /**
    * Set the wanted language for captions
    * Since tracks can be added later it won't update the actual caption track until there is a matching track
-   * @param {String} input - Two character ISO language code (e.g. EN, FR, PT, etc)
+   * @param {String} - Two character ISO language code (e.g. EN, FR, PT, etc)
    */
 
 

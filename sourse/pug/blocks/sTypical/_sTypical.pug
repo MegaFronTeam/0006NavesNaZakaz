@@ -54,3 +54,48 @@ mixin sTypical(data)
 						+sTypicalItem()
 					.swiper-pagination
 	// end sTypical
+
+mixin sTypicalPrice(data)
+	// start sTypical
+	+b.SECTION.sTypical--price.section#sTypical&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h4 Цены
+				h2 Двускатная<br>арочная ферма навеса
+			+e.filter.row
+				.col-12.col-lg-auto
+					p Выберите длину
+				.col
+					.row
+						mixin filterBtn(c, ...items)
+							+e.btn-col.col
+								input.btn-check(type='checkbox' id=`option${c}`)&attributes(attributes)
+								label.btn(for=`option${c}`)
+									each item in items
+										span!= item
+						+filterBtn(1, `4м`, `4 метра`)
+						+filterBtn(2, `5м`, `5 метров`)
+						+filterBtn(3, `6м`, `6 метров`)
+						+filterBtn(4, `7м`, `7 метров`)
+						+filterBtn(5, `8м`, `8 метров`)
+						+filterBtn(6, `9м`, `9 метров`)
+						+filterBtn(7, `10м`, `10 метров`)
+			mixin sTypicalItem()
+				.col-sm-6.col-md-4.col-lg-3
+					+e.item
+						+e.img-wrap(data-fancybox='sTypical' data-src=`img/@2x/sTypical-1.png` data-caption=`Н-1830`)
+							+pic(`sTypical-1.png`, 'bg', 0)
+						+e.info-row.row
+							.col
+								+e.title Ферма навеса 2.5м
+							.col-auto
+								+e.desc 2000 ₽ шт.
+						+e.spec материал проф труба 20х20х1.5
+						+e.btn.link-modal-js(href="#modal-call" data-title= "Хочу навес Н1830" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;сообщим детальную информацию по&nbsp;навесу, направим к&nbsp;вам замерщика или поможем оформить заказ онлайн" data-btn= "Заказать обратный звонок" data-pic= "2") Заказать
+			+e.item-row.row
+				+sTypicalItem()
+				+sTypicalItem()
+				+sTypicalItem()
+				+sTypicalItem()
+				+sTypicalItem()
+				+sTypicalItem()

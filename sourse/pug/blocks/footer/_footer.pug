@@ -1,5 +1,6 @@
 mixin footer()
 	+b.FOOTER.footer
+		
 		.container
 			.row
 				.col-lg-3
@@ -8,6 +9,80 @@ mixin footer()
 							+icon('logo-top')
 						+b.label 
 								span Строим навесы с&nbsp;2019&nbsp;года
+					+e.btn.btn.btn-primary.btn-sm.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1") Вызвать замерщика 
+				.col-6.col-md-4.col-lg-2.ml-lg-auto
+					h6 Компания
+					ul
+						li
+							a(href="#") Калькулятор
+						li
+							a(href="#") Портфолио
+						li
+							a(href="#") Отзывы
+						li
+							a(href="#") Блог
+				.col-6.col-md-4.col-lg-2
+					h6 Навесы
+					ul
+						li
+							a(href="#") Для авто
+						li
+							a(href="#") Для парковки
+						li
+							a(href="#") К дому
+						li
+							a(href="#") Беседка
+						li
+							a(href="#") Для дачи
+						li
+							a(href="#") Кольцо и козырек
+						li
+							a(href="#") Для бассейна
+						li
+							a(href="#") Ангар
+				+e.col.col-md-4.col-lg-3
+					h6 Производим также
+					ul
+						li
+							a(href="#") Бетонные площадки
+						li
+							a(href="#") Заезды на участок
+						li
+							a(href="#") Мощение
+						li
+							a(href="#") Ворота откатные и распашные
+						li
+							a(href="#") Заборы и ограждения
+						li
+							a(href="#") Кованые изделия
+						li
+							a(href="#") Крыльцо
+						li
+							a(href="#") Лестница в дом
+						li
+							a(href="#") Лестница на улице
+						li
+							a(href="#") Ангары
+						li
+							a(href="#") Изготовление металлоконструкций
+						li
+							a(href="#") Беседки 
+				.col-lg-8
+					+e.content
+						span © 2022
+						a(href="#") Политика конфиденцильности
+						p Данный сайт носит информационный характер и&nbsp;не&nbsp;является публичной офертой, которая определяется положениями статьи 437 (2) Гражданского кодекса РФ. Для получения подробной информации о&nbsp;наличии и&nbsp;стоимости указанных товаров и&nbsp;услуг, обращайтесь к&nbsp;нашим менеджерам или укажите телефон, чтобы мы&nbsp;перезвонили вам. 
+mixin footer2()
+	+b.FOOTER.footer
+		block
+		.container
+			.row
+				.col-lg-3
+					+e.head
+						+b.logo(href="/")
+							+icon('logo-top')
+						+b.label 
+								span Работаем с 2012 года
 					+e.btn.btn.btn-primary.btn-sm.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1") Вызвать замерщика 
 				.col-6.col-md-4.col-lg-2.ml-lg-auto
 					h6 Компания

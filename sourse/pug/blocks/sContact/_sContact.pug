@@ -141,7 +141,7 @@ mixin sContact()
 	// end sContact
 mixin sContact2()
 	// start sContact
-	+b.sContact.section#sContact&attributes(attributes)
+	+b.sContact.section.pt-0#sContact&attributes(attributes)
 		.container  
 			.row
 				
@@ -174,18 +174,18 @@ mixin sContact2()
 				+e.wrap.col-auto
 					h5 Email
 					a(href="mailto:info@naves-na-zakaz.ru") info@naves-na-zakaz.RU
-					br
-					+e.flex
+					
+					+e.flex.mt-2
 						//- +e.links(href="#")
 						//- 	+icon('whatsapp') 
-						+e.links(href="#")
+						+e.links(href="#" style="--brand-color:#D21FFF ")
 							+icon('instagram-map')
-						+e.links--yt(href="#")
+						+e.links(href="#" style="--brand-color: red")
 							+icon('youtube')
 							
-						+e.links--vk(href="#")
+						+e.links(href="#" style="--brand-color:rgb(0, 119, 255)")
 							+icon('vk')
-						+e.links--yzen(href="#")
+						+e.links(href="#" style="--brand-color:#000 ")
 							+icon('yzen')
 
 			+form-wrap()

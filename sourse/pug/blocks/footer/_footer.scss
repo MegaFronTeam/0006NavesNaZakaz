@@ -110,6 +110,16 @@
 		}
 	}
 
+	.sContact__links{
+		width: 32px;
+		height: 32px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.icon{
+			color: var(--brand-color) !important;
+		}
+	}
 	.sContact__links:first-of-type{
 		padding: 0;
 		.icon{

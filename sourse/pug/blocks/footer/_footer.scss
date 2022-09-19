@@ -130,6 +130,10 @@
 	.sContact__links:not(:hover){
 		background-color: #fff;
 	}
+	.sContact__content,
+	.sContact__content>*{
+		margin-top: 0;
+	}
 // 
 @include media-breakpoint-up(xl) {}
 

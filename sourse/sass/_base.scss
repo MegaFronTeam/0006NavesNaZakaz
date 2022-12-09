@@ -755,45 +755,24 @@ h4 {
 }
 
 .main-page {
-	.topLine {
-		@include media-breakpoint-down(lg) {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			z-index: 4;
-			border-bottom: 1px solid rgba(255,255,255,.2);
+	@include media-breakpoint-down(lg) {
+		.top-nav {
 			background-color: transparent;
-		}
-		.row {
-			@include media-breakpoint-down(sm) {
-				--bs-gutter-x: #{rem(16)};
+			&.fixed {
+				background-color: #fff;
+				.toggle-menu-mobile {
+					--color: #{$secondary};
+				}
 			}
 		}
 		.toggle-menu-mobile {
-			@include media-breakpoint-down(lg) {
-				--color: #fff;
-				min-width: rem(84);
-			}
+			--color: #fff;
 		}
 	}
 	.logo {
 		&:not(:hover) {
 			@include media-breakpoint-down(lg) {
 				color: #fff;
-			}
-		}
-	}
-	.soc {
-		&--header {
-			.soc__item {
-				&--phone-call {
-					background-color: $light;
-					color: $success;
-					&:hover {
-						background-color: lighten($light, 10%);
-					}
-				}
 			}
 		}
 	}

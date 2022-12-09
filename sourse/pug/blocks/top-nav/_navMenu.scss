@@ -72,7 +72,7 @@
 	height: calc(var(--h) * 15);
 	position: relative;
 	font-size: 17px;
-	width: 1em;
+	width: rem(84);
 	cursor: pointer;
 	span:after,
 	span:before {

@@ -133,6 +133,8 @@ mixin top-nav()
 									li 
 										a(href="#") Беседки
 				.col.text-end
+					+b.logo(href="/").d-lg-none
+						+icon('logo-top')
 					+e.tel(href="tel:+74952563067") +7 495 256 30 67
 				.col-auto
 					+soc().--header

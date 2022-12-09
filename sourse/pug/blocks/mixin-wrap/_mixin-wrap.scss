@@ -35,10 +35,10 @@
 				}
 			}
 			&--phone-call {
-				background-color: $primary;
-				color: $secondary;
+				background-color: $light;
+				color: $success;
 				&:hover {
-					background-color: lighten($primary, 10%);
+					background-color: lighten($light, 10%);
 				}
 			}
 			&--measuring {
@@ -310,7 +310,7 @@
 		@include mt;
 		position: fixed;
 		right: rem(15);
-		bottom: rem(18);
+		bottom: rem(66);
 		display: flex;
 		flex-direction: column;
 		align-items: center;

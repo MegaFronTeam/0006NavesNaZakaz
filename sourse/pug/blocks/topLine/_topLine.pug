@@ -3,11 +3,19 @@ mixin topLine()
 	+b.topLine.section#topLine&attributes(attributes)
 		.container
 			+e.main-row.row
-				.col-auto
+				.col-auto.d-lg-none
+					+menu-toggle()
+				.col.col-lg-auto.text-center.text-lg-left
 					+b.logo(href="/")
 						+icon('logo-top')
 						//- img(src="img/svg/logo-top.svg", alt="")
-				.col
+				.col-auto.d-lg-none
+					+soc().--header
+						+e.A.item--whatsapp(href="#" target="_blank")
+							+icon('whatsapp')
+						+e.A.item--phone-call.link-modal-js(href="#modal-call" data-title= "Обратный звонок" data-text= "Оставьте свой номер телефона, и&nbsp;мы&nbsp;вам перезвоним в&nbsp;течение 15&nbsp;минут." data-btn= "Заказать обратный звонок" data-pic= "2")
+							+icon('phone-call')
+				.col.d-none.d-lg-block
 					.row
 						+e.col.col-auto
 							+b.locaton-dropdown.dropdown

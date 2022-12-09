@@ -2,6 +2,20 @@
 	--fancybox-content-bg: none;
 }
 
+.fancybox__track {
+	@include media-breakpoint-down(md) {
+		height: 100%;
+	}
+}
+.fancybox__slide {
+	@include media-breakpoint-down(md) {
+		padding: 0;
+		&:before, &::after {
+			content: unset;
+		}
+	}
+}
+
 .fancybox__content {
 	--carousel-button-width: 32px;
 	--carousel-button-height: 32px;
@@ -9,18 +23,35 @@
 	--carousel-button-svg-height: 16px;
 	padding: 0;
 	max-width: 100%;
+	@include media-breakpoint-down(md) {
+		height: 100%;
+		width: 100%;
+	}
 	& > .carousel__button {
 		@include mt;
-		--carousel-button-bg: #{$primary};
 		--carousel-button-svg-filter: none;
+		--carousel-button-bg: transparent;
 		&.is-close {
-			right: -8px;
-			top: -8px;
-			color: #35455c;
-		}
-		&:hover {
-			--carousel-button-bg: #{$secondary};
-			color: #{$white};
+			// right: -8px;
+			// top: -8px;
+			// color: #35455c;
+			right: 10px;
+			top: 10px;
+			color: #D3D5D8;
+			@include media-breakpoint-up(lg) {
+				// color: $secondary;
+				right: -8px;
+				top: -8px;
+				--carousel-button-bg: #{$primary};
+				color: #35455c;
+				&:hover {
+					--carousel-button-bg: #{$secondary};
+					color: #{$white};
+				}
+			}
+			svg {
+				font-size: 20px;
+			}
 		}
 	}
 }
@@ -39,10 +70,21 @@
 	@media (min-width: 700px) {
 		width: rem(656);
 	}
+	@include media-breakpoint-down(md) {
+		height: 100%;
+		width: 100% !important;
+		border-radius: 0;
+	}
+	// @media (min-width: 700px) {
+	// 	width: rem(656);
+	// }
 	&--reviews {
 		width: rem(800);
 		@media (min-width: 700px) {
 			width: rem(800);
+		}
+		@include media-breakpoint-down(md) {
+			width: 100% !important;
 		}
 		.sClientsReviews__wrap {
 			padding: rem(32) rem(16) rem(32);
@@ -103,7 +145,7 @@
 		max-height: calc(100% - 12px);
 		z-index: 3;
 		display: none;
-		@media (min-width: 700px) {
+		@include media-breakpoint-up(md) {
 			display: block;
 		}
 	}
@@ -119,7 +161,14 @@
 			padding: rem(32) rem(30) rem(42) rem(32);
 			width: 53%;
 		}
-
+		@include media-breakpoint-down(md) {
+			width: 100% !important;
+		}
+		@include media-breakpoint-down(md) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 		h4 {
 			@media (min-width: 450px) {
 				margin-bottom: rem(17);
@@ -197,7 +246,7 @@
 	&__img-wrap {
 		width: 47%;
 		display: none;
-		@media (min-width: 700px) {
+		@include media-breakpoint-up(md) {
 			display: block;
 		}
 		picture {
@@ -218,6 +267,160 @@
 		color: $primary;
 		font-size: 40px;
 		font-weight: 100;
+	}
+	&--callback {
+		width: 1008px !important;
+		@include media-breakpoint-down(md) {
+			height: 100%;
+			border-radius: 0;
+		}
+		.form-wrap {
+			height: 100%;
+			padding: rem(30) rem(74);
+			padding: rem(20) !important;
+			@media (min-width: 700px) {
+				width: 100%;
+			}
+			@include media-breakpoint-up(lg) {
+				padding: 0 !important;
+			}
+			form {
+				height: 100%;
+			}
+			.row {
+				height: 100%;
+				align-items: center;
+			}
+			&__wrap {
+				@include media-breakpoint-up(lg) {
+					// padding-left: rem(72);
+					padding: rem(20) 0 rem(20) rem(72);
+				}
+			}
+			.h4 {
+				font-size: 22px;
+				line-height: 1.5em;
+				@include media-breakpoint-up(lg) {
+					font-size: 30px;
+				}
+			}
+			p {
+				font-weight: 500;
+				color: rgba($color: $secondary, $alpha: .75);
+				line-height: 1.55em;
+				font-size: rem(14);
+				@media (min-width: 450px) {
+					font-size: rem(16);
+					margin-bottom: rem(30);
+				}
+			}
+			&__input {
+				background-color: #fff;
+				border: 1px solid #D3D5D8;
+				border-radius: 10px;
+				padding: rem(13.5);
+				font-size: 14px;
+				font-weight: 500;
+				text-align: center;
+				@include media-breakpoint-up(lg) {
+					padding: rem(20.5);
+					font-size: 16px;
+				}
+				&::placeholder{
+					color: rgba(44, 52, 64, 0.5) !important;
+					opacity: 1 !important;
+					font-size: 14px;
+					@include media-breakpoint-up(lg) {
+						font-size: 16px;
+					}
+				}
+			}
+			&__input-title {
+				display: none;
+			}
+			&__btn {
+				--bs-btn-border-radius: 10px;
+				padding-bottom: rem(16.5) !important;
+				padding-top: rem(16.5) !important;
+				box-shadow: none !important;
+				margin-top: rem(20);
+				font-size: 14px;
+				@include media-breakpoint-up(lg) {
+					padding-bottom: rem(25.5) !important;
+					padding-top: rem(25.5) !important;
+					font-size: 16px;
+				}
+				&::after {
+					content: unset;
+				}
+			}
+			&__agreement {
+				font-size: 12px;
+				color: rgba($color: $secondary, $alpha: .75);
+				@include media-breakpoint-up(lg) {
+					font-size: 14px;
+				}
+			}
+			&__img-wrap {
+				position: relative;
+				// top: 0;
+				// right: 0;
+				z-index: -1;
+				@include media-breakpoint-down(lg) {
+					display: none;
+				}
+				&:before {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 100%;
+					height: 100%;
+					background-image: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0.5) 97.95%);
+				}
+			}
+			.modal-avatar-js {
+				text-align: center;
+				margin-bottom: rem(20);
+				@include media-breakpoint-up(lg) {
+					display: none;
+				}
+				img {
+					max-width: 100%;
+					height: auto;
+				}
+			}
+		}
+		.img {
+			display: none;
+			position: absolute;
+			bottom: 0;
+			right: rem(70);
+			z-index: -1;
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+
+#modal-callback {
+	.carousel__button.is-close {
+		--carousel-button-bg: transparent;
+		right: 10px;
+    top: 10px;
+		color: #D3D5D8;
+		@include media-breakpoint-up(lg) {
+			color: $secondary;
+			right: 20px;
+			top: 20px;
+		}
+		svg {
+			font-size: 20px;
+		}
 	}
 }
 

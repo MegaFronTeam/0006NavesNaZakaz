@@ -46,13 +46,20 @@ const JSCCommon = {
 							// console.log(modal.querySelector(elem).tagName)
 						}
 					}
+					// function setImage(src) {
+					// 	return `<img src="/wp-content/themes/naves/assets/img/@2x/modal-${src}.png" alt="">`
+					// }
 					function setImage(src) {
-						return `<img src="/wp-content/themes/naves/assets/img/@2x/modal-${src}.png" alt="">`
+						return `<img src="${src}" alt="">`
+					}
+					function setAvatar(src) {
+						return `<img src="${src}" alt="">`
 					}
 					setValue(data.title, '.modal-title-js');
 					setValue(data.text, '.modal-text-js');
-					setValue(setImage(data.pic), '.modal-pic-js');
 					setValue(data.btn, '.btn');
+					setValue(setImage(data.pic), '.modal-pic-js');
+					setValue(setAvatar(data.avatar), '.modal-avatar-js');
 
 				
 				})

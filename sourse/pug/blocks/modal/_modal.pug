@@ -54,4 +54,25 @@ mixin modal()
 				
 	// #modal-policy
 	
+	div(id="modal-callback"  style="display: none" )
+		+b.modal-win--callback
+			+form-wrap
+				.row
+					.col-lg-6
+						+e.wrap
+							picture.modal-avatar-js
+							.text-center
+								.h4 Обратный звонок
+								p Оставьте свой номер телефона и&nbsp;мы&nbsp;вам перезвоним в&nbsp;течение 15&nbsp;минут
+							+input("Ваше Имя")(required)
+							+input("Ваш телефон", 'tel')(required)
+							+e.BUTTON.btn.btn.btn-primary(type="submit") Запросить обратный звонок
+							+e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#modal-policy").link-modal-js персональных данных] 
+					.col-lg-6.d-none.d-lg-block
+						+e.img-wrap
+							+pic('modal-bg-2.jpg', 'bg', 0)
+						picture.modal-pic-js.img
+
+	// #modal-callback
+
 	// end modals

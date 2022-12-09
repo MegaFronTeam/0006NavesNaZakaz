@@ -108,6 +108,9 @@ body {
 	@include media-breakpoint-up(lg) {
 		margin-top: rem(64);
 	}
+	@include media-breakpoint-down(lg) {
+		padding-bottom: rem(60);
+	}
 }
 // .main-wrapper__inner{
 // 	// overflow-x: hidden;
@@ -748,5 +751,50 @@ h4 {
 		font-size: rem(18);
 		font-weight: bold;
 		margin-bottom: rem(40);
+	}
+}
+
+.main-page {
+	.topLine {
+		@include media-breakpoint-down(lg) {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 4;
+			border-bottom: 1px solid rgba(255,255,255,.2);
+			background-color: transparent;
+		}
+		.row {
+			@include media-breakpoint-down(sm) {
+				--bs-gutter-x: #{rem(16)};
+			}
+		}
+		.toggle-menu-mobile {
+			@include media-breakpoint-down(lg) {
+				--color: #fff;
+				min-width: rem(84);
+			}
+		}
+	}
+	.logo {
+		&:not(:hover) {
+			@include media-breakpoint-down(lg) {
+				color: #fff;
+			}
+		}
+	}
+	.soc {
+		&--header {
+			.soc__item {
+				&--phone-call {
+					background-color: $light;
+					color: $success;
+					&:hover {
+						background-color: lighten($light, 10%);
+					}
+				}
+			}
+		}
 	}
 }

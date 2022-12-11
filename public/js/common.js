@@ -630,13 +630,19 @@ function eventHandler() {
 		
 		$('.page-head__row--fix').hcSticky({
 			stickTo: $('.sticky-wrapper'),
-			top: 128,
-			innerTop: 64,
+			top: 60,
+			// innerTop: 60,
 			// bottomEnd: 100,
+			mobileFirst: true,
 			responsive: {
 				992: {
-					top: 96,
-					innerTop: 48,
+					top: 64,
+					// innerTop: 64,
+					// disable: true,
+				},
+				1200: {
+					// innerTop: 39,
+					top: 57,
 					// disable: true,
 				}
 			}

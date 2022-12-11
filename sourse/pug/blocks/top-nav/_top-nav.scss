@@ -10,6 +10,7 @@
 	left: 0;
 	top: 0;
 	height: rem(60);
+	// @media (max-width: 370px)
 	@include media-breakpoint-up(lg) {
 		height: rem(64);
 		// top: 0;
@@ -19,8 +20,8 @@
 		box-shadow: 0px 10px 13px rgba(0, 0, 0, 0.09);
 		background-color: #fff;
 		@include media-breakpoint-down(lg) {
-			top: unset;
-			bottom: 0;
+			// top: unset;
+			// bottom: 0;
 			.top-nav__tel {
 				display: block;
 			}
@@ -31,6 +32,22 @@
 		.toggle-menu-mobile {
 			@include media-breakpoint-down(sm) {
 				width: auto;
+				width: rem(84);
+			}
+			@media (max-width: 370px) {
+				width: rem(63);
+			}
+		}
+		@media (max-width: 370px) {
+			.soc {
+				width: rem(63);
+				&__item {
+					width: 20px;
+					height: 20px;
+					.icon {
+						font-size: 9px;
+					}
+				}
 			}
 		}
 	}
@@ -39,9 +56,9 @@
 			display: none;
 			text-align: center;
 		}
-		@include media-breakpoint-down(sm) {
-			text-align: right;
-		}
+		// @include media-breakpoint-down(sm) {
+		// 	text-align: right;
+		// }
 	}
 	.logo {
 		display: block;

@@ -109,7 +109,7 @@
 @include media-breakpoint-down(lg) {
 	.menu-mobile {
 		position: fixed !important;
-		z-index: 999;
+		z-index: -1;
 		max-width: 100%;
 		height: calc(var(--vh, 1vh) * 100);
 		width: 420px;
@@ -118,7 +118,7 @@
 		right: 0;
 		background-color: $body-bg;
 		&:not(.active) {
-			transform: translate3d(120%, 0, 0);
+			transform: translate3d(0, -120%, 0);
 			--opacity: 0;
 			.toggle-menu-mobile {
 				opacity: 0;
@@ -141,7 +141,8 @@
 		// 	}
 		// }
 		&__inner {
-			padding: rem(8) 0 rem(24);
+			// padding: rem(68) 0 rem(24);
+			padding: calc(env(safe-area-inset-top, 0px) + var(--mob-nab-top, #{rem(70)})) 0 calc(env(safe-area-inset-bottom, 0px) + #{rem(20)});
 			overflow-x: hidden;
 			overflow-y: auto;
 			-webkit-overflow-scrolling: touch;
@@ -174,4 +175,9 @@
 			}
 		}
 	}
+}
+
+
+.blog{
+	--mob-nab-top: #{rem(170)}
 }

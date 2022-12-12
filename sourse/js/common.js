@@ -58,8 +58,8 @@ const JSCCommon = {
 					setValue(data.title, '.modal-title-js');
 					setValue(data.text, '.modal-text-js');
 					setValue(data.btn, '.btn');
-					setValue(setImage(data.pic), '.modal-pic-js');
-					setValue(setAvatar(data.avatar), '.modal-avatar-js');
+					setValue(setImage(data.desktopPic), '.modal-pic-js');
+					setValue(setAvatar(data.mobilePic), '.modal-avatar-js');
 
 				
 				})

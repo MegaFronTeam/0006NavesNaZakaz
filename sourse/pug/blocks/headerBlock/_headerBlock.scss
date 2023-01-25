@@ -8,7 +8,7 @@
 	color: $white;
 	--sPT: #{rem(90)};
 	--sPB: #{rem(27)};
-	--sTPB: #{rem(20)};
+	--sTPB: #{rem(30)};
 	@include media-breakpoint-up(sm) {
 		// --sPT: #{rem(30)};
 		--sPB: #{rem(35)};

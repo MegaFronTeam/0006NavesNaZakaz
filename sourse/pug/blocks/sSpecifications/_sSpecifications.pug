@@ -246,3 +246,119 @@ mixin sSpecifications3(btn, title, subtitle, btnText)
 					if btn
 						button.btn.btn-outline-secondary Сохранить себе
 	// end sSpecifications
+
+mixin sSpecifications4(btn, title, subtitle, btnText)
+	// start sSpecifications
+	+b.sSpecifications.section&attributes(attributes)
+		+e.container.container
+			.row
+				.col-lg-6
+					+e.slider-wrap
+						+e.status--bg До ремонта
+						+e.slider--js.swiper
+							.swiper-wrapper
+								mixin slide2(i)
+									+e.slide.swiper-slide
+										+e.img-wrap(href=`img/@2x/sSpecifications-md-${i}.jpg` data-fancybox= "sCard-gallery")
+											//- img(src=`img/card-md-1.jpg` alt='')
+											+pic(`sSpecifications-md-${i}.jpg`, `bg`, 0)
+								+slide2(1)
+								+slide2(2)
+								//- +slide2(3)
+								//- +slide2(4)
+						+e.slider-thumbs--js.swiper
+							.swiper-wrapper
+								mixin slide(i)
+									+e.slide.swiper-slide
+										+e.img-wrap--thumbs.bg-wrap
+											+pic(`sSpecifications-sm-${i}.jpg`, `bg`, 0).picture-bg
+											//- img(src=`img/@2x/sProject-sm-${i}.jpg` alt='')
+								+slide(1)
+								+slide(2)
+								//- +slide(3)
+								//- +slide(4)
+				.col-lg-6
+					+e.slider-wrap
+						+e.status После ремонта
+						+e.slider--js.swiper
+							.swiper-wrapper
+								mixin slide2(i)
+									+e.slide.swiper-slide
+										+e.img-wrap(href=`img/@2x/sSpecifications-md-${i}.jpg` data-fancybox= "sCard-gallery")
+											//- img(src=`img/card-md-1.jpg` alt='')
+											+pic(`sSpecifications-md-${i}.jpg`, `bg`, 0)
+								+slide2(1)
+								+slide2(2)
+								//- +slide2(3)
+								//- +slide2(4)
+						+e.slider-thumbs--js.swiper
+							.swiper-wrapper
+								mixin slide(i)
+									+e.slide.swiper-slide
+										+e.img-wrap--thumbs.bg-wrap
+											+pic(`sSpecifications-sm-${i}.jpg`, `bg`, 0).picture-bg
+											//- img(src=`img/@2x/sProject-sm-${i}.jpg` alt='')
+								+slide(1)
+								+slide(2)
+								//- +slide(3)
+								//- +slide(4)
+				.col-lg-12
+					+e.wrap
+						h4!= title
+						p!= subtitle
+						h5 Цены и сроки ремонта
+						+e.price 176 400 ₽, 7 дней
+					//- if title 
+					//- 	h4!= title
+					//- 	p!= subtitle
+					//- table
+					//- 	thead
+					//- 		tr
+					//- 			th(colspan="2")
+					//- 				p Характеристики
+					//- 	tbody
+					//- 		tr
+					//- 			td Металлические столбы
+					//- 			td 80&times;80&times;3&nbsp;мм (6&nbsp;шт)
+					//- 		tr
+					//- 			td Силовые боковые балки
+					//- 			td 80&times;80&times;3&nbsp;мм 
+					//- 		tr
+					//- 			td Металлические фермы
+					//- 			td 60&times;30&times;2&nbsp;мм (4&nbsp;шт)
+					//- 		tr
+					//- 			td Обрешетка (лаги)
+					//- 			td 40&times;20&times;1,5&nbsp;мм
+					//- 		tr
+					//- 			td Форма крыши
+					//- 			td Арочная
+					//- 		tr
+					//- 			td Материал кровли
+					//- 			td Сотовый поликарбонат (8&nbsp;мм) &laquo;КарбоGlass Кристалл&raquo;
+					//- 		tr
+					//- 			td Цвет кровли
+					//- 			td Бронзовый
+					//- 		tr
+					//- 			td Монтаж к земле
+					//- 			td Заглубление на&nbsp;1200&nbsp;мм с&nbsp;бутованием щебнем
+					//- table
+					//- 	thead
+					//- 		tr
+					//- 			th(colspan="2")
+					//- 				p Цены и сроки
+					//- 	tbody
+					//- 		tr
+					//- 			td Материалы • Работа
+					//- 			td 123 480 ₽ • 52 920 ₽
+					//- 		tr
+					//- 			td Итого
+					//- 			td 176 400 ₽
+					//- 		tr
+					//- 			td Изготовление • Установка
+					//- 			td 7 дней • 1 день
+					//- a.link-modal-js(href="#modal-call" data-title= "Заказать расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Заказать расчет" data-pic= "2").btn.btn-primary!= btnText
+					//- a.link-modal-js(href="#modal-call" data-title= "Заказать расчет похожего навеса" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;выполним расчет" data-btn= "Заказать расчет" data-pic= "2").btn.btn-primary!= btnText
+					//- button.btn.btn-outline-secondary Смотреть отзыв
+					//- if btn
+					//- 	button.btn.btn-outline-secondary Сохранить себе
+	// end sSpecifications

@@ -356,7 +356,9 @@
 			}
 			&__agreement {
 				font-size: 12px;
+				line-height: 1.4;
 				color: rgba($color: $secondary, $alpha: .75);
+				max-width: none;
 				@include media-breakpoint-up(lg) {
 					font-size: 14px;
 				}

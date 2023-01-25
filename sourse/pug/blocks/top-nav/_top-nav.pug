@@ -31,107 +31,143 @@ mixin top-nav()
 								span
 							span Услуги
 						+e.content.dropdown__content
-							.row
-								.col-4
-									h6 Навесы
-									ul
-										li 
-											a(href="#") Для авто
-										li 
-											a(href="#") Для парковки
-										li 
-											a(href="#") К&nbsp;дому
-										li 
-											a(href="#") Беседка
-										li 
-											a(href="#") Для дачи
-										li 
-											a(href="#") Кольцо и&nbsp;козырек
-										li 
-											a(href="#") Для бассейна
-										li 
-											a(href="#") Ангар
-										
-								.col-8
-									h6 Производим также
-									ul
-										li 
-											a(href="#") Бетонные площадки
-										li 
-											a(href="#") Заезды на&nbsp;участок
-										li 
-											a(href="#") Мощение
-										li 
-											a(href="#") Ворота откатные и&nbsp;распашные
-										li 
-											a(href="#") Заборы и&nbsp;ограждения
-										li 
-											a(href="#") Кованые изделия
-										li 
-											a(href="#") Крыльцо
-										li 
-											a(href="#") Лестница в&nbsp;дом
-										li 
-											a(href="#") Лестница на&nbsp;улице
-										li 
-											a(href="#") Ангары
-										li 
-											a(href="#") Изготовление металлоконструкций
-										li 
-											a(href="#") Беседки
+							.container
+								.row
+									.col-3
+										h6 
+											+img('img/svg/dropdown-1.svg')
+											| Навесы
+										ul
+											li: a(href="#") Для машин
+											li: a(href="#") К дому
+											li: a(href="#") Для бассейна
+											li: a(href="#") Кованые
+											li: a(href="#") Беседки
+											li: a(href="#") Козырьки
+											li: a(href="#") Другие
+											
+									.col-6
+										h6 
+											+img('img/svg/dropdown-2.svg')
+											| Дополнительные услуги
+										+e.UL.large-list
+											li: a(href="#") Гаражи из сэндвич панелей
+											li: a(href="#") Террасы и веранды из ДПК
+											li: a(href="#") Заборы
+											li: a(href="#") Ограждения
+											li: a(href="#") Откатные ворота
+											li: a(href="#") Распашные ворота
+											li: a(href="#") Торговые павильоны
+											li: a(href="#") Быстровозводимые здания
+											li: a(href="#") Металлокаркасы лестниц
+											li: a(href="#") Мощение
+											li: a(href="#") Откатные ворота
+											li: a(href="#") Промышленные откатные ворота
+											li: a(href="#") Распашные ворота
+											li: a(href="#") Рулонные ворота
+											li: a(href="#") Комплекты для откатных ворот
+											li: a(href="#") Калитки
+									.col-3
+										h6 
+											+img('img/svg/dropdown-3.svg')
+											| О компании
+										ul
+											li: a(href="#") Портфолио работ
+											li: a(href="#") Отзывы клиентов
+											li: a(href="#") Калькулятор навесов
+											li: a(href="#") Как заказать навес
+											li: a(href="#") Сертификаты качества
+											li: a(href="#") О компании
+											li: a(href="#") Блог
 				+e.col.col-auto
 					.menu-mobile.menu-mobile--js
 						//- +menu-toggle().d-lg-none
 						.menu-mobile__inner
-							+e.btn-wrap
-								+e.btn.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1") Вызвать замерщика
+							//- +e.btn-wrap
+							//- 	+e.btn.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1") Вызвать замерщика
+							+ddGroup
+								+b.accordion-item
+									+e.head.dd-head-js
+										h4
+											+img('img/svg/dropdown-1.svg')
+											| Навесы
+										+icon('chevron-right')
+									+e.content.dd-content-js
+										ul
+											li: a(href="#") Для машин
+											li: a(href="#") К дому
+											li: a(href="#") Для бассейна
+											li: a(href="#") Кованые
+											li: a(href="#") Беседки
+											li: a(href="#") Козырьки
+											li: a(href="#") Другие
+								+b.accordion-item
+									+e.head.dd-head-js
+										h4
+											+img('img/svg/dropdown-2.svg')
+											| Дополнительные услуги
+										+icon('chevron-right')
+									+e.content.dd-content-js
+										+e.UL.large-list
+											li: a(href="#") Гаражи из сэндвич панелей
+											li: a(href="#") Террасы и веранды из ДПК
+											li: a(href="#") Заборы
+											li: a(href="#") Ограждения
+											li: a(href="#") Откатные ворота
+											li: a(href="#") Распашные ворота
+											li: a(href="#") Торговые павильоны
+											li: a(href="#") Быстровозводимые здания
+											li: a(href="#") Металлокаркасы лестниц
+											li: a(href="#") Мощение
+											li: a(href="#") Откатные ворота
+											li: a(href="#") Промышленные откатные ворота
+											li: a(href="#") Распашные ворота
+											li: a(href="#") Рулонные ворота
+											li: a(href="#") Комплекты для откатных ворот
+											li: a(href="#") Калитки
+								+b.accordion-item
+									+e.head.dd-head-js
+										h4
+											+img('img/svg/dropdown-3.svg')
+											| О компании
+										+icon('chevron-right')
+									+e.content.dd-content-js
+										ul
+											li: a(href="#") Портфолио работ
+											li: a(href="#") Отзывы клиентов
+											li: a(href="#") Калькулятор навесов
+											li: a(href="#") Как заказать навес
+											li: a(href="#") Сертификаты качества
+											li: a(href="#") О компании
+											li: a(href="#") Блог
 							+mnu()
-							+e.list
-								h6 Навесы
-								ul
-									li 
-										a(href="#") Для авто
-									li 
-										a(href="#") Для парковки
-									li 
-										a(href="#") К&nbsp;дому
-									li 
-										a(href="#") Беседка
-									li 
-										a(href="#") Для дачи
-									li 
-										a(href="#") Кольцо и&nbsp;козырек
-									li 
-										a(href="#") Для бассейна
-									li 
-										a(href="#") Ангар
-							+e.list
-								h6 Производим также
-								ul
-									li 
-										a(href="#") Бетонные площадки
-									li 
-										a(href="#") Заезды на&nbsp;участок
-									li 
-										a(href="#") Мощение
-									li 
-										a(href="#") Ворота откатные и&nbsp;распашные
-									li 
-										a(href="#") Заборы и&nbsp;ограждения
-									li 
-										a(href="#") Кованые изделия
-									li 
-										a(href="#") Крыльцо
-									li 
-										a(href="#") Лестница в&nbsp;дом
-									li 
-										a(href="#") Лестница на&nbsp;улице
-									li 
-										a(href="#") Ангары
-									li 
-										a(href="#") Изготовление металлоконструкций
-									li 
-										a(href="#") Беседки
+							+e.link(href='tel:+74952122320') +7 (495) 212-23-20
+							+e.link(href='tel:+79697778247') 
+								| +7 (969) 777-82-47
+								+icon('wa')
+							+e.email(href='mailto:info@naves-na-zakaz.ru') info@naves-na-zakaz.ru
+							+e.soc-wrap
+								+soc()
+									+item-sos()
+										+img('img/svg/yt.svg')
+									+item-sos()
+										+img('img/svg/inst.svg')
+									+item-sos()
+										+img('img/svg/vk2.svg')
+									+item-sos()
+										+img('img/svg/dzen.svg')
+							+e.footer-btn-wrap
+								.row
+									.col-6
+										+e.footer-btn(href='#')
+											+e.icon-wrap
+												+icon('roulette')
+											| Вызвать замерщика
+									.col-6
+										+e.footer-btn(href='#')
+											+e.icon-wrap
+												+icon('roulette')
+											| Вызвать замерщика
 				.col.text-end
 					+e.center-block
 						+b.logo(href="/").d-lg-none.mt
@@ -139,10 +175,10 @@ mixin top-nav()
 						+e.tel(href="tel:+74952563067").mt +7 495 256 30 67
 				.col-auto
 					+soc().--header
-						+e.A.item--whatsapp(href="#" target="_blank")
-							+icon('whatsapp')
 						+e.A.item--phone-call.link-modal-js(href="#modal-call" data-title= "Обратный звонок" data-text= "Оставьте свой номер телефона, и&nbsp;мы&nbsp;вам перезвоним в&nbsp;течение 15&nbsp;минут." data-btn= "Заказать обратный звонок" data-pic= "2")
 							+icon('phone-call')
+						+e.A.item--whatsapp(href="#" target="_blank")
+							+icon('whatsapp')
 						+e.A.item--measuring.d-none.d-xl-grid.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1")
 							+icon('measuring')
 						//- +item-sos('whatsapp')

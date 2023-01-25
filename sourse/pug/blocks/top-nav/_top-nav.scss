@@ -5,7 +5,9 @@
 			color: #000 !important;
 		}
 	}
-
+	.services-dropdown__content {
+		top: 100%;
+	}
 }
 .top-nav {
 	// background: svg-load('../svg/check.svg',  stroke=$primary);

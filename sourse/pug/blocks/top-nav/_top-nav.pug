@@ -87,12 +87,12 @@ mixin top-nav()
 							//- 	+e.btn.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1") Вызвать замерщика
 							+ddGroup
 								+b.accordion-item
-									+e.head.dd-head-js
+									+e.head.dd-head-js.active
 										h4
 											+img('img/svg/dropdown-1.svg')
 											| Навесы
 										+icon('chevron-right')
-									+e.content.dd-content-js
+									+e.content.dd-content-js.active
 										ul
 											li: a(href="#") Для машин
 											li: a(href="#") К дому

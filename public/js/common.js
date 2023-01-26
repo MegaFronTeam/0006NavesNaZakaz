@@ -610,7 +610,9 @@ function eventHandler() {
 
 	// modal window
 	$(".dd-head-js").click(function () {
-		$(this).toggleClass("active").next().slideToggle();
+		$(this).toggleClass("active").next().slideToggle(function () {
+			$(this).toggleClass('active');
+		});
 	})
 	const player = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, { invertTime: false }));
 
@@ -673,6 +675,13 @@ function eventHandler() {
 		})
 	}
 
+	document.addEventListener('keydown', evt => {
+    if (evt.key === 'Escape' && document.querySelector('.menu-mobile--js').classList.contains('active')) {
+			document.querySelector('.menu-mobile--js').classList.remove('active');
+			document.querySelector('.toggle-menu-mobile--js').classList.remove('on');
+			[document.querySelector('body'), document.querySelector('html')].forEach(el => el.classList.remove('fixed'));
+    }
+	});
 
 };
 if (document.readyState !== 'loading') {

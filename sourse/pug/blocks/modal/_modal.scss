@@ -383,6 +383,7 @@
 			.modal-avatar-js {
 				text-align: center;
 				margin-bottom: rem(20);
+				transform: rotateY(180deg);
 				@include media-breakpoint-up(lg) {
 					display: none;
 				}

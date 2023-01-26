@@ -185,8 +185,14 @@
 				display: block;
 			}
 		}
+		.dd-group {
+			border-top: 1px solid #f4f4f4;
+		}
 		.accordion-item {
 			margin-bottom: 0;
+			border-top: none;
+			border-left: none;
+			border-right: none;
 			&__head {
 				display: flex;
 				align-items: center;
@@ -213,9 +219,13 @@
 				}
 			}
 			&__content {
+				display: none;
+				&.active {
+					display: block;
+				}
 				ul {
 					margin-bottom: 0;
-					padding: 0 rem(13);
+					padding: 0 rem(13) rem(10);
 					margin-top: calc(rem(-12));
 					li {
 						margin-top: calc(rem(12));

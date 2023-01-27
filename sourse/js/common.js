@@ -675,11 +675,10 @@ function eventHandler() {
 		})
 	}
 
-	document.addEventListener('keydown', evt => {
-    if (evt.key === 'Escape' && document.querySelector('.menu-mobile--js').classList.contains('active')) {
-			document.querySelector('.menu-mobile--js').classList.remove('active');
-			document.querySelector('.toggle-menu-mobile--js').classList.remove('on');
-			[document.querySelector('body'), document.querySelector('html')].forEach(el => el.classList.remove('fixed'));
+	document.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Escape' && document.querySelector('.services-dropdown').classList.contains('active')) {
+			document.querySelector('.services-dropdown').classList.remove('active');
+			$('.services-dropdown__content').slideUp();
     }
 	});
 

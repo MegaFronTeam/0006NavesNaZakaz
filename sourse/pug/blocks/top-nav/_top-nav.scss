@@ -112,7 +112,7 @@
 	&__tel {
 		display: inline-block;
 		font-weight: bold;
-		font-size: rem(16);
+		font-size: rem(17);
 		line-height: 145%;
 		white-space: nowrap;
 		@include media-breakpoint-only(lg) {
@@ -304,6 +304,7 @@
 	.soc--header,
 	.toggle-menu-mobile{
 		z-index: 10;
+		position: relative;
 	}
 }
 .services-dropdown {
@@ -428,7 +429,7 @@
 			list-style: none;
 			margin-bottom: 0;
 			li {
-				font-size: rem(14);
+				font-size: rem(15.8);
 				font-weight: 500;
 				line-height: 115%;
 				margin-bottom: rem(12);

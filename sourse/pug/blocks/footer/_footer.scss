@@ -42,6 +42,11 @@
 		@include media-breakpoint-up(lg) {
 			margin-bottom: rem(32);
 		}
+		@include media-breakpoint-down(lg) {
+			&:not(:hover) {
+				color: #000;
+			}
+		}
 	}
 	.label {
 		background-color: $secondary;

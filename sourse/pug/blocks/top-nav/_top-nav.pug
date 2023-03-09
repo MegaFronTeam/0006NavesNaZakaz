@@ -159,15 +159,15 @@ mixin top-nav()
 							+e.footer-btn-wrap
 								.row
 									.col-6
-										+e.footer-btn(href='#')
+										+e.footer-btn.link-modal-js(href='#modal-call' data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1")
 											+e.icon-wrap
 												+icon('roulette')
 											| Вызвать замерщика
 									.col-6
-										+e.footer-btn(href='#')
+										+e.footer-btn.link-modal-js(href='#modal-callback' data-desktop-pic= "img/@2x/modal-3.png" data-mobile-pic='img/avatar-1.png')
 											+e.icon-wrap
-												+icon('roulette')
-											| Вызвать замерщика
+												+icon('callBack')
+											| Обратный звонок
 				.col.text-end
 					+e.center-block
 						+b.logo(href="/").d-lg-none.mt

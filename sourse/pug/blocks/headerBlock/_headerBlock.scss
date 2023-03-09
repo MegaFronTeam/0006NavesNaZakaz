@@ -133,6 +133,9 @@
 		max-width: rem(400);
 		margin-left: auto;
 		margin-right: auto;
+		@include media-breakpoint-up(lg) {
+			max-width: none;
+		}
 		&::after {
 			content: "";
 			position: absolute;

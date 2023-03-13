@@ -98,7 +98,8 @@ const JSCCommon = {
 			let container = event.target.closest(".menu-mobile--js.active"); // (1)
 			let link = event.target.closest(".menu-mobile .menu a"); // (1)
 			let toggle = event.target.closest('.toggle-menu-mobile--js.on'); // (1)
-			if (!container && !toggle || link) this.closeMenu();
+			let fancyboxContainer = event.target.closest('.fancybox__container'); // (1)
+			if ((!container && !toggle || link) && !fancyboxContainer) this.closeMenu();
 		}, { passive: true });
 
 		window.addEventListener('resize', () => {

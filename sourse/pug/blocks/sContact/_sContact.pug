@@ -196,3 +196,41 @@ mixin sContact2()
 						+input('Ваш номер телефона', 'tel')
 						button.btn.btn.btn-primary(type="submit") Получить консультацию 
 	// end sContact
+
+mixin sContact3()
+	+b.sContact--3.section.pt-0#sContact&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h4 Контакты
+				h2 Позвоните или посетите наш офис на&nbsp;производстве
+			+e.info
+				+b.locaton-dropdown.dropdown
+						+e.btn.dropdown__btn
+							+icon('geo-tag')
+							span Москва и&nbsp;МО
+							+icon('chevron-down')
+						+e.content.dropdown__content
+							+e.item(href="#") Москва и&nbsp;МО
+							+e.item(href="#") Санкт-Петербург и&nbsp;область
+							+e.item(href="#") И так далее
+				+b.schedule
+					span открыто
+					span Пн&ndash;Вс &bull; 9:00&ndash;21:00
+			+e.wrap
+				h5 Телефоны
+				+e.content
+					+e.phone-number
+						a(href="tel:+74952563067") +7 495 256 30 67 
+						a(href="tel:+74952563067") +7 495 256 30 67 
+					+e.flex
+						+e.links(href="#")
+							+icon('whatsapp')
+							span Whatsapp
+						+e.links(href="#")
+							+icon('instagram-map')
+						+e.links--yt(href="#")
+							+icon('youtube')
+
+					+e.btn.btn.btn-primary.btn-sm.link-modal-js(href="#modal-call" data-title= "Обратный звонок" data-text= "Оставьте свой номер телефона, и&nbsp;мы&nbsp;вам перезвоним в&nbsp;течение 15&nbsp;минут." data-btn= "Заказать обратный звонок" data-pic= "2") Обратный звонок
+			+e.wrap
+				a(href="mailto:info@naves-na-zakaz.ru") info@naves-na-zakaz.ru

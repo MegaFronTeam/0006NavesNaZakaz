@@ -1,6 +1,6 @@
 // start .sThanks
 .sThanks {
-	--sPT: #{rem(50)};
+	--sPT: calc(#{rem(60)} + #{rem(30)});
 	--sPB: #{rem(50)};
 	--sTPB: #{rem(24)};
 

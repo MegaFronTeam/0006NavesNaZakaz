@@ -255,6 +255,125 @@
 		@include roww(10px, m);
 		display: flex;
 	}
+	&--3 {
+		.section-title {
+			margin-bottom: rem(40);
+			@include media-breakpoint-up(lg) {
+				margin-bottom: rem(60);
+			}
+			h4 {
+				line-height: 1.3em;
+				margin-bottom: rem(18);
+				@include media-breakpoint-up(xl) {
+					font-size: rem(24);
+				}
+				@include media-breakpoint-up(lg) {
+					margin-bottom: rem(24);
+				}
+			}
+			h2 {
+				max-width: rem(895);
+				margin-bottom: 0;
+				@include media-breakpoint-up(xl) {
+					font-size: rem(48);
+					margin-bottom: 0;
+				}
+			}
+		}
+		.sContact {
+			&__info {
+				justify-content: center;
+				margin-bottom: rem(30);
+				@include media-breakpoint-down(lg){
+					align-items: center;
+					text-align: center;
+				}
+				.locaton-dropdown {
+					margin-right: rem(30);
+					@include media-breakpoint-down(lg){
+						margin-left: auto;
+						margin-right: auto;
+						padding-left: rem(10);
+					}
+					&__btn {
+						.icon {
+							&-geo-tag {
+								font-size: rem(22);
+							}
+							&-chevron-down {
+								font-size: rem(6);
+							}
+						}
+						span {
+							font-size: rem(14);
+							font-weight: 500;
+						}
+					}
+					&__content {
+						top: calc(100% + 10px);
+					}
+				}
+				.schedule {
+					span {
+						&:first-child {
+							width: rem(54);
+							height: 14px;
+							font-size: rem(10);
+						}
+						&:last-child {
+							font-size: rem(14);
+							color: $dark;
+							font-weight: 500;
+						}
+					}
+				}
+			}
+			&__wrap {
+				text-align: center;
+				&:not(:last-of-type) {
+					margin-bottom: rem(15);
+				}
+				& > a {
+					font-weight: 500;
+				}
+				h5 {
+					font-size: rem(18);
+					margin-bottom: rem(15);
+				}
+			}
+			&__content {
+				justify-content: center;
+				margin-left: auto;
+				margin-right: auto;
+				&__phone-number {
+					a {
+						font-size: rem(24);
+						&:not(:last-child) {
+							margin-bottom: rem(18);
+						}
+					}
+				}
+			}
+			&__btn {
+				--bs-btn-padding-y: #{rem(10)};
+				--bs-btn-font-size: #{rem(12)};
+				--bs-btn-color: #{$dark};
+
+				margin-top: rem(19);
+			}
+			&__flex {
+				justify-content: center;
+			}
+			&__links {
+				display: flex;
+				align-items: center;
+				.icon {
+					flex: 0 0 auto;
+					font-size: 14px;
+				}
+			}
+		}
+	}
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {

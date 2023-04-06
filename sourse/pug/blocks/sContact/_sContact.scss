@@ -244,6 +244,10 @@
 		}
 		textarea {
 			min-height: rem(112);
+			@include media-breakpoint-up(lg) {
+				// min-height: 179px;
+				min-height: rem(190);
+			}
 		}
 		.btn {
 			width: 100%;

@@ -60,11 +60,22 @@
 		}
 	}
 	&__agreement {
+		font-size: 12px;
+		line-height: 1.4;
+		color: rgba($color: $secondary, $alpha: 0.75);
+		margin-top: rem(20);
 		.custom-input {
 			display: flex;
 			align-items: center;
 			margin-bottom: 0;
 			padding-left: 0;
+
+			a {
+				color: currentColor;
+				&:not(:hover) {
+					text-decoration: underline;
+				}
+			}
 			&__input {
 				flex: 0 0 auto;
 				margin-left: 0;
@@ -73,14 +84,15 @@
 				margin-right: 12px;
 				width: 24px;
 				height: 24px;
-				border: 1px solid #D3D5D8;
+				border: 1px solid #d3d5d8;
 				border-radius: rem(6);
 				&:checked {
 					background-color: $white;
 				}
 			}
-			&__text {
-			}
+			// &__text {
+
+			// }
 		}
 	}
 }

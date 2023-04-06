@@ -135,6 +135,55 @@
 			@include a-cent;
 		}
 	}
+	&__btn-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: rem(-8);
+		@include media-breakpoint-up(lg) {
+			margin-top: 0;
+		}
+	}
+	&__btn-back {
+		--bs-btn-bg: transparent;
+		--bs-btn-color: #323c49;
+		--bs-btn-border-color: #e7ecf2;
+		--bs-btn-hover-color: #323c49;
+		--bs-btn-hover-bg: #e7ecf2;
+		--bs-btn-hover-border-color: #e7ecf2;
+		--bs-btn-active-color: #323c49;
+		--bs-btn-active-bg: #f2f6fc;
+		--bs-btn-active-border-color: #f2f6fc;
+		--bs-btn-disabled-color: #f2f6fc;
+		--bs-btn-disabled-bg: transparent;
+		--bs-btn-disabled-border-color: #f2f6fc;
+
+		--bs-btn-padding-x: #{rem(15)};
+		--bs-btn-padding-y: #{rem(11)};
+		--bs-btn-font-size: #{rem(14)};
+		--bs-btn-font-weight: 700;
+		--bs-btn-border-width: 1px;
+		--bs-btn-border-radius: 12px;
+		// --bs-btn-line-height: 150%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: auto;
+		max-width: 100%;
+		@include media-breakpoint-up(lg) {
+			--bs-btn-padding-x: #{rem(30)};
+			--bs-btn-padding-y: #{rem(17)};
+			--bs-btn-font-size: #{rem(16)};
+		}
+		.icon {
+			font-size: 24px;
+			margin-right: 6px;
+		}
+		span {
+			display: inline-block;
+		}
+	}
 	&__link {
 		@extend .btn, .btn-light;
 		position: relative;

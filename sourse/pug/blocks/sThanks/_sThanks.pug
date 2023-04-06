@@ -40,7 +40,8 @@ mixin sThanks(data)
 						+e.link
 							h6 Почитайте <br> наш Блог
 							+e.btn(href="#") Перейти
-			+e.btn-back.btn.btn-outline-secondary(href="#")
-				+icon('chevron-back')
-				span Вернуться назад
+			+e.btn-wrap
+				+e.btn-back.btn.btn-outline-light(href="#")
+					+icon('chevron-back')
+					span Вернуться назад
 	// end sThanks

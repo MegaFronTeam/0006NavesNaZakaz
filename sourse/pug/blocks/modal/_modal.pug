@@ -12,7 +12,7 @@ mixin modal()
 				+input("Ваше Имя")(required)
 				+input("+7 ___ ___ __ __", 'tel')(required)
 				+e.BUTTON.btn.btn(type="submit")
-				+agreement()(checked)
+				+agreement()(checked required)
 				//- +e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#modal-policy").link-modal-js персональных данных] 
 			+e.img-wrap.bg-wrap
 				+pic('modal-bg.jpg', 'bg', 0).picture-bg
@@ -68,7 +68,7 @@ mixin modal()
 							//- +input("Ваше Имя")(required)
 							+input("Ваш телефон", 'tel')(required)
 							+e.BUTTON.btn.btn.btn-primary(type="submit") Запросить обратный звонок
-							+agreement()(checked)
+							+agreement()(checked required)
 							//- +e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#modal-policy").link-modal-js персональных данных] 
 					.col-lg-6.d-none.d-lg-block
 						+e.img-wrap

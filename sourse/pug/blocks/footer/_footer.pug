@@ -146,3 +146,114 @@ mixin footer2()
 						span © 2022
 						a(href="#") Политика конфиденцильности
 						p Данный сайт носит информационный характер и&nbsp;не&nbsp;является публичной офертой, которая определяется положениями статьи 437 (2) Гражданского кодекса РФ. Для получения подробной информации о&nbsp;наличии и&nbsp;стоимости указанных товаров и&nbsp;услуг, обращайтесь к&nbsp;нашим менеджерам или укажите телефон, чтобы мы&nbsp;перезвонили вам. 
+
+mixin footer3()
+	+b.FOOTER.footer--3
+		.container
+			+e.head-row.row
+				.col-auto
+					+b.logo(href="/")
+						+icon('logo-top')
+				.col-auto
+					+b.label 
+						span Работаем с&nbsp;2019 года
+				.col-auto
+					+b.schedule
+						span открыто
+						span Пн&ndash;Вс &bull; 9:00&ndash;21:00
+				.col-auto
+					+e.tel(href="tel:+74952563067") +7&nbsp;495&nbsp;256 30&nbsp;67
+				.col-auto
+					+soc().--header
+						+e.A.item--whatsapp(href="#" target="_blank")
+							+icon('whatsapp')
+						+e.A.item--phone-call.link-modal-js(href="#modal-call" data-title= "Обратный звонок" data-text= "Оставьте свой номер телефона, и&nbsp;мы&nbsp;вам перезвоним в&nbsp;течение 15&nbsp;минут." data-btn= "Заказать обратный звонок" data-pic= "2")
+							+icon('phone-call')
+						+e.A.item--measuring.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1")
+							+icon('measuring')
+				.col-auto
+					+e.btn.btn.btn-primary.btn-sm.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1") Вызвать замерщика 
+			+e.main-row.row
+				.col-6.col-lg-3.order-lg-1
+					h6
+						+img('img/svg/canopy.svg')
+						span Навесы
+					ul
+						li
+							a(href="#") Для машин
+						li
+							a(href="#") К&nbsp;дому
+						li
+							a(href="#") Для дачи
+						li
+							a(href="#") Для бассейна
+						li
+							a(href="#") Кованые
+						li
+							a(href="#") Беседки
+						li
+							a(href="#") Козырьки
+						li
+							a(href="#") Другие
+				.col-6.col-lg-3.order-lg-3
+					h6
+						+img('img/svg/bag.svg')
+						span О&nbsp;компании
+					ul
+						li
+							a(href="#") Портфолио работ
+						li
+							a(href="#") Отзывы клиентов
+						li
+							a(href="#") Калькулятор навесов
+						li
+							a(href="#") Как заказать навес
+						li
+							a(href="#") Сертификаты качества
+						li
+							a(href="#") О&nbsp;компании
+						li
+							a(href="#") Блог
+				.col-lg-6.order-lg-2
+					h6
+						+img('img/svg/garage.svg')
+						span Дополнительные услуги
+					ul.columns
+						li
+							a(href="#") Гаражи из&nbsp;сэндвич панелей
+						li
+							a(href="#") Террасы и&nbsp;веранды из&nbsp;ДПК
+						li
+							a(href="#") Заборы
+						li
+							a(href="#") Ограждения
+						li
+							a(href="#") Откатные ворота
+						li
+							a(href="#") Распашные ворота
+						li
+							a(href="#") Торговые павильоны
+						li
+							a(href="#") Быстровозводимые здания
+						li
+							a(href="#") Металлокаркасы лестниц
+						li
+							a(href="#") Мощение
+						li
+							a(href="#") Откатные ворота
+						li
+							a(href="#") Промышленные откатные ворота
+						li
+							a(href="#") Распашные ворота
+						li
+							a(href="#") Рулонные ворота
+						li
+							a(href="#") Комплекты для откатных ворот
+						li
+							a(href="#") Калитки
+				
+			+e.content
+				span © 2023 Naves-na-zakaz.ru.
+				a(href="#") Политика конфиденцильности
+				p Данный сайт носит информационный характер и&nbsp;не&nbsp;является публичной офертой, которая определяется положениями статьи 437 (2) Гражданского кодекса РФ. Для получения подробной информации о&nbsp;наличии и&nbsp;стоимости указанных товаров и&nbsp;услуг, обращайтесь к&nbsp;нашим менеджерам или укажите телефон, чтобы мы&nbsp;перезвонили вам.
+				p * деятельность организации Meta Platforms Inc, ее&nbsp;продуктов Instagram и&nbsp;Facebook запрещена в&nbsp;Российской Федерации

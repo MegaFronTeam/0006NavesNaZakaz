@@ -186,4 +186,7 @@ mixin adv-item-white(title,caption,btn)
 						+icon('whatsapp')
 					span Whatsapp
 
-
+mixin agreement()
+	+e.agreement
+		+in-c()&attributes(attributes)
+			+e.SPAN.text.form-check-label Я согласен с условиями #[a(href="#modal-policy").link-modal-js политики конфиденциальности] и предоставляю согласие на обработку #[a(href="#modal-policy").link-modal-js персональных данных] 

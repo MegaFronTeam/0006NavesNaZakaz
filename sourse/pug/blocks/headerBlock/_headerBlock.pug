@@ -38,7 +38,8 @@ mixin headerBlock()
 							li
 								+icon('positive')
 								span Бесплатный выезд инженера на&nbsp;ваш участок
-						+e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#") персональных&nbsp;данных]
+						//- +e.agreement Отправляя заявку, вы&nbsp;даете свое согласие на&nbsp;обработку #[a(href="#modal-policy").link-modal-js персональных данных]
+						+agreement()(checked)
 			+e.cards
 				.row
 					.col-lg-4

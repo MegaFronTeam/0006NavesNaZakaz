@@ -338,19 +338,19 @@
 		}
 		&__agreement {
 			font-size: rem(12);
-			line-height: 115%;
-			color: $white;
+			line-height: 140%; 
+			color: rgba($color: $white, $alpha: .75);
 			margin-top: rem(14);
 			@include media-breakpoint-up(sm) {
 				margin-top: rem(20);
 			}
 			@include media-breakpoint-down(lg) {
 				color: rgba($color: $secondary, $alpha: .6);
-				text-align: center;
+				// text-align: center;
 			}
 			a {
 				&:not(:hover) {
-					color: $white;
+					color: rgba($color: $white, $alpha: .75);
 					text-decoration: underline;
 					@include media-breakpoint-down(lg) {
 						color: rgba($color: $secondary, $alpha: .6);

@@ -328,6 +328,7 @@
 		& > span {
 			display: block;
 			line-height: inherit;
+			font-size: 0.777778rem;
 		}
 		&:hover {
 			background-color: lighten($primary, 10%);

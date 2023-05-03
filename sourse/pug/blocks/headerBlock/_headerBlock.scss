@@ -229,6 +229,9 @@
 		@include media-breakpoint-up(lg) {
 			max-width: rem(385);
 		}
+		@include media-breakpoint-up(xl) {
+			max-width: 100%;
+		}
 
 		p {
 			font-weight: 600;

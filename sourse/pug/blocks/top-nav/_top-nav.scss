@@ -39,9 +39,11 @@
 			.top-nav__tel {
 				// display: block;
 				--show: 1;
+				--visibility: visible;
 			}
 			.logo {
 				--show: 0;
+				--visibility: hidden
 				// display: none;
 			}
 		}
@@ -70,7 +72,7 @@
 	&__tel {
 		@include media-breakpoint-down(lg) {
 			// display: none;
-			visibility: var(--show, hidden);
+			visibility: var(--visibility, hidden);
 			opacity: var(--show, 0);
 			text-align: center;
 		}
@@ -80,7 +82,7 @@
 	}
 	.logo {
 		// display: block;
-		visibility: var(--show, visible);
+		visibility: var(--visibility, visible);
 			opacity: var(--show, 1);
 		text-align: center;
 	}
@@ -464,8 +466,11 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		.top-nav__tel,
+		// .top-nav__tel{
+			
+		// }
 		.logo{
+
 			@include a-cent1;
 			// display: flex;
 			// justify-content: center;

@@ -466,10 +466,10 @@
 		text-align: center;
 		.top-nav__tel,
 		.logo{
-			@include a-cent;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			@include a-cent1;
+			// display: flex;
+			// justify-content: center;
+			// align-items: center;
 			
 		}
 	}

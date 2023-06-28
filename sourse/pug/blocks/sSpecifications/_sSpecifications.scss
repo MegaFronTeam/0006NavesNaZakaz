@@ -13,7 +13,7 @@
 	}
 	&__slider {
 		margin-bottom: rem(8);
-		flex-grow: 1;
+		// flex-grow: 1;
 		width: 100%;
 		border-radius: rem(12);
 	}
@@ -37,7 +37,7 @@
 		min-height: 100%;
 		picture {
 			min-height: 100%;
-			@include block(800, 478);
+			@include block(1602, 1000);
 			img {
 				border-radius: rem(8);
 				border: 1px solid #E0E0E0;

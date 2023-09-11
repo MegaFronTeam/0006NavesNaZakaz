@@ -12,121 +12,91 @@
 mixin sFilter(data)
 	// start sFilter
 	+b.sFilter&attributes(attributes)
-		.dd-group-js
-			.dd-head-js.d-flex.d-lg-none.justify-content-between.active
-				| Показать фильтры
-				+icon('chevron-down')
-			+e.wrap.dd-content-js
-				+e.title
-					h4 Фильтры
-					a(href="#") Сбросить
-				+e.body
-					+ddGroup()
-						.row
-							.col-md-6.col-lg-12
-								+ddGroupItem('Навесы').active
-									+e.wrap
-										+in-c("checkbox", 'Для машин')
-										+in-c("checkbox", 'К дому')(checked)
-										+in-c("checkbox", 'Для бассейна')
-										+in-c("checkbox", 'Кованые')(checked)
-										+in-c("checkbox", 'Другие типы навесов')
-							.col-md-6.col-lg-12
-								+ddGroupItem('Прочие конструкции').active
-									+e.wrap
-										+in-c("checkbox", 'Комплекты гаражей')
-										+in-c("checkbox", 'Фермы')(checked)
-										+in-c("checkbox", 'Ангары')
-										+in-c("checkbox", 'Гаражи из сэндвич-панелей')(checked)
-										+in-c("checkbox", 'Козырьки')
-							.col-12
-								+ddGroupItem('Длина').active
-									+e.wrap
-										.row
-											.col-6
-													+in-c("checkbox", '1 м')
-											.col-6
-													+in-c("checkbox", '1 м')
-											.col-6
-													+in-c("checkbox", '12 м')(checked)
-											.col-6
-													+in-c("checkbox", '12 м')(checked)
-											.col-6
-													+in-c("checkbox", '17 м')
-											.col-6
-													+in-c("checkbox", '17 м')
-											.col-6
-													+in-c("checkbox", '2 м')(checked)
-											.col-6
-													+in-c("checkbox", '2 м')(checked)
-											.col-6
-													+in-c("checkbox", '4 м')
-											.col-6
-													+in-c("checkbox", '4 м')
-											.col-6
-													+in-c("checkbox", '6 м')
-											.col-6
-													+in-c("checkbox", '6 м')
-											.col-6
-													+in-c("checkbox", '8 м')
-											.col-6
-													+in-c("checkbox", '8 м')
-								+ddGroupItem('Ширина').active
-									+e.wrap
-										.row
-											.col-6
-													+in-c("checkbox", '1 м')
-											.col-6
-													+in-c("checkbox", '1 м')
-											.col-6
-													+in-c("checkbox", '12 м')(checked)
-											.col-6
-													+in-c("checkbox", '12 м')(checked)
-											.col-6
-													+in-c("checkbox", '17 м')
-											.col-6
-													+in-c("checkbox", '17 м')
-											.col-6
-													+in-c("checkbox", '2 м')(checked)
-											.col-6
-													+in-c("checkbox", '2 м')(checked)
-											.col-6
-													+in-c("checkbox", '4 м')
-											.col-6
-													+in-c("checkbox", '4 м')
-											.col-6
-													+in-c("checkbox", '6 м')
-											.col-6
-													+in-c("checkbox", '6 м')
-											.col-6
-													+in-c("checkbox", '8 м')
-											.col-6
-													+in-c("checkbox", '8 м')
-							.col-md-6.col-lg-12
-								+ddGroupItem('Тип навеса').active
-									+e.wrap
-										+in-c("checkbox", 'Ангары')
-										+in-c("checkbox", 'Беседка')(checked)
-										+in-c("checkbox", 'Ангары')
-										+in-c("checkbox", 'Гаражи из сэндвич-панелей')(checked)
-										+in-c("checkbox", 'Кованные навесы')
-							.col-md-6.col-lg-12
-								+ddGroupItem('Материал кровли').active
-									+e.wrap
-										+in-c("checkbox", 'Ангары')
-										+in-c("checkbox", 'Беседка')(checked)
-										+in-c("checkbox", 'Ангары')
-										+in-c("checkbox", 'Гаражи из сэндвич-панелей')(checked)
-										+in-c("checkbox", 'Кованные навесы')
-							.col-md-6.col-lg-12
-								+ddGroupItem('Тип каркаса').active
-									+e.wrap
-										+in-c("checkbox", 'Ангары')
-										+in-c("checkbox", 'Беседка')(checked)
-										+in-c("checkbox", 'Ангары')
-										+in-c("checkbox", 'Гаражи из сэндвич-панелей')(checked)
-										+in-c("checkbox", 'Кованные навесы')
-					+e.btn-wrap
-						+e.btn-tooltip.btn-primary(type="button") Применить
-						+e.btn-tooltip.btn-secondary(type="button") Сбросить
+		//- .dd-head-js.d-flex.d-lg-none.justify-content-between.active
+		//- 	| Показать фильтры
+		//- 	+icon('chevron-down')
+		+e.wrap
+			+e.title.d-lg-none
+				| Фильтры
+				+e.close-btn: +icon('close')
+			+e.head-row
+				.row
+					.col-lg-auto.order-2.order-lg-1
+						+e.btn-reset.btn.btn-outline-light(href="#") Сбросить
+					.col-lg.order-1.order-lg-2
+						+e.btn-show.btn.btn-primary(href='#') Показать 154 проектов
+			+e.body
+				+ddGroup()
+					.row
+						.col-12
+							+ddGroupItem('Навесы').active
+								+e.wrap
+									+in-c("checkbox", 'Для машин')
+									+in-c("checkbox", 'К дому')(checked)
+									+in-c("checkbox", 'Для дачи')
+									+in-c("checkbox", 'Для бассейна')
+									+in-c("checkbox", 'Кованые')(checked)
+									+in-c("checkbox", 'Другие типы навесов')
+						.col-12
+							+ddGroupItem('Прочие конструкции').active
+								+e.wrap
+									+in-c("checkbox", 'Фермы')
+									+in-c("checkbox", 'Гаражи из СП')(checked)
+									+in-c("checkbox", 'Козырьки')
+									+in-c("checkbox", 'Террасы и веранды из ДПК')(checked)
+									+in-c("checkbox", 'Беседки')
+									+in-c("checkbox", 'Заборы')
+									+in-c("checkbox", 'Ограждения')
+									+in-c("checkbox", 'Откатные ворота')
+									+in-c("checkbox", 'Распашные ворота')
+									+in-c("checkbox", 'Торговые павильоны')
+									+in-c("checkbox", 'Быстровозводимые здания')
+									+in-c("checkbox", 'Металлокаркасы лестниц')
+									+in-c("checkbox", 'Мощение')
+						.col-12
+							+ddGroupItem('Длина').active
+								.range-slider
+									input.js-range-slider(type='text' value='')
+								.extra-controls
+									label(for="") 
+										input.js-input-from(type='text' value='0')
+									label
+										input.js-input-to(type='text' value='0')
+						.col-12
+							+ddGroupItem('Ширина').active
+								.range-slider
+									input.js-range-slider2(type='text' value='')
+								.extra-controls
+									label(for="") 
+										input.js-input-from2(type='text' value='0')
+									label
+										input.js-input-to2(type='text' value='0')
+						.col-12
+							+ddGroupItem('Тип навеса').active
+								+e.wrap
+									+in-c("checkbox", 'Арочный')
+									+in-c("checkbox", 'Двускатный')(checked)
+									+in-c("checkbox", 'Односкатный')
+									+in-c("checkbox", 'Полуарочный')(checked)
+									+in-c("checkbox", 'Четырехскатный')
+						.col-12
+							+ddGroupItem('Материал кровли').active
+								+e.wrap
+									+in-c("checkbox", 'Металлочерепица')
+									+in-c("checkbox", 'Монолитный поликарбонат')(checked)
+									+in-c("checkbox", 'Мягкая кровля')
+									+in-c("checkbox", 'Профнастил')(checked)
+									+in-c("checkbox", 'Сотовый поликарбонат')
+									+in-c("checkbox", 'Сэндвич-панель кровельная')
+						.col-12
+							+ddGroupItem('Тип каркаса')
+								+e.wrap
+									+in-c("checkbox", 'Ангары')
+									+in-c("checkbox", 'Беседка')(checked)
+									+in-c("checkbox", 'Ангары')
+									+in-c("checkbox", 'Гаражи из сэндвич-панелей')(checked)
+									+in-c("checkbox", 'Кованные навесы')
+				//- +e.btn-wrap
+				//- 	+e.btn-tooltip.btn-primary(type="button") Применить
+				//- 	+e.btn-tooltip.btn-secondary(type="button") Сбросить
 	// end sFilter

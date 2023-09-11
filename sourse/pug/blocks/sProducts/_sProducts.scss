@@ -6,31 +6,150 @@
 	.row {
 		--bs-gutter-y: var(--bs-gutter-x);
 	}
+	&__head-row {
+		margin-bottom: rem(18);
+	}
+	&__body-row {
+		margin-bottom: rem(24);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 0;
+		}
+	}
+	&__input-wrap {
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			right: rem(12);
+			transform: translateY(-50%);
+			width: rem(20);
+			height: rem(20);
+			background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.7269 7.34162C14.4014 7.01619 13.8738 7.01619 13.5484 7.34162L9.99968 10.8903L6.45101 7.34162C6.12557 7.01619 5.59793 7.01619 5.2725 7.34162C4.94706 7.66706 4.94706 8.1947 5.2725 8.52014L9.41043 12.6581C9.73586 12.9835 10.2635 12.9835 10.5889 12.6581L14.7269 8.52013C15.0523 8.1947 15.0523 7.66706 14.7269 7.34162Z' fill='%23FFC23B'/%3E%3C/svg%3E%0A");
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			pointer-events: none;
+		}
+	}
 	&__filter {
 		display: flex;
 		align-items: center;
-		margin-bottom: rem(19);
+		width: 100%;
+		margin-bottom: rem(12);
+		@include media-breakpoint-up(lg) {
+			width: auto;
+			margin-bottom: 0;
+		}
+		.sProducts__input-wrap, label {
+			width: 100%;
+			@include media-breakpoint-up(lg) {
+				width: auto;
+			}
+		}
 		p {
 			font-weight: 500;
 			font-size: rem(14);
-			color: rgba(#35455C, $alpha: 0.5);
+			color: #000;
+			margin-right: rem(14.5);
+			margin-bottom: 0;
+			display: none;
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+		}
+		select {
+			font-weight: 800;
+			color: #000;
+			font-size: rem(14);
+			padding: rem(7) rem(43) rem(7) rem(17);
+			border-color: $info;
+			border-radius: rem(8);
+			width: 100%;
+			@include media-breakpoint-up(lg) {
+				border-radius: rem(35);
+				width: auto;
+			}
+			// &:hover {
+			// 	border: 1px solid $secondary;
+			// }
+		}
+	}
+	&__show {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include media-breakpoint-up(lg) {
+			justify-content: flex-start;
+		}
+		p {
+			font-weight: 500;
+			font-size: rem(14);
+			color: #000;
 			margin-right: rem(14.5);
 			margin-bottom: 0;
 		}
 		select {
 			font-weight: 800;
-			color: $secondary;
-			font-size: rem(18);
-			padding: 6px;
-			&:hover {
-				border: 1px solid $secondary;
+			color: #000;
+			font-size: rem(14);
+			padding: rem(7) rem(43) rem(7) rem(17);
+			border-color: $info;
+			border-radius: rem(8);
+			@include media-breakpoint-up(lg) {
+				border-radius: rem(35);
 			}
+			// &:hover {
+			// 	border: 1px solid $secondary;
+			// }
 		}
 	}
 	.pagination-wrapper {
 		margin-top: rem(35);
 		@include media-breakpoint-up(lg) {
 			margin-top: rem(48);
+		}
+	}
+	&__sidebar-filter {
+		display: flex;
+		align-items: center;
+		font-size: rem(14);
+		font-weight: 700;
+		line-height: 1.4;
+		border-radius: 8px;
+		border: 1px solid $info;
+		padding: rem(7) rem(11);
+		cursor: pointer;
+		.icon {
+			flex: 0 0 auto;
+			font-size: rem(20);
+			fill: none;
+			stroke-width: rem(1.5);
+			stroke: currentColor;
+			margin-right: rem(12);
+		}
+		span {
+			@include mt;
+			flex: 0 0 auto;
+			margin-left: auto;
+			font-size: 12px;
+			text-align: center;
+			color: rgba(53, 69, 92, 0.70);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: $light;
+			border-radius: 50%;
+			min-width: rem(20);
+			min-height: rem(20);
+			font-weight: 400;
+			line-height: 1;
+		}
+		&:hover {
+			span {
+				background-color: $primary;
+				color: #000;
+			}
 		}
 	}
 	@include media-breakpoint-up(xl) {}

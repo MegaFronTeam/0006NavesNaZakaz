@@ -1,10 +1,20 @@
 mixin sProducts(data)
 	// start sProducts
 	+b.sProducts&attributes(attributes)
-		+e.filter
-			p Сортировать по:
-			+select('', 'Цена ↑', 'Цена ↓') 
-		.row
+		+e.head-row.row
+			.col
+				+e.filter
+					p Сортировать по:
+					+select('', 'Цена по возрастанию', 'Цена по убыванию') 
+				+e.sidebar-filter.d-lg-none
+					+icon('menu-2')
+					| Фильтр
+					span 0
+			.col-auto.d-none.d-lg-block
+				+e.show
+					p Выводить по:
+					+select('', '25', '30', '45') 
+		+e.body-row.row
 			.col-md-6
 				+b.card
 					a(href="#") 
@@ -149,5 +159,8 @@ mixin sProducts(data)
 					+e.more
 						p 150 400 ₽
 						a.btn.btn-primary.btn-sm(href="#") Подробнее 
+		+e.show.d-lg-none
+			p Выводить по:
+			+select('', '25', '30', '45') 
 		+pugin2()
 	// end sProducts

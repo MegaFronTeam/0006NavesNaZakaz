@@ -653,28 +653,28 @@ function eventHandler() {
 	}
 
 	
-	let filter = document.querySelector(".sFilter__body")
-	if (filter) {
+	// let filter = document.querySelector(".sFilter__body")
+	// if (filter) {
 		
-		filter.addEventListener("click", function (event) {
+	// 	filter.addEventListener("click", function (event) {
 
-			function getCoords(elem) {
-				let box = elem.getBoundingClientRect();
+	// 		function getCoords(elem) {
+	// 			let box = elem.getBoundingClientRect();
 			
-				return {
-					top: box.top 
-				};
-			}
-			let target = event.target.closest(".custom-input");
+	// 			return {
+	// 				top: box.top 
+	// 			};
+	// 		}
+	// 		let target = event.target.closest(".custom-input");
 			
-			if (!target) return;
-			this.style.setProperty('--tooltip-top', `${target.offsetTop}px`);
-			document.querySelector(".sFilter__btn-wrap").classList.add("visible");
-			console.log(target.offsetTop);
+	// 		if (!target) return;
+	// 		this.style.setProperty('--tooltip-top', `${target.offsetTop}px`);
+	// 		document.querySelector(".sFilter__btn-wrap").classList.add("visible");
+	// 		console.log(target.offsetTop);
 
 				
-		})
-	}
+	// 	})
+	// }
 
 	document.addEventListener('keydown', (evt) => {
     if (evt.key === 'Escape' && document.querySelector('.services-dropdown').classList.contains('active')) {
@@ -682,6 +682,157 @@ function eventHandler() {
 			$('.services-dropdown__content').slideUp();
     }
 	});
+
+
+	// Range Slider
+	var $range = $(".js-range-slider");
+	var $inputFrom = $(".js-input-from");
+	var $inputTo = $(".js-input-to");
+	var instance;
+	var min = 0;
+	var max = 100;
+	var from = 0;
+	var to = 0;
+
+	$range.ionRangeSlider({
+		skin: "round",
+		type: "double",
+		min: min,
+		max: max,
+		from: 2,
+		to: 30,
+		onStart: updateInputs,
+		onChange: updateInputs,
+		onFinish: updateInputs
+	});
+	instance = $range.data("ionRangeSlider");
+
+	function updateInputs(data) {
+		from = data.from;
+		to = data.to;
+
+		$inputFrom.prop("value", from);
+		$inputTo.prop("value", to);
+	}
+
+	$inputFrom.on("change", function () {
+		var val = $(this).prop("value");
+		console.log(val);
+		// validate
+		if (val < min) {
+			val = min;
+		} else if (val > to) {
+			val = to;
+		}
+		instance.update({
+			from: val
+		});
+		$(this).prop("value", val);
+	});
+
+	$inputTo.on("change", function () {
+		var val = $(this).prop("value");
+		// validate
+		if (val < from) {
+			val = from;
+		} else if (val > max) {
+			val = max;
+		}
+		instance.update({
+			to: val
+		});
+		$(this).prop("value", val);
+	});
+
+
+	// Range Slider2
+	var $range2 = $(".js-range-slider2");
+	var $inputFrom2 = $(".js-input-from2");
+	var $inputTo2 = $(".js-input-to2");
+	var instance;
+	var min = 0;
+	var max = 100;
+	var from = 0;
+	var to = 0;
+
+	$range2.ionRangeSlider({
+		skin: "round",
+		type: "double",
+		min: min,
+		max: max,
+		from: 2,
+		to: 30,
+		onStart: updateInputs2,
+		onChange: updateInputs2,
+		onFinish: updateInputs2
+	});
+	instance = $range2.data("ionRangeSlider");
+
+	function updateInputs2(data) {
+		from = data.from;
+		to = data.to;
+
+		$inputFrom2.prop("value", from);
+		$inputTo2.prop("value", to);
+	}
+
+	$inputFrom2.on("change", function () {
+		var val = $(this).prop("value");
+		console.log(val);
+		// validate
+		if (val < min) {
+			val = min;
+		} else if (val > to) {
+			val = to;
+		}
+		instance.update({
+			from: val
+		});
+		$(this).prop("value", val);
+	});
+
+	$inputTo2.on("change", function () {
+		var val = $(this).prop("value");
+		// validate
+		if (val < from) {
+			val = from;
+		} else if (val > max) {
+			val = max;
+		}
+		instance.update({
+			to: val
+		});
+		$(this).prop("value", val);
+	});
+
+	$('.sProducts__sidebar-filter').on('click', function() {
+		$('.sFilter').addClass('active');
+		$('body').addClass('fixed');
+	});
+
+	$('.sFilter__close-btn').on('click', function() {
+		$('.sFilter').removeClass('active');
+		$('body').removeClass('fixed');
+	});
+
+	window.addEventListener('resize', () => {
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			$('body').removeClass('fixed');
+			$('.sFilter').removeClass('active');
+		};
+	}, { passive: true });
+
+	var Sticky = new hcSticky('.sFilter__head-row', {
+    stickTo: '.sFilter',
+		mobileFirst: true,
+		disable: true,
+		top: 57,
+		responsive: {
+			998: {
+				disable: false
+			}
+		}
+  });
 
 };
 if (document.readyState !== 'loading') {

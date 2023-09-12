@@ -253,7 +253,85 @@ const JSCCommon = {
 				}
 			});
 		})
-	}
+	},
+	filterIonRangeslider(slider, inputFrom, inputTo) {
+		// Range Slider
+		var $range = $(slider);
+		var $inputFrom = $(inputFrom);
+		var $inputTo = $(inputTo);
+		var instance;
+		var min = 0;
+		var max = 100;
+		var from = 0;
+		var to = 0;
+
+		if ($range) {
+			$range.ionRangeSlider({
+				skin: "round",
+				type: "double",
+				min: min,
+				max: max,
+				from: 2,
+				to: 30,
+				onStart: updateInputs,
+				onChange: updateInputs,
+				onFinish: updateInputs
+			});
+			instance = $range.data("ionRangeSlider");
+		
+			function updateInputs(data) {
+				from = data.from;
+				to = data.to;
+		
+				$inputFrom.prop("value", from);
+				$inputTo.prop("value", to);
+			}
+		
+			$inputFrom.on("change", function () {
+				var val = $(this).prop("value");
+				console.log(val);
+				// validate
+				if (val < min) {
+					val = min;
+				} else if (val > to) {
+					val = to;
+				}
+				instance.update({
+					from: val
+				});
+				$(this).prop("value", val);
+			});
+		
+			$inputTo.on("change", function () {
+				var val = $(this).prop("value");
+				// validate
+				if (val < from) {
+					val = from;
+				} else if (val > max) {
+					val = max;
+				}
+				instance.update({
+					to: val
+				});
+				$(this).prop("value", val);
+			});
+		}
+	},
+	filterFixedBtns() {
+		if($('.sFilter__head-row')) {
+			new hcSticky('.sFilter__head-row', {
+				stickTo: '.sFilter',
+				mobileFirst: true,
+				disable: true,
+				top: 57,
+				responsive: {
+					998: {
+						disable: false
+					}
+				}
+			});
+		}
+	},
 };
 const $ = jQuery;
 
@@ -266,7 +344,11 @@ function eventHandler() {
 	// JSCCommon.sendForm();
 	JSCCommon.heightwindow();
 	JSCCommon.portfolioSlider();
-	JSCCommon.portfolioSlider();
+	// For portfolio START
+	JSCCommon.filterIonRangeslider('.js-range-slider', '.js-input-from', '.js-input-to');
+	JSCCommon.filterIonRangeslider('.js-range-slider2', '.js-input-from2', '.js-input-to2');
+	JSCCommon.filterFixedBtns();
+	// For portfolio END
 	// JSCCommon.makeDDGroup();
 	// JSCCommon.toggleShow(".catalog-block__toggle--desctop", '.catalog-block__dropdown');
 	// JSCCommon.animateScroll();
@@ -683,132 +765,6 @@ function eventHandler() {
     }
 	});
 
-
-	// Range Slider
-	var $range = $(".js-range-slider");
-	var $inputFrom = $(".js-input-from");
-	var $inputTo = $(".js-input-to");
-	var instance;
-	var min = 0;
-	var max = 100;
-	var from = 0;
-	var to = 0;
-
-	if ($range) {
-		$range.ionRangeSlider({
-			skin: "round",
-			type: "double",
-			min: min,
-			max: max,
-			from: 2,
-			to: 30,
-			onStart: updateInputs,
-			onChange: updateInputs,
-			onFinish: updateInputs
-		});
-		instance = $range.data("ionRangeSlider");
-	
-		function updateInputs(data) {
-			from = data.from;
-			to = data.to;
-	
-			$inputFrom.prop("value", from);
-			$inputTo.prop("value", to);
-		}
-	
-		$inputFrom.on("change", function () {
-			var val = $(this).prop("value");
-			console.log(val);
-			// validate
-			if (val < min) {
-				val = min;
-			} else if (val > to) {
-				val = to;
-			}
-			instance.update({
-				from: val
-			});
-			$(this).prop("value", val);
-		});
-	
-		$inputTo.on("change", function () {
-			var val = $(this).prop("value");
-			// validate
-			if (val < from) {
-				val = from;
-			} else if (val > max) {
-				val = max;
-			}
-			instance.update({
-				to: val
-			});
-			$(this).prop("value", val);
-		});
-	}
-
-
-	// Range Slider2
-	var $range2 = $(".js-range-slider2");
-	var $inputFrom2 = $(".js-input-from2");
-	var $inputTo2 = $(".js-input-to2");
-	var instance;
-	var min = 0;
-	var max = 100;
-	var from = 0;
-	var to = 0;
-
-	if ($range2) {
-		$range2.ionRangeSlider({
-			skin: "round",
-			type: "double",
-			min: min,
-			max: max,
-			from: 2,
-			to: 30,
-			onStart: updateInputs2,
-			onChange: updateInputs2,
-			onFinish: updateInputs2
-		});
-		instance = $range2.data("ionRangeSlider");
-	
-		function updateInputs2(data) {
-			from = data.from;
-			to = data.to;
-	
-			$inputFrom2.prop("value", from);
-			$inputTo2.prop("value", to);
-		}
-	
-		$inputFrom2.on("change", function () {
-			var val = $(this).prop("value");
-			console.log(val);
-			// validate
-			if (val < min) {
-				val = min;
-			} else if (val > to) {
-				val = to;
-			}
-			instance.update({
-				from: val
-			});
-			$(this).prop("value", val);
-		});
-	
-		$inputTo2.on("change", function () {
-			var val = $(this).prop("value");
-			// validate
-			if (val < from) {
-				val = from;
-			} else if (val > max) {
-				val = max;
-			}
-			instance.update({
-				to: val
-			});
-			$(this).prop("value", val);
-		});
-	}
-
 	document.addEventListener('click', (event) => {
 		let filterTarget = event.target.closest('.sProducts__sidebar-filter');
 		let filterCloseTarget = event.target.closest('.sFilter__close-btn');
@@ -828,20 +784,6 @@ function eventHandler() {
 			$('.sFilter').removeClass('active');
 		};
 	}, { passive: true });
-
-	if($('.sFilter__head-row')) {
-		new hcSticky('.sFilter__head-row', {
-			stickTo: '.sFilter',
-			mobileFirst: true,
-			disable: true,
-			top: 57,
-			responsive: {
-				998: {
-					disable: false
-				}
-			}
-		});
-	}
 
 };
 if (document.readyState !== 'loading') {

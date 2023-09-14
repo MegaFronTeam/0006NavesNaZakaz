@@ -261,7 +261,7 @@ const JSCCommon = {
 		var $inputTo = $(inputTo);
 		var instance;
 		var min = 0;
-		var max = 100;
+		var max = 30;
 		var from = 0;
 		var to = 0;
 
@@ -272,7 +272,7 @@ const JSCCommon = {
 				min: min,
 				max: max,
 				from: 2,
-				to: 30,
+				to: 28,
 				onStart: updateInputs,
 				onChange: updateInputs,
 				onFinish: updateInputs

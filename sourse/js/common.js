@@ -264,6 +264,8 @@ const JSCCommon = {
 		var max = 30;
 		var from = 0;
 		var to = 0;
+		var memoryValFrom;
+		var memoryValTo;
 
 		if ($range) {
 			$range.ionRangeSlider({
@@ -287,27 +289,21 @@ const JSCCommon = {
 				$inputTo.prop("value", to);
 			}
 			$inputTo.on('focus', function() {
+				memoryValTo = $(this).prop("value");
 				$(this).prop("value", '');
 			})
 			$inputFrom.on('focus', function() {
+				memoryValFrom = $(this).prop("value");
 				$(this).prop("value", '');
 			})
 			$inputTo.on('blur', function() {
 				if($(this).prop("value") == '') {
-					$(this).prop("value", '30');
-					var val = $(this).prop("value");
-					instance.update({
-						to: val
-					});
+					$(this).prop("value", memoryValTo);
 				}
 			});
 			$inputFrom.on('blur', function() {
 				if($(this).prop("value") == '') {
-					$(this).prop("value", '0');
-					var val = $(this).prop("value");
-					instance.update({
-						from: val
-					});
+					$(this).prop("value", memoryValFrom);
 				}
 			});
 			$inputFrom.on("change", function () {

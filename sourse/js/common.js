@@ -286,7 +286,30 @@ const JSCCommon = {
 				$inputFrom.prop("value", from);
 				$inputTo.prop("value", to);
 			}
-		
+			$inputTo.on('focus', function() {
+				$(this).prop("value", '');
+			})
+			$inputFrom.on('focus', function() {
+				$(this).prop("value", '');
+			})
+			$inputTo.on('blur', function() {
+				if($(this).prop("value") == '') {
+					$(this).prop("value", '30');
+					var val = $(this).prop("value");
+					instance.update({
+						to: val
+					});
+				}
+			});
+			$inputFrom.on('blur', function() {
+				if($(this).prop("value") == '') {
+					$(this).prop("value", '0');
+					var val = $(this).prop("value");
+					instance.update({
+						from: val
+					});
+				}
+			});
 			$inputFrom.on("change", function () {
 				var val = $(this).prop("value");
 				console.log(val);

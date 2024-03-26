@@ -178,7 +178,7 @@ mixin top-nav()
 											+e.icon-wrap
 												+icon('callBack')
 											| Обратный звонок
-				.col
+				.col.d-none.d-lg-block
 					+e.search-btn.BUTTON#btnOpenSearch
 						.wrap
 							+icon('search')
@@ -207,6 +207,7 @@ mixin top-nav()
 
 mixin search-result()
 	+b.search-nav.hidden
+		.search-wrap
 			.row
 				.col-3
 					+e.title Часто ищут:
@@ -228,15 +229,21 @@ mixin search-result()
 							li: a(href='#') Портфолио
 							li: a(href='#') Компания
 							li: a(href='#') Блог
-					+link-card('1', 'Навесы', 'Услуги')
-					+link-card('2', 'Современные навесы хай-тек', 'Портфолио')
-					+link-card('3', 'Монтаж навесов к земле: способы и технологии крепления', 'Блог')
-					+link-card('4', 'Наш опыт на рынке навесных сооружений', 'Компания')
-					+b.link-card(href='#')
-						+e.descr
-							+e.title Калькулятор навесов
-							+e.category Компания
-					+link-card('4', 'Нижний Новгород, встречай! Открываем производство в Нижегородской области', 'Компания')
+					+e.res-links.d-none
+						+link-card('1', 'Навесы', 'Услуги')
+						+link-card('2', 'Современные навесы хай-тек', 'Портфолио')
+						+link-card('3', 'Монтаж навесов к земле: способы и технологии крепления', 'Блог')
+						+link-card('4', 'Наш опыт на рынке навесных сооружений', 'Компания')
+						+b.link-card(href='#')
+							+e.descr
+								+e.title Калькулятор навесов
+								+e.category Компания
+						+link-card('4', 'Нижний Новгород, встречай! Открываем производство в Нижегородской области', 'Компания')
+					+e.res-links.empty
+						+icon('empty')
+						+e.title Ничего не найдено
+						+e.text Пожалуйста, скорректируйте запрос
+						+e.btn.btn.btn-outline-primary.btn-sm Очистить
 	.backdrop.hidden
 
 mixin link-card(img, title, category)

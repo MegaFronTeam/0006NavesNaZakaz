@@ -45,9 +45,8 @@ mixin top-nav()
 											li: a(href="#") Беседки
 											li: a(href="#") Козырьки
 											li: a(href="#") Другие
-											
 									.col-6
-										h6 
+										h6
 											+img('img/svg/dropdown-2.svg')
 											| Дополнительные услуги
 										+e.UL.large-list
@@ -168,6 +167,12 @@ mixin top-nav()
 											+e.icon-wrap
 												+icon('callBack')
 											| Обратный звонок
+				.col
+					+e.search-btn.BUTTON
+						.wrap
+							+icon('search')
+							| Поиск
+						+icon('slash')
 				.col.text-end
 					+e.center-block
 						+b.logo(href="/").d-lg-none.mt

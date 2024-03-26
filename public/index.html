@@ -20,6 +20,116 @@
 				<!-- start top-nav-->
 				<div class="top-nav block-with-lazy">
 					<div class="container">
+						<div class="container-search hidden">
+							<div class="search-field">
+								<input type="text" name="search" placeholder="Поиск" aria-label="Search through site content"/>
+								<button>
+									<svg class="icon icon-search ">
+										<use xlink:href="img/svg/sprite.svg#search"></use>
+									</svg>
+								</button>
+								<div class="clear-btn">
+									<button>Очистить</button>
+									<div class="line"></div>
+									<svg class="icon icon-cross ">
+										<use xlink:href="img/svg/sprite.svg#cross"></use>
+									</svg>
+								</div>
+							</div>
+						</div>
+						<div class="search-nav hidden">
+							<div class="row">
+								<div class="col-3">
+									<div class="search-nav__title">Часто ищут:
+									</div>
+									<ul class="often">
+										<li><a href="#">Навесы для машин</a></li>
+										<li><a href="#">Портфолио</a></li>
+										<li><a href="#">Калькулятор навесов</a></li>
+										<li><a href="#">О компании</a></li>
+										<li><a href="#">Контакты</a></li>
+									</ul>
+									<div class="search-nav__order-call">
+										<div class="search-nav__text">Не нашли, что искали?
+										</div>
+										<a class="search-nav__tel mt" href="tel:+74952563067">+7 495 256 30 67
+										</a>
+										<a class="search-nav__btn btn btn-primary btn-sm link-modal-js" href="#modal-call" data-title="Обратный звонок" data-text="Оставьте свой номер телефона, и&amp;nbsp;мы&amp;nbsp;вам перезвоним в&amp;nbsp;течение 15&amp;nbsp;минут." data-btn="Заказать обратный звонок" data-pic="2">Заказать звонок
+										</a>
+									</div>
+								</div>
+								<div class="col">
+									<div class="search-nav__head-links">
+										<ul>
+											<li class="active"><a href="#">Все категории</a></li>
+											<li><a href="#">Услуги</a></li>
+											<li><a href="#">Портфолио</a></li>
+											<li><a href="#">Компания</a></li>
+											<li><a href="#">Блог</a></li>
+										</ul>
+									</div>
+									<a class="link-card" href="#">
+										<div class="link-card__bg picture-wrap"><img src="img/linkCard-1.png" alt="" loading="lazy"/>
+										</div>
+										<div class="link-card__descr">
+											<div class="link-card__title">Навесы
+											</div>
+											<div class="link-card__category">Услуги
+											</div>
+										</div>
+									</a>
+									<a class="link-card" href="#">
+										<div class="link-card__bg picture-wrap"><img src="img/linkCard-2.png" alt="" loading="lazy"/>
+										</div>
+										<div class="link-card__descr">
+											<div class="link-card__title">Современные навесы хай-тек
+											</div>
+											<div class="link-card__category">Портфолио
+											</div>
+										</div>
+									</a>
+									<a class="link-card" href="#">
+										<div class="link-card__bg picture-wrap"><img src="img/linkCard-3.png" alt="" loading="lazy"/>
+										</div>
+										<div class="link-card__descr">
+											<div class="link-card__title">Монтаж навесов к земле: способы и технологии крепления
+											</div>
+											<div class="link-card__category">Блог
+											</div>
+										</div>
+									</a>
+									<a class="link-card" href="#">
+										<div class="link-card__bg picture-wrap"><img src="img/linkCard-4.png" alt="" loading="lazy"/>
+										</div>
+										<div class="link-card__descr">
+											<div class="link-card__title">Наш опыт на рынке навесных сооружений
+											</div>
+											<div class="link-card__category">Компания
+											</div>
+										</div>
+									</a>
+									<a class="link-card" href="#">
+										<div class="link-card__descr">
+											<div class="link-card__title">Калькулятор навесов
+											</div>
+											<div class="link-card__category">Компания
+											</div>
+										</div>
+									</a>
+									<a class="link-card" href="#">
+										<div class="link-card__bg picture-wrap"><img src="img/linkCard-4.png" alt="" loading="lazy"/>
+										</div>
+										<div class="link-card__descr">
+											<div class="link-card__title">Нижний Новгород, встречай! Открываем производство в Нижегородской области
+											</div>
+											<div class="link-card__category">Компания
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="backdrop hidden"></div>
 						<div class="row">
 							<div class="col-auto d-lg-none">
 								<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
@@ -221,7 +331,7 @@
 								</div>
 							</div>
 							<div class="col">
-								<button class="top-nav__search-btn">
+								<button class="top-nav__search-btn" id="btnOpenSearch">
 									<div class="wrap">
 										<svg class="icon icon-search ">
 											<use xlink:href="img/svg/sprite.svg#search"></use>

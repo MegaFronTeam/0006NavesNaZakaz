@@ -161,6 +161,7 @@ const JSCCommon = {
 	},
 	// /tabs
 
+
 	inputMask() {
 		// mask for input
 		let InputTel = [].slice.call(document.querySelectorAll('input[type="tel"]'));
@@ -626,6 +627,29 @@ function eventHandler() {
 		slidesPerView: 'auto',
 		slideToClickedSlide: true,
 	});
+
+	// search
+	const searchNav = document.querySelector('.search-nav')
+	const searchContainer = document.querySelector('.container-search')
+	const btnOpenSearch = document.querySelector('#btnOpenSearch')
+	const btnCloseSearch = document.querySelector('.icon-cross')
+	const backDrop = document.querySelector('.backdrop')
+
+	function openSearch() {
+		searchNav.classList.remove('hidden');
+		searchContainer.classList.remove('hidden');
+		backDrop.classList.remove('hidden');
+	}
+
+	function closeSearch() {
+		searchNav.classList.add('hidden');
+		searchContainer.classList.add('hidden');
+		backDrop.classList.add('hidden');
+	}
+
+	btnOpenSearch.addEventListener('click', openSearch);
+	btnCloseSearch.addEventListener('click', closeSearch);
+	backDrop.addEventListener('click', closeSearch);
 
 	// Прокрутка на верх 
 	$(function () {

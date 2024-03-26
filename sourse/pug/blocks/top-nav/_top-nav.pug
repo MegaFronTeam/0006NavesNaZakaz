@@ -16,11 +16,22 @@ mixin mob-mnu()
 			span
 		+e.inner
 			+mnu()
-	//  мобильное меню
+	//	мобильное меню
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
+		//- .container.container-search
 		.container
+			.container-search.hidden
+				+b.search-field
+					input(type='text' name='search' placeholder='Поиск' aria-label='Search through site content')
+					button
+						+icon('search')
+					.clear-btn
+						button Очистить
+						.line
+						+icon('cross')
+			+search-result()
 			.row
 				.col-auto.d-lg-none
 					+menu-toggle()
@@ -168,7 +179,7 @@ mixin top-nav()
 												+icon('callBack')
 											| Обратный звонок
 				.col
-					+e.search-btn.BUTTON
+					+e.search-btn.BUTTON#btnOpenSearch
 						.wrap
 							+icon('search')
 							| Поиск
@@ -192,3 +203,46 @@ mixin top-nav()
 						//- +item-sos('phone-call')
 						//- +item-sos('measuring-tape')
 	// end top-nav
+
+
+mixin search-result()
+	+b.search-nav.hidden
+			.row
+				.col-3
+					+e.title Часто ищут:
+					ul.often
+						li: a(href='#') Навесы для машин
+						li: a(href='#') Портфолио
+						li: a(href='#') Калькулятор навесов
+						li: a(href='#') О компании
+						li: a(href='#') Контакты
+					+e.order-call
+						+e.text Не нашли, что искали?
+						+e.tel(href="tel:+74952563067").mt +7 495 256 30 67
+						+e.btn.btn.btn-primary.btn-sm.link-modal-js(href="#modal-call" data-title= "Обратный звонок" data-text= "Оставьте свой номер телефона, и&nbsp;мы&nbsp;вам перезвоним в&nbsp;течение 15&nbsp;минут." data-btn= "Заказать обратный звонок" data-pic= "2") Заказать звонок
+				.col
+					+e.head-links
+						ul
+							li.active: a(href='#') Все категории
+							li: a(href='#') Услуги
+							li: a(href='#') Портфолио
+							li: a(href='#') Компания
+							li: a(href='#') Блог
+					+link-card('1', 'Навесы', 'Услуги')
+					+link-card('2', 'Современные навесы хай-тек', 'Портфолио')
+					+link-card('3', 'Монтаж навесов к земле: способы и технологии крепления', 'Блог')
+					+link-card('4', 'Наш опыт на рынке навесных сооружений', 'Компания')
+					+b.link-card(href='#')
+						+e.descr
+							+e.title Калькулятор навесов
+							+e.category Компания
+					+link-card('4', 'Нижний Новгород, встречай! Открываем производство в Нижегородской области', 'Компания')
+	.backdrop.hidden
+
+mixin link-card(img, title, category)
+	+b.link-card(href='#')
+		+e.bg.picture-wrap
+			+img(`img/linkCard-${img}.png`,'bg')
+		+e.descr
+			+e.title!= title
+			+e.category!= category

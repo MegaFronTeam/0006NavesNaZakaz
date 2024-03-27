@@ -51,19 +51,21 @@
     position: relative;
     margin-top: rem(-2);
     @include media-breakpoint-up(lg) {
-      margin-top: rem(2);
+      margin-top: rem(5);
     }
     input {
       border-radius: 8px;
       padding: rem(7);
       padding-left: rem(30);
       border: 1px solid #c1d5f1;
-      font-weight: 600;
       font-size: 12px;
       @include media-breakpoint-up(lg) {
         padding: rem(7);
         padding-left: rem(30);
       }
+      // div {
+      //   font-weight: 600;
+      // }
     }
     .clear-btn {
       position: absolute;

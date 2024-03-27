@@ -190,6 +190,23 @@
 				display: block;
 			}
 		}
+    .top-nav__search-btn {
+      max-width: calc(100% - 24px);
+      display: block;
+      margin: 0 rem(12) rem(12) rem(12);
+    }
+    .descr-wrap {
+      margin-left: rem(12);
+    }
+    .search-nav {
+      &__title {
+        margin-bottom: rem(12);
+      }
+      &__res-links {
+        border-bottom: 1px solid #e2e9f4;
+        margin-bottom: rem(24);
+      }
+    }
 		.dd-group {
 			border-top: 1px solid #f4f4f4;
 		}

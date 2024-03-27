@@ -38,18 +38,12 @@
 							</div>
 						</div>
 						<div class="search-nav hidden">
-							<div class="search-wrap">
+							<div class="search-wrap container">
 								<div class="row">
-									<div class="col-3">
+									<div class="col-12 col-lg-3 order-2 order-lg-1">
 										<div class="search-nav__title">Часто ищут:
 										</div>
-										<ul class="often">
-											<li><a href="#">Навесы для машин</a></li>
-											<li><a href="#">Портфолио</a></li>
-											<li><a href="#">Калькулятор навесов</a></li>
-											<li><a href="#">О компании</a></li>
-											<li><a href="#">Контакты</a></li>
-										</ul>
+										<div class="often"><a href="#">Навесы для машин</a><a href="#">Портфолио</a><a href="#">Калькулятор навесов</a><a href="#">О компании</a><a href="#">Контакты</a></div>
 										<div class="search-nav__order-call">
 											<div class="search-nav__text">Не нашли, что искали?
 											</div>
@@ -59,17 +53,19 @@
 											</a>
 										</div>
 									</div>
-									<div class="col">
+									<div class="col-12 col-lg order-1 order-lg-2">
 										<div class="search-nav__head-links">
-											<ul>
-												<li class="active"><a href="#">Все категории</a></li>
-												<li><a href="#">Услуги</a></li>
-												<li><a href="#">Портфолио</a></li>
-												<li><a href="#">Компания</a></li>
-												<li><a href="#">Блог</a></li>
-											</ul>
+											<div class="tabs-slider--js swiper">
+												<div class="swiper-wrapper">
+													<div class="swiper-slide"><a href="#">Все категории</a></div>
+													<div class="swiper-slide"><a href="#">Услуги</a></div>
+													<div class="swiper-slide"><a href="#">Портфолио</a></div>
+													<div class="swiper-slide"><a href="#">Компания</a></div>
+													<div class="swiper-slide"><a href="#">Блог</a></div>
+												</div>
+											</div>
 										</div>
-										<div class="search-nav__res-links d-none">
+										<div class="search-nav__res-links">
 											<a class="link-card" href="#">
 												<div class="link-card__bg picture-wrap"><img src="img/linkCard-1.png" alt="" loading="lazy"/>
 												</div>
@@ -129,7 +125,7 @@
 												</div>
 											</a>
 										</div>
-										<div class="search-nav__res-links empty">
+										<div class="search-nav__res-links empty d-none">
 											<svg class="icon icon-empty ">
 												<use xlink:href="img/svg/sprite.svg#empty"></use>
 											</svg>
@@ -214,6 +210,15 @@
 							</div>
 							<div class="top-nav__col col-auto">
 								<div class="menu-mobile menu-mobile--js">
+									<div class="d-lg-none">
+										<button class="top-nav__search-btn" id="btnOpenSearchMob">
+											<div class="wrap">
+												<svg class="icon icon-search ">
+													<use xlink:href="img/svg/sprite.svg#search"></use>
+												</svg>Поиск
+											</div>
+										</button>
+									</div>
 									<div class="menu-mobile__inner">
 										<div class="dd-group dd-group-js">
 											<div class="accordion-item">
@@ -289,10 +294,6 @@
 										<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Каталог</a></li>
 											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Портфолио</a></li>
-											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Дизайн</a></li>
-											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
-											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Цены</a></li>
-											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Отзывы</a></li>
 											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Этапы</a></li>
 											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Компания</a></li>
 											<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>

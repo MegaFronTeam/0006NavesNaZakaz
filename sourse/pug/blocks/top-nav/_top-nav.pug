@@ -92,9 +92,16 @@ mixin top-nav()
 				+e.col.col-auto
 					.menu-mobile.menu-mobile--js
 						//- +menu-toggle().d-lg-none
+						.d-lg-none
+							+e.search-btn.BUTTON#btnOpenSearchMob
+								.wrap
+									+icon('search')
+									| Поиск
 						.menu-mobile__inner
 							//- +e.btn-wrap
 							//- 	+e.btn.link-modal-js(href="#modal-call" data-title= "Вызвать замерщика" data-text= "Оставьте свой номер телефона, мы&nbsp;вам перезвоним и&nbsp;договоримся о&nbsp;замере" data-btn= "Отправить" data-pic= "1") Вызвать замерщика
+							//- .container
+							//- 	+search-result
 							+ddGroup
 								+b.accordion-item
 									+e.head.dd-head-js.active
@@ -207,29 +214,35 @@ mixin top-nav()
 
 mixin search-result()
 	+b.search-nav.hidden
-		.search-wrap
+		.search-wrap.container
 			.row
-				.col-3
+				.col-12.col-lg-3.order-2.order-lg-1
 					+e.title Часто ищут:
-					ul.often
-						li: a(href='#') Навесы для машин
-						li: a(href='#') Портфолио
-						li: a(href='#') Калькулятор навесов
-						li: a(href='#') О компании
-						li: a(href='#') Контакты
+					.often
+						a(href='#') Навесы для машин
+						a(href='#') Портфолио
+						a(href='#') Калькулятор навесов
+						a(href='#') О компании
+						a(href='#') Контакты
 					+e.order-call
 						+e.text Не нашли, что искали?
 						+e.tel(href="tel:+74952563067").mt +7 495 256 30 67
 						+e.btn.btn.btn-primary.btn-sm.link-modal-js(href="#modal-call" data-title= "Обратный звонок" data-text= "Оставьте свой номер телефона, и&nbsp;мы&nbsp;вам перезвоним в&nbsp;течение 15&nbsp;минут." data-btn= "Заказать обратный звонок" data-pic= "2") Заказать звонок
-				.col
+				.col-12.col-lg.order-1.order-lg-2
 					+e.head-links
-						ul
-							li.active: a(href='#') Все категории
-							li: a(href='#') Услуги
-							li: a(href='#') Портфолио
-							li: a(href='#') Компания
-							li: a(href='#') Блог
-					+e.res-links.d-none
+						.tabs-slider--js.swiper
+							.swiper-wrapper
+								.swiper-slide
+									a(href='#') Все категории
+								.swiper-slide
+									a(href='#') Услуги
+								.swiper-slide
+									a(href='#') Портфолио
+								.swiper-slide
+									a(href='#') Компания
+								.swiper-slide
+									a(href='#') Блог
+					+e.res-links
 						+link-card('1', 'Навесы', 'Услуги')
 						+link-card('2', 'Современные навесы хай-тек', 'Портфолио')
 						+link-card('3', 'Монтаж навесов к земле: способы и технологии крепления', 'Блог')
@@ -239,7 +252,7 @@ mixin search-result()
 								+e.title Калькулятор навесов
 								+e.category Компания
 						+link-card('4', 'Нижний Новгород, встречай! Открываем производство в Нижегородской области', 'Компания')
-					+e.res-links.empty
+					+e.res-links.empty.d-none
 						+icon('empty')
 						+e.title Ничего не найдено
 						+e.text Пожалуйста, скорректируйте запрос

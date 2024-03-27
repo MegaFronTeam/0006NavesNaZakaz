@@ -627,6 +627,11 @@ function eventHandler() {
 		slidesPerView: 'auto',
 		slideToClickedSlide: true,
 	});
+  const swiperTabs = new Swiper('.tabs-slider--js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		watchOverflow: true
+	});
 
 	// search
 	const searchNav = document.querySelector('.search-nav')
@@ -651,7 +656,30 @@ function eventHandler() {
 	btnCloseSearch.addEventListener('click', closeSearch);
 	backDrop.addEventListener('click', closeSearch);
 
-	// Прокрутка на верх 
+  // // search mob
+	// const searchNavMob = document.querySelector('.search-nav--mob')
+	// const searchContainerMob = document.querySelector('.container-search')
+	const btnOpenSearchMob = document.querySelector('#btnOpenSearchMob')
+	// const btnCloseSearchMob = document.querySelector('.icon-cross')
+	// const backDropMob = document.querySelector('.backdrop')
+
+	function openSearchMob() {
+		searchNav.classList.remove('hidden');
+		searchContainer.classList.remove('hidden');
+		backDrop.classList.remove('hidden');
+	}
+
+	// function closeSearch() {
+	// 	searchNavMob.classList.add('hidden');
+	// 	searchContainerMob.classList.add('hidden');
+	// 	backDrop.classList.add('hidden');
+	// }
+
+	btnOpenSearchMob.addEventListener('click', openSearchMob);
+	// btnCloseSearchMob.addEventListener('click', closeSearch);
+	// backDrop.addEventListener('click', closeSearch);
+	
+  // Прокрутка на верх 
 	$(function () {
 		// прячем кнопку #back-top
 		$("#back-top").hide();

@@ -216,14 +216,15 @@ mixin search-result()
 	+b.search-nav.hidden
 		.search-wrap.container
 			.row
-				.col-12.col-lg-3.order-2.order-lg-1
-					+e.title Часто ищут:
-					.often
-						a(href='#') Навесы для машин
-						a(href='#') Портфолио
-						a(href='#') Калькулятор навесов
-						a(href='#') О компании
-						a(href='#') Контакты
+				.col-12.col-lg-4.order-2.order-lg-1
+					+e.elem
+						+e.title Часто ищут:
+						.often
+							a(href='#') Навесы для машин
+							a(href='#') Портфолио
+							a(href='#') Калькулятор навесов
+							a(href='#') О компании
+							a(href='#') Контакты
 					+e.order-call
 						+e.text Не нашли, что искали?
 						+e.tel(href="tel:+74952563067").mt +7 495 256 30 67
@@ -252,6 +253,13 @@ mixin search-result()
 								+e.title Калькулятор навесов
 								+e.category Компания
 						+link-card('4', 'Нижний Новгород, встречай! Открываем производство в Нижегородской области', 'Компания')
+						+link-card('3', 'Монтаж навесов к земле: способы и технологии крепления', 'Блог')
+						+link-card('4', 'Наш опыт на рынке навесных сооружений', 'Компания')
+						+link-card('4', 'Наш опыт на рынке навесных сооружений', 'Компания')
+						+b.link-card(href='#')
+							+e.descr
+								+e.title Калькулятор навесов
+								+e.category Компания
 					+e.res-links.empty.d-none
 						+icon('empty')
 						+e.title Ничего не найдено

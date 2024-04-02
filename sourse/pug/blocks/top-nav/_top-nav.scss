@@ -789,22 +789,21 @@
       }
     }
     .tabs-slider--js .swiper-slide-active {
-      position: relative;
       a {
         opacity: 1;
-        }
-      &::after {
-        content: '';
-        position: absolute;
-        z-index: 1003;
-        bottom: 0;
-        left: 9px;
-        height: rem(3);
-        width: calc(100% - 18px);
-        background: $secondary;
-        @include media-breakpoint-up(lg) {
-        left: 12px;
-        width: calc(100% - 24px);
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: 1003;
+          bottom: 0;
+          left: 9px;
+          height: rem(3);
+          width: calc(100% - 18px);
+          background: $secondary;
+          @include media-breakpoint-up(lg) {
+          left: 12px;
+          width: calc(100% - 24px);
+          }
         }
       }
     }

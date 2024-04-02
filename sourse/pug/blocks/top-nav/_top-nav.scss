@@ -765,7 +765,7 @@
     position: relative;
     border-bottom: 1px solid #E2E9F4;
     @include media-breakpoint-up(lg) {
-      margin-top: rem(-10);
+      margin-top: -14px;
       padding-left: rem(12);
     }
     .swiper-wrapper {

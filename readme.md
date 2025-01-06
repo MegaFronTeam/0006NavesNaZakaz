@@ -1,3 +1,6 @@
+#### 06.01.2025
+2. <https://megafronteam.github.io/0006NavesNaZakaz/public/07-promo.html>
+
 #### Правки 06.04.2023
 1. <https://megafronteam.github.io/0006NavesNaZakaz/public>
 2. <https://megafronteam.github.io/0006NavesNaZakaz/public/05-thanks.html>

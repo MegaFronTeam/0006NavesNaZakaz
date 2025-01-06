@@ -1,0 +1,21 @@
+extends layout/main.pug
+
+
+include ../blocks/sPromo/_sPromo.pug
+
+block variables
+	- let  mainPage= 'page-promo'
+	- let  bg= null
+
+block title
+	- let  title= 'Посадка'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	//- +headerBlock()
+	+sPromo
+	//- +footer()
+
+
+
+

@@ -17,10 +17,10 @@
       padding-bottom: rem(24);
     }
     .container.container-max {
-      @include media-breakpoint-up(md) {
-        max-width: 614px;
+      @include media-breakpoint-up(sm) {
+        max-width: 616px;
       }
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(sm) {
         padding-left: 0;
         padding-right: 0;
         // margin-left: calc(var(--bs-gutter-x) * -1);
@@ -80,6 +80,9 @@
     font-size: 24px;
     line-height: 114%;
     margin-bottom: rem(16);
+    // @include media-breakpoint-down(sm) {
+      // text-wrap: balance;
+    // }
   }
 
   &__feature-list {
@@ -160,6 +163,11 @@
     .icon {
       font-size: 24px;
     }
+  }
+
+  &__title {
+    max-width: 470px;
+    margin: auto;
   }
 
   &__link {

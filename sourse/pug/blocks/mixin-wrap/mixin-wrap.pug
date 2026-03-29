@@ -8,6 +8,7 @@ include components/soc.pug
 include components/pic.pug
 include components/img.pug
 include components/btn.pug
+include components/gallerySlider.pug
 
 include components/ddgroup.pug
 
@@ -38,7 +39,7 @@ mixin catalogItem(i, h, p)
 
 mixin page-head(data)
 	+b.page-head
-		.container
+		.container(class= data.container)
 			+e.row.row
 				if data.btn
 					.col-auto
@@ -62,7 +63,7 @@ mixin page-head(data)
 mixin page-head-fixed(data)
 	+b.page-head
 		+e.row--fix
-			.container
+			.container(class= data.container)
 				.row
 					if data.btn
 						.col-auto
@@ -78,7 +79,7 @@ mixin page-head-fixed(data)
 								button
 									+icon('search')
 		+e.wrap
-			.container
+			.container(class= data.container)
 				h1!= data.title
 				if data.text
 					p!= data.text

@@ -1,0 +1,23 @@
+{
+  "singleQuote": true,
+  "tabWidth": 2,
+  "semi": true,
+  "printWidth": 100,
+  "trailingComma": "all",
+  "arrowParens": "always",
+  "overrides": [
+    {
+      "files": "*.scss",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.pug",
+      "options": {
+        "singleQuote": false,
+        "printWidth": 120
+      }
+    }
+  ]
+}

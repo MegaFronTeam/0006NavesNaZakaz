@@ -1,0 +1,54 @@
+mixin sHistoryArticle(data)
+	// start sHistoryArticle
+	+b.SECTION.sHistoryArticle.section#sHistoryArticle&attributes(attributes)
+		.container
+			.section-title
+				h2 Строгие линии, безупречный результат: история создания навеса с алюминиевым фризом
+
+		.container.container--xxxl
+				.sHistoryArticle__top-gallery
+					+e.top-gallery-item
+						+img('img/sAbout-1.png', 'Фото навеса')
+					+e.top-gallery-item
+						+img('img/sAbout-1.png', 'Фото навеса сбоку')
+					+e.top-gallery-item
+							+img('img/sAbout-1.png', 'Фото навеса сбоку 2')
+
+
+		article.sHistoryArticle__article.container
+			h3 Задача
+			p Требовалось возвести навес с мягкой кровлей на два машиноместа. Дополнительной задачей была заливка бетонной площадки под навес, а также отдельной парковочной зоны возле дома.
+
+		article.sHistoryArticle__article.container
+			h3 Фото до начала работ
+			p До старта строительства участок имел только ограждение и открытую парковочную зону. Нам нужно было не просто поставить навес, а аккуратно интегрировать его в существующую архитектуру дома и прилегающей территории.
+		.container.container--xxxl
+			.sHistoryArticle__wide-image
+				+img('img/sAbout-1.png', 'Фото участка до начала работ')
+
+		article.sHistoryArticle__article.container
+			h3 Чертежи и 3D-визуализация
+			p Прежде чем приступить к работам, команда разработала детальную 3D-визуализацию, которая позволила клиенту увидеть будущий навес «вживую» и заранее оценить все ключевые решения: от цветовой гаммы до геометрии конструкции. Благодаря такому подходу проект был полностью согласован до старта монтажа.
+		.container.container--xxxl
+			.sHistoryArticle__bottom-gallery.container.container--xxxl
+				.sHistoryArticle__bottom-item
+					+img('img/sAbout-1.png', 'Готовый навес 1')
+				.sHistoryArticle__bottom-item
+					+img('img/sAbout-1.png', 'Готовый навес 2')
+
+		article.sHistoryArticle__article.container
+			h3 Инженерное решение
+			p Залили бетонное основание под навес, установили ограждения и ворота, а также подготовили парковочную зону.
+			p Изготовили и смонтировали навес в стиле хай-тек с мягкой кровлей и фризом из алюминиевого композита цвета RAL 1015. Конструкция органично дополнила архитектурный стиль дома.
+			p Конструкция из профильных труб: опоры 120x120 мм, ригели 120x120 мм, фермы 60x30 мм, обрешетка кровли 30x30 мм.
+
+	.sHistoryArticle__bottom-gallery.container.container--xxxl
+		.sHistoryArticle__bottom-item
+			+img('img/sAbout-1.png', 'Готовый навес 1')
+		.sHistoryArticle__bottom-item
+			+img('img/sAbout-1.png', 'Готовый навес 2')
+		.sHistoryArticle__bottom-item
+			+img('img/sAbout-1.png', 'Готовый навес 3')
+		.sHistoryArticle__bottom-item
+			+img('img/sAbout-1.png', 'Готовый навес 4')
+	// end sHistoryArticle

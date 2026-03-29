@@ -1,0 +1,28 @@
+mixin sClientReview(data)
+	// start sClientReview
+	+b.SECTION.sClientReview.section#sClientReview&attributes(attributes)
+		.container.container--xxxl
+			+b.section-title.text-center
+				h4 Отзыв
+				h2 Что&nbsp;говорит наш&nbsp;клиент о&nbsp;выполненном объекте
+
+			+e.wrap
+				.row.g-4.align-items-stretch
+					.col-12.col-lg-5.order-lg-last
+						+e.video-wrap(data-fancybox='review-video' data-src='https://www.youtube.com/watch?v=1iQyF0pURvc')
+							+img('img/expert-project.jpg').sClientReview__video-preview
+							+e.play
+								+icon('play')
+					.col-12.col-lg-7
+						+e.content
+							h3 Александр&nbsp;Мисунов
+							+e.location микрорайон Востряково, г.&nbsp;Домодедово, МО
+							+e.text
+								| &laquo;Главной сложностью здесь была точность монтажа фриза. Любая&nbsp;погрешность в&nbsp;5&nbsp;мм
+								| на&nbsp;такой длине была&nbsp;бы заметна. Мы&nbsp;использовали лазерное нивелирование на&nbsp;всех
+								| этапах, поэтому геометрия идеальна. Этот навес простоит минимум 25&nbsp;лет без
+								| капитального ремонта.&raquo;&nbsp;&mdash; Александр, Руководитель&nbsp;компании
+							+e.meta
+								+e.meta-item Объект сдан: Июль&nbsp;2024
+								+e.meta-item В&nbsp;эксплуатации 2-й&nbsp;сезон
+	// end sClientReview

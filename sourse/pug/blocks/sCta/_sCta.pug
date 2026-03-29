@@ -1,0 +1,16 @@
+mixin sCta(data)
+	// start sCta
+	+b.SECTION.sCta.section#sCta&attributes(attributes)
+		.container.container--xxxl
+			+e.card
+				.row
+					.col-12.col-xl-6
+						+e.image-wrap
+							+img('img/cta-project.jpg')
+					.col-12.col-xl-6
+						+e.content
+							+e.head
+								h2 Хотите рассчитать стоимость такого проекта для&nbsp;своего участка?
+								p Стоимость зависит от&nbsp;размеров, типа фундамента и&nbsp;удалённости.&ensp;Мы&nbsp;сделаем точный расчёт за&nbsp;30&nbsp;минут.
+							a.btn.btn-primary.with-shadow.sCta__btn.link-modal-js(href='#modal-callback' data-desktop-pic= "img/modal-4.png" data-mobile-pic='img/avatar-2.png') Рассчитать проект под&nbsp;мой участок
+	// end sCta

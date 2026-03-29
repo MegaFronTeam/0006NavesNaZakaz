@@ -1,0 +1,22 @@
+mixin gallerySlider(slides, gid)
+	- const fancyGroup = gid || 'gallery'
+	+b.gallerySlider
+		+e.slider-wrapper
+			+e.slider--js.swiper
+				.swiper-wrapper
+					each item in (slides || [])
+						+e.slide.swiper-slide
+							if item.video
+								+e.item.--video(data-fancybox=fancyGroup data-src=item.video data-caption=(item.caption || ''))
+									+img(item.src, 'bg')
+							else
+								+e.item(data-fancybox=fancyGroup data-src=item.src data-caption=(item.caption || ''))
+									+img(item.src, 'bg')
+			+e.slider-nav-wrap
+				+e.slider--nav.--nav-js.swiper
+					.swiper-wrapper
+						each item in (slides || [])
+							+e.slide--sm.swiper-slide
+								+e.item--sm(class=item.video ? '--video' : '')
+									+img(item.src, 'bg')
+				+arrow

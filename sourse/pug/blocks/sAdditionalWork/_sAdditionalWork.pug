@@ -1,0 +1,81 @@
+mixin sAdditionalWork(data)
+	// start sAdditionalWork
+	+b.SECTION.sAdditionalWork.section#sAdditionalWork&attributes(attributes)
+		.container.container--xxxl
+			+b.section-title.text-center
+				h2 Дополнительно&nbsp;реализовали
+				h4 Конструкции в&nbsp;дополнение к&nbsp;навесам
+
+			-
+				const items = [
+					{
+						id: 'mangal',
+						tab: 'Мангальная&nbsp;зона',
+						title: 'Мангальная зона отдыха на&nbsp;заднем дворе&nbsp;дома',
+						text: 'Мы&nbsp;создали современную мангальную зону под ключ, которая гармонично вписалась в&nbsp;ландшафт участка и&nbsp;обеспечила безопасность отдыха. Это пространство стало идеальным местом для приготовления вкусных блюд на&nbsp;огне и&nbsp;незабываемых вечеров в&nbsp;кругу семьи и&nbsp;друзей.',
+						slides: [
+							{src: 'img/sAbout-1.png', caption: 'Мангальная зона'},
+							{src: 'img/sAbout-1.png', caption: 'Мангальная зона'},
+							{src: 'img/sAbout-1.png', caption: 'Мангальная зона'},
+							{src: 'img/sAbout-1.png', caption: 'Мангальная зона'},
+						],
+					},
+					{
+						id: 'playground',
+						tab: 'Детская&nbsp;площадка',
+						title: 'Детская площадка с&nbsp;безопасным покрытием',
+						text: 'Обустроили игровую зону с&nbsp;безопасным резиновым покрытием и&nbsp;качественными игровыми элементами, которые прослужат долгие годы.',
+						slides: [
+							{src: 'img/sAbout-1.png', caption: 'Детская площадка'},
+							{src: 'img/sAbout-1.png', caption: 'Детская площадка'},
+						],
+					},
+					{
+						id: 'mansard',
+						tab: 'Мансарда',
+						title: 'Мансардный этаж с&nbsp;панорамными окнами',
+						text: 'Увеличили полезную площадь дома, обустроив мансарду с&nbsp;панорамными окнами и&nbsp;качественной тепло&minus;звукоизоляцией.',
+						slides: [
+							{src: 'img/sAbout-1.png', caption: 'Мансарда'},
+							{src: 'img/sAbout-1.png', caption: 'Мансарда'},
+						],
+					},
+					{
+						id: 'veranda',
+						tab: 'Веранда',
+						title: 'Открытая веранда с&nbsp;видом на&nbsp;участок',
+						text: 'Пристроенная веранда органично дополнила дом, создав удобное место для семейного отдыха на&nbsp;свежем воздухе.',
+						slides: [
+							{src: 'img/sAbout-1.png', caption: 'Веранда'},
+							{src: 'img/sAbout-1.png', caption: 'Веранда'},
+						],
+					},
+					{
+						id: 'backyard',
+						tab: 'Задний&nbsp;двор',
+						title: 'Благоустройство заднего двора под&nbsp;ключ',
+						text: 'Комплексное благоустройство: дорожки, освещение, озеленение и&nbsp;малые архитектурные формы&nbsp;&mdash; всё в&nbsp;едином стиле с&nbsp;основным строением.',
+						slides: [
+							{src: 'img/sAbout-1.png', caption: 'Задний двор'},
+							{src: 'img/sAbout-1.png', caption: 'Задний двор'},
+						],
+					},
+				]
+
+			+e.tabs.swiper.tabs-slider--js
+				.swiper-wrapper
+					each item, i in items
+						+e.tab-slide.swiper-slide
+							+e.tab-btn(class=(i === 0 ? 'active' : '') data-tab=item.id)!= item.tab
+
+			+e.contents
+				each item, i in items
+					+e.content(class=(i === 0 ? 'active' : '') data-tab-content=item.id)
+						.row.align-items-stretch.g-4
+							.col-12.col-xl-7
+								+gallerySlider(item.slides, item.id)
+							.col-12.col-xl-5
+								+e.card
+									h3!= item.title
+									p!= item.text
+	// end sAdditionalWork

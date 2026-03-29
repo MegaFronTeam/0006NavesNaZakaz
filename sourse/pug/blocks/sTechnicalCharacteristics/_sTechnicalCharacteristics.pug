@@ -1,0 +1,31 @@
+mixin parametr(name, material, competitors)
+	tr
+		td!= name
+		td!= material
+		td!= competitors
+
+mixin sTechnicalCharacteristics(data)
+	// start sTechnicalCharacteristics
+	+b.SECTION.sTechnicalCharacteristics.section#sTechnicalCharacteristics&attributes(attributes)
+		.container.container--xxxl
+			.section-title.text-center
+				h2 Технические характеристики
+				h4 Спецификация материалов
+
+			+e.table-wrap
+				table
+					thead
+						tr
+							th Тип конструкции
+							th Материалы
+							th Что ставят конкуренты
+					tbody
+						+parametr('Опорные столбы:', 'Профильная труба 150x150x4 мм', 'Обычно на рынке ставят 100x100, что снижает жесткость в 2 раза')
+						+parametr('Несущие балки (Ригели)', 'Профильная труба 150x150x4 мм', 'Обычно на рынке ставят 100x100, что снижает жесткость в 2 раза')
+						+parametr('Фермы/Стропила', 'Профильная труба 150x150x4 мм', 'Обычно на рынке ставят 100x100, что снижает жесткость в 2 раза')
+						+parametr('Кровельная обрешетка', 'Профильная труба 150x150x4 мм', 'Обычно на рынке ставят 100x100, что снижает жесткость в 2 раза')
+						+parametr('Покраска', 'Профильная труба 150x150x4 мм', 'Обычно на рынке ставят 100x100, что снижает жесткость в 2 раза')
+
+			+e.action
+				a.btn.btn-primary.btn-lg.with-shadow.link-modal-js(href='#modal-callback' data-desktop-pic= "img/modal-4.png" data-mobile-pic='img/avatar-2.png') Рассчитать проект под мой участок
+	// end sTechnicalCharacteristics

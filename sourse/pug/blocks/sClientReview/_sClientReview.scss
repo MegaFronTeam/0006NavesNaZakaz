@@ -1,0 +1,135 @@
+// start .sClientReview
+.sClientReview {
+  // --sPT: #{rem(32)};
+  // --sPB: #{rem(40)};
+  // --sTPB: #{rem(20)};
+
+  // @include media-breakpoint-up(lg) {
+  //   --sPT: #{rem(48)};
+  //   --sPB: #{rem(56)};
+  //   --sTPB: #{rem(24)};
+  // }
+  .section-title {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px;
+  }
+  &__wrap {
+    background-color: #f2f6fc;
+    border-radius: rem(16);
+    padding: rem(20);
+
+    @include media-breakpoint-up(lg) {
+      border-radius: rem(20);
+      padding: rem(20) rem(28);
+    }
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      margin-bottom: rem(4);
+      color: #35455c;
+      font-size: rem(30);
+      line-height: 1.2;
+
+      @include media-breakpoint-up(lg) {
+        font-size: rem(44);
+      }
+    }
+  }
+
+  &__location {
+    margin-bottom: rem(18);
+    color: rgba(44, 52, 64, 0.55);
+    font-size: rem(14);
+    line-height: 1.4;
+  }
+
+  &__text {
+    color: #35455c;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: em(16);
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: auto;
+      font-size: rem(20);
+    }
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(16);
+    padding-top: rem(12);
+  }
+
+  &__meta-item {
+    color: rgba(44, 52, 64, 0.55);
+    font-size: rem(16);
+    line-height: 1.5;
+  }
+
+  &__video-wrap {
+    position: relative;
+    display: block;
+    min-height: rem(280);
+    border-radius: rem(20);
+    overflow: hidden;
+    cursor: pointer;
+    height: 100%;
+    aspect-ratio: 56/ 42;
+    max-width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      min-height: rem(360);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.12);
+      transition: background 0.2s ease;
+    }
+    &:hover {
+      &::after {
+        background: rgba(0, 0, 0, 0.24);
+      }
+    }
+  }
+
+  &__video-preview {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__play {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: rem(72);
+    height: rem(72);
+    border-radius: 50%;
+    // background-color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      color: $primary;
+      font-size: rem(34);
+      margin-left: rem(2);
+    }
+  }
+}
+// end .sClientReview

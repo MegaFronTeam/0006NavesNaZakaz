@@ -1,50 +1,60 @@
 :root {
-	--animate-delay: 1.2s;
-	--bs-body-font-size: #{$em-base};
+  --animate-delay: 1.2s;
+  --bs-body-font-size: #{$em-base};
 
-	@include media-breakpoint-up(md) {
-		--sPT: #{rem(80)};
-		--sPB: #{rem(90)};
-		--sTPB: #{rem(40)};
-	}
+  @include media-breakpoint-up(md) {
+    --sPT: #{rem(80)};
+    --sPB: #{rem(90)};
+    --sTPB: #{rem(40)};
+  }
 
-	--sPT: #{rem(80 * 0.5)};
-	--sPB: #{rem(90 * 0.5)};
-	--sTPB: #{rem(40 * 0.5)};
+  --neutral-primary: #35455c;
+  --neutral-border: #c1d5f1;
+  --neutral-secondary-700: rgba(44, 52, 64, 0.7);
+  --neutral-secondary-500: rgba(44, 52, 64, 0.5);
+  --neutral-white: #fff;
+  --neutral-light: #f2f6fc;
+  --accent-primary: #ffc23c;
+  --accent-error: #ec5e2a;
+  --accent-secondary: #ff9c64;
+  --accent-succes: #93ca7d;
+  --accent-blue: #3af;
+  --sPT: #{rem(80 * 0.5)};
+  --sPB: #{rem(90 * 0.5)};
+  --sTPB: #{rem(40 * 0.5)};
 
-	--swiperArrowSize: #{rem(32)};
-	--swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 4);
-	--swiperBorderColorDef: var(--bs-white);
-	--swiperColorDef: var(--bs-warning);
-	--swiperBgDef: var(--bs-white);
+  --swiperArrowSize: #{rem(32)};
+  --swiperArrowPosition: calc(-1 * var(--swiperArrowSize) / 4);
+  --swiperBorderColorDef: var(--bs-white);
+  --swiperColorDef: var(--bs-warning);
+  --swiperBgDef: var(--bs-white);
 
-	--swiperBorderColorDefHover: var(--bs-secondary);
-	--swiperColorDefHover: var(--bs-warning);
-	--swiperBgDefHover: var(--bs-secondary);
-	@media (min-width: 440px) {
-		--swiperArrowSize: #{rem(48)};
-	}
+  --swiperBorderColorDefHover: var(--bs-secondary);
+  --swiperColorDefHover: var(--bs-warning);
+  --swiperBgDefHover: var(--bs-secondary);
+  @media (min-width: 440px) {
+    --swiperArrowSize: #{rem(48)};
+  }
 
-	--fancybox-bg: rgba(0, 0, 0, 0.5);
+  --fancybox-bg: rgba(0, 0, 0, 0.5);
 
+  --plyr-color-main: var(--bs-primary);
+  --plyr-control-icon-size: #{rem(15)};
+  --plyr-audio-controls-background: var(--bs-secondary);
+  --plyr-audio-control-color: var(--bs-primary);
+  --plyr-audio-control-color-hover: var(--bs-secondary);
+  --plyr-control-spacing: 8px;
+  @include media-breakpoint-up(xl) {
+    --plyr-control-spacing: 9.7px;
+  }
+  //  --carousel-button-width: 48px;
+  //  --carousel-button-height: 48px;
 
-	--plyr-color-main: var(--bs-primary);
-	--plyr-control-icon-size: #{rem(15)};
-	--plyr-audio-controls-background: var(--bs-secondary);
-	--plyr-audio-control-color: var(--bs-primary);
-	--plyr-audio-control-color-hover: var(--bs-secondary);
-	--plyr-control-spacing: 8px;
-	@include media-breakpoint-up(xl) {
-		--plyr-control-spacing: 9.7px;
-	}
-	//  --carousel-button-width: 48px;
-	//  --carousel-button-height: 48px;
+  //  --carousel-button-svg-width: 24px;
+  //  --carousel-button-svg-height: 24px;
 
-	//  --carousel-button-svg-width: 24px;
-	//  --carousel-button-svg-height: 24px;
-
-	//  --carousel-button-svg-stroke-width: 2.5;
-	//  --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0/ 0.4));
+  //  --carousel-button-svg-stroke-width: 2.5;
+  //  --carousel-button-svg-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0/ 0.4));
 }
 
 @include media-breakpoint-up(xl) {

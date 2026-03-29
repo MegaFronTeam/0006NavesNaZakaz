@@ -1,0 +1,54 @@
+mixin passportStat(iconName, title, valueHtml, noteText)
+	+e.item
+		+e.item-head
+			+e.icon
+				+icon(iconName)
+			+e.item-title!= title
+		+e.item-value!= valueHtml
+		if noteText
+			+e.item-note!= noteText
+		else
+			+e.item-note &nbsp;
+
+mixin passportBullet(text)
+	+e.bullet!= text
+
+mixin sPassport(data)
+	// start sPassport
+	+b.SECTION.sPassport.section#sPassport&attributes(attributes)
+		.container.container--xxxl
+			+e.hero
+				+e.hero-bg
+					+img('img/passport-hero-bg.jpg')
+				+e.hero-inner
+					h2.sPassport__title Паспорт объекта
+					+e.stats
+						+passportStat('size', 'Размер', '7,8 x 4,4 м<br>(35 м²)', '')
+						+passportStat('calendar-clock', 'Срок', '23 дня', '20 дней пр-во + 3 дня монтаж')
+						+passportStat('calculator-money', 'Стоимость', '1 200 000 ₽', 'Честная смета без скрытой экономии')
+
+			+e.load
+				+e.load-main
+					+e.load-head
+						img(src="img/snow.svg", alt="")
+						+e.load-label Допустимая снеговая нагрузка
+					+e.load-title
+						| ≈ 200-210 см
+						br
+						| свежего снега
+					+e.bullets
+						+passportBullet('≈ 50-55 см мокрого весеннего снега')
+						+passportBullet('Вам не придется чистить крышу')
+
+
+				+e.load-card
+					+e.load-card-head
+						img(src="img/kg.svg", alt="")
+						+e.load-card-label Нагрузка
+					+e.load-card-value 210 кг на каждом квадратном метре навеса
+					+e.note
+						+e.note-text Примерно столько весит взрослый бурый медведь
+						+img('img/passport-bear.png').sPassport__note-image
+				+e.load-image
+					+img('img/passport-snow-roof.png')
+	// end sPassport

@@ -28,6 +28,8 @@ import cssnano from 'cssnano';
 import nested from 'postcss-nested';
 import pscss from 'postcss-scss';
 import plumber from 'gulp-plumber';
+import stylelint from 'stylelint';
+import { ESLint } from 'eslint';
 
 function browsersync() {
   browserSync.init({
@@ -134,6 +136,43 @@ function styles() {
       .pipe(browserSync.stream())
   );
 }
+async function lintStyles(done) {
+  try {
+    const { results } = await stylelint.lint({
+      files: [sourse + '/sass/**/*.scss', sourse + '/pug/blocks/**/*.scss'],
+      formatter: 'compact',
+    });
+    let hasIssues = false;
+    results.forEach(({ source, warnings }) => {
+      if (!warnings.length) return;
+      hasIssues = true;
+      warnings.forEach(({ line, column, severity, rule, text }) =>
+        console.log(
+          `[stylelint] ${severity.toUpperCase()} ${source}:${line}:${column}  ${text}  (${rule})`,
+        ),
+      );
+    });
+    if (!hasIssues) console.log('[stylelint] ✔ No issues found');
+  } catch (e) {
+    console.error('[stylelint] Error:', e.message);
+  }
+  done();
+}
+
+async function lintScripts(done) {
+  try {
+    const eslint = new ESLint();
+    const results = await eslint.lintFiles([sourse + '/js/*.js']);
+    const formatter = await eslint.loadFormatter('stylish');
+    const output = await formatter.format(results);
+    if (output) console.log(output);
+    else console.log('[eslint] ✔ No issues found');
+  } catch (e) {
+    console.error('[eslint] Error:', e.message);
+  }
+  done();
+}
+
 function common() {
   return (
     src([
@@ -219,9 +258,23 @@ function startwatch() {
   // watch([sourse + '/js/libs.js'], { usePolling: true }, scripts);
   watch(sourse + '/sass/*.svg', { usePolling: true }, svgCopy);
 
-  watch([sourse + '/js/common.js'], { usePolling: true }, common);
+  watch([sourse + '/js/common.js'], { usePolling: true }, series(lintScripts, common));
+  watch(
+    [sourse + '/sass/**/*.scss', sourse + '/pug/blocks/**/*.scss'],
+    { usePolling: true },
+    lintStyles,
+  );
 }
 
 export let libs = series(cleanlibs, copyLibs);
 export let sprite = series(svg, svgCopy);
-export default series(common, libs, styles, sprite, pugFiles, parallel(browsersync, startwatch));
+export let lint = parallel(lintStyles, lintScripts);
+export default series(
+  parallel(lintStyles, lintScripts),
+  common,
+  libs,
+  styles,
+  sprite,
+  pugFiles,
+  parallel(browsersync, startwatch),
+);

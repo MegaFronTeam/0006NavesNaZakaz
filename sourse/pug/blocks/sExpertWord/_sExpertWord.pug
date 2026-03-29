@@ -1,0 +1,25 @@
+mixin sExpertWord(data)
+	// start sExpertWord
+	+b.SECTION.sExpertWord.section#sExpertWord&attributes(attributes)
+		.container.container--xxxl
+			+b.section-title.text-center
+				h2 Слово&nbsp;эксперта
+
+			+e.content.row.align-items-stretch.g-4
+				.col-12.col-lg-6
+					+e.quote
+						+e.photo-wrap
+							+img('img/expert-author.jpg').sExpertWord__photo
+						+e.author Александр&nbsp;Мисунов
+						+e.position Руководитель&nbsp;компании
+						+e.text
+							| &laquo;Главной сложностью здесь была точность монтажа фриза. Любая&nbsp;погрешность в&nbsp;5&nbsp;мм
+							| на&nbsp;такой длине была&nbsp;бы заметна. Мы&nbsp;использовали лазерное нивелирование
+							| на&nbsp;всех этапах, поэтому геометрия идеальна. Этот навес простоит
+							| минимум 25&nbsp;лет без капитального ремонта.&raquo;&nbsp;&mdash; Александр, Руководитель&nbsp;компании
+						+e.mark
+							+img('img/quote-mark.svg')
+				.col-12.col-lg-6
+					+e.image-wrap
+						+img('img/expert-project.jpg').sExpertWord__image
+	// end sExpertWord

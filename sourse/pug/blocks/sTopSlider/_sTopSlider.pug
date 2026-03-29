@@ -1,0 +1,16 @@
+mixin sTopSlider(data)
+	// start sTopSlider
+	+b.sTopSlider.section#sTopSlider.pt-0&attributes(attributes)
+		.container.container--xxxl
+			-
+				const slides = [
+					{src: 'img/sAbout-1.png', caption: 'Видео', video: 'https://www.youtube.com/watch?v=1iQyF0pURvc'},
+					{src: 'img/sAbout-1.png', caption: 'Сварочный цех'},
+					{src: 'img/sAbout-1.png', caption: 'Сборочный цех'},
+					{src: 'img/sAbout-1.png', caption: 'Сварочный цех'},
+					{src: 'img/sAbout-1.png', caption: 'Сборочный цех'},
+					{src: 'img/sAbout-1.png', caption: 'Сварочный цех'},
+					{src: 'img/sAbout-1.png', caption: 'Сборочный цех'},
+				]
+			+gallerySlider(slides, 'sTopSlider')
+	// end sTopSlider

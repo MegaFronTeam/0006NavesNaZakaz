@@ -1,21 +1,63 @@
 extends layout/main.pug
 
 
-include ../blocks/sPromo/_sPromo.pug
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sCatalog/_sCatalog.pug
+//- include ../blocks/sPortfolio/_sPortfolio.pug
+//- include ../blocks/sDesign/_sDesign.pug
+//- include ../blocks/sCalculator/_sCalculator.pug
+//- include ../blocks/sTypical/_sTypical.pug
+//- include ../blocks/sPriceList/_sPriceList.pug
+//- include ../blocks/sReviews/_sReviews.pug
+//- include ../blocks/sStages/_sStages.pug
+//- include ../blocks/sAbout/_sAbout.pug
+//- include ../blocks/sAdvantages/_sAdvantages.pug
+//- include ../blocks/sAccordion/_sAccordion.pug
+//- include ../blocks/sCertificates/_sCertificates.pug
+include ../blocks/sFilter/_sFilter.pug
+include ../blocks/sProducts/_sProducts.pug
+include ../blocks/sTopSlider/_sTopSlider.pug
+include ../blocks/sHistoryArticle/_sHistoryArticle.pug
+include ../blocks/sAdditionalWork/_sAdditionalWork.pug
+include ../blocks/sClientReview/_sClientReview.pug
+include ../blocks/sCta/_sCta.pug
+include ../blocks/sPassport/_sPassport.pug
+include ../blocks/sTechnicalCharacteristics/_sTechnicalCharacteristics.pug
+include ../blocks/sExpertWord/_sExpertWord.pug
+
 
 block variables
-	- let  mainPage= 'page-promo'
+	- let  mainPage= 'portfolio-page' 
 	- let  bg= null
 
 block title
-	- let  title= 'Посадка'
+	- let  title= 'Навес хай-тек 5,7 х 7,3 с мягкой кровлей и фризом из алюминиевого композита – СНТ Тихая Дубрава Одинцовский г.о.'
 	title= title
 block pagecontent
 	//- +mob-mnu()
-	//- +headerBlock()
-	+sPromo
-	//- +footer()
-
+	+header()
+		+top-nav()
+		+topLine()
+	+page-head({
+		title,
+		btn: 'btn',
+		container: "container--xxxl"
+	})
+		+e.text Капитальное строение с запасом прочности +40%. Рассчитано инженерами на 50 лет службы.
+	+sTopSlider
+	+sHistoryArticle()
+	+sPassport()
+	+sTechnicalCharacteristics()
+	+sAdditionalWork()
+	+sExpertWord()
+	+sClientReview()
+	+sCta()
+	+sContact()
+	.section-wrapper.section-wrapper--footer
+		+footer()
+	//- +sForm()
+	+scrollToTop()
 
 
 

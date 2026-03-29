@@ -11,7 +11,7 @@ mixin sAbout(data)
 					.swiper-wrapper
 						mixin sAboutSlide(i, p)
 							+e.slide.swiper-slide
-								+e.item(data-fancybox='sAbout' data-src=`img/@2x/sAbout-${i}.png` data-caption=`${p}`)
+								+e.item(data-fancybox='sAbout' data-src=`img//sAbout-${i}.png` data-caption=`${p}`)
 									+e.img-wrap.picture-bg
 										+pic(`sAbout-${i}.png`, 'bg')
 									span!= p

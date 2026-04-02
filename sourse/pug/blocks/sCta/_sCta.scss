@@ -89,8 +89,10 @@
 
   &__btn {
     padding: rem(24) rem(5);
+    width: 100%;
     @include media-breakpoint-up(sm) {
       padding-inline: rem(32);
+      width: auto;
     }
     //   display: inline-flex;
     //   align-self: flex-start;

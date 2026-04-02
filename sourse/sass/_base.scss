@@ -142,6 +142,7 @@ body {
     margin-bottom: rem(16);
     @include media-breakpoint-up(md) {
       margin-bottom: rem(24);
+      margin-top: 24px;
     }
   }
 }

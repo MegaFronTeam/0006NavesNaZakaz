@@ -8,6 +8,8 @@
     --sTPB: #{rem(40)};
   }
 
+  --win-h: calc(100vh - 80px);
+
   --neutral-primary: #35455c;
   --neutral-border: #c1d5f1;
   --neutral-secondary-700: rgba(44, 52, 64, 0.7);

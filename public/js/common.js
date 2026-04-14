@@ -5,6 +5,25 @@ const JSCCommon = {
     const fancyboxApi = window.Fancybox;
     if (!fancyboxApi) return;
 
+    // Add VK Video support: extend Html.processType to handle vkvideo.ru URLs
+    const htmlPlugin = fancyboxApi.Plugins && fancyboxApi.Plugins.Html;
+    if (htmlPlugin && htmlPlugin.prototype && htmlPlugin.prototype.processType) {
+      const origProcessType = htmlPlugin.prototype.processType;
+      htmlPlugin.prototype.processType = function (slide) {
+        const src = slide.src && typeof slide.src === 'string' ? slide.src : '';
+        const match = src.match(/https?:\/\/vkvideo\.ru\/video(-?\d+)_(\d+)/);
+        if (match) {
+          slide.src = `https://vk.com/video_ext.php?oid=${match[1]}&id=${match[2]}&hd=2&autoplay=1`;
+          slide.type = 'video';
+          slide.vendor = 'vk';
+          slide.ratio = 16 / 9;
+          slide.video = { autoplay: true, ratio: 16 / 9 };
+          return;
+        }
+        origProcessType.call(this, slide);
+      };
+    }
+
     const link = '[data-fancybox="modal"], .link-modal-js';
 
     fancyboxApi.bind(link, {
